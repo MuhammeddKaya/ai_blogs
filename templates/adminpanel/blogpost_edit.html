@@ -1,0 +1,59 @@
+{% extends 'base/layouts/_base_layout.html' %}
+{% load static %}
+
+{% block main-content-block %}
+
+{% comment %} <!DOCTYPE html>
+<html>
+<head>
+    <title>Düzenle Blog Gönderisi</title>
+</head>
+<body>
+    <h1>Düzenle Blog Gönderisi</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}  {# Tüm form alanlarını bir paragraf (p) içinde görüntüler #}
+        <button type="submit">Kaydet</button>
+    </form>
+    <a href="{% url 'adminpanel:admin_panel' %}">Admin Paneline Geri Dön</a>
+</body>
+</html> {% endcomment %}
+
+
+    <h1>Blog Gönderisini Düzenle</h1>
+    <form method="post">
+        {% csrf_token %}
+
+        <!-- Form alanları bir tablo içine yerleştirilsin -->
+        <table class="table">
+            <tr>
+                <th>Başlık</th>
+                <td>{{ form.title }}</td>
+            </tr>
+            <tr>
+                <th>İçerik</th>
+                <td>{{ form.content }}</td>
+            </tr>
+            <tr>
+                <th>Yazar</th>
+                <td>{{ form.author }}</td>
+            </tr>
+            <tr>
+                <th>Kategoriler</th>
+                <td>{{ form.categories }}</td>
+            </tr>
+            <tr>
+                <th>Resim</th>
+                <td>{{ form.image }}</td>
+            </tr>
+        </table>
+
+        <button type="submit">Kaydet</button>
+    </form>
+    <a href="{% url 'adminpanel:admin_panel' %}">Admin Paneline Geri Dön</a>
+
+
+
+
+
+{% endblock main-content-block %}

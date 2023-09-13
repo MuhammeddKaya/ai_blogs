@@ -1,7 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.text import slugify
-
+from PIL import Image
+from django_resized import ResizedImageField
 
 # Create your models here.
 
@@ -18,13 +19,37 @@ class Category(models.Model):
         return self.name
     
 
+# class BlogPost(models.Model):
+#     title = models.CharField(max_length=200)
+#     content = models.TextField()
+#     author = models.ForeignKey(User, on_delete=models.CASCADE)
+#     categories = models.ManyToManyField(Category, related_name='blog_posts')
+#     created_at = models.DateTimeField(auto_now_add=True)
+#     image = models.ImageField(upload_to='blog_images/', blank=True, null=True)
+#     slug = models.SlugField(unique=True, allow_unicode=True, blank=True)
+
+#     class Meta:
+#         ordering = ("slug",)
+#         verbose_name =('Blog')
+#         verbose_name_plural = ('Bloglar')
+
+#     def save(self, *args, **kwargs):
+#         if not self.slug:
+#             self.slug = slugify(self.title)
+#         super().save(*args, **kwargs)
+
+
+
+#     def __str__(self):
+#         return self.title
+
 class BlogPost(models.Model):
     title = models.CharField(max_length=200)
     content = models.TextField()
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     categories = models.ManyToManyField(Category, related_name='blog_posts')
     created_at = models.DateTimeField(auto_now_add=True)
-    image = models.ImageField(upload_to='blog_images/', blank=True, null=True)
+    image = ResizedImageField(size=[700, 450],upload_to='blog_images/', blank=True, null=True)
     slug = models.SlugField(unique=True, allow_unicode=True, blank=True)
 
     class Meta:
@@ -35,9 +60,8 @@ class BlogPost(models.Model):
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)
+
         super().save(*args, **kwargs)
-
-
 
     def __str__(self):
         return self.title

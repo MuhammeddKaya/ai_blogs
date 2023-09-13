@@ -18,12 +18,17 @@ from django.contrib import admin
 from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
+from . import views
 # from apps.blog import views as blog_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', blog_views.blog_list, name='blog_list'),
     path('blog/', include('apps.blog.urls')),
+    path('account/', include('apps.account.urls')),
+    # path('chatai/', include('apps.chatai.urls')),
+    path('', views.query_view, name='query'),
+    path('panel/', include('apps.adminpanel.urls')), #admin app için
 ]
 
 

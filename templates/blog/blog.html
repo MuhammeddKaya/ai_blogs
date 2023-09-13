@@ -1,8 +1,90 @@
-{% extends 'base/layouts/base.html' %}
+{% extends 'base/layouts/_base_layout.html' %}
 {% load static %}
 
 {% block main-content-block %}
 
-<h3>blog</h3>
+{% comment %} <section class="section">
+    <div class="container">
+
+        <div class="row mb-4">
+            <div class="col-sm-6">
+                <h2 class="posts-entry-title">Politics</h2>
+            </div>
+            <div class="col-sm-6 text-sm-end"><a href="category.html" class="read-more">View All</a></div>
+        </div>
+
+        <div class="row">
+            {% for blog in blog_posts %}
+            <div class="col-lg-4 mb-4">
+                <div class="post-entry-alt">
+                    <a href="{% url 'blog:blog_detail'  blog.slug%}" class="img-link"><img src="{{ blog.image.url }}" alt="Image" class="img-fluid" style="max-height: 280px;"></a>
+                    <div class="excerpt">
+                        
+
+                        <h2><a href="{% url 'blog:blog_detail'  blog.slug%}">{{blog.title}}</a></h2>
+                        <div class="post-meta align-items-center text-left clearfix">
+                            <figure class="author-figure mb-0 me-3 float-start"><img src="images/person_1.jpg" alt="Image" class="img-fluid"></figure>
+                            <span class="d-inline-block mt-1">By <a href="#">{{ blog.author.username }}</a></span>
+                            <span>&nbsp;-&nbsp; {{ blog.created_at|date:"F d, Y" }}</span>
+                        </div>
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor laudantium sed optio, explicabo ad deleniti impedit facilis fugit recusandae! Illo, aliquid, dicta beatae quia porro id est.</p>
+                        <p><a href="{% url 'blog:blog_detail'  blog.slug%}" class="read-more">Continue Reading</a></p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+    </div>
+</section> {% endcomment %}
+
+<div class="container-fluid">
+    <div class="card bg-light-info shadow-none position-relative overflow-hidden">
+      <div class="card-body px-4 py-3">
+        <div class="row align-items-center">
+          <div class="col-9">
+            <h4 class="fw-semibold mb-8">Latest Blogs</h4>
+          </div>
+          <div class="col-3">
+            <div class="text-center mb-n5">  
+              <img src="../../dist/images/breadcrumb/ChatBc.png" alt="" class="img-fluid mb-n4">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+    {% for blog in blog_posts %}
+      <div class="col-md-6 col-lg-4">
+        <div class="card rounded-2 overflow-hidden hover-img">
+          {% if blog.image %}
+          <div class="position-relative">
+            <a href="javascript:void(0)"><img src="{{ blog.image.url }}" class="card-img-top rounded-0" alt="..." style="max-height:240px ;"></a>
+            <span class="badge bg-white text-dark fs-2 rounded-4 lh-sm mb-9 me-9 py-1 px-2 fw-semibold position-absolute bottom-0 end-0">2 min Read</span>
+            <img src="{% static 'package/dist/images/profile/user-1.jpg' %}" alt="" class="img-fluid rounded-circle position-absolute bottom-0 start-0 mb-n9 ms-9" width="40" height="40" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Addie Keller">
+          </div>
+          {% else %}
+          <div class="position-relative">
+            <a href="javascript:void(0)"><img src="{% static './package/dist/images/ai/ai.jpeg' %}"  class="card-img-top rounded-0" alt="..." style="max-height:240px ;"></a>
+            <span class="badge bg-white text-dark fs-2 rounded-4 lh-sm mb-9 me-9 py-1 px-2 fw-semibold position-absolute bottom-0 end-0">2 min Read</span>
+            <img src="{% static 'package/dist/images/profile/user-1.jpg' %}"  alt="" class="img-fluid rounded-circle position-absolute bottom-0 start-0 mb-n9 ms-9" width="40" height="40" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Addie Keller">
+          </div>
+          {% endif %}
+          <div class="card-body p-4">
+            <span class="badge text-bg-light fs-2 rounded-4 py-1 px-2 lh-sm  mt-3">{{blog.categories}}</span>
+            <a class="d-block my-4 fs-5 text-dark fw-semibold" href="{% url 'blog:blog_detail'  blog.slug%}">{{blog.title|truncatechars:37}}</a>
+            <div class="d-flex align-items-center gap-4">
+              <div class="d-flex align-items-center gap-2"><i class="ti ti-eye text-dark fs-5"></i>9,125</div>
+              <div class="d-flex align-items-center gap-2"><i class="ti ti-message-2 text-dark fs-5"></i>3</div>
+              <div class="d-flex align-items-center fs-2 ms-auto"><i class="ti ti-point text-dark"></i>{{ blog.created_at|date:"F d, Y" }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+
+  </div>
 
 {% endblock main-content-block %}

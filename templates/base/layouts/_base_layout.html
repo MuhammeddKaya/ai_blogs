@@ -1,0 +1,58 @@
+{% load static i18n  %}
+
+  <!--  start head -->
+  {% include "base/partials/_head.html" %}
+  <!--  end head -->
+
+  <body>
+    <!-- Preloader -->
+    <div class="preloader">
+      <img src="{% static 'package/dist/images/logos/favicon.png' %}" alt="loader" class="lds-ripple img-fluid" />
+    </div>
+
+    <!-- Preloader -->
+    <div class="preloader">
+      <img src="{% static 'package/dist/images/logos/favicon.png' %}" alt="loader" class="lds-ripple img-fluid" />
+    </div>
+
+    <!--  Body Wrapper -->
+    <div class="page-wrapper" id="main-wrapper" data-theme="blue_theme"  data-layout="vertical" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed">
+      
+      <!-- Sidebar Start -->
+      {% include "base/partials/_left_sidebar.html" %}
+      <!--  Sidebar End -->
+
+      <!--  Main wrapper -->
+      <div class="body-wrapper">
+
+        <!--  Header Start -->
+        {% include "base/partials/_header.html" %}
+        <!--  Header End -->
+
+        <div class="container-fluid">
+            <!--main-content-block open-->
+            {% block main-content-block %}
+            {% endblock main-content-block %}
+            <!--main-content-block close-->
+        </div>
+
+      </div>
+    </div>
+
+    <!--  Shopping Cart -->
+    {% include "base/partials/_shopping_cart.html" %}
+
+    <!--  Mobilenavbar -->
+    {% include "base/partials/_mobile_navbar.html" %}
+    
+    <!--  Search Bar -->
+    {% include "base/partials/_search_bar.html" %}
+   
+    <!--  Customizer -->
+    {% include "base/partials/_customizer.html" %}
+    
+    <!--  Source-->
+    {% include "base/partials/_src.html" %}
+
+  </body>
+</html>
