@@ -1,0 +1,31 @@
+{% extends 'base/layouts/_base_layout.html' %}
+{% load static %}
+
+{% block main-content-block %}
+
+
+<h1>ajax deneme sayfası</h1>
+
+<button href="" type="button" class="btn btn-dark btn-large " id="divkapa">Divleri Kapat</button>
+
+<div class="row align-items-center divkapa">
+  <div class="col">
+      <div class="card mb-3">
+          <div class="card-body">
+              <h5 class="card-title">Weather Reporting App</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                  additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">React Native, Java, REST Api</small></p>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<ul id="display-data">
+
+</ul>
+
+
+
+{% endblock main-content-block %}

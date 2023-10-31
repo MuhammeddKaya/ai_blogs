@@ -46,6 +46,11 @@ INSTALLED_APPS = [
     # 'allauth.socialaccount',
     # 'allauth.socialaccount.providers.google',
 
+
+    #3rd part apps
+    'crispy_forms',
+    'crispy_bootstrap5',
+
     #custom apps
     'apps.blog',
     'apps.adminpanel',
@@ -134,6 +139,15 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
+
+
+# crispyform templates
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+
+
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [ BASE_DIR / "static",]

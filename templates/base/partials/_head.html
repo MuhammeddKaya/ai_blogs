@@ -5,6 +5,7 @@
   <head>
     <!--  Title -->
     <title>{% block head_title %}{% endblock %}</title>
+    
     <!--  Required Meta Tag -->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -21,6 +22,7 @@
     
     <!-- Core Css -->
     <link  id="themeColors"  rel="stylesheet" href="{% static 'package/dist/css/style.min.css' %}" />
+    
     {% block extra_head %}
     {% endblock %}
   </head>

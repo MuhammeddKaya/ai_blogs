@@ -24,10 +24,11 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', blog_views.blog_list, name='blog_list'),
-    path('blog/', include('apps.blog.urls')),
+    path('blog', include('apps.blog.urls')),
     path('account/', include('apps.account.urls')),
-    # path('chatai/', include('apps.chatai.urls')),
-    path('', views.query_view, name='query'),
+    path('serp/', include('apps.serp.urls')),
+    path('chatai/', include('apps.chatai.urls')),
+    # path('', views.query_view, name='query'),
     path('panel/', include('apps.adminpanel.urls')), #admin app için
 ]
 

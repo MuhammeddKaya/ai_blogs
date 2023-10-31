@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from apps.blog.models import BlogPost
+from django.http import JsonResponse
 
 # Create your views here.
 
@@ -18,3 +19,28 @@ class BlogPostUpdateView(UpdateView):
     form_class = BlogPostForm  # Özel ModelForm'unuzu buraya ekleyin
     template_name = 'adminpanel/blogpost_edit.html'  # Düzenleme formu şablonunuzu buraya ekleyin
     success_url = '/panel/admin_panel/'  # Başarılı güncelleme sonrası yönlendirme
+
+
+def blog_ajax(request):
+
+
+    return render(request, 'adminpanel/blog_ajax_list.html')
+
+
+
+def BlogPostListAjaxView(request):
+
+    blogs=BlogPost.objects.all()
+
+    
+
+
+    return JsonResponse({"blogs":list(blogs.values())})
+
+
+
+def blog_ajax_create(request):
+    if request.method=='POST':
+        title=request.POST['title']
+        title=request.POST['title']
+        title=request.POST['title']

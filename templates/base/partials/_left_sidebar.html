@@ -92,6 +92,14 @@
               <span class="hide-menu">{% trans 'Blog Edit' %}</span>
             </a>
           </li>
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="{% url 'adminpanel:blog_ajax' %}" aria-expanded="false">
+              <span>
+                <i class="ti ti-layout-grid"></i>
+              </span>
+              <span class="hide-menu">{% trans 'Blog Ajax Edit' %}</span>
+            </a>
+          </li>
           {% comment %} <li class="sidebar-item">
             <a class="sidebar-link" href="./app-calendar.html" aria-expanded="false">
               <span>
@@ -106,11 +114,23 @@
             <span class="hide-menu">Artificial İntelligence</span>
           </li>
           <li class="sidebar-item">
-            <a class="sidebar-link" href="{% url 'query' %}" aria-expanded="false">
+            <a class="sidebar-link" href="{% url 'chatai:query' %}" aria-expanded="false">
               <span>
                 <i class="ti ti-brush"></i>
               </span>
               <span class="hide-menu">{% trans 'Blog Generate Ai' %}</span>
+            </a>
+          </li>
+          <li class="nav-small-cap">
+            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+            <span class="hide-menu">Serp Analyzer</span>
+          </li>
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="{% url 'serp:serp' %}" aria-expanded="false">
+              <span>
+                <i class="ti ti-brush"></i>
+              </span>
+              <span class="hide-menu">{% trans 'Serp Analyzer' %}</span>
             </a>
           </li>
         </ul>

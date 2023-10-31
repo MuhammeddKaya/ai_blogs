@@ -1,0 +1,321 @@
+{% extends 'base/layouts/_base_layout.html' %}
+{% load static %}
+
+<script>
+
+
+</script>
+
+{% block main-content-block %}
+<div class="container-fluid">
+  <div class="card bg-light-info shadow-none position-relative overflow-hidden">
+    <div class="card-body px-4 py-3">
+      <div class="row align-items-center">
+        <div class="col-9">
+          <h4 class="fw-semibold mb-8">{{ domain }}</h4>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a class="text-muted" href="./index.html">Dashboard{{main_page_score}}</a></li>
+              <li class="breadcrumb-item" aria-current="page">Total {{url_count}} url found for ---- {{raw_domain_name}}</li>
+            </ol>
+          </nav>
+        </div>
+        <div class="col-3">
+          <div class="text-center mb-n5">  
+            <img src="{% static 'package/dist/images/breadcrumb/ChatBc.png' %}" alt="" class="img-fluid mb-n4">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% comment %} <div class="container-fluid">
+  <div class="widget-content searchable-container list">
+    <!-- --------------------- start Contact ---------------- -->
+    <!-- Modal -->
+    <div class="card card-body">
+      <div class="table-responsive">
+        <table class="table search-table align-middle text-nowrap">
+          <thead class="header-item">
+            <th>
+              <div class="n-chk align-self-center text-center">
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input primary" id="contact-check-all" />
+                  <label class="form-check-label" for="contact-check-all"></label>
+                  <span class="new-control-indicator"></span>
+                </div>
+              </div>
+            </th>
+            <th>Link</th>
+            <th>İnspect</th>
+          </thead>
+          <tbody>
+            {% for link in sitemap_link_list %}
+            <tr class="search-items">
+              <td >
+                <div class="n-chk align-self-center text-center">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input contact-chkbox primary" id="checkbox1" />
+                    <label class="form-check-label" for="checkbox1"></label>
+                  </div>
+                </div>
+              </td>
+              <td >
+                <a href="{{link}}">{{link|truncatechars:100}}</a>
+                <div data-id="{{link}}" >
+                </div>
+              </td>
+              <td >
+                <button id="sent_link" type="button" class="btn btn-success view-link" data-link="{{ link }}" data-id="{{link.id}}"></button>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div> {% endcomment %}
+
+{% comment %} <div class="row">
+
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-body ">
+        <h5 class="card-title fw-semibold">Upcoming Activity</h5>
+        <p class="card-subtitle mb-7 pb-8">In New year</p>
+        <div class="position-relative">
+          {% for link in sitemap_link_list %}
+            <div class="search-items mb-3">
+              <div class="row ">
+                <div class="col-md-1">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input primary" id="contact-check-all" />
+                    <label class="form-check-label" for="contact-check-all"></label>
+                    <span class="new-control-indicator"></span>
+                  </div>
+                </div>
+                <div class="col-md-10">
+                    <h6 class="fs-4 fw-semibold"><a href="{{link}}">{{link|truncatechars:100}}</a></h6> 
+                </div>
+                <div class="col-md-1">
+                  <button id="sent_link" type="button" class="btn btn-success view-link" data-link="{{ link }}" data-id="{{link.id}}">inspect</button>
+                </div>
+              </div>
+              
+              <div class="align-items-center m-3" data-id="{{link}}" >
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div> {% endcomment %}
+
+
+<div id="hidden-result-div" class="d-none ">
+  <div class="row m-12">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body p-4">
+          <h1>Bu sayfa için Seo Skoru: <span id="seo-score"></span></h1>
+          <h5 class="card-title fw-semibold mb-4">Settings</h5>
+          <div class="d-flex align-items-center gap-3 pb-3 mb-3 border-bottom">
+            <div class="d-flex align-items-center">
+              <div class="bg-primary rounded-2 d-flex align-items-center justify-content-center p-6">
+                <i class="ti ti-volume text-white fs-7"></i>
+              </div>
+            </div>
+            <div class="position-relative w-100">
+              <div class="d-flex align-items-center justify-content-between">
+                <h6 class="mb-0 fw-semibold fs-4">Sound</h6>
+                <span>45%</span>
+              </div>
+              <input type="range" class="form-range pt-2" id="customRange1">
+            </div>
+          </div>
+          <div class="d-flex align-items-center gap-3 pb-3 border-bottom mb-3">
+            <div class="d-flex align-items-center">
+              <div class="bg-secondary rounded-2 d-flex align-items-center justify-content-center p-6">
+                <i class="ti ti-message text-white fs-7"></i>
+              </div>
+            </div>
+            <div class="position-relative w-100 d-flex align-items-center justify-content-between">
+              <div>
+                <h6 class="mb-2 fw-semibold fs-4">Sound</h6>
+                <span>Turn on chat during call%</span>
+              </div>
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+              </div>
+            </div>
+          </div>
+          <div class="text-end">
+            <button class="btn btn-outline-danger me-3">Cencel</button>
+            <button class="btn btn-primary">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="col-md-12">
+  <!-- --------------------- start Custom Icon Tab---------------- -->
+  <div class="card">
+    <div class="card-body">
+      <div class="mx-auto">
+        <div class="col-md-4 col-lg-4 mx-auto">
+        <!-- Nav tabs -->
+          <ul class="nav nav-pills nav-fill mt-4 " role="tablist">
+            <li class="nav-item mx-auto">
+              <a class="nav-link d-flex active" data-bs-toggle="tab" href="#home2" role="tab" > <span ><i class="ti ti-device-laptop fs-4"></i> </span> <span class="d-none d-md-block ms-2">Desktop</span> </a>
+            </li>
+            <li class="nav-item mx-auto"> 
+              <a class="nav-link d-flex" data-bs-toggle="tab" href="#profile2" role="tab" > <span ><i class="ti ti-device-mobile fs-4"></i> </span> <span class="d-none d-md-block ms-2">Mobile</span> </a>
+            </li>
+          </ul>
+        </div>
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div class="tab-pane active" id="home2" role="tabpanel">
+            <div class="p-3">
+              
+              <div class="row">
+                <div class="col-lg-4 d-flex align-items-stretch">
+                  <div class="card w-100">
+                    <div class="card-body">
+                      <h5>my Chart</h5>
+                      <div id="chart-div"></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Start Semi Circle Radial Bar Chart -->
+                <div class="col-lg-4 d-flex align-items-stretch">
+                  <div class="card w-100">
+                    <div class="card-body">
+                      <h5>Semi Circle Radial Bar Chart</h5>
+                      <div
+                        class="d-flex align-items-center justify-content-center mt-5"
+                      >
+                        <div id="chart-radial-semi-circle"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                  <div class="col-lg-4 d-flex align-items-stretch">
+                  <div class="card w-100">
+                    <div class="card-body">
+                      <h5>Semi Circle Radial Bar Chart</h5>
+                      <div
+                        class="d-flex align-items-center justify-content-center mt-5"
+                      >
+                        <div id="chart-radial-semi-circle"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Semi Circle Radial Bar Chart -->
+              </div>
+
+              <div class="container-fluid">
+                <div class="widget-content searchable-container list">
+                  <!-- --------------------- start Contact ---------------- -->
+                  <!-- Modal -->
+                  <div class="card card-body">
+                    <div class="table-responsive">
+                      <table class="table search-table align-middle text-nowrap">
+                        <thead class="header-item">
+                          <th>
+                            <div class="n-chk align-self-center text-center">
+                              <div class="form-check">
+                                <input type="checkbox" class="form-check-input primary" id="contact-check-all" />
+                                <label class="form-check-label" for="contact-check-all"></label>
+                                <span class="new-control-indicator"></span>
+                              </div>
+                            </div>
+                          </th>
+                          <th>Link</th>
+                          <th>İnspect</th>
+                        </thead>
+                        <tbody>
+                          {% for link in sitemap_link_list %}
+                          <tr class="search-items">
+                            <td >
+                              <div class="n-chk align-self-center text-center">
+                                <div class="form-check">
+                                  <input type="checkbox" class="form-check-input contact-chkbox primary" id="checkbox1" />
+                                  <label class="form-check-label" for="checkbox1"></label>
+                                </div>
+                              </div>
+                            </td>
+                            <td >
+                              <a href="{{link}}">{{link|truncatechars:100}}</a>
+                              <div data-id="{{link}}" >
+                              </div>
+                            </td>
+                            <td >
+                              <button id="sent_link" type="button" class="btn btn-success view-link" data-link="{{ link }}" data-id="{{link.id}}"></button>
+                            </td>
+                          </tr>
+                          {% endfor %}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div> 
+
+            </div>
+          </div>
+          <div class="tab-pane p-3" id="profile2" role="tabpanel">
+
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="card">
+                  <div class="card-body ">
+                    <h5 class="card-title fw-semibold">Upcoming Activity</h5>
+                    <p class="card-subtitle mb-7 pb-8">In New year</p>
+                    <div class="position-relative">
+                      {% for link in sitemap_link_list %}
+                        <div class="search-items mb-3">
+                          <div class="row ">
+                            <div class="col-md-1">
+                              <div class="form-check">
+                                <input type="checkbox" class="form-check-input primary" id="contact-check-all" />
+                                <label class="form-check-label" for="contact-check-all"></label>
+                                <span class="new-control-indicator"></span>
+                              </div>
+                            </div>
+                            <div class="col-md-10">
+                                <h6 class="fs-4 fw-semibold"><a href="{{link}}">{{link|truncatechars:100}}</a></h6> 
+                            </div>
+                            <div class="col-md-1">
+                              <button id="sent_link" type="button" class="btn btn-success view-link" data-link="{{ link }}" data-id="{{link.id}}">inspect</button>
+                            </div>
+                          </div>
+                          
+                          <div class="align-items-center m-3" data-id="{{link}}" >
+                          </div>
+                        </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ---------------------   end Custom Icon Tab ---------------- -->
+</div>
+
+
+{% endblock main-content-block %}

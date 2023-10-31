@@ -1,5 +1,5 @@
 {% extends 'base/layouts/_base_layout.html' %}
-{% load static %}
+{% load static  crispy_forms_tags %}
 
 {% block main-content-block %}
 
@@ -18,14 +18,15 @@
     <a href="{% url 'adminpanel:admin_panel' %}">Admin Paneline Geri Dön</a>
 </body>
 </html> {% endcomment %}
-
+<h2></h2>
 
     <h1>Blog Gönderisini Düzenle</h1>
     <form method="post">
         {% csrf_token %}
 
         <!-- Form alanları bir tablo içine yerleştirilsin -->
-        <table class="table">
+        {{ form|crispy }}
+        {% comment %} <table class="table">
             <tr>
                 <th>Başlık</th>
                 <td>{{ form.title }}</td>
@@ -46,7 +47,7 @@
                 <th>Resim</th>
                 <td>{{ form.image }}</td>
             </tr>
-        </table>
+        </table> {% endcomment %}
 
         <button type="submit">Kaydet</button>
     </form>
