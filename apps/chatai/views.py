@@ -9,7 +9,7 @@ from django.core.files.base import ContentFile
 
 
 
-openai.api_key = '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'
+openai.api_key = ''
 
 def get_completion(prompt_blog):
 	query = openai.Completion.create(
