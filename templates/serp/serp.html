@@ -126,16 +126,248 @@
           <!-- Nav tabs -->
             <ul class="nav nav-pills nav-fill mt-4 " role="tablist">
               <li class="nav-item mx-auto">
-                <a class="nav-link d-flex active" data-bs-toggle="tab" href="#home2" role="tab" > <span ><i class="ti ti-device-laptop fs-4"></i> </span> <span class="d-none d-md-block ms-2">Desktop</span> </a>
+                <a class="nav-link d-flex active" data-bs-toggle="tab" href="#Desktop" role="tab" > <span ><i class="ti ti-device-laptop fs-4"></i> </span> <span class="d-none d-md-block ms-2">Desktop</span> </a>
               </li>
               <li class="nav-item mx-auto"> 
-                <a class="nav-link d-flex" data-bs-toggle="tab" href="#profile2" role="tab" > <span ><i class="ti ti-device-mobile fs-4"></i> </span> <span class="d-none d-md-block ms-2">Mobile</span> </a>
+                <a class="nav-link d-flex" data-bs-toggle="tab" href="#Mobile" role="tab" > <span ><i class="ti ti-device-mobile fs-4"></i> </span> <span class="d-none d-md-block ms-2">Mobile</span> </a>
               </li>
             </ul>
           </div>
           <!-- Tab panes -->
           <div class="tab-content">
-            <div class="tab-pane active" id="home2" role="tabpanel">
+            <div class="tab-pane active" id="Desktop" role="tabpanel">
+              <div class="p-3">
+                
+                <div class="row">
+                  <!-- start  -->
+                  <div class="col-lg-3 d-flex align-items-stretch">
+                      <div class="card-body">
+                        <div id="desktop_performance_score-div"></div>
+                        <div class="d-flex align-items-center">
+                          <button
+                          type="button"
+                          class="me-2 btn btn-light text-light font-medium"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="bottom"
+                          title="Bir sayfanın performans değeri, genellikle web sitesinin veya web sayfasının hız ve kullanılabilirlik açısından ne kadar iyi performans gösterdiğini ölçen bir metrik veya skordur. Bu performans değeri, kullanıcı deneyimini iyileştirmek ve sayfa yüklemesi sürelerini minimize etmek için önemlidir."
+                        >
+                        <i class="ti-layers"><h5 class="text-center">Performance</h5></i>
+                        </button>
+                        </div>
+                      </div>
+                  </div>
+                  <!-- start  -->
+                  <div class="col-lg-3 d-flex align-items-stretch">
+                    <div class="card-body">
+                      <div id="desktop_accessibility_score-div"></div>
+                      <h5 class="text-center">Accessibility</h5>
+                    </div>
+                  </div>
+                  <!-- start  -->
+                  <div class="col-lg-3 d-flex align-items-stretch">
+                    <div class="card-body">
+                      <div id="desktop_seo_score-div"></div>
+                      <h5 class="text-center">Seo</h5>
+                    </div>
+                  </div>
+                  <!-- start  -->
+                  <div class="col-lg-3 d-flex align-items-stretch">
+                    <div class="card-body">
+                      <div id="desktop_best_practices_score-div"></div>
+                      <h5 class="text-center">Best Practice</h5>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="row">
+                  <div class="col-lg-6 d-flex align-items-strech">
+                    <div class="card w-100">
+                      <div class="card-body">
+                        <div id="desktop_performance_score_big-div"></div>
+                        <h5 class="text-center"> Desktop Performance Score</h5>
+                        <h6 class="text-center">Values are estimated and may vary. The performance score is calculated <br>directly from these metrics.See calculator.</h6>
+                        <div class="d-flex align-items-center justify-content-between">
+                          <div class="d-flex align-items-center">
+                            <button
+                              type="button"
+                              class="me-2 btn btn-light-success text-danger font-medium"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              title="Kırmızı renk, web sitesinin SEO açısından zayıf olduğunu gösterir.
+                              Bu aralıkta olan bir site, arama motorlarında düşük sıralamalara sahip olabilir.
+                              Site sahipleri, SEO stratejilerini gözden geçirmeli ve iyileştirmeler yapmalıdır.
+                              İçerik kalitesi, anahtar kelime kullanımı ve teknik SEO eksiklikleri göz önüne alınmalıdır."
+                            >
+                            <i class="ti-layers">0-49</i>
+                            </button>
+                          </div>
+                          <div class="d-flex align-items-center">
+                            <button
+                            type="button"
+                            class="me-2 btn btn-light-success text-warning font-medium"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="bottom"
+                            title="Turuncu renk, web sitesinin orta seviyede bir SEO değerine sahip olduğunu gösterir.
+                            Bu aralıkta olan bir site, belirli anahtar kelimelerde iyi sıralamalara sahip olabilir, ancak potansiyel iyileştirmelere ihtiyaç duyabilir.
+                            SEO stratejileri daha fazla optimize edilebilir ve içerik kalitesi artırılabilir.
+                            Rekabetçi anahtar kelimelerde daha iyi sıralamalar elde etmek için çalışılabilir."
+                          >
+                          <i class="ti-layers">50-84</i>
+                          </button>
+                          </div>
+                          <div class="d-flex align-items-center">
+                            <button
+                            type="button"
+                            class="me-2 btn btn-light-success text-success font-medium"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="bottom"
+                            title="Yeşil renk, web sitesinin yüksek bir SEO değerine sahip olduğunu gösterir.
+                            Bu aralıkta olan bir site, arama motorlarında yüksek sıralamalara sahip olabilir ve geniş bir görünürlüğe ulaşabilir.
+                            İyi bir SEO stratejisi ve kaliteli içerikle bu başarı elde edilmiş olabilir.
+                            Site sahipleri, mevcut başarılarını sürdürmek ve rekabeti önde tutmak için sürekli olarak SEO'yu optimize etmelidir."
+                          >
+                          <i class="ti-layers">85-100</i>
+                          </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="row">
+                      <div class="col-lg-12 col-md-6 col-sm-12">
+                        <!-- Yearly Breakup -->
+                        <div class="card overflow-hidden">
+                          <div class="card-body">
+                            <div class="row align-items-center justify-content-between">
+                              <div  style="max-width: 95%;" id="desktop_fullPageScreenshot-div"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row justify-content-center">
+                  <div class="col-lg-6">
+                    <div class="accordion accordion-flush mb-5 card position-relative overflow-hidden" id="accordionFlushExample">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                          <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#desktop_first_contentful_paint" aria-expanded="false" aria-controls="desktop_first_contentful_paint">
+                            <div class="row">
+                              <div class="row">
+                                <h6>First Contentful Paint</h6>
+                              </div>
+                              <div class="row">
+                                <div class="desktop_first_contentful_paint"></div>
+                              </div>
+                            </div>
+                          </button>
+                        </h2>
+                        <div id="desktop_first_contentful_paint" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body fw-normal">
+                            Admin Dashboard is the backend interface of a website or an application that helps to manage the 
+                            website's overall content and settings. It is widely used by the site owners to keep track of their website, 
+                            make changes to their content, and more.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                          <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#desktop_total_blocking_time" aria-expanded="false" aria-controls="desktop_total_blocking_time">
+                            <div class="row">
+                              <div class="row">
+                                <h6>Total Blocking Time</h6>
+                              </div>
+                              <div class="row">
+                                <div class="desktop_total_blocking_time"></div>
+                              </div>
+                            </div>
+                          </button>
+                        </h2>
+                        <div id="desktop_total_blocking_time" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body fw-normal">
+                            Admin Dashboard is the backend interface of a website or an application that helps to manage the 
+                            website's overall content and settings. It is widely used by the site owners to keep track of their website, 
+                            make changes to their content, and more.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                          <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#desktop_speed_index" aria-expanded="false" aria-controls="desktop_speed_index">
+                            <div class="row">
+                              <div class="row">
+                                <h6>Speed Index</h6>
+                              </div>
+                              <div class="row">
+                                <div class="desktop_speed_index"></div>
+                              </div>
+                            </div>
+                          </button>
+                        </h2>
+                        <div id="desktop_speed_index" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body fw-normal">
+                            Admin Dashboard is the backend interface of a website or an application that helps to manage the 
+                            website's overall content and settings. It is widely used by the site owners to keep track of their website, 
+                            make changes to their content, and more.
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="accordion accordion-flush mb-5 card position-relative overflow-hidden" id="accordionFlushExample">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                          <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#desktop_largest_contentful_paint" aria-expanded="false" aria-controls="desktop_largest_contentful_paint">
+                            <div class="row">
+                              <div class="row">
+                                <h6>Largest Contentful Paint</h6>
+                              </div>
+                              <div class="row">
+                                <div class="desktop_largest_contentful_paint"></div>
+                              </div>
+                            </div>
+                          </button>
+                        </h2>
+                        <div id="desktop_largest_contentful_paint" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body fw-normal">
+                            Admin Dashboard is the backend interface of a website or an application that helps to manage the 
+                            website's overall content and settings. It is widely used by the site owners to keep track of their website, 
+                            make changes to their content, and more.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                          <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#desktop_cumulative_layaout_shift" aria-expanded="false" aria-controls="desktop_cumulative_layaout_shift">
+                            <div class="row">
+                              <div class="row">
+                                <h6>Cumulative Layout Shift</h6>
+                              </div>
+                              <div class="row">
+                                <div class="desktop_cumulative_layaout_shift"></div>
+                              </div>
+                            </div>
+                          </button>
+                        </h2>
+                        <div id="desktop_cumulative_layaout_shift" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body fw-normal">
+                            Admin Dashboard is the backend interface of a website or an application that helps to manage the 
+                            website's overall content and settings. It is widely used by the site owners to keep track of their website, 
+                            make changes to their content, and more.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+  
+              </div>
+            </div>
+            <div class="tab-pane p-3" id="Mobile" role="tabpanel">
               <div class="p-3">
                 
                 <div class="row">
@@ -169,137 +401,189 @@
                   </div>
 
                 </div>
-                <div class="container-fluid">
-                  <div class="widget-content searchable-container list">
-                    <!-- --------------------- start Contact ---------------- -->
-                    <!-- Modal -->
-                    <div class="card card-body">
-                      <div class="table-responsive">
-                        <table class="table search-table align-middle text-nowrap">
-                          <thead class="header-item">
-                            <th>
-                              <div class="n-chk align-self-center text-center">
-                                <div class="form-check">
-                                  <input type="checkbox" class="form-check-input primary" id="contact-check-all" />
-                                  <label class="form-check-label" for="contact-check-all"></label>
-                                  <span class="new-control-indicator"></span>
-                                </div>
-                              </div>
-                            </th>
-                            <th>Link</th>
-                            <th>İnspect</th>
-                          </thead>
-                          <tbody>
-                            {% for link in sitemap_link_list %}
-                            <tr class="search-items">
-                              <td >
-                                <div class="n-chk align-self-center text-center">
-                                  <div class="form-check">
-                                    <input type="checkbox" class="form-check-input contact-chkbox primary" id="checkbox1" />
-                                    <label class="form-check-label" for="checkbox1"></label>
-                                  </div>
-                                </div>
-                              </td>
-                              <td >
-                                <a href="{{link}}">{{link|truncatechars:100}}</a>
-                                <div data-id="{{link}}" >
-                                </div>
-                              </td>
-                              <td >
-                                <button id="sent_link" type="button" class="btn btn-success view-link" data-link="{{ link }}" data-id="{{link.id}}"></button>
-                              </td>
-                            </tr>
-                            {% endfor %}
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-                </div> 
-  
-              </div>
-            </div>
-            <div class="tab-pane p-3" id="profile2" role="tabpanel">
-              <div class="p-3">
-                
                 <div class="row">
-                  <!-- start  -->
-                  <div class="col-lg-3 d-flex align-items-stretch">
+                  <div class="col-lg-6 d-flex align-items-strech">
+                    <div class="card w-100">
                       <div class="card-body">
-                        <div id="desktop_performance_score-div"></div>
-                        <h5 class="text-center">Performance</h5>
+                        <div id="mobile_performance_score_big-div"></div>
+                        <h5 class="text-center"> mobile Performance Score</h5>
+                        <h6 class="text-center">Values are estimated and may vary. The performance score is calculated <br>directly from these metrics.See calculator.</h6>
+                        <div class="d-flex align-items-center justify-content-between">
+                          <div class="d-flex align-items-center">
+                            <button
+                              type="button"
+                              class="me-2 btn btn-light-success text-danger font-medium"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              title="Kırmızı renk, web sitesinin SEO açısından zayıf olduğunu gösterir.
+                              Bu aralıkta olan bir site, arama motorlarında düşük sıralamalara sahip olabilir.
+                              Site sahipleri, SEO stratejilerini gözden geçirmeli ve iyileştirmeler yapmalıdır.
+                              İçerik kalitesi, anahtar kelime kullanımı ve teknik SEO eksiklikleri göz önüne alınmalıdır."
+                            >
+                            <i class="ti-layers">0-49</i>
+                            </button>
+                          </div>
+                          <div class="d-flex align-items-center">
+                            <button
+                            type="button"
+                            class="me-2 btn btn-light-success text-warning font-medium"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="bottom"
+                            title="Turuncu renk, web sitesinin orta seviyede bir SEO değerine sahip olduğunu gösterir.
+                            Bu aralıkta olan bir site, belirli anahtar kelimelerde iyi sıralamalara sahip olabilir, ancak potansiyel iyileştirmelere ihtiyaç duyabilir.
+                            SEO stratejileri daha fazla optimize edilebilir ve içerik kalitesi artırılabilir.
+                            Rekabetçi anahtar kelimelerde daha iyi sıralamalar elde etmek için çalışılabilir."
+                          >
+                          <i class="ti-layers">50-84</i>
+                          </button>
+                          </div>
+                          <div class="d-flex align-items-center">
+                            <button
+                            type="button"
+                            class="me-2 btn btn-light-success text-success font-medium"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="bottom"
+                            title="Yeşil renk, web sitesinin yüksek bir SEO değerine sahip olduğunu gösterir.
+                            Bu aralıkta olan bir site, arama motorlarında yüksek sıralamalara sahip olabilir ve geniş bir görünürlüğe ulaşabilir.
+                            İyi bir SEO stratejisi ve kaliteli içerikle bu başarı elde edilmiş olabilir.
+                            Site sahipleri, mevcut başarılarını sürdürmek ve rekabeti önde tutmak için sürekli olarak SEO'yu optimize etmelidir."
+                          >
+                          <i class="ti-layers">85-100</i>
+                          </button>
+                          </div>
+                        </div>
                       </div>
-                  </div>
-                  <!-- start  -->
-                  <div class="col-lg-3 d-flex align-items-stretch">
-                    <div class="card-body">
-                      <div id="desktop_accessibility_score-div"></div>
-                      <h5 class="text-center">Accessibility</h5>
                     </div>
                   </div>
-                  <!-- start  -->
-                  <div class="col-lg-3 d-flex align-items-stretch">
-                    <div class="card-body">
-                      <div id="desktop_seo_score-div"></div>
-                      <h5 class="text-center">Seo</h5>
+                  <div class="col-lg-6">
+                    <div class="row">
+                      <div class="col-lg-12 col-md-6 col-sm-12">
+                        <!-- Yearly Breakup -->
+                        <div class="card overflow-hidden">
+                          <div class="card-body">
+                            <div class="row align-items-center justify-content-between">
+                              <div  style="max-width: 95%;" id="mobile_fullPageScreenshot-div"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <!-- start  -->
-                  <div class="col-lg-3 d-flex align-items-stretch">
-                    <div class="card-body">
-                      <div id="desktop_best_practices_score-div"></div>
-                      <h5 class="text-center">Best Practice</h5>
-                    </div>
-                  </div>
-
                 </div>
-                <div class="container-fluid">
-                  <div class="widget-content searchable-container list">
-                    <!-- --------------------- start Contact ---------------- -->
-                    <!-- Modal -->
-                    <div class="card card-body">
-                      <div class="table-responsive">
-                        <table class="table search-table align-middle text-nowrap">
-                          <thead class="header-item">
-                            <th>
-                              <div class="n-chk align-self-center text-center">
-                                <div class="form-check">
-                                  <input type="checkbox" class="form-check-input primary" id="contact-check-all" />
-                                  <label class="form-check-label" for="contact-check-all"></label>
-                                  <span class="new-control-indicator"></span>
-                                </div>
+                <div class="row justify-content-center">
+                  <div class="col-lg-6">
+                    <div class="accordion accordion-flush mb-5 card position-relative overflow-hidden" id="accordionFlushExample">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                          <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_first_contentful_paint" aria-expanded="false" aria-controls="mobile_first_contentful_paint">
+                            <div class="row">
+                              <div class="row">
+                                <h6>First Contentful Paint</h6>
                               </div>
-                            </th>
-                            <th>Link</th>
-                            <th>İnspect</th>
-                          </thead>
-                          <tbody>
-                            {% for link in sitemap_link_list %}
-                            <tr class="search-items">
-                              <td >
-                                <div class="n-chk align-self-center text-center">
-                                  <div class="form-check">
-                                    <input type="checkbox" class="form-check-input contact-chkbox primary" id="checkbox1" />
-                                    <label class="form-check-label" for="checkbox1"></label>
-                                  </div>
-                                </div>
-                              </td>
-                              <td >
-                                <a href="{{link}}">{{link|truncatechars:100}}</a>
-                                <div data-id="{{link}}" >
-                                </div>
-                              </td>
-                              <td >
-                                <button id="sent_link" type="button" class="btn btn-success view-link" data-link="{{ link }}" data-id="{{link.id}}"></button>
-                              </td>
-                            </tr>
-                            {% endfor %}
-                          </tbody>
-                        </table>
+                              <div class="row">
+                                <div class="mobile_first_contentful_paint"></div>
+                              </div>
+                            </div>
+                          </button>
+                        </h2>
+                        <div id="mobile_first_contentful_paint" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body fw-normal">
+                            Tarayıcının bir sayfayı ziyaret eden kullanıcının gördüğü ilk içeriği oluşturması için geçen süreyi ölçer. Bu metrik, sayfanın ne kadar hızlı yüklendiğini gösterir ve kullanıcı deneyimini etkiler. Kısacası, bu değer ne kadar düşük olursa, sayfa o kadar hızlı yüklenir ve kullanıcılar daha hızlı bir deneyim yaşar.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                          <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_total_blocking_time" aria-expanded="false" aria-controls="mobile_total_blocking_time">
+                            <div class="row">
+                              <div class="row">
+                                <h6>Total Blocking Time</h6>
+                              </div>
+                              <div class="row">
+                                <div class="mobile_total_blocking_time"></div>
+                              </div>
+                            </div>
+                          </button>
+                        </h2>
+                        <div id="mobile_total_blocking_time" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body fw-normal">
+                            Admin Dashboard is the backend interface of a website or an application that helps to manage the 
+                            website's overall content and settings. It is widely used by the site owners to keep track of their website, 
+                            make changes to their content, and more.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                          <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_speed_index" aria-expanded="false" aria-controls="mobile_speed_index">
+                            <div class="row">
+                              <div class="row">
+                                <h6>Speed Index</h6>
+                              </div>
+                              <div class="row">
+                                <div class="mobile_speed_index"></div>
+                              </div>
+                            </div>
+                          </button>
+                        </h2>
+                        <div id="mobile_speed_index" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body fw-normal">
+                            Admin Dashboard is the backend interface of a website or an application that helps to manage the 
+                            website's overall content and settings. It is widely used by the site owners to keep track of their website, 
+                            make changes to their content, and more.
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="accordion accordion-flush mb-5 card position-relative overflow-hidden" id="accordionFlushExample">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                          <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_largest_contentful_paint" aria-expanded="false" aria-controls="mobile_largest_contentful_paint">
+                            <div class="row">
+                              <div class="row">
+                                <h6>Largest Contentful Paint</h6>
+                              </div>
+                              <div class="row">
+                                <div class="mobile_largest_contentful_paint"></div>
+                              </div>
+                            </div>
+                          </button>
+                        </h2>
+                        <div id="mobile_largest_contentful_paint" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body fw-normal">
+                            Admin Dashboard is the backend interface of a website or an application that helps to manage the 
+                            website's overall content and settings. It is widely used by the site owners to keep track of their website, 
+                            make changes to their content, and more.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                          <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_cumulative_layaout_shift" aria-expanded="false" aria-controls="mobile_cumulative_layaout_shift">
+                            <div class="row">
+                              <div class="row">
+                                <h6>Cumulative Layout Shift</h6>
+                              </div>
+                              <div class="row">
+                                <div class="mobile_cumulative_layaout_shift"></div>
+                              </div>
+                            </div>
+                          </button>
+                        </h2>
+                        <div id="mobile_cumulative_layaout_shift" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body fw-normal">
+                            Admin Dashboard is the backend interface of a website or an application that helps to manage the 
+                            website's overall content and settings. It is widely used by the site owners to keep track of their website, 
+                            make changes to their content, and more.
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div> 
+                </div>
   
               </div>
   

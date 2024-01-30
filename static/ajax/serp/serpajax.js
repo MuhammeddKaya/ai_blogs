@@ -51,6 +51,28 @@ $(document).on('click', '.serp-analyze-link', function (event) {
 
       $('#hidden-result-div').removeClass('d-none');
 
+      var mobile_fullPageScreenshot = data.mobile_fullPageScreenshot
+      var $mobileImage = $('<img/>').attr('src', mobile_fullPageScreenshot);
+      $("#mobile_fullPageScreenshot-div").empty();
+      $("#mobile_fullPageScreenshot-div").append($mobileImage);
+      $mobileImage.css({
+        'max-width': '100%',
+        'height': 'auto',
+        'max-height': '300px',
+        'overflow': 'hidden',
+      });
+      
+      var desktop_fullPageScreenshot = data.desktop_fullPageScreenshot
+      var $desktopImage = $('<img/>').attr('src', desktop_fullPageScreenshot);
+      $("#desktop_fullPageScreenshot-div").empty();
+      $("#desktop_fullPageScreenshot-div").append($desktopImage);
+      $desktopImage.css({
+        'max-width': '100%',
+        'height': 'auto',
+        'max-height': '300px',
+        'overflow': 'hidden',
+      });
+
       
       function updateChart(chart, data) {
         var score = data.toFixed(3) * 100;
@@ -81,7 +103,110 @@ $(document).on('click', '.serp-analyze-link', function (event) {
       updateChart(desktop_accessibility_score_chart, data.desktop_accessibility_score);
       updateChart(desktop_seo_score_chart, data.desktop_seo_score);
       updateChart(desktop_best_practices_score_chart, data.desktop_best_practices_score);
+
+
+      updateChart(mobile_performance_score_big_chart, data.mobile_performance_score);
+      updateChart(mobile_accessibility_score_big_chart, data.mobile_accessibility_score);
+      updateChart(mobile_seo_score_big_chart, data.mobile_seo_score);
+      updateChart(mobile_best_practices_score_big_chart, data.mobile_best_practices_score);
+      updateChart(desktop_performance_score_big_chart, data.desktop_performance_score);
+      updateChart(desktop_accessibility_score_big_chart, data.desktop_accessibility_score);
+      updateChart(desktop_seo_score_big_chart, data.desktop_seo_score);
+      updateChart(desktop_best_practices_score_big_chart, data.desktop_best_practices_score);
     
+
+      //DESKTOP SİDE
+      //FIRST CONTENTFULL PAİNT
+      var desktop_first_contentful_paint = data.desktop_first_contentful_paint;
+      var $desktopFirstContentfulPaint = $(".desktop_first_contentful_paint");
+      
+      // FCP süresine göre renk belirleme
+      if (desktop_first_contentful_paint >= 0 && desktop_first_contentful_paint <= 1.8) {
+        $desktopFirstContentfulPaint.css("color", "green"); // Yeşil (hızlı)
+      } else if (desktop_first_contentful_paint > 1.8 && desktop_first_contentful_paint <= 3) {
+        $desktopFirstContentfulPaint.css("color", "orange"); // Turuncu (orta)
+      } else {
+        $desktopFirstContentfulPaint.css("color", "red"); // Kırmızı (yavaş)
+      }
+      $desktopFirstContentfulPaint.text(desktop_first_contentful_paint);
+      
+
+
+      //LARGEST CONTENTFULL PAİNT
+      var desktop_largest_contentful_paint = data.desktop_largest_contentful_paint;
+      var $desktopLargestContentfulPaint = $(".desktop_largest_contentful_paint");
+
+      if (desktop_largest_contentful_paint >= 0 && desktop_largest_contentful_paint <= 2.5) {
+        $desktopLargestContentfulPaint.css("color", "green"); // Yeşil (hızlı)
+      } else if (desktop_argest_contentful_paint > 2.5 && desktop_largest_contentful_paint <= 4) {
+        $desktopLargestContentfulPaint.css("color", "orange"); // Turuncu (orta)
+      } else {
+        $desktopLargestContentfulPaint.css("color", "red"); // Kırmızı (yavaş)
+      }
+      $desktopLargestContentfulPaint.text(desktop_largest_contentful_paint);
+
+
+
+      var desktop_total_blocking_time = data.desktop_total_blocking_time;
+      $(".desktop_total_blocking_time").text(desktop_total_blocking_time);
+
+
+      //TOTAL BLOCKİNG TİME
+      var desktop_total_blocking_time = data.desktop_total_blocking_time;
+      var $desktopTotalBockingTime = $(".desktop_total_blocking_time");
+      if (desktop_total_blocking_time >= 0 && desktop_total_blocking_time <= 200) {
+        $desktopTotalBockingTime.css("color", "green"); // Yeşil (hızlı)
+      } else if (desktop_argest_contentful_paint > 200 && desktop_total_blocking_time <= 600) {
+        $desktopTotalBockingTime.css("color", "orange"); // Turuncu (orta)
+      } else {
+        $desktopTotalBockingTime.css("color", "red"); // Kırmızı (yavaş)
+      }
+      $desktopTotalBockingTime.text(desktop_total_blocking_time);
+
+      
+
+      var desktop_cumulative_layaout_shift = data.desktop_cumulative_layaout_shift;
+      $(".desktop_cumulative_layaout_shift").text(desktop_cumulative_layaout_shift);
+
+      var desktop_speed_index = data.desktop_speed_index;
+      $(".desktop_speed_index").text(desktop_speed_index);
+
+
+
+
+
+
+      //MOİLE SİDE
+      //FIRST CONTENTFULL PAİNT
+      var mobile_first_contentful_paint = data.mobile_first_contentful_paint;
+      var $mobileFirstContentfulPaint = $(".mobile_first_contentful_paint");
+      
+      // FCP süresine göre renk belirleme
+      if (mobile_first_contentful_paint >= 0 && mobile_first_contentful_paint <= 1.8) {
+        $mobileFirstContentfulPaint.css("color", "green"); // Yeşil (hızlı)
+      } else if (mobile_first_contentful_paint > 1.8 && mobile_first_contentful_paint <= 3) {
+        $mobileFirstContentfulPaint.css("color", "orange"); // Turuncu (orta)
+      } else {
+        $mobileFirstContentfulPaint.css("color", "red"); // Kırmızı (yavaş)
+      }
+      
+      $mobileFirstContentfulPaint.text(mobile_first_contentful_paint);
+
+
+
+
+      var mobile_largest_contentful_paint = data.mobile_largest_contentful_paint;
+      $(".mobile_largest_contentful_paint").text(mobile_largest_contentful_paint);
+
+      var mobile_total_blocking_time = data.mobile_total_blocking_time;
+      $(".mobile_total_blocking_time").text(mobile_total_blocking_time);
+
+      var mobile_cumulative_layaout_shift = data.mobile_cumulative_layaout_shift;
+      $(".mobile_cumulative_layaout_shift").text(mobile_cumulative_layaout_shift);
+
+      var mobile_speed_index = data.mobile_speed_index;
+      $(".mobile_speed_index").text(mobile_speed_index);
+
 
 
 

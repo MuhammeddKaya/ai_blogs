@@ -4,6 +4,8 @@ import os
 import json
 from bs4 import BeautifulSoup
 from django.http import JsonResponse
+import base64
+
 
 # Create your views here.
 
@@ -43,9 +45,7 @@ def get_seo(domain,device):
         return response.json()
     else:
         raise ValueError(f"API request failed: {response.status_code}")
-
-
-
+    
 
 
 # def analyze_url(request):
@@ -181,17 +181,48 @@ def link_analyze(request):
             # with open(file_path, "w") as f:
             #     json.dump(mobile_result, f)
 
+            #----- seo - performance-accessiblity best-practices--------------------------------------
             mobile_performance_score                 = mobile_result['lighthouseResult']["categories"]["performance"]["score"]
             mobile_accessibility_score               = mobile_result['lighthouseResult']["categories"]["accessibility"]["score"]
             mobile_seo_score                         = mobile_result['lighthouseResult']["categories"]["seo"]["score"]
             mobile_best_practices_score              = mobile_result['lighthouseResult']["categories"]["best-practices"]["score"]
+
+
+            mobile_fullPageScreenshot                = mobile_result['lighthouseResult']["fullPageScreenshot"]["screenshot"]["data"]
+
+
+            #-------METRİKLER------------------------------------------
+            mobile_first_contentful_paint             = mobile_result['lighthouseResult']["audits"]["first-contentful-paint"]["displayValue"]
+            mobile_largest_contentful_paint           = mobile_result['lighthouseResult']["audits"]["largest-contentful-paint"]["score"]
+            mobile_total_blocking_time                = mobile_result['lighthouseResult']["audits"]["total-blocking-time"]["displayValue"]
+            mobile_cumulative_layaout_shift           = mobile_result['lighthouseResult']["audits"]["cumulative-layout-shift"]["displayValue"]
+            mobile_speed_index                        = mobile_result['lighthouseResult']["audits"]["speed-index"]["displayValue"]
+
+
+
+
             #------------ Desktop Side--------------------------------------------------------------------------------------------------
             desktop_result = get_seo(domain_name,"desktop")
 
+            #----- seo - performance-accessiblity best-practices--------------------------------------
             desktop_performance_score                 = desktop_result['lighthouseResult']["categories"]["performance"]["score"]
             desktop_accessibility_score               = desktop_result['lighthouseResult']["categories"]["accessibility"]["score"]
             desktop_seo_score                         = desktop_result['lighthouseResult']["categories"]["seo"]["score"]
             desktop_best_practices_score              = desktop_result['lighthouseResult']["categories"]["best-practices"]["score"]
+
+            desktop_fullPageScreenshot                = desktop_result['lighthouseResult']["fullPageScreenshot"]["screenshot"]["data"]
+
+
+            #-------METRİKLER------------------------------------------
+            desktop_first_contentful_paint             = desktop_result['lighthouseResult']["audits"]["first-contentful-paint"]["displayValue"]
+            desktop_largest_contentful_paint          = desktop_result['lighthouseResult']["audits"]["largest-contentful-paint"]["score"]
+            desktop_total_blocking_time                = desktop_result['lighthouseResult']["audits"]["total-blocking-time"]["displayValue"]
+            desktop_cumulative_layaout_shift           = desktop_result['lighthouseResult']["audits"]["cumulative-layout-shift"]["displayValue"]
+            desktop_speed_index                        = desktop_result['lighthouseResult']["audits"]["speed-index"]["displayValue"]
+            
+
+
+
             #------------ --------------------------------------------------------------------------------------------------------------
             
             print("mobile seo score",mobile_seo_score)
@@ -200,15 +231,29 @@ def link_analyze(request):
             print("desktop seo score",desktop_seo_score)
 
             response_data = {
-                "mobile_performance_score"         : mobile_performance_score,
-                "mobile_accessibility_score"       : mobile_accessibility_score,
-                "mobile_best_practices_score"      : mobile_best_practices_score,
-                "mobile_seo_score"                 : mobile_seo_score,
+                "mobile_performance_score"             : mobile_performance_score,
+                "mobile_accessibility_score"           : mobile_accessibility_score,
+                "mobile_best_practices_score"          : mobile_best_practices_score,
+                "mobile_seo_score"                     : mobile_seo_score,
+                "mobile_fullPageScreenshot"            : mobile_fullPageScreenshot,
 
-                "desktop_performance_score"        : desktop_performance_score,
-                "desktop_accessibility_score"      : desktop_accessibility_score,
-                "desktop_seo_score"                : desktop_seo_score,
-                "desktop_best_practices_score"     : desktop_best_practices_score,
+                "mobile_first_contentful_paint"        : mobile_first_contentful_paint,
+                "mobile_largest_contentful_paint"      : mobile_largest_contentful_paint,
+                "mobile_total_blocking_time"           : mobile_total_blocking_time,
+                "mobile_cumulative_layaout_shift"      : mobile_cumulative_layaout_shift,
+                "mobile_speed_index"                   : mobile_speed_index,
+
+                "desktop_first_contentful_paint"        : desktop_first_contentful_paint,
+                "desktop_largest_contentful_paint"     : desktop_largest_contentful_paint,
+                "desktop_total_blocking_time"           : desktop_total_blocking_time,
+                "desktop_cumulative_layaout_shift"      : desktop_cumulative_layaout_shift,
+                "desktop_speed_index"                   : desktop_speed_index,
+
+                "desktop_performance_score"             : desktop_performance_score,
+                "desktop_accessibility_score"           : desktop_accessibility_score,
+                "desktop_seo_score"                     : desktop_seo_score,
+                "desktop_best_practices_score"          : desktop_best_practices_score,
+                "desktop_fullPageScreenshot"            : desktop_fullPageScreenshot,
             }
             return JsonResponse(response_data)
         
