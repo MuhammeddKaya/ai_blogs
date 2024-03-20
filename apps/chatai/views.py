@@ -13,7 +13,7 @@ openai.api_key = ''
 
 def get_completion(prompt_blog):
 	query = openai.Completion.create(
-		engine="text-davinci-003",
+		engine="gpt-3.5-turbo",
 		prompt=prompt_blog,
 		max_tokens=1024,
 		n=1,

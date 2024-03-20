@@ -153,7 +153,8 @@ $(document).on('click', '.serp-analyze-link', function (event) {
 
       //TOTAL BLOCKİNG TİME
       var desktop_total_blocking_time = data.desktop_total_blocking_time;
-      var $desktopTotalBockingTime = $(".desktop_total_blocking_time");
+      console.log("sjahskjahskhjaskhjaskjhaskjas",desktop_total_blocking_time);
+      
       if (desktop_total_blocking_time >= 0 && desktop_total_blocking_time <= 200) {
         $desktopTotalBockingTime.css("color", "green"); // Yeşil (hızlı)
       } else if (desktop_argest_contentful_paint > 200 && desktop_total_blocking_time <= 600) {
@@ -163,17 +164,37 @@ $(document).on('click', '.serp-analyze-link', function (event) {
       }
       $desktopTotalBockingTime.text(desktop_total_blocking_time);
 
-      
 
-      var desktop_cumulative_layaout_shift = data.desktop_cumulative_layaout_shift;
-      $(".desktop_cumulative_layaout_shift").text(desktop_cumulative_layaout_shift);
 
+      // Cumulative Layout Shift
+      var desktop_cumulative_layout_shift = data.desktop_cumulative_layout_shift;
+      var $desktopCumulativeLayoutShift = $(".desktop_cumulative_layout_shift");
+
+      if (desktop_cumulative_layout_shift >= 0 && desktop_cumulative_layout_shift <= 0.1) {
+        $desktopCumulativeLayoutShift.css("color", "green"); // Yeşil (iyi)
+      } else if (desktop_cumulative_layout_shift > 0.1 && desktop_cumulative_layout_shift <= 0.25) {
+        $desktopCumulativeLayoutShift.css("color", "orange"); // Turuncu (orta)
+      } else {
+        $desktopCumulativeLayoutShift.css("color", "red"); // Kırmızı (kötü)
+      }
+
+      $desktopCumulativeLayoutShift.text(desktop_cumulative_layout_shift);
+
+
+      // Speed Index
       var desktop_speed_index = data.desktop_speed_index;
-      $(".desktop_speed_index").text(desktop_speed_index);
+      console.log(desktop_speed_index,"desktop speed index")
+      var $desktopSpeedIndex = $(".desktop_speed_index");
 
+      if (desktop_speed_index >= 0 && desktop_speed_index <= 3.4) {
+        $desktopSpeedIndex.css("color", "green"); // Yeşil (hızlı)
+      } else if (desktop_speed_index > 3.4 && desktop_speed_index <= 5.8) {
+        $desktopSpeedIndex.css("color", "orange"); // Turuncu (orta)
+      } else {
+        $desktopSpeedIndex.css("color", "red"); // Kırmızı (yavaş)
+      }
 
-
-
+      $desktopSpeedIndex.text(desktop_speed_index);
 
 
       //MOİLE SİDE
@@ -195,18 +216,68 @@ $(document).on('click', '.serp-analyze-link', function (event) {
 
 
 
+
+      //LARGEST CONTENTFULL PAİNT
       var mobile_largest_contentful_paint = data.mobile_largest_contentful_paint;
-      $(".mobile_largest_contentful_paint").text(mobile_largest_contentful_paint);
+      var $mobileLargestContentfulPaint = $(".mobile_largest_contentful_paint");
+
+      if (mobile_largest_contentful_paint >= 0 && mobile_largest_contentful_paint <= 2.5) {
+        $mobileLargestContentfulPaint.css("color", "green"); // Yeşil (hızlı)
+      } else if (mobile_argest_contentful_paint > 2.5 && mobile_largest_contentful_paint <= 4) {
+        $mobileLargestContentfulPaint.css("color", "orange"); // Turuncu (orta)
+      } else {
+        $mobileLargestContentfulPaint.css("color", "red"); // Kırmızı (yavaş)
+      }
+      $mobileLargestContentfulPaint.text(mobile_largest_contentful_paint);
+
+
 
       var mobile_total_blocking_time = data.mobile_total_blocking_time;
       $(".mobile_total_blocking_time").text(mobile_total_blocking_time);
 
-      var mobile_cumulative_layaout_shift = data.mobile_cumulative_layaout_shift;
-      $(".mobile_cumulative_layaout_shift").text(mobile_cumulative_layaout_shift);
 
+      //TOTAL BLOCKİNG TİME
+      var mobile_total_blocking_time = data.mobile_total_blocking_time;
+      var $mobileTotalBockingTime = $(".mobile_total_blocking_time");
+      if (mobile_total_blocking_time >= 0 && mobile_total_blocking_time <= 200) {
+        $mobileTotalBockingTime.css("color", "green"); // Yeşil (hızlı)
+      } else if (mobile_argest_contentful_paint > 200 && mobile_total_blocking_time <= 600) {
+        $mobileTotalBockingTime.css("color", "orange"); // Turuncu (orta)
+      } else {
+        $mobileTotalBockingTime.css("color", "red"); // Kırmızı (yavaş)
+      }
+      $mobileTotalBockingTime.text(mobile_total_blocking_time);
+
+
+
+      // Cumulative Layout Shift
+      var mobile_cumulative_layout_shift = data.mobile_cumulative_layout_shift;
+      var $mobileCumulativeLayoutShift = $(".mobile_cumulative_layout_shift");
+
+      if (mobile_cumulative_layout_shift >= 0 && mobile_cumulative_layout_shift <= 0.1) {
+        $mobileCumulativeLayoutShift.css("color", "green"); // Yeşil (iyi)
+      } else if (mobile_cumulative_layout_shift > 0.1 && mobile_cumulative_layout_shift <= 0.25) {
+        $mobileCumulativeLayoutShift.css("color", "orange"); // Turuncu (orta)
+      } else {
+        $mobileCumulativeLayoutShift.css("color", "red"); // Kırmızı (kötü)
+      }
+
+      $mobileCumulativeLayoutShift.text(mobile_cumulative_layout_shift);
+
+
+      // Speed Index
       var mobile_speed_index = data.mobile_speed_index;
-      $(".mobile_speed_index").text(mobile_speed_index);
+      var $mobileSpeedIndex = $(".mobile_speed_index");
 
+      if (mobile_speed_index >= 0 && mobile_speed_index <= 3.4) {
+        $mobileSpeedIndex.css("color", "green"); // Yeşil (hızlı)
+      } else if (mobile_speed_index > 3.4 && mobile_speed_index <= 5.8) {
+        $mobileSpeedIndex.css("color", "orange"); // Turuncu (orta)
+      } else {
+        $mobileSpeedIndex.css("color", "red"); // Kırmızı (yavaş)
+      }
+
+      $mobileSpeedIndex.text(mobile_speed_index);
 
 
 

@@ -35,7 +35,7 @@ def get_seo(domain,device):
     params = {
         'url': domain,
         'strategy': device,
-        'key': "AIzaSyBXMVer3CbXtAPA8vGooFlb5loyjE0V-oQ",
+        'key': "",
         'category': ["performance", "seo", "accessibility","pwa","best_practices"],
     }
     response = requests.get(url, params)
@@ -215,10 +215,11 @@ def link_analyze(request):
 
             #-------METRİKLER------------------------------------------
             desktop_first_contentful_paint             = desktop_result['lighthouseResult']["audits"]["first-contentful-paint"]["displayValue"]
-            desktop_largest_contentful_paint          = desktop_result['lighthouseResult']["audits"]["largest-contentful-paint"]["score"]
+            desktop_largest_contentful_paint           = desktop_result['lighthouseResult']["audits"]["largest-contentful-paint"]["score"]
             desktop_total_blocking_time                = desktop_result['lighthouseResult']["audits"]["total-blocking-time"]["displayValue"]
             desktop_cumulative_layaout_shift           = desktop_result['lighthouseResult']["audits"]["cumulative-layout-shift"]["displayValue"]
-            desktop_speed_index                        = desktop_result['lighthouseResult']["audits"]["speed-index"]["displayValue"]
+            desktop_speed_index                        = desktop_result['lighthouseResult']["audits"]["speed-index"]["score"]
+            # desktop_speed_index                        = desktop_result['lighthouseResult']["audits"]["speed-index"]["displayValue"]
             
 
 
@@ -244,7 +245,7 @@ def link_analyze(request):
                 "mobile_speed_index"                   : mobile_speed_index,
 
                 "desktop_first_contentful_paint"        : desktop_first_contentful_paint,
-                "desktop_largest_contentful_paint"     : desktop_largest_contentful_paint,
+                "desktop_largest_contentful_paint"      : desktop_largest_contentful_paint,
                 "desktop_total_blocking_time"           : desktop_total_blocking_time,
                 "desktop_cumulative_layaout_shift"      : desktop_cumulative_layaout_shift,
                 "desktop_speed_index"                   : desktop_speed_index,
