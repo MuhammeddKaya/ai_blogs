@@ -172,7 +172,11 @@ def link_analyze(request):
             print("analyze_sub_url çalıştı")
             print(domain_name)
             
-            #------------ Mobile Side--------------------------------------------------------------------------------------------------
+
+#--------------------------------------------------------------------------------------------------------------------------
+#------------ Mobile Side--------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------------------------
+
             mobile_result = get_seo(domain_name,"mobile")
             # current_directory = os.getcwd()
             # file_name = 'json/'+ f"{domain_name.replace('https://', '')}.json"
@@ -195,13 +199,15 @@ def link_analyze(request):
             mobile_first_contentful_paint             = mobile_result['lighthouseResult']["audits"]["first-contentful-paint"]["displayValue"]
             mobile_largest_contentful_paint           = mobile_result['lighthouseResult']["audits"]["largest-contentful-paint"]["score"]
             mobile_total_blocking_time                = mobile_result['lighthouseResult']["audits"]["total-blocking-time"]["displayValue"]
-            mobile_cumulative_layaout_shift           = mobile_result['lighthouseResult']["audits"]["cumulative-layout-shift"]["displayValue"]
+            mobile_cumulative_layout_shift           = mobile_result['lighthouseResult']["audits"]["cumulative-layout-shift"]["displayValue"]
             mobile_speed_index                        = mobile_result['lighthouseResult']["audits"]["speed-index"]["displayValue"]
 
+            #-------DIAGNOSTICS------------------------------------------
 
 
-
-            #------------ Desktop Side--------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------------------------
+#------------ Desktop Side--------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------------------------
             desktop_result = get_seo(domain_name,"desktop")
 
             #----- seo - performance-accessiblity best-practices--------------------------------------
@@ -217,11 +223,10 @@ def link_analyze(request):
             desktop_first_contentful_paint             = desktop_result['lighthouseResult']["audits"]["first-contentful-paint"]["displayValue"]
             desktop_largest_contentful_paint           = desktop_result['lighthouseResult']["audits"]["largest-contentful-paint"]["score"]
             desktop_total_blocking_time                = desktop_result['lighthouseResult']["audits"]["total-blocking-time"]["displayValue"]
-            desktop_cumulative_layaout_shift           = desktop_result['lighthouseResult']["audits"]["cumulative-layout-shift"]["displayValue"]
-            desktop_speed_index                        = desktop_result['lighthouseResult']["audits"]["speed-index"]["score"]
-            # desktop_speed_index                        = desktop_result['lighthouseResult']["audits"]["speed-index"]["displayValue"]
+            desktop_cumulative_layout_shift            = desktop_result['lighthouseResult']["audits"]["cumulative-layout-shift"]["displayValue"]
+            desktop_speed_index                        = desktop_result['lighthouseResult']["audits"]["speed-index"]["displayValue"]
             
-
+            #-------DIAGNOSTICS------------------------------------------
 
 
             #------------ --------------------------------------------------------------------------------------------------------------
@@ -230,6 +235,12 @@ def link_analyze(request):
             print("mobile_performance_score",mobile_performance_score)
             print("mobile best_practices score",mobile_best_practices_score)
             print("desktop seo score",desktop_seo_score)
+            print("desktop seo score type",desktop_seo_score)
+            print("desktop_first_contentful_paint",type(desktop_first_contentful_paint))
+            print("desktop_total_blocking_time",type(desktop_total_blocking_time))
+            print("desktop_speed_index",type(desktop_speed_index))
+
+
 
             response_data = {
                 "mobile_performance_score"             : mobile_performance_score,
@@ -241,13 +252,13 @@ def link_analyze(request):
                 "mobile_first_contentful_paint"        : mobile_first_contentful_paint,
                 "mobile_largest_contentful_paint"      : mobile_largest_contentful_paint,
                 "mobile_total_blocking_time"           : mobile_total_blocking_time,
-                "mobile_cumulative_layaout_shift"      : mobile_cumulative_layaout_shift,
+                "mobile_cumulative_layout_shift"      : mobile_cumulative_layout_shift,
                 "mobile_speed_index"                   : mobile_speed_index,
 
                 "desktop_first_contentful_paint"        : desktop_first_contentful_paint,
                 "desktop_largest_contentful_paint"      : desktop_largest_contentful_paint,
                 "desktop_total_blocking_time"           : desktop_total_blocking_time,
-                "desktop_cumulative_layaout_shift"      : desktop_cumulative_layaout_shift,
+                "desktop_cumulative_layout_shift"      : desktop_cumulative_layout_shift,
                 "desktop_speed_index"                   : desktop_speed_index,
 
                 "desktop_performance_score"             : desktop_performance_score,

@@ -93,7 +93,12 @@ $(document).on('click', '.serp-analyze-link', function (event) {
             colors: [color],
         });
       }
-      
+
+
+//----------------------------------------------------------------------------------
+//------------------------------Charts----------------------------------------------
+//----------------------------------------------------------------------------------
+
       // Her bir grafik için işlevi kullanarak güncelleme yapın
       updateChart(mobile_performance_score_chart, data.mobile_performance_score);
       updateChart(mobile_accessibility_score_chart, data.mobile_accessibility_score);
@@ -115,7 +120,11 @@ $(document).on('click', '.serp-analyze-link', function (event) {
       updateChart(desktop_best_practices_score_big_chart, data.desktop_best_practices_score);
     
 
-      //DESKTOP SİDE
+
+//----------------------------------------------------------------------------------
+//------------------------MOBİLE SİDE-----------------------------------------------
+//----------------------------------------------------------------------------------
+
       //FIRST CONTENTFULL PAİNT
       var desktop_first_contentful_paint = data.desktop_first_contentful_paint;
       var $desktopFirstContentfulPaint = $(".desktop_first_contentful_paint");
@@ -135,34 +144,32 @@ $(document).on('click', '.serp-analyze-link', function (event) {
       //LARGEST CONTENTFULL PAİNT
       var desktop_largest_contentful_paint = data.desktop_largest_contentful_paint;
       var $desktopLargestContentfulPaint = $(".desktop_largest_contentful_paint");
-
+      
       if (desktop_largest_contentful_paint >= 0 && desktop_largest_contentful_paint <= 2.5) {
-        $desktopLargestContentfulPaint.css("color", "green"); // Yeşil (hızlı)
-      } else if (desktop_argest_contentful_paint > 2.5 && desktop_largest_contentful_paint <= 4) {
-        $desktopLargestContentfulPaint.css("color", "orange"); // Turuncu (orta)
+          $desktopLargestContentfulPaint.css("color", "green"); // Yeşil (hızlı)
+      } else if (desktop_largest_contentful_paint > 2.5 && desktop_largest_contentful_paint <= 4) {
+          $desktopLargestContentfulPaint.css("color", "orange"); // Turuncu (orta)
       } else {
-        $desktopLargestContentfulPaint.css("color", "red"); // Kırmızı (yavaş)
+          $desktopLargestContentfulPaint.css("color", "red"); // Kırmızı (yavaş)
       }
       $desktopLargestContentfulPaint.text(desktop_largest_contentful_paint);
 
 
 
-      var desktop_total_blocking_time = data.desktop_total_blocking_time;
-      $(".desktop_total_blocking_time").text(desktop_total_blocking_time);
-
 
       //TOTAL BLOCKİNG TİME
       var desktop_total_blocking_time = data.desktop_total_blocking_time;
-      console.log("sjahskjahskhjaskhjaskjhaskjas",desktop_total_blocking_time);
+      var $desktopTotalBlockingTime = $(".desktop_total_blocking_time");
+      console.log(desktop_total_blocking_time, "total blocking time");
       
       if (desktop_total_blocking_time >= 0 && desktop_total_blocking_time <= 200) {
-        $desktopTotalBockingTime.css("color", "green"); // Yeşil (hızlı)
-      } else if (desktop_argest_contentful_paint > 200 && desktop_total_blocking_time <= 600) {
-        $desktopTotalBockingTime.css("color", "orange"); // Turuncu (orta)
+          $desktopTotalBlockingTime.css("color", "green"); // Yeşil (hızlı)
+      } else if (desktop_total_blocking_time > 200 && desktop_total_blocking_time <= 600) {
+          $desktopTotalBlockingTime.css("color", "orange"); // Turuncu (orta)
       } else {
-        $desktopTotalBockingTime.css("color", "red"); // Kırmızı (yavaş)
+          $desktopTotalBlockingTime.css("color", "red"); // Kırmızı (yavaş)
       }
-      $desktopTotalBockingTime.text(desktop_total_blocking_time);
+      $desktopTotalBlockingTime.text(desktop_total_blocking_time);
 
 
 
@@ -196,8 +203,10 @@ $(document).on('click', '.serp-analyze-link', function (event) {
 
       $desktopSpeedIndex.text(desktop_speed_index);
 
+//----------------------------------------------------------------------------------
+//------------------------MOBİLE SİDE-----------------------------------------------
+//----------------------------------------------------------------------------------
 
-      //MOİLE SİDE
       //FIRST CONTENTFULL PAİNT
       var mobile_first_contentful_paint = data.mobile_first_contentful_paint;
       var $mobileFirstContentfulPaint = $(".mobile_first_contentful_paint");
@@ -232,8 +241,7 @@ $(document).on('click', '.serp-analyze-link', function (event) {
 
 
 
-      var mobile_total_blocking_time = data.mobile_total_blocking_time;
-      $(".mobile_total_blocking_time").text(mobile_total_blocking_time);
+
 
 
       //TOTAL BLOCKİNG TİME
@@ -241,7 +249,7 @@ $(document).on('click', '.serp-analyze-link', function (event) {
       var $mobileTotalBockingTime = $(".mobile_total_blocking_time");
       if (mobile_total_blocking_time >= 0 && mobile_total_blocking_time <= 200) {
         $mobileTotalBockingTime.css("color", "green"); // Yeşil (hızlı)
-      } else if (mobile_argest_contentful_paint > 200 && mobile_total_blocking_time <= 600) {
+      } else if (mobile_total_blocking_time > 200 && mobile_total_blocking_time <= 600) {
         $mobileTotalBockingTime.css("color", "orange"); // Turuncu (orta)
       } else {
         $mobileTotalBockingTime.css("color", "red"); // Kırmızı (yavaş)
