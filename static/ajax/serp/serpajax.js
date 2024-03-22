@@ -122,7 +122,7 @@ $(document).on('click', '.serp-analyze-link', function (event) {
 
 
 //----------------------------------------------------------------------------------
-//------------------------MOBİLE SİDE-----------------------------------------------
+//------------------------DESKTOP SİDE-----------------------------------------------
 //----------------------------------------------------------------------------------
 
       //FIRST CONTENTFULL PAİNT
@@ -138,8 +138,6 @@ $(document).on('click', '.serp-analyze-link', function (event) {
         $desktopFirstContentfulPaint.css("color", "red"); // Kırmızı (yavaş)
       }
       $desktopFirstContentfulPaint.text(desktop_first_contentful_paint);
-      
-
 
       //LARGEST CONTENTFULL PAİNT
       var desktop_largest_contentful_paint = data.desktop_largest_contentful_paint;
@@ -153,8 +151,6 @@ $(document).on('click', '.serp-analyze-link', function (event) {
           $desktopLargestContentfulPaint.css("color", "red"); // Kırmızı (yavaş)
       }
       $desktopLargestContentfulPaint.text(desktop_largest_contentful_paint);
-
-
 
 
       //TOTAL BLOCKİNG TİME
@@ -203,6 +199,12 @@ $(document).on('click', '.serp-analyze-link', function (event) {
 
       $desktopSpeedIndex.text(desktop_speed_index);
 
+//------------------------DESKTOP SİDE  DIAGNOSTICS-----------------------------------------------
+
+
+
+
+
 //----------------------------------------------------------------------------------
 //------------------------MOBİLE SİDE-----------------------------------------------
 //----------------------------------------------------------------------------------
@@ -223,9 +225,6 @@ $(document).on('click', '.serp-analyze-link', function (event) {
       $mobileFirstContentfulPaint.text(mobile_first_contentful_paint);
 
 
-
-
-
       //LARGEST CONTENTFULL PAİNT
       var mobile_largest_contentful_paint = data.mobile_largest_contentful_paint;
       var $mobileLargestContentfulPaint = $(".mobile_largest_contentful_paint");
@@ -240,10 +239,6 @@ $(document).on('click', '.serp-analyze-link', function (event) {
       $mobileLargestContentfulPaint.text(mobile_largest_contentful_paint);
 
 
-
-
-
-
       //TOTAL BLOCKİNG TİME
       var mobile_total_blocking_time = data.mobile_total_blocking_time;
       var $mobileTotalBockingTime = $(".mobile_total_blocking_time");
@@ -255,7 +250,6 @@ $(document).on('click', '.serp-analyze-link', function (event) {
         $mobileTotalBockingTime.css("color", "red"); // Kırmızı (yavaş)
       }
       $mobileTotalBockingTime.text(mobile_total_blocking_time);
-
 
 
       // Cumulative Layout Shift
@@ -286,6 +280,20 @@ $(document).on('click', '.serp-analyze-link', function (event) {
       }
 
       $mobileSpeedIndex.text(mobile_speed_index);
+
+//------------------------Mobile SİDE  DIAGNOSTICS-----------------------------------------------
+      var mobile_minimizes_main_thread_work = data.mobile_minimizes_main_thread_work;
+
+      // Tabloya veriyi yazdır
+      var tableBody = $('#mobile_minimizes_main_thread_work_table tbody');
+      mobile_minimizes_main_thread_work['details']['items'].forEach(function(item) {
+          tableBody.append('<tr><td>' + item['groupLabel'] + '</td><td>' + item['duration'] + '</td></tr>');
+      });
+
+
+
+
+
 
 
 
