@@ -232,17 +232,19 @@ def link_analyze(request):
 
             #------------ --------------------------------------------------------------------------------------------------------------
             
-            print("mobile seo score",mobile_seo_score)
-            print("mobile_performance_score",mobile_performance_score)
-            print("mobile best_practices score",mobile_best_practices_score)
-            print("desktop seo score",desktop_seo_score)
-            print("desktop seo score type",desktop_seo_score)
-            print("desktop_first_contentful_paint",type(desktop_first_contentful_paint))
-            print("desktop_total_blocking_time",type(desktop_total_blocking_time))
-            print("desktop_speed_index",type(desktop_speed_index))
-            print("mobile_minimizes_main_thread_work",mobile_minimizes_main_thread_work)
+            # print("mobile seo score",mobile_seo_score)
+            # print("mobile_performance_score",mobile_performance_score)
+            # print("mobile best_practices score",mobile_best_practices_score)
+            # print("desktop seo score",desktop_seo_score)
+            # print("desktop seo score type",desktop_seo_score)
+            # print("desktop_first_contentful_paint",type(desktop_first_contentful_paint))
+            # print("desktop_total_blocking_time",type(desktop_total_blocking_time))
+            # print("desktop_speed_index",type(desktop_speed_index))
+            # print("mobile_minimizes_main_thread_work",mobile_minimizes_main_thread_work)
 
-
+            audit = mobile_result['lighthouseResult']["audits"]
+            audit_list = audit.keys()
+            print("audittttttt",len(audit_list))
 
             response_data = {
                 #----------------------------------------------------------------

@@ -1,0 +1,12 @@
+
+
+
+
+
+
+
+DIAGNOSTICS
+            - passed auditler score değeri 1 olanlar. Diğer değerler score değeri ne göre renkleri değişiyor.
+            - description kısmında açıklamalar var 
+            - 
+
