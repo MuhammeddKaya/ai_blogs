@@ -134,11 +134,11 @@
             </ul>
           </div>
 
-          <!-- ---------- -->
-          <!-- ---------- -->
-          <!-- Tab panels -->
-          <!-- ---------- -->
-          <!-- ---------- -->
+          <!-- ---------- ----------------------------------------------------------->
+          <!-- ---------- -------------------------------------------------->
+          <!-- Tab panels ---------------------------------------------->
+          <!-- ---------- -------------------------------------------------->
+          <!-- ---------- ----------------------------------------------------------->
 
           <!-- -------   --- -->
           <!-- desktop SİDE -->
@@ -373,6 +373,38 @@
                     </div>
                   </div>
                 </div>
+                <div class="row">
+                  <div class="col-lg-12 d-flex align-items-strech">
+                    <div class="card w-100">
+                      <div class="card-body">
+                        <div id="desktop_accessibility_score_big-div"></div>
+                        <h5 class="text-center"> Accessibility</h5>
+                        <h6 class="text-center">These checks highlight opportunities to improve the accessibility of your web app. Automatic detection can only detect a subset of issues and does not guarantee the accessibility of your web app, so manual testing is also encouraged.</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12 d-flex align-items-strech">
+                    <div class="card w-100">
+                      <div class="card-body">
+                        <div id="desktop_best_practices_score_big-div"></div>
+                        <h5 class="text-center">Best Practices</h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12 d-flex align-items-strech">
+                    <div class="card w-100">
+                      <div class="card-body">
+                        <div id="desktop_seo_score_big-div"></div>
+                        <h5 class="text-center"> SEO</h5>
+                        <h6 class="text-center">These checks ensure that your page is following basic search engine optimization advice. There are many additional factors Lighthouse does not score here that may affect your search ranking, including performance on Core Web Vitals. Learn more about Google Search Essentials.</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
   
               </div>
             </div>
@@ -416,784 +448,343 @@
                   </div>
 
                 </div>
+                <div class="card w-100">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-lg-6 d-flex align-items-strech">
+                        <div class="card w-100">
+                          <div class="card-body">
+                            <div id="mobile_performance_score_big-div"></div>
+                            <h5 class="text-center"> mobile Performance Score</h5>
+                            <h6 class="text-center">Values are estimated and may vary. The performance score is calculated <br>directly from these metrics.See calculator.</h6>
+                            <div class="d-flex align-items-center justify-content-between">
+                              <div class="d-flex align-items-center">
+                                <button
+                                  type="button"
+                                  class="me-2 btn btn-light-success text-danger font-medium"
+                                  data-bs-toggle="tooltip"
+                                  data-bs-placement="bottom"
+                                  title="Kırmızı renk, web sitesinin SEO açısından zayıf olduğunu gösterir.
+                                  Bu aralıkta olan bir site, arama motorlarında düşük sıralamalara sahip olabilir.
+                                  Site sahipleri, SEO stratejilerini gözden geçirmeli ve iyileştirmeler yapmalıdır.
+                                  İçerik kalitesi, anahtar kelime kullanımı ve teknik SEO eksiklikleri göz önüne alınmalıdır."
+                                >
+                                <i class="ti-layers">0-49</i>
+                                </button>
+                              </div>
+                              <div class="d-flex align-items-center">
+                                <button
+                                type="button"
+                                class="me-2 btn btn-light-success text-warning font-medium"
+                                data-bs-toggle="tooltip"
+                                data-bs-placement="bottom"
+                                title="Turuncu renk, web sitesinin orta seviyede bir SEO değerine sahip olduğunu gösterir.
+                                Bu aralıkta olan bir site, belirli anahtar kelimelerde iyi sıralamalara sahip olabilir, ancak potansiyel iyileştirmelere ihtiyaç duyabilir.
+                                SEO stratejileri daha fazla optimize edilebilir ve içerik kalitesi artırılabilir.
+                                Rekabetçi anahtar kelimelerde daha iyi sıralamalar elde etmek için çalışılabilir."
+                              >
+                              <i class="ti-layers">50-84</i>
+                              </button>
+                              </div>
+                              <div class="d-flex align-items-center">
+                                <button
+                                type="button"
+                                class="me-2 btn btn-light-success text-success font-medium"
+                                data-bs-toggle="tooltip"
+                                data-bs-placement="bottom"
+                                title="Yeşil renk, web sitesinin yüksek bir SEO değerine sahip olduğunu gösterir.
+                                Bu aralıkta olan bir site, arama motorlarında yüksek sıralamalara sahip olabilir ve geniş bir görünürlüğe ulaşabilir.
+                                İyi bir SEO stratejisi ve kaliteli içerikle bu başarı elde edilmiş olabilir.
+                                Site sahipleri, mevcut başarılarını sürdürmek ve rekabeti önde tutmak için sürekli olarak SEO'yu optimize etmelidir."
+                              >
+                              <i class="ti-layers">85-100</i>
+                              </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="row">
+                          <div class="col-lg-12 col-md-6 col-sm-12">
+                            <!-- Yearly Breakup -->
+                            <div class="card overflow-hidden">
+                              <div class="card-body">
+                                <div class="row align-items-center justify-content-between">
+                                  <div  style="max-width: 95%;" id="mobile_fullPageScreenshot-div"></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <h4>METRİCS</h4>
+                    </div>
+                    <div class="row justify-content-center">
+                      <div class="col-lg-6">
+                        <div class="accordion accordion-flush mb-5 card position-relative overflow-hidden" id="accordionFlushExample">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingOne">
+                              <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_first_contentful_paint" aria-expanded="false" aria-controls="mobile_first_contentful_paint">
+                                <div class="row">
+                                  <div class="row">
+                                    <h6>First Contentful Paint</h6>
+                                  </div>
+                                  <div class="row">
+                                    <div class="mobile_first_contentful_paint"></div>
+                                  </div>
+                                </div>
+                              </button>
+                            </h2>
+                            <div id="mobile_first_contentful_paint" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                              <div class="accordion-body fw-normal">
+                                Tarayıcının bir sayfayı ziyaret eden kullanıcının gördüğü ilk içeriği oluşturması için geçen süreyi ölçer. Bu metrik, sayfanın ne kadar hızlı yüklendiğini gösterir ve kullanıcı deneyimini etkiler. Kısacası, bu değer ne kadar düşük olursa, sayfa o kadar hızlı yüklenir ve kullanıcılar daha hızlı bir deneyim yaşar.
+                              </div>
+                            </div>
+                          </div>
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingOne">
+                              <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_total_blocking_time" aria-expanded="false" aria-controls="mobile_total_blocking_time">
+                                <div class="row">
+                                  <div class="row">
+                                    <h6>Total Blocking Time</h6>
+                                  </div>
+                                  <div class="row">
+                                    <div class="mobile_total_blocking_time"></div>
+                                  </div>
+                                </div>
+                              </button>
+                            </h2>
+                            <div id="mobile_total_blocking_time" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                              <div class="accordion-body fw-normal">
+                                Admin Dashboard is the backend interface of a website or an application that helps to manage the 
+                                website's overall content and settings. It is widely used by the site owners to keep track of their website, 
+                                make changes to their content, and more.
+                              </div>
+                            </div>
+                          </div>
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingOne">
+                              <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_speed_index" aria-expanded="false" aria-controls="mobile_speed_index">
+                                <div class="row">
+                                  <div class="row">
+                                    <h6>Speed Index</h6>
+                                  </div>
+                                  <div class="row">
+                                    <div class="mobile_speed_index"></div>
+                                  </div>
+                                </div>
+                              </button>
+                            </h2>
+                            <div id="mobile_speed_index" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                              <div class="accordion-body fw-normal">
+                                Admin Dashboard is the backend interface of a website or an application that helps to manage the 
+                                website's overall content and settings. It is widely used by the site owners to keep track of their website, 
+                                make changes to their content, and more.
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="accordion accordion-flush mb-5 card position-relative overflow-hidden" id="accordionFlushExample">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingOne">
+                              <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_largest_contentful_paint" aria-expanded="false" aria-controls="mobile_largest_contentful_paint">
+                                <div class="row">
+                                  <div class="row">
+                                    <h6>Largest Contentful Paint</h6>
+                                  </div>
+                                  <div class="row">
+                                    <div class="mobile_largest_contentful_paint"></div>
+                                  </div>
+                                </div>
+                              </button>
+                            </h2>
+                            <div id="mobile_largest_contentful_paint" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                              <div class="accordion-body fw-normal">
+                                Admin Dashboard is the backend interface of a website or an application that helps to manage the 
+                                website's overall content and settings. It is widely used by the site owners to keep track of their website, 
+                                make changes to their content, and more.
+                              </div>
+                            </div>
+                          </div>
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingOne">
+                              <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_cumulative_layout_shift" aria-expanded="false" aria-controls="mobile_cumulative_layout_shift">
+                                <div class="row">
+                                  <div class="row">
+                                    <h6>Cumulative Layout Shift</h6>
+                                  </div>
+                                  <div class="row">
+                                    <div class="mobile_cumulative_layout_shift"></div>
+                                  </div>
+                                </div>
+                              </button>
+                            </h2>
+                            <div id="mobile_cumulative_layout_shift" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                              <div class="accordion-body fw-normal">
+                                Admin Dashboard is the backend interface of a website or an application that helps to manage the 
+                                website's overall content and settings. It is widely used by the site owners to keep track of their website, 
+                                make changes to their content, and more.
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h6>Diagnostics</h6>
+                    <div class="accordion accordion-flush mobile_performance_audits" id="accordionFlushExample">
+                      <!-- buraya seo auditleri gelecek-->
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h6>PASSED AUDITS</h6>
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                      <!-- buraya seo auditleri gelecek-->
+                    </div>
+                  </div>
+                </div>   
                 <div class="row">
-                  <div class="col-lg-6 d-flex align-items-strech">
+                  <div class="col-lg-12 d-flex align-items-strech">
                     <div class="card w-100">
                       <div class="card-body">
-                        <div id="mobile_performance_score_big-div"></div>
-                        <h5 class="text-center"> mobile Performance Score</h5>
-                        <h6 class="text-center">Values are estimated and may vary. The performance score is calculated <br>directly from these metrics.See calculator.</h6>
-                        <div class="d-flex align-items-center justify-content-between">
-                          <div class="d-flex align-items-center">
-                            <button
-                              type="button"
-                              class="me-2 btn btn-light-success text-danger font-medium"
-                              data-bs-toggle="tooltip"
-                              data-bs-placement="bottom"
-                              title="Kırmızı renk, web sitesinin SEO açısından zayıf olduğunu gösterir.
-                              Bu aralıkta olan bir site, arama motorlarında düşük sıralamalara sahip olabilir.
-                              Site sahipleri, SEO stratejilerini gözden geçirmeli ve iyileştirmeler yapmalıdır.
-                              İçerik kalitesi, anahtar kelime kullanımı ve teknik SEO eksiklikleri göz önüne alınmalıdır."
-                            >
-                            <i class="ti-layers">0-49</i>
-                            </button>
-                          </div>
-                          <div class="d-flex align-items-center">
-                            <button
-                            type="button"
-                            class="me-2 btn btn-light-success text-warning font-medium"
-                            data-bs-toggle="tooltip"
-                            data-bs-placement="bottom"
-                            title="Turuncu renk, web sitesinin orta seviyede bir SEO değerine sahip olduğunu gösterir.
-                            Bu aralıkta olan bir site, belirli anahtar kelimelerde iyi sıralamalara sahip olabilir, ancak potansiyel iyileştirmelere ihtiyaç duyabilir.
-                            SEO stratejileri daha fazla optimize edilebilir ve içerik kalitesi artırılabilir.
-                            Rekabetçi anahtar kelimelerde daha iyi sıralamalar elde etmek için çalışılabilir."
-                          >
-                          <i class="ti-layers">50-84</i>
-                          </button>
-                          </div>
-                          <div class="d-flex align-items-center">
-                            <button
-                            type="button"
-                            class="me-2 btn btn-light-success text-success font-medium"
-                            data-bs-toggle="tooltip"
-                            data-bs-placement="bottom"
-                            title="Yeşil renk, web sitesinin yüksek bir SEO değerine sahip olduğunu gösterir.
-                            Bu aralıkta olan bir site, arama motorlarında yüksek sıralamalara sahip olabilir ve geniş bir görünürlüğe ulaşabilir.
-                            İyi bir SEO stratejisi ve kaliteli içerikle bu başarı elde edilmiş olabilir.
-                            Site sahipleri, mevcut başarılarını sürdürmek ve rekabeti önde tutmak için sürekli olarak SEO'yu optimize etmelidir."
-                          >
-                          <i class="ti-layers">85-100</i>
-                          </button>
-                          </div>
+                        <div id="mobile_accessibility_score_big-div"></div>
+                        <h4 class="text-center"> Accessibility</h4>
+                        <h6 class="text-center">These checks highlight opportunities to improve the accessibility of your web app. Automatic detection can only detect a subset of issues and does not guarantee the accessibility of your web app, so manual testing is also encouraged.</h6>
+                      </div>
+                      <div class="card-body">
+                        <h6>NAMES AND LABELS</h6>
+                        <div class="accordion accordion-flush mobile_accessibility_audits" id="accordionFlushExample">
+                          <!-- buraya seo auditleri gelecek-->
                         </div>
+                      </div>
+                      <div class="card-body">
+                        <h6>CONTRAST</h6>
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                          <!-- buraya seo auditleri gelecek-->
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <h6>NAVIGATION</h6>
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                          <!-- buraya seo auditleri gelecek-->
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <h6>ADDITIONAL ITEMS TO MANUALLY CHECK</h6>
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                          <!-- buraya seo auditleri gelecek-->
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <h6>PASSED AUDITS</h6>
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                          <!-- buraya seo auditleri gelecek-->
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <h6>NOT APPLICABLE</h6>
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                          <!-- buraya seo auditleri gelecek-->
+                        </div>
+                      </div>
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-6">
-                    <div class="row">
-                      <div class="col-lg-12 col-md-6 col-sm-12">
-                        <!-- Yearly Breakup -->
-                        <div class="card overflow-hidden">
-                          <div class="card-body">
-                            <div class="row align-items-center justify-content-between">
-                              <div  style="max-width: 95%;" id="mobile_fullPageScreenshot-div"></div>
-                            </div>
-                          </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12 d-flex align-items-strech">
+                    <div class="card w-100">
+                      <div class="card-body">
+                        <div id="mobile_best_practices_score_big-div"></div>
+                        <h5 class="text-center">Best Practices</h5>
+                      </div>
+                      <div class="card-body">
+                        <h6>USER EXPERIENCE</h6>
+                        <div class="accordion accordion-flush mobile_best_practices_audits" id="accordionFlushExample">
+                          <!-- buraya seo auditleri gelecek-->
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <h6>TRUST AND SAFETY</h6>
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                          <!-- buraya seo auditleri gelecek-->
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <h6>GENERAL</h6>
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                          <!-- buraya seo auditleri gelecek-->
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <h6>PASSED AUDITS</h6>
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                          <!-- buraya seo auditleri gelecek-->
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <h6>NOT APPLICABLE</h6>
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                          <!-- buraya seo auditleri gelecek-->
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="row">
-                  <h4>METRİCS</h4>
-                </div>
-                <div class="row justify-content-center">
-                  <div class="col-lg-6">
-                    <div class="accordion accordion-flush mb-5 card position-relative overflow-hidden" id="accordionFlushExample">
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingOne">
-                          <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_first_contentful_paint" aria-expanded="false" aria-controls="mobile_first_contentful_paint">
-                            <div class="row">
-                              <div class="row">
-                                <h6>First Contentful Paint</h6>
-                              </div>
-                              <div class="row">
-                                <div class="mobile_first_contentful_paint"></div>
-                              </div>
-                            </div>
-                          </button>
-                        </h2>
-                        <div id="mobile_first_contentful_paint" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                          <div class="accordion-body fw-normal">
-                            Tarayıcının bir sayfayı ziyaret eden kullanıcının gördüğü ilk içeriği oluşturması için geçen süreyi ölçer. Bu metrik, sayfanın ne kadar hızlı yüklendiğini gösterir ve kullanıcı deneyimini etkiler. Kısacası, bu değer ne kadar düşük olursa, sayfa o kadar hızlı yüklenir ve kullanıcılar daha hızlı bir deneyim yaşar.
-                          </div>
+                  <div class="col-lg-12 d-flex align-items-strech">
+                    <div class="card w-100">
+                      <div class="card-body">
+                        <div id="mobile_seo_score_big-div"></div>
+                        <h5 class="text-center"> SEO</h5>
+                        <h6 class="text-center">These checks ensure that your page is following basic search engine optimization advice. There are many additional factors Lighthouse does not score here that may affect your search ranking, including performance on Core Web Vitals. Learn more about Google Search Essentials.</h6>
+                      </div>
+                      <div class="card-body">
+                        <h6>CRAWLING AND INDEXING</h6>
+                        <div class="accordion accordion-flush mobile_seo_audits" id="accordionFlushExample">
+                          <!-- buraya seo auditleri gelecek-->
                         </div>
                       </div>
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingOne">
-                          <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_total_blocking_time" aria-expanded="false" aria-controls="mobile_total_blocking_time">
-                            <div class="row">
-                              <div class="row">
-                                <h6>Total Blocking Time</h6>
-                              </div>
-                              <div class="row">
-                                <div class="mobile_total_blocking_time"></div>
-                              </div>
-                            </div>
-                          </button>
-                        </h2>
-                        <div id="mobile_total_blocking_time" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                          <div class="accordion-body fw-normal">
-                            Admin Dashboard is the backend interface of a website or an application that helps to manage the 
-                            website's overall content and settings. It is widely used by the site owners to keep track of their website, 
-                            make changes to their content, and more.
-                          </div>
+                      <div class="card-body">
+                        <h6>CONTENT BEST PRACTICES</h6>
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                          <!-- buraya seo auditleri gelecek-->
                         </div>
                       </div>
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingOne">
-                          <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_speed_index" aria-expanded="false" aria-controls="mobile_speed_index">
-                            <div class="row">
-                              <div class="row">
-                                <h6>Speed Index</h6>
-                              </div>
-                              <div class="row">
-                                <div class="mobile_speed_index"></div>
-                              </div>
-                            </div>
-                          </button>
-                        </h2>
-                        <div id="mobile_speed_index" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                          <div class="accordion-body fw-normal">
-                            Admin Dashboard is the backend interface of a website or an application that helps to manage the 
-                            website's overall content and settings. It is widely used by the site owners to keep track of their website, 
-                            make changes to their content, and more.
-                          </div>
+                      <div class="card-body">
+                        <h6>ADDITIONAL ITEMS TO MANUALLY CHECK</h6>
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                          <!-- buraya seo auditleri gelecek-->
                         </div>
                       </div>
-
-                    </div>
-                  </div>
-                  <div class="col-lg-6">
-                    <div class="accordion accordion-flush mb-5 card position-relative overflow-hidden" id="accordionFlushExample">
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingOne">
-                          <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_largest_contentful_paint" aria-expanded="false" aria-controls="mobile_largest_contentful_paint">
-                            <div class="row">
-                              <div class="row">
-                                <h6>Largest Contentful Paint</h6>
-                              </div>
-                              <div class="row">
-                                <div class="mobile_largest_contentful_paint"></div>
-                              </div>
-                            </div>
-                          </button>
-                        </h2>
-                        <div id="mobile_largest_contentful_paint" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                          <div class="accordion-body fw-normal">
-                            Admin Dashboard is the backend interface of a website or an application that helps to manage the 
-                            website's overall content and settings. It is widely used by the site owners to keep track of their website, 
-                            make changes to their content, and more.
-                          </div>
+                      <div class="card-body">
+                        <h6>PASSED AUDITS</h6>
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                          <!-- buraya seo auditleri gelecek-->
                         </div>
                       </div>
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingOne">
-                          <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_cumulative_layout_shift" aria-expanded="false" aria-controls="mobile_cumulative_layout_shift">
-                            <div class="row">
-                              <div class="row">
-                                <h6>Cumulative Layout Shift</h6>
-                              </div>
-                              <div class="row">
-                                <div class="mobile_cumulative_layout_shift"></div>
-                              </div>
-                            </div>
-                          </button>
-                        </h2>
-                        <div id="mobile_cumulative_layout_shift" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                          <div class="accordion-body fw-normal">
-                            Admin Dashboard is the backend interface of a website or an application that helps to manage the 
-                            website's overall content and settings. It is widely used by the site owners to keep track of their website, 
-                            make changes to their content, and more.
-                          </div>
+                      <div class="card-body">
+                        <h6>NOT APPLICABLE</h6>
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                          <!-- buraya seo auditleri gelecek-->
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
 <!-- ---------------------  DIAGNOSTICS------25 adet---------- -->
-                <div class="row">
+                {% comment %} <div class="row">
                   <h4>DIAGNOSTICS</h4>
-                </div>
-                <div class="accordion accordion-flush mb-1 card position-relative overflow-hidden" id="accordionFlushExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                      <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_eliminate_render_blocking_resources" aria-expanded="false" aria-controls="mobile_eliminate_render_blocking_resources">
-                        <div class="row">
-                          <div class="row">
-                            <h6>Eliminate render-blocking resources</h6>
-                          </div>
-                          <div class="row">
-                            <div class="mobile_eliminate_render_blocking_resources"></div>
-                          </div>
-                        </div>
-                      </button>
-                    </h2>
-                    <div id="mobile_eliminate_render_blocking_resources" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body fw-normal">
-                        Eliminate render-blocking resources
-                      </div>
-                    </div>
-                  </div>
+                  <div class="diagnostic_audits"></div>
+                </div> {% endcomment %}
 
-                </div>
-                <div class="accordion accordion-flush mb-1 card position-relative overflow-hidden" id="accordionFlushExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                      <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_enable_text_compression " aria-expanded="false" aria-controls="mobile_enable_text_compression ">
-                        <div class="row">
-                          <div class="row">
-                            <h6>Enable text compression </h6>
-                          </div>
-                          <div class="row">
-                            <div class="mobile_enable_text_compression "></div>
-                          </div>
-                        </div>
-                      </button>
-                    </h2>
-                    <div id="mobile_enable_text_compression " class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body fw-normal">
-                        Enable text compression 
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-                <div class="accordion accordion-flush mb-1 card position-relative overflow-hidden" id="accordionFlushExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                      <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#largest_contentful_paint_element" aria-expanded="false" aria-controls="largest_contentful_paint_element">
-                        <div class="row">
-                          <div class="row">
-                            <h6>Largest Contentful Paint element</h6>
-                          </div>
-                          <div class="row">
-                            <div class="largest_contentful_paint_element"></div>
-                          </div>
-                        </div>
-                      </button>
-                    </h2>
-                    <div id="largest_contentful_paint_element" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body fw-normal">
-                        Largest Contentful Paint element
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-                <div class="accordion accordion-flush mb-1 card position-relative overflow-hidden" id="accordionFlushExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                      <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_reduce_unused_css" aria-expanded="false" aria-controls="mobile_reduce_unused_css">
-                        <div class="row">
-                          <div class="row">
-                            <h6>Reduce unused CSS</h6>
-                          </div>
-                          <div class="row">
-                            <div class="mobile_reduce_unused_css"></div>
-                          </div>
-                        </div>
-                      </button>
-                    </h2>
-                    <div id="mobile_reduce_unused_css" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body fw-normal">
-                        Reduce unused CSS
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-                <div class="accordion accordion-flush mb-1 card position-relative overflow-hidden" id="accordionFlushExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                      <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_serve_images_in_next_gen_formats" aria-expanded="false" aria-controls="mobile_serve_images_in_next_gen_formats">
-                        <div class="row">
-                          <div class="row">
-                            <h6>Serve images in next-gen formats</h6>
-                          </div>
-                          <div class="row">
-                            <div class="mobile_serve_images_in_next_gen_formats"></div>
-                          </div>
-                        </div>
-                      </button>
-                    </h2>
-                    <div id="mobile_serve_images_in_next_gen_formats" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body fw-normal">
-                        Serve images in next-gen formats
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-                <div class="accordion accordion-flush mb-1 card position-relative overflow-hidden" id="accordionFlushExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                      <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_properly_size_images" aria-expanded="false" aria-controls="mobile_properly_size_images">
-                        <div class="row">
-                          <div class="row">
-                            <h6>Properly size images</h6>
-                          </div>
-                          <div class="row">
-                            <div class="mobile_properly_size_images"></div>
-                          </div>
-                        </div>
-                      </button>
-                    </h2>
-                    <div id="mobile_properly_size_images" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body fw-normal">
-                        Properly size images
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-                <div class="accordion accordion-flush mb-1 card position-relative overflow-hidden" id="accordionFlushExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                      <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_minify_css" aria-expanded="false" aria-controls="mobile_minify_css">
-                        <div class="row">
-                          <div class="row">
-                            <h6>Minify CSS</h6>
-                          </div>
-                          <div class="row">
-                            <div class="mobile_minify_css"></div>
-                          </div>
-                        </div>
-                      </button>
-                    </h2>
-                    <div id="mobile_minify_css" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body fw-normal">
-                        Minify CSS
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-                <div class="accordion accordion-flush mb-1 card position-relative overflow-hidden" id="accordionFlushExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                      <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_reduce_unused_javaScript" aria-expanded="false" aria-controls="mobile_reduce_unused_javaScript">
-                        <div class="row">
-                          <div class="row">
-                            <h6>Reduce unused JavaScript</h6>
-                          </div>
-                          <div class="row">
-                            <div class="mobile_reduce_unused_javaScript"></div>
-                          </div>
-                        </div>
-                      </button>
-                    </h2>
-                    <div id="mobile_reduce_unused_javaScript" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body fw-normal">
-                        Reduce unused JavaScript
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-                <div class="accordion accordion-flush mb-1 card position-relative overflow-hidden" id="accordionFlushExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                      <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_efficiently_encode_images" aria-expanded="false" aria-controls="mobile_efficiently_encode_images">
-                        <div class="row">
-                          <div class="row">
-                            <h6>Efficiently encode images </h6>
-                          </div>
-                          <div class="row">
-                            <div class="mobile_efficiently_encode_images"></div>
-                          </div>
-                        </div>
-                      </button>
-                    </h2>
-                    <div id="mobile_efficiently_encode_images" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body fw-normal">
-                        Efficiently encode images 
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-
-
-                <div class="accordion accordion-flush mb-1 card position-relative overflow-hidden" id="accordionFlushExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                      <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_image_elements_do_not_have_explicit_width_and_height" aria-expanded="false" aria-controls="mobile_image_elements_do_not_have_explicit_width_and_height">
-                        <div class="row">
-                          <div class="row">
-                            <h6>Image elements do not have explicit width and height</h6>
-                          </div>
-                          <div class="row">
-                            <div class="mobile_image_elements_do_not_have_explicit_width_and_height"></div>
-                          </div>
-                        </div>
-                      </button>
-                    </h2>
-                    <div id="mobile_image_elements_do_not_have_explicit_width_and_height" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body fw-normal">
-                        Image elements do not have explicit width and height
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-
-                <div class="accordion accordion-flush mb-1 card position-relative overflow-hidden" id="accordionFlushExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                      <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_minify_javaScript" aria-expanded="false" aria-controls="mobile_minify_javaScript">
-                        <div class="row">
-                          <div class="row">
-                            <h6>Minify JavaScript</h6>
-                          </div>
-                          <div class="row">
-                            <div class="mobile_minify_javaScript"></div>
-                          </div>
-                        </div>
-                      </button>
-                    </h2>
-                    <div id="mobile_minify_javaScript" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body fw-normal">
-                        Minify JavaScript
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-
-
-                <div class="accordion accordion-flush mb-1 card position-relative overflow-hidden" id="accordionFlushExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                      <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_serve_static_assets_with_an_efficient_cache_policy" aria-expanded="false" aria-controls="mobile_serve_static_assets_with_an_efficient_cache_policy">
-                        <div class="row">
-                          <div class="row">
-                            <h6>Serve static assets with an efficient cache policy</h6>
-                          </div>
-                          <div class="row">
-                            <div class="mobile_serve_static_assets_with_an_efficient_cache_policy"></div>
-                          </div>
-                        </div>
-                      </button>
-                    </h2>
-                    <div id="mobile_serve_static_assets_with_an_efficient_cache_policy" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body fw-normal">
-                        Serve static assets with an efficient cache policy
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-
-                <div class="accordion accordion-flush mb-1 card position-relative overflow-hidden" id="accordionFlushExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                      <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_ensure_text_remains_visible_during_webfont_load" aria-expanded="false" aria-controls="mobile_ensure_text_remains_visible_during_webfont_load">
-                        <div class="row">
-                          <div class="row">
-                            <h6>Ensure text remains visible during webfont load</h6>
-                          </div>
-                          <div class="row">
-                            <div class="mobile_ensure_text_remains_visible_during_webfont_load"></div>
-                          </div>
-                        </div>
-                      </button>
-                    </h2>
-                    <div id="mobile_ensure_text_remains_visible_during_webfont_load" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body fw-normal">
-                        Ensure text remains visible during webfont load
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-
-                <div class="accordion accordion-flush mb-1 card position-relative overflow-hidden" id="accordionFlushExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                      <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_defer_offscreen_images" aria-expanded="false" aria-controls="mobile_defer_offscreen_images">
-                        <div class="row">
-                          <div class="row">
-                            <h6>Defer offscreen images</h6>
-                          </div>
-                          <div class="row">
-                            <div class="mobile_defer_offscreen_images"></div>
-                          </div>
-                        </div>
-                      </button>
-                    </h2>
-                    <div id="mobile_defer_offscreen_images" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body fw-normal">
-                        Defer offscreen images
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-
-                <div class="accordion accordion-flush mb-1 card position-relative overflow-hidden" id="accordionFlushExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                      <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_avoid_serving_legacy_javaScript_to_modern_browsers" aria-expanded="false" aria-controls="mobile_avoid_serving_legacy_javaScript_to_modern_browsers">
-                        <div class="row">
-                          <div class="row">
-                            <h6>Avoid serving legacy JavaScript to modern browsers</h6>
-                          </div>
-                          <div class="row">
-                            <div class="mobile_avoid_serving_legacy_javaScript_to_modern_browsers"></div>
-                          </div>
-                        </div>
-                      </button>
-                    </h2>
-                    <div id="mobile_avoid_serving_legacy_javaScript_to_modern_browsers" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body fw-normal">
-                        Avoid serving legacy JavaScript to modern browsers
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-
-
-                <div class="accordion accordion-flush mb-1 card position-relative overflow-hidden" id="accordionFlushExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                      <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_avoid_enormous_network_payloads" aria-expanded="false" aria-controls="mobile_avoid_enormous_network_payloads">
-                        <div class="row">
-                          <div class="row">
-                            <h6>Avoid enormous network payloads</h6>
-                          </div>
-                          <div class="row">
-                            <div class="mobile_avoid_enormous_network_payloads"></div>
-                          </div>
-                        </div>
-                      </button>
-                    </h2>
-                    <div id="mobile_avoid_enormous_network_payloads" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body fw-normal">
-                        Avoid enormous network payloads
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-
-                <div class="accordion accordion-flush mb-1 card position-relative overflow-hidden" id="accordionFlushExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                      <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_javaScript_execution_time" aria-expanded="false" aria-controls="mobile_javaScript_execution_time">
-                        <div class="row">
-                          <div class="row">
-                            <h6>JavaScript execution time</h6>
-                          </div>
-                          <div class="row">
-                            <div class="mobile_javaScript_execution_time"></div>
-                          </div>
-                        </div>
-                      </button>
-                    </h2>
-                    <div id="mobile_javaScript_execution_time" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body fw-normal">
-                        JavaScript execution time
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-
-
-                <div class="accordion accordion-flush mb-1 card position-relative overflow-hidden" id="accordionFlushExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                      <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_minimize_third_party_usage" aria-expanded="false" aria-controls="Minimize third-party usage">
-                        <div class="row">
-                          <div class="row">
-                            <h6>Minimize third-party usage</h6>
-                          </div>
-                          <div class="row">
-                            <div class="mobile_minimize_third_party_usage"></div>
-                          </div>
-                        </div>
-                      </button>
-                    </h2>
-                    <div id="mobile_minimize_third_party_usage" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body fw-normal">
-                        Minimize third-party usage
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-
-                <div class="accordion accordion-flush mb-1 card position-relative overflow-hidden" id="accordionFlushExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                      <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_avoid_large_layout_shifts" aria-expanded="false" aria-controls="mobile_avoid_large_layout_shifts">
-                        <div class="row">
-                          <div class="row">
-                            <h6>Avoid large layout shifts</h6>
-                          </div>
-                          <div class="row">
-                            <div class="mobile_avoid_large_layout_shifts"></div>
-                          </div>
-                        </div>
-                      </button>
-                    </h2>
-                    <div id="mobile_avoid_large_layout_shifts" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body fw-normal">
-                        Avoid large layout shifts
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-
-
-
-                <div class="accordion accordion-flush mb-1 card position-relative overflow-hidden" id="accordionFlushExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                      <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_user_timing_marks_and_measures" aria-expanded="false" aria-controls="mobile_user_timing_marks_and_measures">
-                        <div class="row">
-                          <div class="row">
-                            <h6>User Timing marks and measures</h6>
-                          </div>
-                          <div class="row">
-                            <div class="mobile_user_timing_marks_and_measures"></div>
-                          </div>
-                        </div>
-                      </button>
-                    </h2>
-                    <div id="mobile_user_timing_marks_and_measures" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body fw-normal">
-                        User Timing marks and measures
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-
-
-                <div class="accordion accordion-flush mb-1 card position-relative overflow-hidden" id="accordionFlushExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                      <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_ınitial_server_response_time_was_short" aria-expanded="false" aria-controls="mobile_ınitial_server_response_time_was_short">
-                        <div class="row">
-                          <div class="row">
-                            <h6>Initial server response time was short</h6>
-                          </div>
-                          <div class="row">
-                            <div class="mobile_ınitial_server_response_time_was_short"></div>
-                          </div>
-                        </div>
-                      </button>
-                    </h2>
-                    <div id="mobile_ınitial_server_response_time_was_short" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body fw-normal">
-                        Initial server response time was short
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-
-
-                <div class="accordion accordion-flush mb-1 card position-relative overflow-hidden" id="accordionFlushExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                      <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_avoids_an_excessive_dom_size" aria-expanded="false" aria-controls="mobile_avoids_an_excessive_dom_size">
-                        <div class="row">
-                          <div class="row">
-                            <h6>Avoids an excessive DOM size</h6>
-                          </div>
-                          <div class="row">
-                            <div class="mobile_avoids_an_excessive_dom_size"></div>
-                          </div>
-                        </div>
-                      </button>
-                    </h2>
-                    <div id="mobile_avoids_an_excessive_dom_size" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body fw-normal">
-                        Avoids an excessive DOM size
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-
-                <div class="accordion accordion-flush mb-1 card position-relative overflow-hidden" id="accordionFlushExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                      <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_avoid_chaining_critical_requests" aria-expanded="false" aria-controls="mobile_avoid_chaining_critical_requests">
-                        <div class="row">
-                          <div class="row">
-                            <h6>Avoid chaining critical requests</h6>
-                          </div>
-                          <div class="row">
-                            <div class="mobile_avoid_chaining_critical_requests"></div>
-                          </div>
-                        </div>
-                      </button>
-                    </h2>
-                    <div id="mobile_avoid_chaining_critical_requests" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body fw-normal">
-                        Avoid chaining critical requests
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-
-                <div class="accordion accordion-flush mb-1 card position-relative overflow-hidden" id="accordionFlushExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                      <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_minimizes_main_thread_work" aria-expanded="false" aria-controls="mobile_minimizes_main_thread_work">
-                        <div class="row">
-                          <div class="row">
-                            <h6>Minimizes main-thread work</h6>
-                          </div>
-                          <div class="row">
-                            <div class="mobile_minimizes_main_thread_work"></div>
-                          </div>
-                        </div>
-                      </button>
-                    </h2>
-                    <div id="mobile_minimizes_main_thread_work" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body fw-normal">
-                        <table class="table border mb-0" id="mobile_minimizes_main_thread_work_table">
-                          <thead>
-                            <!-- start row -->
-                            <tr>
-                              <th scope="col">Category</th>
-                              <th scope="col">Duration (ms)</th>
-                            </tr>
-                            <!-- end row -->
-                          </thead>
-                          <tbody>
-
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-
-
-
-                <div class="accordion accordion-flush mb-1 card position-relative overflow-hidden" id="accordionFlushExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                      <button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#mobile_avoid_long_main_thread_tasks" aria-expanded="false" aria-controls="mobile_avoid_long_main_thread_tasks">
-                        <div class="row">
-                          <div class="row">
-                            <h6>Avoid long main-thread tasks </h6>
-                          </div>
-                          <div class="row">
-                            <div class="mobile_avoid_long_main_thread_tasks"></div>
-                          </div>
-                        </div>
-                      </button>
-                    </h2>
-                    <div id="mobile_avoid_long_main_thread_tasks" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body fw-normal">
-                        Avoid long main-thread tasks 
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
 
 
               </div>

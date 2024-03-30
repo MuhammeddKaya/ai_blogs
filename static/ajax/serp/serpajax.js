@@ -282,13 +282,161 @@ $(document).on('click', '.serp-analyze-link', function (event) {
       $mobileSpeedIndex.text(mobile_speed_index);
 
 //------------------------Mobile SİDE  DIAGNOSTICS-----------------------------------------------
-      var mobile_minimizes_main_thread_work = data.mobile_minimizes_main_thread_work;
+      var audits = data.audit; // AJAX ile aldığınız audit verileri
+      console.log(audits)
+      for (var key in audits) {
+        
+        var audit_id = audits[key].id;
 
-      // Tabloya veriyi yazdır
-      var tableBody = $('#mobile_minimizes_main_thread_work_table tbody');
-      mobile_minimizes_main_thread_work['details']['items'].forEach(function(item) {
-          tableBody.append('<tr><td>' + item['groupLabel'] + '</td><td>' + item['duration'] + '</td></tr>');
-      });
+        var audit_ttitle = audits[key].title;
+        var audit_title = audit_ttitle.replace(/<[^>]+>/g, function(match) {
+          return match.replace(/\</g, '&lt;').replace(/\>/g, '&gt;');
+        });
+
+        var tdescription = audits[key].description;
+        var description = tdescription.replace(/<[^>]+>/g, function(match) {
+          return match.replace(/\</g, '&lt;').replace(/\>/g, '&gt;');
+        }).replace(/\[[^\]]*\]|\([^\)]*\)/g, '');
+        
+
+        // HTML içeriğini oluştur
+        var html =                 '<div class="accordion accordion-flush mb-1 card position-relative overflow-hidden" id="accordionFlushExample">'+
+                  '<div class="accordion-item">'+
+                    '<h2 class="accordion-header" id="flush-headingOne">'+
+                      '<button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#'+audit_id+'" aria-expanded="false" aria-controls="'+audit_id+'">'+
+                        '<div class="row">'+
+                         ' <div class="row">'+
+                            '<h6>'+audit_title+'</h6>'+
+                          '</div>'+
+                          '<div class="row">'+
+                            '<div class="'+audit_id+'"></div>'+
+                          '</div>'+
+                        '</div>'+
+                      '</button>'+
+                    '</h2>'+
+                    '<div id="'+audit_id+'" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">'+
+                      '<div class="accordion-body fw-normal">'+description+
+                      '</div>'+
+                      '<div> <!--'+
+                        '<table class="table border mb-0" id="mobile_minimizes_main_thread_work_table">'+
+                          '<thead>'+
+                            '<tr>'+
+                             ' <th scope="col">Category</th>'+
+                              '<th scope="col">Duration (ms)</th>'+
+                            '</tr>'+
+                          '</thead>'+
+                          '<tbody>'+
+
+                          '</tbody>'+
+                        '</table>'+
+                      '</div> -->'+
+                    '</div>'+
+                  '</div>'+
+
+                '</div>';
+
+        var seoAudits = ["crawlable-anchors", "image-alt", "structured-data", "viewport", "document-title", "meta-description", "http-status-code", 
+            "link-text", "is-crawlable", "hreflang", "font-size", "plugins", "tap-targets", "robots-txt", "canonical"];
+
+        var bestPractices = [
+            "image-size-responsive", "csp-xss",   "js-libraries", "is-on-https", "deprecations", "paste-preventing-inputs",  "geolocation-on-start",
+            "notification-on-start", "image-aspect-ratio","doctype", "charset",  "no-unload-listeners","errors-in-console",    "inspector-issues",
+            "valid-source-maps","preload-fonts", "third-party-cookies"
+        ];
+        var performanceAudits = ["largest-contentful-paint-element", "mainthread-work-breakdown", "bootup-time", "third-party-facades", "render-blocking-resources", 
+            "lcp-lazy-loaded", "unused-css-rules", "layout-shift-elements", "third-party-summary", "unminified-css", "modern-image-formats", "unsized-images", "uses-long-cache-ttl", 
+            "font-display", "legacy-javascript", "unused-javascript", "server-response-time", "non-composited-animations", "total-byte-weight", "dom-size", "critical-request-chains",
+            "long-tasks", "offscreen-images", "unminified-javascript", "uses-optimized-images", "uses-rel-preconnect", "redirects", "uses-rel-preload", "efficient-animated-content", 
+            "duplicated-javascript", "prioritize-lcp-image", "user-timings", "uses-passive-event-listeners", "no-document-write", "viewport", "uses-text-compression", "uses-responsive-images"];
+
+        var accessibilityAudits = ["button-name", "image-alt", "link-name", "color-contrast", "heading-order", "focusable-controls", "interactive-element-affordance", "logical-tab-order", 
+            "visual-order-follows-dom", "focus-traps", "managed-focus", "use-landmarks", "offscreen-content-hidden", "custom-controls-labels", "custom-controls-roles", "aria-hidden-body", 
+            "meta-viewport", "aria-hidden-focus", "document-title", "html-has-lang", "valid-lang", "image-redundant-alt", "accesskeys", "aria-allowed-attr", "aria-allowed-role", "aria-command-name",
+            "aria-dialog-name", "aria-input-field-name", "aria-meter-name", "aria-required-children", "aria-progressbar-name", "aria-required-attr", "aria-required-parent", "aria-roles", "aria-text", 
+            "aria-toggle-field-name", "aria-valid-attr", "aria-tooltip-name", "aria-treeitem-name", "duplicate-id-aria", "aria-valid-attr-value", "bypass", "definition-list", "dlitem", 
+            "duplicate-id-active", "form-field-multiple-labels", "html-xml-lang-mismatch", "input-button-name", "input-image-alt", "label", "link-in-text-block", "list", "listitem", "meta-refresh", 
+            "object-alt", "select-name", "skip-link", "tabindex", "table-duplicate-name", "td-headers-attr", "th-has-data-cells", "video-caption", "empty-heading", "identical-links-same-purpose",
+            "target-size", "label-content-name-mismatch", "table-fake-caption", "td-has-header", "html-lang-valid", "frame-title"];
+        
+          
+        // Audit'in listemizde olup olmadığını kontrol et
+        if (bestPractices.includes(audit_id)) {
+
+              $('.mobile_best_practices_audits').append(html);
+
+        } else if (seoAudits.includes(audit_id)) {
+
+              $('.mobile_seo_audits').append(html);
+
+        } else if (performanceAudits.includes(audit_id)) {
+
+              $('.mobile_performance_audits').append(html);
+
+        } else if (accessibilityAudits.includes(audit_id)) {
+
+              $('.mobile_accessibility_audits').append(html);
+
+        }  else {
+
+              console.log(audit_id);
+        }
+        
+      }
+                  
+      // Her bir audit için döngü
+      // for (var key in audits) {
+      //     if (audits.hasOwnProperty(key)) {
+      //         var audit = audits[key]; // Tek bir audit verisi
+
+      //         // HTML içeriğini oluştur
+      //         var html = '<div class="accordion-item">' +
+      //                       '<h2 class="accordion-header" id="flush-headingOne">' +
+      //                           '<button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#' + key + '" aria-expanded="false" aria-controls="' + key + '">' +
+      //                               '<div class="row">' +
+      //                                   '<div class="row">' +
+      //                                       '<h6>' + audit.description + '</h6>' +
+      //                                   '</div>' +
+      //                                   '<div class="row">' +
+      //                                       '<div class="' + key + ' title"></div>' +
+      //                                   '</div>' +
+      //                               '</div>' +
+      //                           '</button>' +
+      //                       '</h2>' +
+      //                       '<div id="' + key + '" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">' +
+      //                           '<div class="accordion-body fw-normal">' +
+      //                               '<table class="table border mb-0" id="' + key + '">' +
+      //                                   '<thead>' +
+      //                                       '<tr>';
+
+      //         // headings içeriğini ekle
+      //         for (var i = 0; i < audit.details.headings.length; i++) {
+      //             html += '<th scope="col">' + audit.details.headings[i].label + '</th>';
+      //         }
+
+      //         html += '</tr>' +
+      //                   '</thead>' +
+      //                   '<tbody>';
+
+      //         // items içeriğini ekle
+      //         for (var j = 0; j < audit.details.items.length; j++) {
+      //             html += '<tr>';
+      //             for (var k = 0; k < audit.details.headings.length; k++) {
+      //                 var keyItem = audit.details.headings[k].key;
+      //                 html += '<td>' + audit.details.items[j][keyItem] + '</td>';
+      //             }
+      //             html += '</tr>';
+      //         }
+
+            //   html += '</tbody>' +
+            //             '</table>' +
+            //         '</div>' +
+            //     '</div>' +
+            // '</div>';
+
+      //         // HTML içeriğini ekle
+      //         $('#diagnostic_audits').append(html);
+      //     }
+      // }
 
 
 

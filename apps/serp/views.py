@@ -243,8 +243,11 @@ def link_analyze(request):
             # print("mobile_minimizes_main_thread_work",mobile_minimizes_main_thread_work)
 
             audit = mobile_result['lighthouseResult']["audits"]
-            audit_list = audit.keys()
-            print("audittttttt",len(audit_list))
+            # audit_list = audit.keys()
+            # print("audittttttt",len(audit_list))
+            # with open('audit_keys.txt', 'w') as file:
+            #     for key in audit_list:
+            #         file.write(key + '\n')
 
             response_data = {
                 #----------------------------------------------------------------
@@ -266,6 +269,7 @@ def link_analyze(request):
                 
                 #--------------------DIAGNOSTICS-------------------------------------
                 "mobile_minimizes_main_thread_work"    : mobile_minimizes_main_thread_work,
+                "audit"    : audit,
 
 
 

@@ -10,3 +10,70 @@ DIAGNOSTICS
             - description kısmında açıklamalar var 
             - 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//------------------------Mobile SİDE  DIAGNOSTICS-----------------------------------------------
+      var mobile_minimizes_main_thread_work = data.mobile_minimizes_main_thread_work;
+
+      // Tabloya veriyi yazdır
+      var tableBody = $('#mobile_minimizes_main_thread_work_table tbody');
+      mobile_minimizes_main_thread_work['details']['items'].forEach(function(item) {
+          tableBody.append('<tr><td>' + item['groupLabel'] + '</td><td>' + item['duration'] + '</td></tr>');
+      });
+
+
+
+
+
+
+-------------------------------show-hide-----------------------------------------------------------
+                  <div class="card w-100">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-lg-10">
+                          <h5 class="mb-0">Passed</h5>
+                        </div>
+                        <div class="col-lg-2">
+                          <button
+                            class="btn btn-light-warning font-medium text-warning px-4 rounded-pill"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseExample"
+                            aria-expanded="false"
+                            aria-controls="collapseExample"
+                          >
+                            Show
+                          </button>
+                        </div>
+                      </div>
+                      <div class="row mt-2">
+                        <div class="col">
+                          <div class="collapse" id="collapseExample">
+                            <div class="card card-body">
+                              Anim pariatur cliche reprehenderit, enim eiusmod high
+                              life accusamus terry richardson ad squid. Nihil anim
+                              keffiyeh helvetica, craft beer labore wes anderson cred
+                              nesciunt sapiente ea proident.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
