@@ -283,10 +283,12 @@ $(document).on('click', '.serp-analyze-link', function (event) {
 
 //------------------------Mobile SİDE  DIAGNOSTICS-----------------------------------------------
       var audits = data.audit; // AJAX ile aldığınız audit verileri
-      console.log(audits)
+      // console.log(audits)
       for (var key in audits) {
         
         var audit_id = audits[key].id;
+        var audit_score = audits[key].score;
+        var audit_score_display_mode = audits[key].scoreDisplayMode;
 
         var audit_ttitle = audits[key].title;
         var audit_title = audit_ttitle.replace(/<[^>]+>/g, function(match) {
@@ -362,19 +364,57 @@ $(document).on('click', '.serp-analyze-link', function (event) {
         // Audit'in listemizde olup olmadığını kontrol et
         if (bestPractices.includes(audit_id)) {
 
+            if (audit_score==1){
+              $('.mobile_best_practices_passed_audits').append(html);
+            }
+            else if (audit_score==null){
+              $('.mobile_best_practices_not_applicable_audits').append(html);
+            }
+            else {
               $('.mobile_best_practices_audits').append(html);
+            } 
 
         } else if (seoAudits.includes(audit_id)) {
 
               $('.mobile_seo_audits').append(html);
 
         } else if (performanceAudits.includes(audit_id)) {
-
-              $('.mobile_performance_audits').append(html);
+            if (audit_score==1){
+              $('.mobile_performance_passed_audits').append(html);
+            }
+            else {
+              $('.mobile_performance_diagnostic_audits').append(html);
+            }
 
         } else if (accessibilityAudits.includes(audit_id)) {
 
-              $('.mobile_accessibility_audits').append(html);
+            if (audit_score==1){
+              $('.mobile_accessibility_passed_audits').append(html);
+            }
+
+            else if (audit_score_display_mode=='manual'){
+              $('.mobile_accessibility_add_manual_check_audits').append(html);
+            }
+
+            else if (audit_score_display_mode=='notApplicable'){
+              $('.mobile_accessibility_not_applicable_audits').append(html);
+            }
+
+            else if (!(audit_score==1) && (audit_id=='button-name'|| audit_id=='link-name'||audit_id=='image-alt')){
+              $('.mobile_names_and_labels_audits').append(html);
+            }
+
+            else if (!(audit_score==1) && (audit_id=='heading-order')){
+              $('.mobile_accessibility_navigation_audits').append(html);
+            }
+
+            else if (!(audit_score==1) && (audit_id=='color-contrast')){
+              $('.mobile_accessibility_contrast_audits').append(html);
+            }
+
+            else {
+              console.log("accessibility kategoriye uymayan audit",audit_id);
+            }
 
         }  else {
 
