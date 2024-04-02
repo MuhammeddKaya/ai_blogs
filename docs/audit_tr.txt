@@ -1,0 +1,852 @@
+    "tabindex": {
+        "id": "tabindex",
+        "title": "0'dan büyük bir `[tabindex]` değeri yok",
+        "description": "0'dan büyük bir değer açık gezinme sırası belirtir. Teknik olarak geçerli olsa da, bu genellikle yardımcı teknolojilere bağımlı olan kullanıcılar için hayal kırıklığı yaratan deneyimler oluşturur. [`tabindex` özniteliği hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/tabindex)."
+    },
+    "timing-budget": {
+        "id": "timing-budget",
+        "title": "Zaman bütçesi",
+        "description": "Sitenizin performansını gözlemlemenize yardımcı olmak için bir zaman bütçesi belirleyin. Performanslı siteler hızlı yüklenir ve kullanıcı giriş etkinliklerine hızlı yanıt verir. [Performans bütçeleri hakkında daha fazla bilgi edinin](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
+    },
+    "bootup-time": {
+        "id": "bootup-time",
+        "title": "JavaScript yürütme süresini azaltın",
+        "description": "JS'nin ayrıştırılması, derlenmesi ve yürütülmesi için harcanan zamanı azaltmayı düşünün. Daha küçük JS yükleri sunmanın bununla yardımcı olabileceğini görebilirsiniz. [JavaScript yürütme süresini nasıl azaltacağınızı öğrenin](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)."
+    },
+    "redirects": {
+        "id": "redirects",
+        "title": "Birden fazla sayfa yönlendirmesinden kaçının",
+        "description": "Yönlendirmeler, sayfanın yüklenebilmesinden önce ek gecikmeler ekler. [Sayfa yönlendirmelerinden nasıl kaçınılacağını öğrenin](https://developer.chrome.com/docs/lighthouse/performance/redirects/)."
+    },
+    "render-blocking-resources": {
+        "id": "render-blocking-resources",
+        "title": "Render etmeyi engelleyen kaynakları ortadan kaldırın",
+        "description": "Kaynaklar sayfanızın ilk boyasını engelliyor. Kritik JS/CSS'yi içeriye teslim etmeyi ve tüm kritik olmayan JS/stilleri ertelemeyi düşünebilirsiniz. [Render etmeyi engelleyen kaynakları ortadan kaldırmanın yollarını öğrenin](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)."
+    },
+    "video-caption": {
+        "id": "video-caption",
+        "title": "`<video>` öğeleri `[kind=\"captions\"]` özniteliğine sahip bir `<track>` öğesi içeriyor",
+        "description": "Bir video altyazı sağladığında, işitme engelli kullanıcıların ve işitme engelli olanların bilgisine erişmek daha kolay olur. [Video altyazıları hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/video-caption)."
+    },
+    "script-treemap-data": {
+        "id": "script-treemap-data",
+        "title": "Script Treemap Verisi",
+        "description": "Treemap uygulaması için kullanıldı"
+    },
+    "empty-heading": {
+        "id": "empty-heading",
+        "title": "Tüm başlık öğeleri içerik içerir.",
+        "description": "İçeriği olmayan veya erişilemeyen metin içeren bir başlık, ekran okuyucu kullanıcılarının sayfa yapısı hakkında bilgiye erişmesini engeller. [Başlıklar hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/empty-heading)."
+    },
+    "notification-on-start": {
+        "id": "notification-on-start",
+        "title": "Sayfa yüklenirken bildirim izni istemeyi önler",
+        "description": "Kullanıcılar, bağlam olmadan bildirim gönderme isteğinde bulunan sitelere güvenmez veya kafası karışır. İsteği kullanıcı jestleriyle ilişkilendirmeyi düşünün. [Bildirim izni için sorumlu bir şekilde nasıl izin alacağınızı öğrenin](https://developer.chrome.com/docs/lighthouse/best-practices/notification-on-start/)."
+    },
+    "input-button-name": {
+        "id": "input-button-name",
+        "title": "Giriş düğmelerinin ayırt edilebilir metni vardır.",
+        "description": "Giriş düğmelerine ayırt edilebilir ve erişilebilir metin eklemek, ekran okuyucu kullanıcılarının giriş düğmesinin amacını anlamasına yardımcı olabilir. [Giriş düğmeleri hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/input-button-name)."
+    },
+    "document-title": {
+        "id": "document-title",
+        "title": "Belgede bir `<title>` öğesi var",
+        "description": "Başlık, ekran okuyucu kullanıcılarına sayfanın genel bir görünümünü sağlar ve arama motoru kullanıcıları onu aramalarıyla ilgili sayfanın ilgili olup olmadığını belirlemekte ağırlıklı olarak buna güvenirler. [Belge başlıkları hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/document-title)."
+    },
+    "maskable-icon": {
+        "id": "maskable-icon",
+        "title": "Manifestte maskelenebilir bir simge yok",
+        "description": "Maskelenebilir bir simge, uygulamayı bir cihaza kurduğunuzda resmin, kenarlarına siyah şerit olmadan tam şekilde doldurulmasını sağlar. [Maskelenebilir manifest simgeleri hakkında bilgi edinin](https://developer.chrome.com/docs/lighthouse/pwa/maskable-icon-audit/)."
+    },
+    "unused-javascript": {
+        "id": "unused-javascript",
+        "title": "Kullanılmayan JavaScript'i azaltın",
+        "description": "Kullanılmayan JavaScript'i azaltın ve ağ etkinliği tarafından tüketilen baytları azaltmak için betikleri gerektiğinde yüklemeyi erteleyin. [Kullanılmayan JavaScript'i nasıl azaltacağınızı öğrenin](https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/)."
+    },
+    "valid-lang": {
+        "id": "valid-lang",
+        "title": "`[lang]` öznitelikleri geçerli bir değere sahiptir",
+        "description": "Öğelerde geçerli bir [BCP 47 dilini](https://www.w3.org/International/questions/qa-choosing-language-tags#question) belirtmek, metnin bir ekran okuyucu tarafından doğru bir şekilde telaffuz edilmesine yardımcı olur. [`lang` özniteliğini nasıl kullanacağınızı öğrenin](https://dequeuniversity.com/rules/axe/4.7/valid-lang)."
+    },
+    "link-name": {
+        "id": "link-name",
+        "title": "Bağlantıların ayırt edilebilir bir adı yok",
+        "description": "Ekran okuyucu kullanıcıları için ayırt edilebilir, benzersiz ve odaklanabilir bağlantı metni (ve bağlantı olarak kullanılan görüntüler için alternatif metinler) gezinme deneyimini geliştirir. [Bağlantıları erişilebilir hale getirmenin yollarını öğrenin](https://dequeuniversity.com/rules/axe/4.7/link-name)."
+    },
+    "listitem": {
+        "id": "listitem",
+        "title": "Liste öğeleri (`<li>`) `<ul>`, `<ol>` veya `<menu>` üst öğelerinin içinde bulunur",
+        "description": "Ekran okuyucuların listelerin (`<li>`) doğru bir şekilde duyurulabilmesi için liste öğelerinin bir `<ul>`, `<ol>` veya `<menu>` üst öğesinin içinde bulunması gerekir. [Doğru liste yapısı hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/listitem)."
+    },
+    "duplicated-javascript": {
+        "id": "duplicated-javascript",
+        "title": "JavaScript paketlerindeki yinelenen modülleri kaldırın",
+        "description": "Ağ etkinliği tarafından tüketilen gereksiz baytları azaltmak için büyük, yinelenen JavaScript modüllerini paketlerden kaldırın."
+    },
+    "uses-rel-preload": {
+        "id": "uses-rel-preload",
+        "title": "Anahtar istekleri önceden yükle",
+        "description": "Şu anda sayfa yüklemesinin daha sonraki aşamalarında talep edilen kaynakları önceliklendirmek için `<link rel=preload>` kullanmayı düşünün. [Anahtar istekleri önceden yüklemeyi nasıl yapacağınızı öğrenin](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/)."
+    },
+    "server-response-time": {
+        "id": "server-response-time",
+        "title": "İlk sunucu yanıt süresi kısaydı",
+        "description": "Ana belge için sunucu yanıt süresini kısa tutun çünkü diğer tüm istekler ona bağlıdır. [İlk Bayt Zamanı metriği hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/performance/time-to-first-byte/)."
+    },
+    "robots-txt": {
+        "id": "robots-txt",
+        "title": "robots.txt geçerlidir",
+        "description": "Robots.txt dosyanız hatalı biçimlendirilmişse, tarayıcılar web sitenizin nasıl taranmasını veya dizinlenmesini istediğinizi anlayamayabilir. [Robots.txt hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)."
+    },
+    "custom-controls-labels": {
+        "id": "custom-controls-labels",
+        "title": "Özel kontrollerle ilişkilendirilmiş etiketler var",
+        "description": "Özel etkileşimli kontroller, aria-label veya aria-labelledby tarafından sağlanan ilişkilendirilmiş etiketlere sahiptir. [Özel kontroller ve etiketler hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/accessibility/custom-controls-labels/)."
+    },
+    "aria-tooltip-name": {
+        "id": "aria-tooltip-name",
+        "title": "ARIA `tooltip` öğelerinin erişilebilir adları var",
+        "description": "Bir `tooltip` öğesi erişilebilir bir ad içermediğinde, ekran okuyucuları genel bir adla duyurur, bu da ekran okuyuculara güvenen kullanıcılar için kullanılamaz hale getirir. [`tooltip` öğelerinin adlandırılması hakkında bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/aria-tooltip-name)."
+    },
+    "aria-input-field-name": {
+        "id": "aria-input-field-name",
+        "title": "ARIA giriş alanlarının erişilebilir adları var",
+        "description": "Bir giriş alanı erişilebilir bir ad içermediğinde, ekran okuyucuları genel bir adla duyurur, bu da ekran okuyuculara güvenen kullanıcılar için kullanılamaz hale getirir. [Giriş alanı etiketleri hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/aria-input-field-name)."
+    },
+    "legacy-javascript": {
+        "id": "legacy-javascript",
+        "title": "Modern tarayıcılara eski JavaScript sunmaktan kaçının",
+        "description": "Polyfill'ler ve dönüşümler, eski tarayıcıların yeni JavaScript özelliklerini kullanmasını sağlar. Ancak, birçok tarayıcı için gerekli değildir. Paketlenmiş JavaScript'iniz için, modern tarayıcılara gönderilen kod miktarını azaltmak için modül/nomodule özelliği algılama kullanarak modern bir betik dağıtım stratejisi benimseyin, ancak eski tarayıcılara destek sağlayarak. [Modern JavaScript kullanımı hakkında bilgi edinin](https://web.dev/publish-modern-javascript/)"
+    },
+    "aria-allowed-role": {
+        "id": "aria-allowed-role",
+        "title": "`role=\"\"`'ye atanan değerler geçerli ARIA rolleridir.",
+        "description": "ARIA `role`'ler, yardımcı teknolojilerin web sayfasındaki her öğenin rolünü bilmesini sağlar. Eğer `role` değerleri yanlış yazılmışsa, mevcut olmayan ARIA `role` değerleri veya soyut rollerse, öğenin amacı yardımcı teknoloji kullanıcılarına iletilmez. [ARIA rolleri hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/aria-allowed-roles)."
+    },
+    "font-display": {
+        "id": "font-display",
+        "title": "Webfont yüklenirken tüm metinler görünür kalır",
+        "description": "`font-display` CSS özelliğinden yararlanarak, webfontlar yüklenirken metnin kullanıcı tarafından görünür olmasını sağlayın. [`font-display` hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/performance/font-display/)."
+    },
+    "aria-meter-name": {
+        "id": "aria-meter-name",
+        "title": "ARIA `meter` öğelerinin erişilebilir adları var",
+        "description": "Bir `meter` öğesi erişilebilir bir ad içermediğinde, ekran okuyucuları genel bir adla duyurur, bu da ekran okuyuculara güvenen kullanıcılar için kullanılamaz hale getirir. [`meter` öğelerinin adlandırılması hakkında bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/aria-meter-name)."
+    },
+    "aria-command-name": {
+        "id": "aria-command-name",
+        "title": "`button`, `link` ve `menuitem` öğelerinin erişilebilir adları var",
+        "description": "Bir öğe erişilebilir bir ad içermediğinde, ekran okuyucuları genel bir adla duyurur, bu da ekran okuyuculara güvenen kullanıcılar için kullanılamaz hale getirir. [Komut öğelerini daha erişilebilir hale getirmenin yollarını öğrenin](https://dequeuniversity.com/rules/axe/4.7/aria-command-name)."
+    },
+    "font-size": {
+        "id": "font-size",
+        "title": "Belge, okunabilir font boyutları kullanıyor",
+        "description": "12px'den küçük font boyutları okunabilir değildir ve mobil ziyaretçilerin okuyabilmek için \u201cpinch to zoom\u201d yapmalarını gerektirir. Sayfa metnin >60%'ini \u226512px olacak şekilde ayarlamaya çalışın. [Okunabilir font boyutları hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/seo/font-size/)."
+    },
+    "network-requests": {
+        "id": "network-requests",
+        "title": "Ağ İstekleri",
+        "description": "Sayfa yüklenirken yapılan ağ isteklerini listeler."
+    },
+    "csp-xss": {
+        "id": "csp-xss",
+        "title": "CSP, XSS saldırılarına karşı etkilidir",
+        "description": "Güçlü bir İçerik Güvenlik Politikası (CSP), XSS saldırılarının riskini önemli ölçüde azaltır. [XSS'yi önlemek için bir CSP kullanmayı nasıl yapacağınızı öğrenin](https://developer.chrome.com/docs/lighthouse/best-practices/csp-xss/)"
+    },
+    "pwa-each-page-has-url": {
+        "id": "pwa-each-page-has-url",
+        "title": "Her sayfanın bir URL'si var",
+        "description": "Bireysel sayfaların URL aracılığıyla derin bağlantılabilir olduğundan ve URL'lerin sosyal medyada paylaşılabilirlik amacıyla benzersiz olduğundan emin olun. [Derin bağlantılar sağlama hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/pwa/pwa-each-page-has-url/)."
+    },
+    "object-alt": {
+        "id": "object-alt",
+        "title": "`<object>` öğeleri alternatif metne sahiptir",
+        "description": "Ekran okuyucular, metin olmayan içeriği çeviremez. `<object>` öğelerine alternatif metin eklemek, ekran okuyucuların kullanıcılara anlam aktarmasına yardımcı olur. [`object` öğeleri için alternatif metin hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/object-alt)."
+    },
+    "aria-progressbar-name": {
+        "id": "aria-progressbar-name",
+        "title": "ARIA `progressbar` öğelerinin erişilebilir adları var",
+        "description": "Bir `progressbar` öğesi erişilebilir bir ad içermediğinde, ekran okuyucuları genel bir adla duyurur, bu da ekran okuyuculara güvenen kullanıcılar için kullanılamaz hale getirir. [`progressbar` öğelerini etiketleme hakkında bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/aria-progressbar-name)."
+    },
+    "performance-budget": {
+        "id": "performance-budget",
+        "title": "Performans bütçesi",
+        "description": "Sağlanan performans bütçesi tarafından belirlenen hedeflerin altında ağ isteklerinin miktarını ve boyutunu tutun. [Performans bütçeleri hakkında daha fazla bilgi edinin](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
+    },
+    "bypass": {
+        "id": "bypass",
+        "title": "Sayfa bir başlık, atlamalı bağlantı veya işaret bölgesi içerir",
+        "description": "Tekrarlayan içeriği atlamak için yollar eklemek, klavye kullanan kullanıcıların sayfada daha verimli bir şekilde gezinmesine olanak tanır. [Atlamalı bloklar hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/bypass)."
+    },
+    "unminified-css": {
+        "id": "unminified-css",
+        "title": "CSS'yi sıkıştır",
+        "description": "CSS dosyalarını sıkıştırmak, ağ yükü boyutlarını azaltabilir. [CSS'yi nasıl sıkıştıracağınızı öğrenin](https://developer.chrome.com/docs/lighthouse/performance/unminified-css/)."
+    },
+    "tap-targets": {
+        "id": "tap-targets",
+        "title": "Dokunma hedefleri uygun boyutta",
+        "description": "Butonlar ve bağlantılar gibi etkileşimli öğeler yeterince büyük olmalıdır (48x48px) veya etrafında yeterince alan olmalıdır, böylece diğer öğelerle çakışmadan kolayca dokunulabilir. [Dokunma hedefleri hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/seo/tap-targets/)."
+    },
+    "meta-refresh": {
+        "id": "meta-refresh",
+        "title": "Belge `<meta http-equiv=\"refresh\">` kullanmaz",
+        "description": "Kullanıcılar bir sayfanın otomatik olarak yeniden yüklenmesini beklemiyorlar ve bunun yapılması odaklanmayı sayfanın üstüne geri taşır. Bu, can sıkıcı veya kafa karıştırıcı bir deneyime neden olabilir. [Yenileme meta etiketi hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/meta-refresh)."
+    },
+    "landmark-one-main": {
+        "id": "landmark-one-main",
+        "title": "Belgede bir ana işaret var.",
+        "description": "Bir ana işaret, ekran okuyucu kullanıcılarının bir web sayfasında gezinmesine yardımcı olur. [İşaretler hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/landmark-one-main)."
+    },
+    "js-libraries": {
+        "id": "js-libraries",
+        "title": "Algılanan JavaScript kütüphaneleri",
+        "description": "Sayfadaki tüm ön uç JavaScript kütüphaneleri algılanır. [Bu JavaScript kütüphane algılama tanımlama denetimi hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/best-practices/js-libraries/)."
+    },
+    "unused-css-rules": {
+        "id": "unused-css-rules",
+        "title": "Kullanılmayan CSS'yi azalt",
+        "description": "Stil sayfalarındaki kullanılmayan kuralları azaltın ve ağ faaliyeti tarafından tüketilen baytları azaltmak için yukarıdaki kat içeriğinde kullanılmayan CSS'yi erteleyin. [Kullanılmayan CSS'yi nasıl azaltacağınızı öğrenin](https://developer.chrome.com/docs/lighthouse/performance/unused-css-rules/)."
+    },
+    "aria-treeitem-name": {
+        "id": "aria-treeitem-name",
+        "title": "ARIA `treeitem` öğelerinin erişilebilir adları var",
+        "description": "Bir `treeitem` öğesi erişilebilir bir ad içermediğinde, ekran okuyucuları genel bir adla duyurur, bu da ekran okuyuculara güvenen kullanıcılar için kullanılamaz hale getirir. [`treeitem` öğelerini etiketleme hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/aria-treeitem-name)."
+    },
+    "td-has-header": {
+        "id": "td-has-header",
+        "title": "Büyük bir `<table>` içindeki `<td>` öğelerinin bir veya daha fazla tablo başlığına sahip olması gerekiyor.",
+        "description": "Ekran okuyucuların tabloları daha kolay gezmesini sağlayan özelliklere sahiptir. Bir büyük tabloda (`3 veya daha fazla hücre genişliğinde ve yüksekliğinde`) `<td>` öğelerinin bir ilişkili tablo başlığına sahip olması, ekran okuyucu kullanıcıları için deneyimi iyileştirebilir. [Tablo başlıkları hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/td-has-header)."
+    },
+    "image-alt": {
+        "id": "image-alt",
+        "title": "Görüntü öğelerinin `[alt]` öznitelikleri yok",
+        "description": "Bilgilendirici öğeler kısa, açıklayıcı alternatif metne sahip olmalıdır. Dekoratif öğeler, boş bir alt özniteliği ile ihmal edilebilir. [`alt` özniteliği hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/image-alt)."
+    },
+    "uses-passive-event-listeners": {
+        "id": "uses-passive-event-listeners",
+        "title": "Kaydırma performansını artırmak için pasif dinleyiciler kullanmaz",
+        "description": "Sayfanızın kaydırma performansını artırmak için dokunma ve tekerlek etkinlik dinleyicilerinizi `pasif` olarak işaretlemeyi düşünün. [Pasif olay dinleyicilerini benimseme hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/best-practices/uses-passive-event-listeners/)."
+    },
+    "viewport": {
+        "id": "viewport",
+        "title": "`<meta name=\"viewport\">` etiketi `width` veya `initial-scale` özelliğiyle birlikte bulunuyor",
+        "description": "`<meta name=\"viewport\">`, uygulamanızı mobil ekran boyutları için optimize etmekle kalmaz, aynı zamanda [kullanıcı girişine 300 milisaniyelik bir gecikmeyi](https://developer.chrome.com/blog/300ms-tap-delay-gone-away/) önler. [Görünüm meta etiketini kullanma hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/pwa/viewport/)."
+    },
+    "identical-links-same-purpose": {
+        "id": "identical-links-same-purpose",
+        "title": "Aynı amaca sahip aynı bağlantılar",
+        "description": "Aynı hedefe sahip bağlantıların aynı açıklamaya sahip olması, kullanıcıların bağlantının amacını anlamasına ve takip etmeye karar vermelerine yardımcı olur. [Aynı bağlantılar hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/identical-links-same-purpose)."
+    },
+    "third-party-summary": {
+        "id": "third-party-summary",
+        "title": "Üçüncü taraf kodunun etkisini azaltın",
+        "description": "Üçüncü taraf kodları, yükleme performansını önemli ölçüde etkileyebilir. Redundant üçüncü taraf sağlayıcılarının sayısını sınırlayın ve üçüncü taraf kodunun sayfanızın temel olarak yüklendikten sonra yüklenmesini sağlamaya çalışın. [Üçüncü taraf etkisini en aza indirmenin yollarını öğrenin](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/)."
+    },
+    "managed-focus": {
+        "id": "managed-focus",
+        "title": "Kullanıcının odak, sayfaya eklenen yeni içeriğe yönlendirilir",
+        "description": "Eğer yeni içerik, bir iletişim kutusu gibi, sayfaya eklenirse, kullanıcının odak, ona yönlendirilir. [Odaklanmayı yeni içeriğe yönlendirme hakkında bilgi edinin](https://developer.chrome.com/docs/lighthouse/accessibility/managed-focus/)."
+    },
+    "long-tasks": {
+        "id": "long-tasks",
+        "title": "Uzun ana iş parçacığı görevlerinden kaçının",
+        "description": "Ana iş parçacığı üzerindeki en uzun görevleri listeler, giriş gecikmesine en çok katkıda bulunanları belirlemek için kullanışlıdır. [Uzun ana iş parçacığı görevlerinden kaçınma hakkında bilgi edinin](https://web.dev/long-tasks-devtools/)"
+    },
+    "unsized-images": {
+        "id": "unsized-images",
+        "title": "Görüntü öğelerinin açık `width` ve `height` değerleri yok",
+        "description": "Düzen kaymalarını azaltmak ve CLS'yi iyileştirmek için görüntü öğelerine açık bir genişlik ve yükseklik belirtin. [Görüntü boyutlarını ayarlama hakkında bilgi edinin](https://web.dev/optimize-cls/#images-without-dimensions)"
+    },
+    "uses-optimized-images": {
+        "id": "uses-optimized-images",
+        "title": "Verimli kodlanmış görüntüler kullanır",
+        "description": "Optimize edilmiş görüntüler daha hızlı yüklenir ve daha az hücresel veri tüketir. [Verimli kodlanmış görüntüler kullanma hakkında bilgi edinin](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/)."
+    },
+    "first-meaningful-paint": {
+        "id": "first-meaningful-paint",
+        "title": "İlk Anlamlı Boyama",
+        "description": "İlk Anlamlı Boyama, bir sayfanın birincil içeriğinin ne zaman görünür hale geldiğini ölçer. [İlk Anlamlı Boyama metriği hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/performance/first-meaningful-paint/)."
+    },
+    "doctype": {
+        "id": "doctype",
+        "title": "Sayfada HTML doctype'u var",
+        "description": "Bir doctype belirtmek, tarayıcının garip mod'a geçmesini önler. [DOCTYPE bildirimi hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/best-practices/doctype/)."
+    },
+    "button-name": {
+        "id": "button-name",
+        "title": "Düğmelerin erişilebilir bir adı yok",
+        "description": "Bir düğmeye erişilebilir bir ad verilmediğinde, ekran okuyucuları onu \"düğme\" olarak duyurur, bu da ekran okuyuculara güvenen kullanıcılar için kullanılamaz hale getirir. [Düğmeleri daha erişilebilir hale getirme hakkında bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/button-name)."
+    },
+    "hreflang": {
+        "id": "hreflang",
+        "title": "Belgede geçerli bir `hreflang` var",
+        "description": "hreflang bağlantıları, arama motorlarına bir dil veya bölge için hangi sürümün listelenmesi gerektiğini söyler. [`hreflang` hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/seo/hreflang/)."
+    },
+    "html-lang-valid": {
+        "id": "html-lang-valid",
+        "title": "`<html>` öğesi, `[lang]` özniteliği için geçerli bir değere sahip",
+        "description": "Geçerli bir [BCP 47 dilini](https://www.w3.org/International/questions/qa-choosing-language-tags#question) belirtmek, ekran okuyucuların metni uygun şekilde duyurmasına yardımcı olur. [`lang` özniteliğini nasıl kullanacağınızı öğrenin](https://dequeuniversity.com/rules/axe/4.7/html-lang-valid)."
+    },
+    "third-party-facades": {
+        "id": "third-party-facades",
+        "title": "Bazı üçüncü taraf kaynaklar bir cephe ile tembel yüklenebilir",
+        "description": "Bazı üçüncü taraf gömülü nesneler tembel yüklenebilir. Gerekli olana kadar onları bir cephe ile değiştirmeyi düşünün. [Bir cephe ile üçüncü tarafları ertelemeyi öğrenin](https://developer.chrome.com/docs/lighthouse/performance/third-party-facades/)."
+    },
+    "aria-toggle-field-name": {
+        "id": "aria-toggle-field-name",
+        "title": "ARIA geçiş alanlarının erişilebilir adları var",
+        "description": "Bir geçiş alanı erişilebilir bir ad içermediğinde, ekran okuyucuları genel bir adla duyurur, bu da ekran okuyuculara güvenen kullanıcılar için kullanılamaz hale getirir. [Geçiş alanları hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/aria-toggle-field-name)."
+    },
+    "custom-controls-roles": {
+        "id": "custom-controls-roles",
+        "title": "Özel kontrollerin ARIA rolleri var",
+        "description": "Özel etkileşimli kontroller uygun ARIA rollerine sahiptir. [Özel kontrollere roller eklemenin nasıl yapılacağını öğrenin](https://developer.chrome.com/docs/lighthouse/accessibility/custom-control-roles/)."
+    },
+    "aria-valid-attr-value": {
+        "id": "aria-valid-attr-value",
+        "title": "`[aria-*]` öznitelikleri geçerli değerlere sahiptir",
+        "description": "Yardımcı teknolojiler, ekran okuyucular gibi, geçersiz değerlere sahip ARIA özniteliklerini yorumlayamazlar. [ARIA öznitelikleri için geçerli değerler hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/aria-valid-attr-value)."
+    },
+    "dom-size": {
+        "id": "dom-size",
+        "title": "Aşırı bir DOM boyutundan kaçının",
+        "description": "Büyük bir DOM, bellek kullanımını artırır, [stil hesaplamalarını](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations) daha uzun sürer ve maliyetli [düzen yeniden düzenlemeleri](https://developers.google.com/speed/articles/reflow) üretir. [Aşırı bir DOM boyutundan nasıl kaçınacağını öğrenin](https://developer.chrome.com/docs/lighthouse/performance/dom-size/)."
+    },
+    "aria-hidden-focus": {
+        "id": "aria-hidden-focus",
+        "title": "`[aria-hidden=\"true\"]` öğeler odaklanabilir alt öğeler içermez",
+        "description": "`[aria-hidden=\"true\"]` öğeler içindeki odaklanabilir alt öğeler, ekran okuyucular gibi yardımcı teknoloji kullanan kullanıcılara erişilebilir olmalarını engeller. [`aria-hidden`'ın odaklanabilir öğeleri nasıl etkilediği hakkında bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/aria-hidden-focus)."
+    },
+    "input-image-alt": {
+        "id": "input-image-alt",
+        "title": "`<input type=\"image\">` öğelerinin `[alt]` metni var",
+        "description": "Bir resim bir `<input>` düğmesi olarak kullanılıyorsa, alternatif metin sağlamak, ekran okuyucu kullanıcılarının düğmenin amacını anlamasına yardımcı olabilir. [Giriş resmi alternatif metin hakkında bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/input-image-alt)."
+    },
+    "preload-fonts": {
+        "id": "preload-fonts",
+        "title": "`font-display: optional` ile fontlar önceden yükleniyor",
+        "description": "İlk kez ziyaret edenlerin bunları kullanabilmesi için `optional` fontları önceden yükleyin. [Fontları önceden yükleme hakkında daha fazla bilgi edinin](https://web.dev/preload-optional-fonts/)"
+    },
+    "themed-omnibox": {
+        "id": "themed-omnibox",
+        "title": "Adres çubuğu için bir tema rengi belirtilmemiş.",
+        "description": "Tarayıcı adres çubuğu, sitenize uyum sağlamak için tema olarak ayarlanabilir. [Adres çubuğunu temalandırma hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/pwa/themed-omnibox/)."
+    },
+    "th-has-data-cells": {
+        "id": "th-has-data-cells",
+        "title": "`<th>` öğeleri ve `[role=\"columnheader\"/\"rowheader\"]` özniteliğine sahip öğeler, açıkladığı veri hücrelerine sahiptir.",
+        "description": "Ekran okuyucuların tabloları daha kolay gezmesine yardımcı olan özellikleri vardır. Tablo başlıklarının her zaman bir hücre kümesine başvurması, ekran okuyucu kullanıcıları için deneyimi iyileştirebilir. [Tablo başlıkları hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/th-has-data-cells)."
+    },
+    "pwa-cross-browser": {
+        "id": "pwa-cross-browser",
+        "title": "Site çapraz tarayıcı çalışır",
+        "description": "En fazla kullanıcıya ulaşmak için siteler her önemli tarayıcıda çalışmalıdır. [Çapraz tarayıcı uyumluluğu hakkında bilgi edinin](https://developer.chrome.com/docs/lighthouse/pwa/pwa-cross-browser/)."
+    },
+    "offscreen-content-hidden": {
+        "id": "offscreen-content-hidden",
+        "title": "Erişilebilirlik teknolojisinden gizlenmiş ekran dışı içerik",
+        "description": "Ekran dışı içerik display: none veya aria-hidden=true ile gizlenmiştir. [Ekran dışı içeriği uygun şekilde gizlemenin nasıl yapılacağını öğrenin](https://developer.chrome.com/docs/lighthouse/accessibility/offscreen-content-hidden/)."
+    },
+    "definition-list": {
+        "id": "definition-list",
+        "title": "`<dl>`'ler yalnızca düzgün sıralanmış `<dt>` ve `<dd>` grupları, `<script>`, `<template>` veya `<div>` öğeleri içerir.",
+        "description": "Tanım listeleri uygun şekilde işaretlenmediğinde, ekran okuyucular karışık veya yanıltıcı çıktılar üretebilir. [Tanım listelerini doğru şekilde yapılandırmanın nasıl yapılacağını öğrenin](https://dequeuniversity.com/rules/axe/4.7/definition-list)."
+    },
+    "list": {
+        "id": "list",
+        "title": "Listeler yalnızca `<li>` öğeleri ve komut destekleyici öğeler (`<script>` ve `<template>`) içerir.",
+        "description": "Ekran okuyucuların listeleri duyurmak için belirli bir yolu vardır. Uygun liste yapısını sağlamak, ekran okuyucu çıktısına yardımcı olur. [Uygun liste yapısı hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/list)."
+    },
+    "aria-required-children": {
+        "id": "aria-required-children",
+        "title": "Belirli bir `[role]` gerektiren ARIA `[role]`'ye sahip öğelerin tüm gereken çocukları vardır.",
+        "description": "Bazı ARIA ebeveyn rolleri, amaçlanan erişilebilirlik işlevlerini gerçekleştirmek için belirli çocuk rollerini içermelidir. [Roller ve gerekli çocuk öğeleri hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/aria-required-children)."
+    },
+    "uses-text-compression": {
+        "id": "uses-text-compression",
+        "title": "Metin sıkıştırmasını etkinleştir",
+        "description": "Metin tabanlı kaynaklar, toplam ağ baytlarını en aza indirmek için sıkıştırma (gzip, deflate veya brotli) ile sunulmalıdır. [Metin sıkıştırması hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/performance/uses-text-compression/)."
+    },
+    "aria-required-attr": {
+        "id": "aria-required-attr",
+        "title": "`[role]`'lerin tüm gerekli `[aria-*]` öznitelikleri vardır",
+        "description": "Bazı ARIA rollerinin, ekran okuyuculara öğenin durumunu açıklayan gerekli özniteliklere sahip olması gerekir. [Roller ve gerekli öznitelikler hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/aria-required-attr)."
+    },
+    "skip-link": {
+        "id": "skip-link",
+        "title": "Atlanabilir bağlantılar odaklanabilir.",
+        "description": "Bir atlanabilir bağlantı eklemek, kullanıcıların zaman kazanmak için ana içeriğe atlamasına yardımcı olabilir. [Atlanabilir bağlantılar hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/skip-link)."
+    },
+    "uses-long-cache-ttl": {
+        "id": "uses-long-cache-ttl",
+        "title": "Statik varlıkların verimli bir önbellek politikası ile sunulması",
+        "description": "Uzun önbellek ömrü, sayfanızı tekrar ziyaret edenlerin hızını artırabilir. [Verimli önbellek politikaları hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/performance/uses-long-cache-ttl/)."
+    },
+    "http-status-code": {
+        "id": "http-status-code",
+        "title": "Sayfa başarılı bir HTTP durum koduna sahip",
+        "description": "Başarısız HTTP durum kodlarına sahip sayfalar doğru bir şekilde dizine eklenmeyebilir. [HTTP durum kodları hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/seo/http-status-code/)."
+    },
+    "crawlable-anchors": {
+        "id": "crawlable-anchors",
+        "title": "Bağlantılar taranabilir",
+        "description": "Arama motorları, web sitelerini tararken bağlantılardaki `href` özniteliğini kullanabilir. Birleşik ağ sayfasının daha fazla sayfasının keşfedilmesi için, bir bağlantı öğesinin `href` özniteliğinin uygun bir hedefe bağlanması sağlanmalıdır. [Bağlantıların taranabilir hale getirilmesi hakkında bilgi edinin](https://support.google.com/webmasters/answer/9112205)"
+    },
+    "logical-tab-order": {
+        "id": "logical-tab-order",
+        "title": "Sayfada mantıksal bir sekme sırası var",
+        "description": "Sayfa üzerinde gezinmek için tab tuşuna basma, görsel düzeni takip eder. Kullanıcılar ekran dışında olan öğelere odaklanamazlar. [Mantıksal sekme sırası hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/accessibility/logical-tab-order/)."
+    },
+    "errors-in-console": {
+        "id": "errors-in-console",
+        "title": "Konsola kaydedilen hata yok",
+        "description": "Konsola kaydedilen hatalar çözülmemiş sorunları işaret eder. Bunlar ağ isteği hataları ve diğer tarayıcı endişelerinden kaynaklanabilir. [Konsoldaki hatalar hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/best-practices/errors-in-console/)"
+    },
+    "main-thread-tasks": {
+        "id": "main-thread-tasks",
+        "title": "Görevler",
+        "description": "Sayfa yükleme sırasında yürütülen üst düzey ana iş parçacığı görevlerini listeler."
+    },
+    "geolocation-on-start": {
+        "id": "geolocation-on-start",
+        "title": "Sayfa yüklenirken konum izni istenmemiş",
+        "description": "Kullanıcılar, bağlam olmadan konumlarını isteyen veya karışık olan sitelere güvensizlik duyarlar. İsteği bir kullanıcı eylemiyle ilişkilendirmeyi düşünün. [Konum izni hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/best-practices/geolocation-on-start/)."
+    },
+    "link-text": {
+        "id": "link-text",
+        "title": "Bağlantılar açıklayıcı metne sahiptir",
+        "description": "Açıklayıcı bağlantı metni, arama motorlarının içeriğinizi anlamasına yardımcı olur. [Bağlantıları daha erişilebilir hale getirmenin yollarını öğrenin](https://developer.chrome.com/docs/lighthouse/seo/link-text/)."
+    },
+    "splash-screen": {
+        "id": "splash-screen",
+        "title": "Özel bir başlangıç ekranı için yapılandırılmamıştır",
+        "description": "Tema uyumlu bir başlangıç ekranı, kullanıcılar uygulamanızı ana ekranlarından başlattıklarında yüksek kaliteli bir deneyim sağlar. [Başlangıç ekranları hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)."
+    },
+    "total-blocking-time": {
+        "id": "total-blocking-time",
+        "title": "Toplam Engelleme Süresi",
+        "description": "FCP ve Etkileşim için Zaman arasındaki tüm zaman aralıklarının toplamı, görev süresi 50 ms'yi aştığında ifade edilen milisaniyeler. [Toplam Engelleme Süresi metriği hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/)."
+    },
+    "duplicate-id-aria": {
+        "id": "duplicate-id-aria",
+        "title": "ARIA Kimlikleri benzersizdir",
+        "description": "Bir ARIA Kimliği değeri, yardımcı teknolojiler tarafından gözden kaçırılmasını önlemek için benzersiz olmalıdır. [Tekrarlanan ARIA Kimliklerini nasıl düzelteceğinizi öğrenin](https://dequeuniversity.com/rules/axe/4.7/duplicate-id-aria)."
+    },
+    "visual-order-follows-dom": {
+        "id": "visual-order-follows-dom",
+        "title": "Sayfadaki görsel sıra DOM sırasını takip eder",
+        "description": "DOM sırası, ekran okuyucu için gezinmeyi iyileştirerek görsel sıra ile eşleşir. [DOM ve görsel sıralama hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/accessibility/visual-order-follows-dom/)."
+    },
+    "diagnostics": {
+        "id": "diagnostics",
+        "title": "Teşhisler",
+        "description": "Faydalı sayfa durumları koleksiyonu."
+    },
+    "meta-description": {
+        "id": "meta-description",
+        "title": "Belgenin bir meta açıklaması var",
+        "description": "Meta açıklamalar, sayfa içeriğini öz olarak özetlemek için arama sonuçlarına dahil edilebilir. [Meta açıklaması hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/seo/meta-description/)."
+    },
+    "table-duplicate-name": {
+        "id": "table-duplicate-name",
+        "title": "Tablolarda özet özniteliği ve `<caption>` farklı içeriklere sahiptir.",
+        "description": "Özet özniteliği tablo yapısını açıklamalıdır, `<caption>` ise ekrandaki başlığı taşımalıdır. Doğru tablo işaretleme, ekran okuyucu kullanan kullanıcılara yardımcı olur. [Özet ve başlık hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/table-duplicate-name)."
+    },
+    "modern-image-formats": {
+        "id": "modern-image-formats",
+        "title": "Resimleri yeni nesil formatlarda sun",
+        "description": "WebP ve AVIF gibi resim formatları genellikle PNG veya JPEG'den daha iyi sıkıştırma sağlar, bu da daha hızlı indirmeler ve daha az veri tüketimi anlamına gelir. [Modern resim formatları hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/performance/uses-webp-images/)."
+    },
+    "offscreen-images": {
+        "id": "offscreen-images",
+        "title": "Ekran dışı resimleri erteleyin",
+        "description": "Tüm kritik kaynaklar yüklendikten sonra ekran dışı ve gizli resimleri gecikmeli olarak yüklemeyi düşünün. Bu, etkileşim zamanını azaltır. [Ekran dışı resimleri nasıl erteleyeceğiniz hakkında bilgi edinin](https://developer.chrome.com/docs/lighthouse/performance/offscreen-images/)."
+    },
+    "structured-data": {
+        "id": "structured-data",
+        "title": "Yapılandırılmış veri geçerlidir",
+        "description": "Yapılandırılmış veriyi doğrulamak için [Yapılandırılmış Veri Test Aracı](https://search.google.com/structured-data/testing-tool/) ve [Yapılandırılmış Veri Linter](http://linter.structured-data.org/) kullanın. [Yapılandırılmış Veri hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/seo/structured-data/)."
+    },
+    "plugins": {
+        "id": "plugins",
+        "title": "Belge eklentilerden kaçınır",
+        "description": "Arama motorları, eklenti içeriğini dizine ekleyemez ve birçok cihaz eklentileri kısıtlar veya desteklemez. [Eklentilerden kaçınma hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/seo/plugins/)."
+    },
+    "efficient-animated-content": {
+        "id": "efficient-animated-content",
+        "title": "Animasyonlu içerik için video formatları kullanın",
+        "description": "Büyük GIF'ler, animasyonlu içerik sağlamak için verimsizdir. Ağ baytlarını tasarruf etmek için animasyonlar için MPEG4/WebM videolarını ve statik resimler için PNG/WebP'yi GIF yerine kullanmayı düşünün. [Verimli video formatları hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/performance/efficient-animated-content/)"
+    },
+    "max-potential-fid": {
+        "id": "max-potential-fid",
+        "title": "Maksimum Potansiyel İlk Giriş Gecikmesi",
+        "description": "Kullanıcılarınızın deneyimleyebileceği maksimum potansiyel İlk Giriş Gecikmesi, en uzun görevin süresidir. [Maksimum Potansiyel İlk Giriş Gecikmesi metriği hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/)."
+    },
+    "aria-roles": {
+        "id": "aria-roles",
+        "title": "`[role]` değerleri geçerlidir",
+        "description": "ARIA rollerinin, amaçlanan erişilebilirlik işlevlerini gerçekleştirmek için geçerli değerlere sahip olması gerekir. [Geçerli ARIA rolleri hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/aria-roles)."
+    },
+    "total-byte-weight": {
+        "id": "total-byte-weight",
+        "title": "Büyük ağ yüklerinden kaçının",
+        "description": "Büyük ağ yükleri, kullanıcılara gerçek para maliyeti ve uzun yükleme süreleri ile yüksek bir şekilde ilişkilidir. [Yük boyutlarını nasıl azaltacağınızı öğrenin](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/)."
+    },
+    "duplicate-id-active": {
+        "id": "duplicate-id-active",
+        "title": "Etkin, odaklanabilir öğelerdeki `[id]` öznitelikleri benzersizdir",
+        "description": "Tüm odaklanabilir öğelerin benzersiz bir `id`'ye sahip olması, bunların yardımcı teknolojilere görünür olmasını sağlar. [Tekrarlanan `id`'leri nasıl düzelteceğinizi öğrenin](https://dequeuniversity.com/rules/axe/4.7/duplicate-id-active)."
+    },
+    "final-screenshot": {
+        "id": "final-screenshot",
+        "title": "Son Ekran Görüntüsü",
+        "description": "Sayfa yüklemesinin son ekran görüntüsü."
+    },
+    "installable-manifest": {
+        "id": "installable-manifest",
+        "title": "Web uygulama manifesti veya hizmet işçisi kurulabilirlik gereksinimlerini karşılamıyor",
+        "description": "Hizmet işçisi, uygulamanızın çevrimdışı, ana ekrana ekleme ve bildirim al gibi birçok İlerici Web Uygulaması özelliğini kullanmasını sağlayan teknolojidir. Doğru hizmet işçisi ve manifest uygulamalarıyla, tarayıcılar kullanıcıları uygulamanızı ana ekranlarına eklemeleri için proaktif olarak teşvik edebilir, bu da daha yüksek etkileşimle sonuçlanabilir. [Manifest kurulabilirlik gereksinimleri hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/pwa/installable-manifest/)."
+    },
+    "paste-preventing-inputs": {
+        "id": "paste-preventing-inputs",
+        "title": "Kullanıcıların giriş alanlarına yapıştırmalarına izin verir",
+        "description": "Giriş yapıştırmanın engellenmesi, UX için kötü bir uygulama olup, parola yöneticilerini engelleyerek güvenliği zayıflatır. [Kullanıcı dostu giriş alanları hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/best-practices/paste-preventing-inputs/)."
+    },
+    "largest-contentful-paint": {
+        "id": "largest-contentful-paint",
+        "title": "En Büyük İçerikli Boya",
+        "description": "En Büyük İçerikli Boya, en büyük metnin veya resmin boyandığı zamanı işaret eder. [En Büyük İçerikli Boya metriği hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
+    },
+    "image-redundant-alt": {
+        "id": "image-redundant-alt",
+        "title": "Resim öğelerinde `[alt]` öznitelikleri gereksiz metin içermez",
+        "description": "Bilgilendirici öğeler kısa, açıklayıcı alternatif metin hedeflemelidir. Bağlantı veya resim yanındaki metinle tam olarak aynı olan alternatif metin, ekran okuyucu kullanıcıları için potansiyel olarak kafa karıştırıcıdır, çünkü metin iki kez okunacaktır. [`alt` özniteliği hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/image-redundant-alt)."
+    },
+    "label": {
+        "id": "label",
+        "title": "Form öğeleri ilişkili etiketlere sahiptir",
+        "description": "Etiketler, form kontrollerinin ekran okuyucular tarafından doğru şekilde duyurulmasını sağlar. [Form öğesi etiketleri hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/label)."
+    },
+    "use-landmarks": {
+        "id": "use-landmarks",
+        "title": "HTML5 landmark öğeleri navigasyonu iyileştirmek için kullanılır",
+        "description": "Landmark öğeleri (`<main>`, `<nav>`, vb.) sayfanın klavye gezintisini, yardımcı teknoloji için iyileştirmek için kullanılır. [Landmark öğeleri hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/accessibility/use-landmarks/)."
+    },
+    "aria-allowed-attr": {
+        "id": "aria-allowed-attr",
+        "title": "`[aria-*]` öznitelikleri rolleriyle eşleşir",
+        "description": "Her ARIA `role`, belirli bir `[aria-*]` özniteliği alt kümesini destekler. Bunların eşleşmemesi `[aria-*]` özniteliklerini geçersiz kılar. [ARIA özniteliklerini rolleriyle eşleştirmeyi öğrenin](https://dequeuniversity.com/rules/axe/4.7/aria-allowed-attr)."
+    },
+    "focus-traps": {
+        "id": "focus-traps",
+        "title": "Kullanıcı odak yanlışlıkla bir bölgede tıkanmaz",
+        "description": "Bir kullanıcı, odaklanabilir ve odaklanamaz herhangi bir denetim veya bölgeye yanlışlıkla odaklanmadan girebilir ve çıkabilir. [Odak tuzağından kaçınma hakkında bilgi edinin](https://developer.chrome.com/docs/lighthouse/accessibility/focus-traps/)."
+    },
+    "html-has-lang": {
+        "id": "html-has-lang",
+        "title": "`<html>` öğesi bir `[lang]` özniteliğine sahip",
+        "description": "Bir sayfa `lang` özniteliğini belirtmezse, bir ekran okuyucu sayfanın varsayılan dilinin, ekran okuyucuyu kurarken kullanıcının seçtiği dil olduğunu varsayar. Sayfa aslında varsayılan dilde değilse, ekran okuyucu sayfanın metnini doğru şekilde duyurmayabilir. [`lang` özniteliği hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/html-has-lang)."
+    },
+    "is-crawlable": {
+        "id": "is-crawlable",
+        "title": "Sayfa dizinlemeyi engellemiyor",
+        "description": "Arama motorları, sayfaları dizinlemek için izinleri yoksa sayfaları arama sonuçlarına ekleyemezler. [Örümcek direktifleri hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/seo/is-crawlable/)."
+    },
+    "aria-dialog-name": {
+        "id": "aria-dialog-name",
+        "title": "`role=\"dialog\"` veya `role=\"alertdialog\"` öğeleri erişilebilir isme sahip değil.",
+        "description": "Erişilebilir ismi olmayan ARIA iletişim öğeleri, ekran okuyucu kullanıcılarının bu öğelerin amacını ayırt etmesini engelleyebilir. [ARIA iletişim öğelerini daha erişilebilir hale getirmeyi öğrenin](https://dequeuniversity.com/rules/axe/4.7/aria-dialog-name)."
+    },
+    "td-headers-attr": {
+        "id": "td-headers-attr",
+        "title": "`<table>` öğesindeki hücreler `[headers]` özniteliğini aynı tablo içindeki diğer hücrelere işaret eder.",
+        "description": "Ekran okuyucuların tabloları daha kolay gezmesini sağlayan özellikleri vardır. `[headers]` özniteliğini kullanan `<td>` hücrelerinin yalnızca aynı tablodaki diğer hücrelere işaret ettiğinden emin olmak, ekran okuyucu kullanıcıları için deneyimi iyileştirebilir. [`headers` özniteliği hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/td-headers-attr)."
+    },
+    "no-unload-listeners": {
+        "id": "no-unload-listeners",
+        "title": "`unload` olay dinleyicilerinden kaçının",
+        "description": "`unload` olayı güvenilir bir şekilde tetiklenmez ve bunu dinlemek, Geri-İleri Önbelleği gibi tarayıcı optimizasyonlarını engelleyebilir. Bunun yerine `pagehide` veya `visibilitychange` olaylarını kullanın. [unload olay dinleyicileri hakkında daha fazla bilgi edinin](https://web.dev/bfcache/#never-use-the-unload-event)"
+    },
+    "aria-valid-attr": {
+        "id": "aria-valid-attr",
+        "title": "`[aria-*]` öznitelikleri geçerli ve yanlış yazılmamıştır",
+        "description": "Ekran okuyucu gibi yardımcı teknolojiler, geçersiz adlara sahip ARIA özniteliklerini yorumlayamaz. [Geçerli ARIA öznitelikleri hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/aria-valid-attr)."
+    },
+    "uses-rel-preconnect": {
+        "id": "uses-rel-preconnect",
+        "title": "Gerekli kökenlere önbağlantı kurar",
+        "description": "Önemli üçüncü taraf kökenlere erken bağlantılar kurmak için `preconnect` veya `dns-prefetch` kaynak ipuçları eklemeyi düşünün. [Gerekli kökenlere önbağlantı kurmayı öğrenin](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/)."
+    },
+    "is-on-https": {
+        "id": "is-on-https",
+        "title": "HTTPS kullanıyor",
+        "description": "Tüm sitelerin HTTPS ile korunması gerekir, hatta hassas verileri işlemeyenler bile. Bu, bazı kaynakların HTTPS üzerinden sunulmasına rağmen ilk isteğin HTTPS üzerinden sunulmasına rağmen bazı kaynakların HTTP üzerinden yüklenmesini içeren [karışık içeriği](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content) içerir. HTTPS, uygulamanız ve kullanıcılarınız arasındaki iletişimi yabancıların müdahale etmesini veya pasif olarak dinlemesini önler ve HTTP/2 ve birçok yeni web platformu API'si için bir ön koşuldur. [HTTPS hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/pwa/is-on-https/)."
+    },
+    "user-timings": {
+        "id": "user-timings",
+        "title": "Kullanıcı Zamanlama işaretleri ve ölçümleri",
+        "description": "Uygulamanızı kullanıcı deneyimlerinin anahtar noktalarında uygulama Zamanlama API'si ile enstrümantalize etmeyi düşünün. [Kullanıcı Zamanlama işaretleri hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/performance/user-timings/)."
+    },
+    "target-size": {
+        "id": "target-size",
+        "title": "Dokunma hedefleri yeterli boyutta ve aralıklıdır.",
+        "description": "Yeterli boyutta ve aralıklı dokunma hedefleri, küçük kontrolleri hedeflemekte zorluk çeken kullanıcılara hedefleri etkinleştirmelerine yardımcı olur. [Dokunma hedefleri hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/target-size)."
+    },
+    "aria-hidden-body": {
+        "id": "aria-hidden-body",
+        "title": "`[aria-hidden=\"true\"]` belge `<body>` öğesinde bulunmaz",
+        "description": "Erişilebilirlik teknolojileri, ekran okuyucular gibi, `aria-hidden=\"true\"` belirtecinin belge `<body>` öğesine ayarlandığında tutarsız çalışır. [`aria-hidden`'ın belge gövdesini nasıl etkilediğini öğrenin](https://dequeuniversity.com/rules/axe/4.7/aria-hidden-body)."
+    },
+    "cumulative-layout-shift": {
+        "id": "cumulative-layout-shift",
+        "title": "Kümülatif Düzen Kayması",
+        "description": "Kümülatif Düzen Kayması, görünür öğelerin görüntü içindeki hareketini ölçer. [Kümülatif Düzen Kayması metriği hakkında daha fazla bilgi edinin](https://web.dev/cls/)."
+    },
+    "no-document-write": {
+        "id": "no-document-write",
+        "title": "`document.write()` kullanmaktan kaçınır",
+        "description": "Yavaş bağlantılardaki kullanıcılar için, `document.write()` aracılığıyla dinamik olarak enjekte edilen harici betikler sayfa yüklemesini on saniyelerce geciktirebilir. [`document.write()` kullanmaktan nasıl kaçınılır](https://developer.chrome.com/docs/lighthouse/best-practices/no-document-write/)."
+    },
+    "non-composited-animations": {
+        "id": "non-composited-animations",
+        "title": "Bileşiklenmemiş animasyonlardan kaçının",
+        "description": "Bileşiklenmemiş animasyonlar sıkışık olabilir ve CLS'yi artırabilir. [Bileşiklenmemiş animasyonlardan nasıl kaçınılır](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/)"
+    },
+    "heading-order": {
+        "id": "heading-order",
+        "title": "Başlık öğeleri sıralı olarak azalan bir sırayla görünür",
+        "description": "Başlıkların doğru sırayla, seviyeleri atlamadan sıralanması sayfanın anlamsal yapısını iletişim teknolojileri kullanılırken daha kolay gezilmesini ve anlaşılmasını sağlar. [Başlık sırası hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/heading-order)."
+    },
+    "metrics": {
+        "id": "metrics",
+        "title": "Metrikler",
+        "description": "Mevcut tüm metrikleri toplar."
+    },
+    "mainthread-work-breakdown": {
+        "id": "mainthread-work-breakdown",
+        "title": "Ana iş parçacığını minimuma indirin",
+        "description": "JS ayrıştırma, derleme ve yürütme için harcanan zamanı azaltmayı düşünebilirsiniz. Bu konuda daha küçük JS yükleri sağlamanın bununla yardımcı olabileceğini bulabilirsiniz. [Ana iş parçacığını minimuma indirmenin yolunu öğrenin](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)"
+    },
+    "pwa-page-transitions": {
+        "id": "pwa-page-transitions",
+        "title": "Sayfa geçişleri ağda engellenmiş gibi hissettirmiyor",
+        "description": "Geçişler, yavaş bir ağda bile etrafta tıkladığınızda çevik hissetmeli. Bu deneyim, bir kullanıcının performans algısının anahtarıdır. [Sayfa geçişleri hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/pwa/pwa-page-transitions/)."
+    },
+    "deprecations": {
+        "id": "deprecations",
+        "title": "Kullanımdan kaldırılan API'leri kullanmaktan kaçınır",
+        "description": "Kullanımdan kaldırılan API'ler sonunda tarayıcıdan kaldırılacaktır. [Kullanımdan kaldırılan API'ler hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/best-practices/deprecations/)."
+    },
+    "frame-title": {
+        "id": "frame-title",
+        "title": "`<frame>` veya `<iframe>` öğeleri bir başlık içermez",
+        "description": "Ekran okuyucu kullanıcıları, çerçeve içeriğini açıklamak için çerçeve başlıklarına güvenir. [Çerçeve başlıkları hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/frame-title)."
+    },
+    "valid-source-maps": {
+        "id": "valid-source-maps",
+        "title": "Büyük birinci taraf JavaScript için kaynak haritaları eksik",
+        "description": "Kaynak haritaları, küçültülmüş kodu orijinal kaynak koduna çevirir. Bu, geliştiricilerin üretimde hata ayıklamasına yardımcı olur. Ayrıca, Lighthouse daha fazla içgörü sağlayabilir. Bu avantajlardan faydalanmak için kaynak haritalarını dağıtmayı düşünün. [Kaynak haritaları hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/devtools/javascript/source-maps/)."
+    },
+    "color-contrast": {
+        "id": "color-contrast",
+        "title": "Arka plan ve ön plan renkleri arasında yeterli bir kontrast oranı bulunmaktadır",
+        "description": "Düşük kontrastlı metin, birçok kullanıcının okumasını zor veya imkansız hale getirir. [Yeterli renk kontrastı sağlamanın yollarını öğrenin](https://dequeuniversity.com/rules/axe/4.7/color-contrast)."
+    },
+    "html-xml-lang-mismatch": {
+        "id": "html-xml-lang-mismatch",
+        "title": "`<html>` öğesinin `[xml:lang]` özniteliği, `[lang]` özniteliğiyle aynı temel dilde.",
+        "description": "Web sayfası tutarlı bir dil belirtmezse, ekran okuyucu sayfanın metnini doğru bir şekilde duyurmayabilir. [Dil özniteliği hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/html-xml-lang-mismatch)."
+    },
+    "interactive-element-affordance": {
+        "id": "interactive-element-affordance",
+        "title": "Etkileşimli öğeler amaçlarını ve durumlarını belirtir",
+        "description": "Bağlantılar ve düğmeler gibi etkileşimli öğeler, durumlarını belirtmeli ve etkileşimli olmayan öğelerden ayırt edilebilir olmalıdır. [Etkileşimli öğeleri etkileşim ipuçları ile süslemenin yolunu öğrenin](https://developer.chrome.com/docs/lighthouse/accessibility/interactive-element-affordance/)."
+    },
+    "form-field-multiple-labels": {
+        "id": "form-field-multiple-labels",
+        "title": "Hiçbir form alanının birden fazla etiketi yoktur",
+        "description": "Birden fazla etikete sahip form alanları, ilk, son veya tüm etiketleri kullanan ekran okuyucular gibi erişilebilirlik teknolojileri tarafından kafa karıştırıcı şekilde duyurulabilir. [Form etiketlerini nasıl kullanacağınızı öğrenin](https://dequeuniversity.com/rules/axe/4.7/form-field-multiple-labels)."
+    },
+    "interactive": {
+        "id": "interactive",
+        "title": "Etkileşim Zamanı",
+        "description": "Etkileşim Zamanı, sayfanın tamamen etkileşimli hale gelmesi için geçen süredir. [Etkileşim Zamanı metriği hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/performance/interactive/)."
+    },
+    "first-contentful-paint": {
+        "id": "first-contentful-paint",
+        "title": "İlk İçerikli Boyama",
+        "description": "İlk İçerikli Boyama, ilk metin veya resmin boyandığı zamanı belirtir. [İlk İçerikli Boyama metriği hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)."
+    },
+    "accesskeys": {
+        "id": "accesskeys",
+        "title": "`[accesskey]` değerleri benzersizdir",
+        "description": "Erişim tuşları, kullanıcıların sayfanın bir bölümüne hızlıca odaklanmasını sağlar. Doğru gezinti için her erişim tuşunun benzersiz olması gerekir. [Erişim tuşları hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/accesskeys)."
+    },
+    "content-width": {
+        "id": "content-width",
+        "title": "İçerik, viewport için doğru boyutta",
+        "description": "Uygulamanızın içeriğinin genişliği, viewport'un genişliğiyle eşleşmiyorsa, uygulamanız mobil ekranlar için optimize edilmemiş olabilir. [İçeriği viewport için boyutlandırmanın yolunu öğrenin](https://developer.chrome.com/docs/lighthouse/pwa/content-width/)."
+    },
+    "aria-text": {
+        "id": "aria-text",
+        "title": "`role=text` özniteliğine sahip öğelerin odaklanabilir alt öğeleri yoktur.",
+        "description": "Metin düğümünü işaretlemele ekran okuyucuların onu bir kelime olarak ele almasını sağlar ancak öğenin odaklanabilir alt öğeleri duyurulmaz. [`role=text` özniteliği hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/aria-text)."
+    },
+    "image-aspect-ratio": {
+        "id": "image-aspect-ratio",
+        "title": "Görüntüler doğru en boy oranıyla görüntülenir",
+        "description": "Görüntü görüntüleme boyutları, doğal en boy oranına uymalıdır. [Görüntü en boy oranı hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/best-practices/image-aspect-ratio/)."
+    },
+    "image-size-responsive": {
+        "id": "image-size-responsive",
+        "title": "Uygun çözünürlükte görüntüler sunar",
+        "description": "Görüntü doğal boyutları, görüntü netliğini maksimize etmek için görüntüleme boyutu ve piksel oranıyla orantılı olmalıdır. [Duyarlı görüntüler sunmanın yolunu öğrenin](https://web.dev/serve-responsive-images/)."
+    },
+    "focusable-controls": {
+        "id": "focusable-controls",
+        "title": "Etkileşimli kontroller klavye ile odaklanabilir",
+        "description": "Özel etkileşimli kontroller klavye ile odaklanabilir ve bir odak göstergesi görüntüler. [Özel kontrolleri odaklanabilir hale getirmenin yolunu öğrenin](https://developer.chrome.com/docs/lighthouse/accessibility/focusable-controls/)."
+    },
+    "prioritize-lcp-image": {
+        "id": "prioritize-lcp-image",
+        "title": "En Büyük İçerikli Boyama resmini önceden yükle",
+        "description": "LCP öğesi sayfaya dinamik olarak ekleniyorsa, LCP'yi iyileştirmek için resmi önceden yüklemelisiniz. [LCP öğelerini ön yüklemek hakkında daha fazla bilgi edinin](https://web.dev/optimize-lcp/#optimize-when-the-resource-is-discovered)."
+    },
+    "label-content-name-mismatch": {
+        "id": "label-content-name-mismatch",
+        "title": "Görünür metin etiketleri olan öğelerin eşleşen erişilebilir adı var",
+        "description": "Erişilebilir adıyla eşleşmeyen görünür metin etiketleri, ekran okuyucu kullanıcıları için kafa karıştırıcı bir deneyime neden olabilir. [Erişilebilir adlar hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/label-content-name-mismatch)."
+    },
+    "lcp-lazy-loaded": {
+        "id": "lcp-lazy-loaded",
+        "title": "En Büyük İçerikli Boyama resmi tembel yüklendi",
+        "description": "Üst kısımdaki görüntülerin tembel yüklenmesi sayfa yaşam döngüsünde daha sonra renderlenir ve en büyük içerikli boyamayı geciktirebilir. [Optimal tembel yükleme hakkında daha fazla bilgi edinin](https://web.dev/lcp-lazy-loading/)."
+    },
+    "aria-required-parent": {
+        "id": "aria-required-parent",
+        "title": "`[role]`lar gerekli üst öğe tarafından içerilir",
+        "description": "Bazı ARIA alt rollerinin, uygun erişilebilirlik işlevlerini gerçekleştirmek için belirli üst roller tarafından içerilmesi gerekir. [ARIA rolleri ve gerekli üst öğe hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/aria-required-parent)."
+    },
+    "largest-contentful-paint-element": {
+        "id": "largest-contentful-paint-element",
+        "title": "En Büyük İçerikli Boyama öğesi",
+        "description": "Bu, viewport içinde boyanan en büyük içerikli elemandır. [En Büyük İçerikli Boyama öğesi hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)."
+    },
+    "layout-shift-elements": {
+        "id": "layout-shift-elements",
+        "title": "Büyük düzen kaymalarından kaçının",
+        "description": "Bu DOM öğeleri, sayfanın CLS'sine en çok katkıda bulunan öğelerdir. [CLS'yi nasıl iyileştireceğinizi öğrenin](https://web.dev/optimize-cls/)"
+    },
+    "uses-responsive-images": {
+        "id": "uses-responsive-images",
+        "title": "Görüntüleri uygun şekilde boyutlandırma",
+        "description": "Hücresel verileri kaydetmek ve yükleme süresini iyileştirmek için uygun boyutta görüntüler sunun. [Görüntüleri boyutlandırmanın yolunu öğrenin](https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images/)."
+    },
+    "table-fake-caption": {
+        "id": "table-fake-caption",
+        "title": "Tablolar bir başlık belirtmek için `[colspan]` özniteliğine sahip hücreler yerine `<caption>` öğesini kullanır.",
+        "description": "Ekran okuyucuların tabloları daha kolay gezmesine yardımcı olan özellikleri vardır. Tabloların gerçek başlık öğesini, `[colspan]` özniteliğine sahip hücreler yerine kullanılması, ekran okuyucu kullanıcıları için deneyimi iyileştirebilir. [Başlıklar hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/table-fake-caption)."
+    },
+    "screenshot-thumbnails": {
+        "id": "screenshot-thumbnails",
+        "title": "Ekran Görüntüsü Küçük Resimleri",
+        "description": "Bu, sitenizin yüklenme görünümüdür."
+    },
+    "network-server-latency": {
+        "id": "network-server-latency",
+        "title": "Sunucu Arka Uç Gecikmeleri",
+        "description": "Sunucu gecikmeleri web performansını etkileyebilir. Bir kaynağın sunucu gecikmesi yüksekse, sunucunun aşırı yüklü olduğu veya kötü arka uç performansı olduğu bir göstergedir. [Sunucu yanıt süresi hakkında daha fazla bilgi edinin](https://hpbn.co/primer-on-web-performance/#analyzing-the-resource-waterfall)."
+    },
+    "unminified-javascript": {
+        "id": "unminified-javascript",
+        "title": "JavaScript'i Sıkıştırın",
+        "description": "JavaScript dosyalarını sıkıştırmak, payload boyutlarını ve betik ayrışma süresini azaltabilir. [JavaScript'i nasıl sıkıştıracağınızı öğrenin](https://developer.chrome.com/docs/lighthouse/performance/unminified-javascript/)."
+    },
+    "network-rtt": {
+        "id": "network-rtt",
+        "title": "Ağ Tur Süre Zamanları",
+        "description": "Ağ tur süreleri (RTT), performans üzerinde büyük bir etkiye sahiptir. Bir kaynağa olan RTT yüksekse, bu, kullanıcıya daha yakın sunucuların performansını artırabileceğinin bir göstergesidir. [Tur süre zamanı hakkında daha fazla bilgi edinin](https://hpbn.co/primer-on-latency-and-bandwidth/)."
+    },
+    "critical-request-chains": {
+        "id": "critical-request-chains",
+        "title": "Kritik istek zincirlerini zincirlemekten kaçının",
+        "description": "Aşağıdaki Kritik İstek Zincirleri, yüksek öncelikle yüklenen kaynakları gösterir. Sayfa yüklemesini iyileştirmek için zincirlerin uzunluğunu azaltmayı, kaynakların indirme boyutunu azaltmayı veya gereksiz kaynakların indirilmesini ertelemeyi düşünün. [Kritik istek zincirlerini zincirlemekten nasıl kaçınacağınızı öğrenin](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/)."
+    },
+    "inspector-issues": {
+        "id": "inspector-issues",
+        "title": "Chrome Devtools'taki `Sorunlar` panelinde sorunlar kaydedildi",
+        "description": "Sorunlar, çözümlenmemiş sorunları gösteren Chrome Devtools'taki `Sorunlar` paneline kaydedilir. Bunlar, ağ isteği başarısızlıklarından, yetersiz güvenlik kontrollerinden ve diğer tarayıcı endişelerinden kaynaklanabilir. Her bir sorunla ilgili daha fazla ayrıntı için Chrome DevTools'taki Sorunlar panelini açın."
+    },
+    "charset": {
+        "id": "charset",
+        "title": "Doğru bir karakter kümesi tanımlar",
+        "description": "Bir karakter kodlaması bildirimi gereklidir. İlk 1024 bayt HTML içinde bir `<meta>` etiketiyle veya Content-Type HTTP yanıt başlığında yapılabilir. [Karakter kodlamasını nasıl bildireceğiniz hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/best-practices/charset/)."
+    },
+    "select-name": {
+        "id": "select-name",
+        "title": "Seçim öğelerinin ilişkili etiket öğeleri vardır.",
+        "description": "Etkili etiketleri olmayan form öğeleri, ekran okuyucu kullanıcıları için sinir bozucu deneyimler oluşturabilir. [Seçim öğesi hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/select-name)."
+    },
+    "canonical": {
+        "id": "canonical",
+        "title": "Belge geçerli bir `rel=canonical`'a sahiptir",
+        "description": "Kanonik bağlantılar, arama sonuçlarında hangi URL'nin gösterileceğini önerir. [Kanonik bağlantılar hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/seo/canonical/)."
+    },
+    "meta-viewport": {
+        "id": "meta-viewport",
+        "title": "`<meta name=\"viewport\">` öğesinde `[user-scalable=\"no\"]` kullanılmaz ve `[maximum-scale]` özniteliği 5'ten az değildir.",
+        "description": "Yakınlaştırmayı devre dışı bırakmak, düşük görme yeteneğine sahip kullanıcılar için sorunlu olabilir çünkü ekran büyütmesine dayanarak web sayfasının içeriğini doğru bir şekilde görmek. [Görünüm meta etiketi hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/meta-viewport)."
+    },
+    "dlitem": {
+        "id": "dlitem",
+        "title": "Tanım listesi öğeleri `<dl>` öğelerine sarılır",
+        "description": "Tanım listesi öğeleri (`<dt>` ve `<dd>`) doğru bir şekilde duyurulabilmesi için bir üst `<dl>` öğesi içinde sarılmalıdır. [Tanım listelerini doğru bir şekilde nasıl yapılandıracağınızı öğrenin](https://dequeuniversity.com/rules/axe/4.7/dlitem)."
+    },
+    "link-in-text-block": {
+        "id": "link-in-text-block",
+        "title": "Bağlantılar renk kullanmadan ayırt edilebilir.",
+        "description": "Düşük kontrastlı metin, birçok kullanıcı için zor veya imkansızdır. Ayırt edilebilir bağlantı metni, düşük görme yeteneğine sahip kullanıcılar için deneyimi iyileştirir. [Bağlantıları ayırt edilebilir hale getirmenin yollarını öğrenin](https://dequeuniversity.com/rules/axe/4.7/link-in-text-block)."
+    },
+    "speed-index": {
+        "id": "speed-index",
+        "title": "Hız Endeksi",
+        "description": "Hız Endeksi, bir sayfanın içeriğinin ne kadar hızlı görünür hale geldiğini gösterir. [Hız Endeksi metriği hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/performance/speed-index/)."
+    }
+
+
+
+
+
+
+
+
+
+
+
+            "performance": {
+                "id": "performance",
+                "title": "Performans",
+            },
+            "accessibility": {
+                "id": "accessibility",
+                "title": "Erişilebilirlik",
+                "description": "Bu kontroller, web uygulamanızın [erişilebilirliğini geliştirme fırsatlarını vurgular](https://developer.chrome.com/docs/lighthouse/accessibility/). Otomatik tespit yalnızca belirli bir sorun kümesini algılayabilir ve web uygulamanızın erişilebilirliğini garanti etmez, bu nedenle [manuel test](https://web.dev/how-to-review/) etme de teşvik edilir.",
+                "manualDescription": "Bu öğeler, otomatik test aracının kapsayamadığı alanları ele alır. Daha fazla bilgi için [erişilebilirlik incelemesi yapma kılavuzumuza](https://web.dev/how-to-review/) bakın."
+            },
+            "best-practices": {
+                "id": "best-practices",
+                "title": "En İyi Uygulamalar",
+            },
+            "seo": {
+                "id": "seo",
+                "title": "SEO",
+                "description": "Bu kontroller, sayfanızın temel arama motoru optimizasyonu tavsiyelerini takip ettiğinden emin olur. Lighthouse burada puanlamadığı birçok ek faktör bulunmaktadır ve arama sıralamanızı etkileyebilir, bunlar arasında [Ana Web Ölçütleri](https://web.dev/learn-core-web-vitals/) performansı da bulunur. [Google Arama Temel İlkeleri hakkında daha fazla bilgi edinin](https://support.google.com/webmasters/answer/35769).",
+                "manualDescription": "Sitenizde bu ek doğrulayıcıları çalıştırarak ek SEO en iyi uygulamalarını kontrol edin."
+            },
+            "pwa": {
+                "id": "pwa",
+                "title": "PWA",
+                "description": "Bu kontroller, Birleşik Web Uygulaması'nın (PWA) yönlerini doğrular. [İyi Bir Birleşik Web Uygulaması'nı oluşturan unsurları öğrenin](https://web.dev/pwa-checklist/).",
+                "manualDescription": "Bu kontroller, temel [PWA Kontrol Listesi](https://web.dev/pwa-checklist/) tarafından gereklidir, ancak otomatik olarak Lighthouse tarafından kontrol edilmez. Puanınızı etkilemezler, ancak bunları manuel olarak doğrulamanız önemlidir."
+            }

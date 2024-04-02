@@ -370,13 +370,41 @@ $(document).on('click', '.serp-analyze-link', function (event) {
             else if (audit_score==null){
               $('.mobile_best_practices_not_applicable_audits').append(html);
             }
+            else if (!(audit_score == 1) && ['csp-xss'].includes(audit_id)) {
+              $('.mobile_best_practices_trust_and_safety_audits').append(html);
+            }
+            else if (!(audit_score == 1) && ['inspector-issues','js-libraries','valid-source-maps'].includes(audit_id)) {
+              $('.mobile_best_practices_general_audits').append(html);
+            }
+            else if (!(audit_score == 1) && ['image-aspect-ratio','image-aspect-ratio'].includes(audit_id)) {
+              $('.mobile_best_practices_user_experience_audits').append(html);
+            }
             else {
-              $('.mobile_best_practices_audits').append(html);
+              console.log("best practices kategoriye uymayan audit",audit_id);
             } 
 
         } else if (seoAudits.includes(audit_id)) {
-
-              $('.mobile_seo_audits').append(html);
+            if (audit_score==1){
+              $('.mobile_seo_passed_audits').append(html);
+            }
+            else if (audit_score==null){
+              $('.mobile_seo_not_applicable_audits').append(html);
+            }
+            else if (!(audit_score == 1) && ['crawlable-anchors'].includes(audit_id)) {
+              $('.mobile_seo_crawl_and_indexing_audits').append(html);
+            }
+            else if (!(audit_score == 1) && ['image-alt'].includes(audit_id)) {
+              $('.mobile_seo_content_best_practices_audits').append(html);
+            }
+            else if (!(audit_score == 1) && ['tap-targets'].includes(audit_id)) {
+              $('.mobile_seo_mobile_friendly_audits').append(html);
+            }
+            else if (!(audit_score == 1) && ['structured-data'].includes(audit_id)) {
+              $('.mobile_seo_add_item_to_manually_check_audits').append(html);
+            }
+            else {
+              console.log("Seo kategoriye uymayan audit",audit_id);
+            } 
 
         } else if (performanceAudits.includes(audit_id)) {
             if (audit_score==1){
@@ -401,7 +429,7 @@ $(document).on('click', '.serp-analyze-link', function (event) {
             }
 
             else if (!(audit_score==1) && (audit_id=='button-name'|| audit_id=='link-name'||audit_id=='image-alt')){
-              $('.mobile_names_and_labels_audits').append(html);
+              $('.mobile_accessibility_names_and_labels_audits').append(html);
             }
 
             else if (!(audit_score==1) && (audit_id=='heading-order')){
@@ -411,7 +439,16 @@ $(document).on('click', '.serp-analyze-link', function (event) {
             else if (!(audit_score==1) && (audit_id=='color-contrast')){
               $('.mobile_accessibility_contrast_audits').append(html);
             }
-
+            else if (!(audit_score==1) && (audit_id=='list'|| audit_id=='listitem')){
+              $('.mobile_accessibility_tables_lists_audits').append(html);
+            }
+            else if (!(audit_score==1) && (audit_id=='list'|| audit_id=='listitem')){
+              $('.mobile_accessibility_aria_audits').append(html);
+            }
+            else if (!(audit_score == 1) && ['aria-allowed-attr', 'aria-allowed-role', 'aria-command-name', 'aria-dialog-name', 'aria-input-field-name', 'aria-meter-name', 'aria-required-children', 'aria-progressbar-name', 'aria-required-attr', 'aria-required-parent', 'aria-roles', 'aria-text', 'aria-toggle-field-name', 'aria-valid-attr', 'aria-tooltip-name', 'aria-treeitem-name', 'duplicate-id-aria', 'aria-valid-attr-value', 'aria-hidden-body', 'aria-hidden-focus'].includes(audit_id)) {
+              $('.mobile_accessibility_aria_audits').append(html);
+            }
+                    
             else {
               console.log("accessibility kategoriye uymayan audit",audit_id);
             }

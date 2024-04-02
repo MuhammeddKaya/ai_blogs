@@ -1,0 +1,1792 @@
+{
+    "captchaResult": "CAPTCHA_NOT_NEEDED",
+    "kind": "pagespeedonline#result",
+    "id": "https://www.impalabt.com/en_GB",
+    "loadingExperience": {
+        "initial_url": "https://www.impalabt.com/en_GB"
+    },
+    "lighthouseResult": {
+        "requestedUrl": "https://impalabt.com/",
+        "finalUrl": "https://www.impalabt.com/en_GB",
+        "mainDocumentUrl": "https://www.impalabt.com/en_GB",
+        "finalDisplayedUrl": "https://www.impalabt.com/en_GB",
+        "lighthouseVersion": "11.0.0",
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.5938.149 Safari/537.36",
+        "fetchTime": "2023-11-02T17:59:48.323Z",
+        "environment": {
+            "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Mobile Safari/537.36",
+            "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.5938.149 Safari/537.36",
+            "benchmarkIndex": 331,
+            "credits": {
+                "axe-core": "4.7.2"
+            }
+        },
+        "runWarnings": [
+            "The page may not be loading as expected because your test URL (https://impalabt.com/) was redirected to https://www.impalabt.com/en_GB. Try testing the second URL directly."
+        ],
+        "configSettings": {
+            "emulatedFormFactor": "mobile",
+            "formFactor": "mobile",
+            "locale": "en-US",
+            "onlyCategories": [
+                "pwa",
+                "performance",
+                "accessibility",
+                "best-practices",
+                "seo"
+            ],
+            "channel": "lr"
+        },
+        "audits": {
+            "tabindex": {
+                "id": "tabindex",
+                "title": "0'dan büyük bir `[tabindex]` değeri yok",
+                "description": "0'dan büyük bir değer açık gezinme sırası belirtir. Teknik olarak geçerli olsa da, bu genellikle yardımcı teknolojilere bağımlı olan kullanıcılar için hayal kırıklığı yaratan deneyimler oluşturur. [`tabindex` özniteliği hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/tabindex)."
+            },
+            "timing-budget": {
+                "id": "timing-budget",
+                "title": "Zaman bütçesi",
+                "description": "Sitenizin performansını gözlemlemenize yardımcı olmak için bir zaman bütçesi belirleyin. Performanslı siteler hızlı yüklenir ve kullanıcı giriş etkinliklerine hızlı yanıt verir. [Performans bütçeleri hakkında daha fazla bilgi edinin](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
+            },
+            "bootup-time": {
+                "id": "bootup-time",
+                "title": "JavaScript yürütme süresini azaltın",
+                "description": "JS'nin ayrıştırılması, derlenmesi ve yürütülmesi için harcanan zamanı azaltmayı düşünün. Daha küçük JS yükleri sunmanın bununla yardımcı olabileceğini görebilirsiniz. [JavaScript yürütme süresini nasıl azaltacağınızı öğrenin](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)."
+            },
+            "redirects": {
+                "id": "redirects",
+                "title": "Birden fazla sayfa yönlendirmesinden kaçının",
+                "description": "Yönlendirmeler, sayfanın yüklenebilmesinden önce ek gecikmeler ekler. [Sayfa yönlendirmelerinden nasıl kaçınılacağını öğrenin](https://developer.chrome.com/docs/lighthouse/performance/redirects/)."
+            },
+            "render-blocking-resources": {
+                "id": "render-blocking-resources",
+                "title": "Render etmeyi engelleyen kaynakları ortadan kaldırın",
+                "description": "Kaynaklar sayfanızın ilk boyasını engelliyor. Kritik JS/CSS'yi içeriye teslim etmeyi ve tüm kritik olmayan JS/stilleri ertelemeyi düşünebilirsiniz. [Render etmeyi engelleyen kaynakları ortadan kaldırmanın yollarını öğrenin](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)."
+            },
+            "video-caption": {
+                "id": "video-caption",
+                "title": "`<video>` öğeleri `[kind=\"captions\"]` özniteliğine sahip bir `<track>` öğesi içeriyor",
+                "description": "Bir video altyazı sağladığında, işitme engelli kullanıcıların ve işitme engelli olanların bilgisine erişmek daha kolay olur. [Video altyazıları hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/video-caption)."
+            },
+            "script-treemap-data": {
+                "id": "script-treemap-data",
+                "title": "Script Treemap Verisi",
+                "description": "Treemap uygulaması için kullanıldı"
+            },
+            "empty-heading": {
+                "id": "empty-heading",
+                "title": "Tüm başlık öğeleri içerik içerir.",
+                "description": "İçeriği olmayan veya erişilemeyen metin içeren bir başlık, ekran okuyucu kullanıcılarının sayfa yapısı hakkında bilgiye erişmesini engeller. [Başlıklar hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/empty-heading)."
+            },
+            "notification-on-start": {
+                "id": "notification-on-start",
+                "title": "Sayfa yüklenirken bildirim izni istemeyi önler",
+                "description": "Kullanıcılar, bağlam olmadan bildirim gönderme isteğinde bulunan sitelere güvenmez veya kafası karışır. İsteği kullanıcı jestleriyle ilişkilendirmeyi düşünün. [Bildirim izni için sorumlu bir şekilde nasıl izin alacağınızı öğrenin](https://developer.chrome.com/docs/lighthouse/best-practices/notification-on-start/)."
+            },
+            "input-button-name": {
+                "id": "input-button-name",
+                "title": "Giriş düğmelerinin ayırt edilebilir metni vardır.",
+                "description": "Giriş düğmelerine ayırt edilebilir ve erişilebilir metin eklemek, ekran okuyucu kullanıcılarının giriş düğmesinin amacını anlamasına yardımcı olabilir. [Giriş düğmeleri hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/input-button-name)."
+            },
+            "document-title": {
+                "id": "document-title",
+                "title": "Belgede bir `<title>` öğesi var",
+                "description": "Başlık, ekran okuyucu kullanıcılarına sayfanın genel bir görünümünü sağlar ve arama motoru kullanıcıları onu aramalarıyla ilgili sayfanın ilgili olup olmadığını belirlemekte ağırlıklı olarak buna güvenirler. [Belge başlıkları hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/document-title)."
+            },
+            "maskable-icon": {
+                "id": "maskable-icon",
+                "title": "Manifestte maskelenebilir bir simge yok",
+                "description": "Maskelenebilir bir simge, uygulamayı bir cihaza kurduğunuzda resmin, kenarlarına siyah şerit olmadan tam şekilde doldurulmasını sağlar. [Maskelenebilir manifest simgeleri hakkında bilgi edinin](https://developer.chrome.com/docs/lighthouse/pwa/maskable-icon-audit/)."
+            },
+            "unused-javascript": {
+                "id": "unused-javascript",
+                "title": "Kullanılmayan JavaScript'i azaltın",
+                "description": "Kullanılmayan JavaScript'i azaltın ve ağ etkinliği tarafından tüketilen baytları azaltmak için betikleri gerektiğinde yüklemeyi erteleyin. [Kullanılmayan JavaScript'i nasıl azaltacağınızı öğrenin](https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/)."
+            },
+            "valid-lang": {
+                "id": "valid-lang",
+                "title": "`[lang]` öznitelikleri geçerli bir değere sahiptir",
+                "description": "Öğelerde geçerli bir [BCP 47 dilini](https://www.w3.org/International/questions/qa-choosing-language-tags#question) belirtmek, metnin bir ekran okuyucu tarafından doğru bir şekilde telaffuz edilmesine yardımcı olur. [`lang` özniteliğini nasıl kullanacağınızı öğrenin](https://dequeuniversity.com/rules/axe/4.7/valid-lang)."
+            },
+            "link-name": {
+                "id": "link-name",
+                "title": "Bağlantıların ayırt edilebilir bir adı yok",
+                "description": "Ekran okuyucu kullanıcıları için ayırt edilebilir, benzersiz ve odaklanabilir bağlantı metni (ve bağlantı olarak kullanılan görüntüler için alternatif metinler) gezinme deneyimini geliştirir. [Bağlantıları erişilebilir hale getirmenin yollarını öğrenin](https://dequeuniversity.com/rules/axe/4.7/link-name)."
+            },
+            "listitem": {
+                "id": "listitem",
+                "title": "Liste öğeleri (`<li>`) `<ul>`, `<ol>` veya `<menu>` üst öğelerinin içinde bulunur",
+                "description": "Ekran okuyucuların listelerin (`<li>`) doğru bir şekilde duyurulabilmesi için liste öğelerinin bir `<ul>`, `<ol>` veya `<menu>` üst öğesinin içinde bulunması gerekir. [Doğru liste yapısı hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/listitem)."
+            },
+            "duplicated-javascript": {
+                "id": "duplicated-javascript",
+                "title": "JavaScript paketlerindeki yinelenen modülleri kaldırın",
+                "description": "Ağ etkinliği tarafından tüketilen gereksiz baytları azaltmak için büyük, yinelenen JavaScript modüllerini paketlerden kaldırın."
+            },
+            "uses-rel-preload": {
+                "id": "uses-rel-preload",
+                "title": "Anahtar istekleri önceden yükle",
+                "description": "Şu anda sayfa yüklemesinin daha sonraki aşamalarında talep edilen kaynakları önceliklendirmek için `<link rel=preload>` kullanmayı düşünün. [Anahtar istekleri önceden yüklemeyi nasıl yapacağınızı öğrenin](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/)."
+            },
+            "server-response-time": {
+                "id": "server-response-time",
+                "title": "İlk sunucu yanıt süresi kısaydı",
+                "description": "Ana belge için sunucu yanıt süresini kısa tutun çünkü diğer tüm istekler ona bağlıdır. [İlk Bayt Zamanı metriği hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/performance/time-to-first-byte/)."
+            },
+            "robots-txt": {
+                "id": "robots-txt",
+                "title": "robots.txt geçerlidir",
+                "description": "Robots.txt dosyanız hatalı biçimlendirilmişse, tarayıcılar web sitenizin nasıl taranmasını veya dizinlenmesini istediğinizi anlayamayabilir. [Robots.txt hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)."
+            },
+            "custom-controls-labels": {
+                "id": "custom-controls-labels",
+                "title": "Özel kontrollerle ilişkilendirilmiş etiketler var",
+                "description": "Özel etkileşimli kontroller, aria-label veya aria-labelledby tarafından sağlanan ilişkilendirilmiş etiketlere sahiptir. [Özel kontroller ve etiketler hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/accessibility/custom-controls-labels/)."
+            },
+            "aria-tooltip-name": {
+                "id": "aria-tooltip-name",
+                "title": "ARIA `tooltip` öğelerinin erişilebilir adları var",
+                "description": "Bir `tooltip` öğesi erişilebilir bir ad içermediğinde, ekran okuyucuları genel bir adla duyurur, bu da ekran okuyuculara güvenen kullanıcılar için kullanılamaz hale getirir. [`tooltip` öğelerinin adlandırılması hakkında bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/aria-tooltip-name)."
+            },
+            "aria-input-field-name": {
+                "id": "aria-input-field-name",
+                "title": "ARIA giriş alanlarının erişilebilir adları var",
+                "description": "Bir giriş alanı erişilebilir bir ad içermediğinde, ekran okuyucuları genel bir adla duyurur, bu da ekran okuyuculara güvenen kullanıcılar için kullanılamaz hale getirir. [Giriş alanı etiketleri hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/aria-input-field-name)."
+            },
+            "legacy-javascript": {
+                "id": "legacy-javascript",
+                "title": "Modern tarayıcılara eski JavaScript sunmaktan kaçının",
+                "description": "Polyfill'ler ve dönüşümler, eski tarayıcıların yeni JavaScript özelliklerini kullanmasını sağlar. Ancak, birçok tarayıcı için gerekli değildir. Paketlenmiş JavaScript'iniz için, modern tarayıcılara gönderilen kod miktarını azaltmak için modül/nomodule özelliği algılama kullanarak modern bir betik dağıtım stratejisi benimseyin, ancak eski tarayıcılara destek sağlayarak. [Modern JavaScript kullanımı hakkında bilgi edinin](https://web.dev/publish-modern-javascript/)"
+            },
+            "aria-allowed-role": {
+                "id": "aria-allowed-role",
+                "title": "`role=\"\"`'ye atanan değerler geçerli ARIA rolleridir.",
+                "description": "ARIA `role`'ler, yardımcı teknolojilerin web sayfasındaki her öğenin rolünü bilmesini sağlar. Eğer `role` değerleri yanlış yazılmışsa, mevcut olmayan ARIA `role` değerleri veya soyut rollerse, öğenin amacı yardımcı teknoloji kullanıcılarına iletilmez. [ARIA rolleri hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/aria-allowed-roles)."
+            },
+            "font-display": {
+                "id": "font-display",
+                "title": "Webfont yüklenirken tüm metinler görünür kalır",
+                "description": "`font-display` CSS özelliğinden yararlanarak, webfontlar yüklenirken metnin kullanıcı tarafından görünür olmasını sağlayın. [`font-display` hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/performance/font-display/)."
+            },
+            "aria-meter-name": {
+                "id": "aria-meter-name",
+                "title": "ARIA `meter` öğelerinin erişilebilir adları var",
+                "description": "Bir `meter` öğesi erişilebilir bir ad içermediğinde, ekran okuyucuları genel bir adla duyurur, bu da ekran okuyuculara güvenen kullanıcılar için kullanılamaz hale getirir. [`meter` öğelerinin adlandırılması hakkında bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/aria-meter-name)."
+            },
+            "aria-command-name": {
+                "id": "aria-command-name",
+                "title": "`button`, `link` ve `menuitem` öğelerinin erişilebilir adları var",
+                "description": "Bir öğe erişilebilir bir ad içermediğinde, ekran okuyucuları genel bir adla duyurur, bu da ekran okuyuculara güvenen kullanıcılar için kullanılamaz hale getirir. [Komut öğelerini daha erişilebilir hale getirmenin yollarını öğrenin](https://dequeuniversity.com/rules/axe/4.7/aria-command-name)."
+            },
+            "font-size": {
+                "id": "font-size",
+                "title": "Belge, okunabilir font boyutları kullanıyor",
+                "description": "12px'den küçük font boyutları okunabilir değildir ve mobil ziyaretçilerin okuyabilmek için \u201cpinch to zoom\u201d yapmalarını gerektirir. Sayfa metnin >60%'ini \u226512px olacak şekilde ayarlamaya çalışın. [Okunabilir font boyutları hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/seo/font-size/)."
+            },
+            "network-requests": {
+                "id": "network-requests",
+                "title": "Ağ İstekleri",
+                "description": "Sayfa yüklenirken yapılan ağ isteklerini listeler."
+            },
+            "csp-xss": {
+                "id": "csp-xss",
+                "title": "CSP, XSS saldırılarına karşı etkilidir",
+                "description": "Güçlü bir İçerik Güvenlik Politikası (CSP), XSS saldırılarının riskini önemli ölçüde azaltır. [XSS'yi önlemek için bir CSP kullanmayı nasıl yapacağınızı öğrenin](https://developer.chrome.com/docs/lighthouse/best-practices/csp-xss/)"
+            },
+            "pwa-each-page-has-url": {
+                "id": "pwa-each-page-has-url",
+                "title": "Her sayfanın bir URL'si var",
+                "description": "Bireysel sayfaların URL aracılığıyla derin bağlantılabilir olduğundan ve URL'lerin sosyal medyada paylaşılabilirlik amacıyla benzersiz olduğundan emin olun. [Derin bağlantılar sağlama hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/pwa/pwa-each-page-has-url/)."
+            },
+            "object-alt": {
+                "id": "object-alt",
+                "title": "`<object>` öğeleri alternatif metne sahiptir",
+                "description": "Ekran okuyucular, metin olmayan içeriği çeviremez. `<object>` öğelerine alternatif metin eklemek, ekran okuyucuların kullanıcılara anlam aktarmasına yardımcı olur. [`object` öğeleri için alternatif metin hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/object-alt)."
+            },
+            "aria-progressbar-name": {
+                "id": "aria-progressbar-name",
+                "title": "ARIA `progressbar` öğelerinin erişilebilir adları var",
+                "description": "Bir `progressbar` öğesi erişilebilir bir ad içermediğinde, ekran okuyucuları genel bir adla duyurur, bu da ekran okuyuculara güvenen kullanıcılar için kullanılamaz hale getirir. [`progressbar` öğelerini etiketleme hakkında bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/aria-progressbar-name)."
+            },
+            "performance-budget": {
+                "id": "performance-budget",
+                "title": "Performans bütçesi",
+                "description": "Sağlanan performans bütçesi tarafından belirlenen hedeflerin altında ağ isteklerinin miktarını ve boyutunu tutun. [Performans bütçeleri hakkında daha fazla bilgi edinin](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
+            },
+            "bypass": {
+                "id": "bypass",
+                "title": "Sayfa bir başlık, atlamalı bağlantı veya işaret bölgesi içerir",
+                "description": "Tekrarlayan içeriği atlamak için yollar eklemek, klavye kullanan kullanıcıların sayfada daha verimli bir şekilde gezinmesine olanak tanır. [Atlamalı bloklar hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/bypass)."
+            },
+            "unminified-css": {
+                "id": "unminified-css",
+                "title": "CSS'yi sıkıştır",
+                "description": "CSS dosyalarını sıkıştırmak, ağ yükü boyutlarını azaltabilir. [CSS'yi nasıl sıkıştıracağınızı öğrenin](https://developer.chrome.com/docs/lighthouse/performance/unminified-css/)."
+            },
+            "tap-targets": {
+                "id": "tap-targets",
+                "title": "Dokunma hedefleri uygun boyutta",
+                "description": "Butonlar ve bağlantılar gibi etkileşimli öğeler yeterince büyük olmalıdır (48x48px) veya etrafında yeterince alan olmalıdır, böylece diğer öğelerle çakışmadan kolayca dokunulabilir. [Dokunma hedefleri hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/seo/tap-targets/)."
+            },
+            "meta-refresh": {
+                "id": "meta-refresh",
+                "title": "Belge `<meta http-equiv=\"refresh\">` kullanmaz",
+                "description": "Kullanıcılar bir sayfanın otomatik olarak yeniden yüklenmesini beklemiyorlar ve bunun yapılması odaklanmayı sayfanın üstüne geri taşır. Bu, can sıkıcı veya kafa karıştırıcı bir deneyime neden olabilir. [Yenileme meta etiketi hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/meta-refresh)."
+            },
+            "landmark-one-main": {
+                "id": "landmark-one-main",
+                "title": "Belgede bir ana işaret var.",
+                "description": "Bir ana işaret, ekran okuyucu kullanıcılarının bir web sayfasında gezinmesine yardımcı olur. [İşaretler hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/landmark-one-main)."
+            },
+            "js-libraries": {
+                "id": "js-libraries",
+                "title": "Algılanan JavaScript kütüphaneleri",
+                "description": "Sayfadaki tüm ön uç JavaScript kütüphaneleri algılanır. [Bu JavaScript kütüphane algılama tanımlama denetimi hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/best-practices/js-libraries/)."
+            },
+            "unused-css-rules": {
+                "id": "unused-css-rules",
+                "title": "Kullanılmayan CSS'yi azalt",
+                "description": "Stil sayfalarındaki kullanılmayan kuralları azaltın ve ağ faaliyeti tarafından tüketilen baytları azaltmak için yukarıdaki kat içeriğinde kullanılmayan CSS'yi erteleyin. [Kullanılmayan CSS'yi nasıl azaltacağınızı öğrenin](https://developer.chrome.com/docs/lighthouse/performance/unused-css-rules/)."
+            },
+            "aria-treeitem-name": {
+                "id": "aria-treeitem-name",
+                "title": "ARIA `treeitem` öğelerinin erişilebilir adları var",
+                "description": "Bir `treeitem` öğesi erişilebilir bir ad içermediğinde, ekran okuyucuları genel bir adla duyurur, bu da ekran okuyuculara güvenen kullanıcılar için kullanılamaz hale getirir. [`treeitem` öğelerini etiketleme hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/aria-treeitem-name)."
+            },
+            "td-has-header": {
+                "id": "td-has-header",
+                "title": "Büyük bir `<table>` içindeki `<td>` öğelerinin bir veya daha fazla tablo başlığına sahip olması gerekiyor.",
+                "description": "Ekran okuyucuların tabloları daha kolay gezmesini sağlayan özelliklere sahiptir. Bir büyük tabloda (`3 veya daha fazla hücre genişliğinde ve yüksekliğinde`) `<td>` öğelerinin bir ilişkili tablo başlığına sahip olması, ekran okuyucu kullanıcıları için deneyimi iyileştirebilir. [Tablo başlıkları hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/td-has-header)."
+            },
+            "image-alt": {
+                "id": "image-alt",
+                "title": "Görüntü öğelerinin `[alt]` öznitelikleri yok",
+                "description": "Bilgilendirici öğeler kısa, açıklayıcı alternatif metne sahip olmalıdır. Dekoratif öğeler, boş bir alt özniteliği ile ihmal edilebilir. [`alt` özniteliği hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/image-alt)."
+            },
+            "uses-passive-event-listeners": {
+                "id": "uses-passive-event-listeners",
+                "title": "Kaydırma performansını artırmak için pasif dinleyiciler kullanmaz",
+                "description": "Sayfanızın kaydırma performansını artırmak için dokunma ve tekerlek etkinlik dinleyicilerinizi `pasif` olarak işaretlemeyi düşünün. [Pasif olay dinleyicilerini benimseme hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/best-practices/uses-passive-event-listeners/)."
+            },
+            "viewport": {
+                "id": "viewport",
+                "title": "`<meta name=\"viewport\">` etiketi `width` veya `initial-scale` özelliğiyle birlikte bulunuyor",
+                "description": "`<meta name=\"viewport\">`, uygulamanızı mobil ekran boyutları için optimize etmekle kalmaz, aynı zamanda [kullanıcı girişine 300 milisaniyelik bir gecikmeyi](https://developer.chrome.com/blog/300ms-tap-delay-gone-away/) önler. [Görünüm meta etiketini kullanma hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/pwa/viewport/)."
+            },
+            "identical-links-same-purpose": {
+                "id": "identical-links-same-purpose",
+                "title": "Aynı amaca sahip aynı bağlantılar",
+                "description": "Aynı hedefe sahip bağlantıların aynı açıklamaya sahip olması, kullanıcıların bağlantının amacını anlamasına ve takip etmeye karar vermelerine yardımcı olur. [Aynı bağlantılar hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/identical-links-same-purpose)."
+            },
+            "third-party-summary": {
+                "id": "third-party-summary",
+                "title": "Üçüncü taraf kodunun etkisini azaltın",
+                "description": "Üçüncü taraf kodları, yükleme performansını önemli ölçüde etkileyebilir. Redundant üçüncü taraf sağlayıcılarının sayısını sınırlayın ve üçüncü taraf kodunun sayfanızın temel olarak yüklendikten sonra yüklenmesini sağlamaya çalışın. [Üçüncü taraf etkisini en aza indirmenin yollarını öğrenin](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/)."
+            },
+            "managed-focus": {
+                "id": "managed-focus",
+                "title": "Kullanıcının odak, sayfaya eklenen yeni içeriğe yönlendirilir",
+                "description": "Eğer yeni içerik, bir iletişim kutusu gibi, sayfaya eklenirse, kullanıcının odak, ona yönlendirilir. [Odaklanmayı yeni içeriğe yönlendirme hakkında bilgi edinin](https://developer.chrome.com/docs/lighthouse/accessibility/managed-focus/)."
+            },
+            "long-tasks": {
+                "id": "long-tasks",
+                "title": "Uzun ana iş parçacığı görevlerinden kaçının",
+                "description": "Ana iş parçacığı üzerindeki en uzun görevleri listeler, giriş gecikmesine en çok katkıda bulunanları belirlemek için kullanışlıdır. [Uzun ana iş parçacığı görevlerinden kaçınma hakkında bilgi edinin](https://web.dev/long-tasks-devtools/)"
+            },
+            "unsized-images": {
+                "id": "unsized-images",
+                "title": "Görüntü öğelerinin açık `width` ve `height` değerleri yok",
+                "description": "Düzen kaymalarını azaltmak ve CLS'yi iyileştirmek için görüntü öğelerine açık bir genişlik ve yükseklik belirtin. [Görüntü boyutlarını ayarlama hakkında bilgi edinin](https://web.dev/optimize-cls/#images-without-dimensions)"
+            },
+            "uses-optimized-images": {
+                "id": "uses-optimized-images",
+                "title": "Verimli kodlanmış görüntüler kullanır",
+                "description": "Optimize edilmiş görüntüler daha hızlı yüklenir ve daha az hücresel veri tüketir. [Verimli kodlanmış görüntüler kullanma hakkında bilgi edinin](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/)."
+            },
+            "first-meaningful-paint": {
+                "id": "first-meaningful-paint",
+                "title": "İlk Anlamlı Boyama",
+                "description": "İlk Anlamlı Boyama, bir sayfanın birincil içeriğinin ne zaman görünür hale geldiğini ölçer. [İlk Anlamlı Boyama metriği hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/performance/first-meaningful-paint/)."
+            },
+            "doctype": {
+                "id": "doctype",
+                "title": "Sayfada HTML doctype'u var",
+                "description": "Bir doctype belirtmek, tarayıcının garip mod'a geçmesini önler. [DOCTYPE bildirimi hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/best-practices/doctype/)."
+            },
+            "button-name": {
+                "id": "button-name",
+                "title": "Düğmelerin erişilebilir bir adı yok",
+                "description": "Bir düğmeye erişilebilir bir ad verilmediğinde, ekran okuyucuları onu \"düğme\" olarak duyurur, bu da ekran okuyuculara güvenen kullanıcılar için kullanılamaz hale getirir. [Düğmeleri daha erişilebilir hale getirme hakkında bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/button-name)."
+            },
+            "hreflang": {
+                "id": "hreflang",
+                "title": "Belgede geçerli bir `hreflang` var",
+                "description": "hreflang bağlantıları, arama motorlarına bir dil veya bölge için hangi sürümün listelenmesi gerektiğini söyler. [`hreflang` hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/seo/hreflang/)."
+            },
+            "html-lang-valid": {
+                "id": "html-lang-valid",
+                "title": "`<html>` öğesi, `[lang]` özniteliği için geçerli bir değere sahip",
+                "description": "Geçerli bir [BCP 47 dilini](https://www.w3.org/International/questions/qa-choosing-language-tags#question) belirtmek, ekran okuyucuların metni uygun şekilde duyurmasına yardımcı olur. [`lang` özniteliğini nasıl kullanacağınızı öğrenin](https://dequeuniversity.com/rules/axe/4.7/html-lang-valid)."
+            },
+            "third-party-facades": {
+                "id": "third-party-facades",
+                "title": "Bazı üçüncü taraf kaynaklar bir cephe ile tembel yüklenebilir",
+                "description": "Bazı üçüncü taraf gömülü nesneler tembel yüklenebilir. Gerekli olana kadar onları bir cephe ile değiştirmeyi düşünün. [Bir cephe ile üçüncü tarafları ertelemeyi öğrenin](https://developer.chrome.com/docs/lighthouse/performance/third-party-facades/)."
+            },
+            "aria-toggle-field-name": {
+                "id": "aria-toggle-field-name",
+                "title": "ARIA geçiş alanlarının erişilebilir adları var",
+                "description": "Bir geçiş alanı erişilebilir bir ad içermediğinde, ekran okuyucuları genel bir adla duyurur, bu da ekran okuyuculara güvenen kullanıcılar için kullanılamaz hale getirir. [Geçiş alanları hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/aria-toggle-field-name)."
+            },
+            "custom-controls-roles": {
+                "id": "custom-controls-roles",
+                "title": "Özel kontrollerin ARIA rolleri var",
+                "description": "Özel etkileşimli kontroller uygun ARIA rollerine sahiptir. [Özel kontrollere roller eklemenin nasıl yapılacağını öğrenin](https://developer.chrome.com/docs/lighthouse/accessibility/custom-control-roles/)."
+            },
+            "aria-valid-attr-value": {
+                "id": "aria-valid-attr-value",
+                "title": "`[aria-*]` öznitelikleri geçerli değerlere sahiptir",
+                "description": "Yardımcı teknolojiler, ekran okuyucular gibi, geçersiz değerlere sahip ARIA özniteliklerini yorumlayamazlar. [ARIA öznitelikleri için geçerli değerler hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/aria-valid-attr-value)."
+            },
+            "dom-size": {
+                "id": "dom-size",
+                "title": "Aşırı bir DOM boyutundan kaçının",
+                "description": "Büyük bir DOM, bellek kullanımını artırır, [stil hesaplamalarını](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations) daha uzun sürer ve maliyetli [düzen yeniden düzenlemeleri](https://developers.google.com/speed/articles/reflow) üretir. [Aşırı bir DOM boyutundan nasıl kaçınacağını öğrenin](https://developer.chrome.com/docs/lighthouse/performance/dom-size/)."
+            },
+            "aria-hidden-focus": {
+                "id": "aria-hidden-focus",
+                "title": "`[aria-hidden=\"true\"]` öğeler odaklanabilir alt öğeler içermez",
+                "description": "`[aria-hidden=\"true\"]` öğeler içindeki odaklanabilir alt öğeler, ekran okuyucular gibi yardımcı teknoloji kullanan kullanıcılara erişilebilir olmalarını engeller. [`aria-hidden`'ın odaklanabilir öğeleri nasıl etkilediği hakkında bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/aria-hidden-focus)."
+            },
+            "input-image-alt": {
+                "id": "input-image-alt",
+                "title": "`<input type=\"image\">` öğelerinin `[alt]` metni var",
+                "description": "Bir resim bir `<input>` düğmesi olarak kullanılıyorsa, alternatif metin sağlamak, ekran okuyucu kullanıcılarının düğmenin amacını anlamasına yardımcı olabilir. [Giriş resmi alternatif metin hakkında bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/input-image-alt)."
+            },
+            "preload-fonts": {
+                "id": "preload-fonts",
+                "title": "`font-display: optional` ile fontlar önceden yükleniyor",
+                "description": "İlk kez ziyaret edenlerin bunları kullanabilmesi için `optional` fontları önceden yükleyin. [Fontları önceden yükleme hakkında daha fazla bilgi edinin](https://web.dev/preload-optional-fonts/)"
+            },
+            "themed-omnibox": {
+                "id": "themed-omnibox",
+                "title": "Adres çubuğu için bir tema rengi belirtilmemiş.",
+                "description": "Tarayıcı adres çubuğu, sitenize uyum sağlamak için tema olarak ayarlanabilir. [Adres çubuğunu temalandırma hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/pwa/themed-omnibox/)."
+            },
+            "th-has-data-cells": {
+                "id": "th-has-data-cells",
+                "title": "`<th>` öğeleri ve `[role=\"columnheader\"/\"rowheader\"]` özniteliğine sahip öğeler, açıkladığı veri hücrelerine sahiptir.",
+                "description": "Ekran okuyucuların tabloları daha kolay gezmesine yardımcı olan özellikleri vardır. Tablo başlıklarının her zaman bir hücre kümesine başvurması, ekran okuyucu kullanıcıları için deneyimi iyileştirebilir. [Tablo başlıkları hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/th-has-data-cells)."
+            },
+            "pwa-cross-browser": {
+                "id": "pwa-cross-browser",
+                "title": "Site çapraz tarayıcı çalışır",
+                "description": "En fazla kullanıcıya ulaşmak için siteler her önemli tarayıcıda çalışmalıdır. [Çapraz tarayıcı uyumluluğu hakkında bilgi edinin](https://developer.chrome.com/docs/lighthouse/pwa/pwa-cross-browser/)."
+            },
+            "offscreen-content-hidden": {
+                "id": "offscreen-content-hidden",
+                "title": "Erişilebilirlik teknolojisinden gizlenmiş ekran dışı içerik",
+                "description": "Ekran dışı içerik display: none veya aria-hidden=true ile gizlenmiştir. [Ekran dışı içeriği uygun şekilde gizlemenin nasıl yapılacağını öğrenin](https://developer.chrome.com/docs/lighthouse/accessibility/offscreen-content-hidden/)."
+            },
+            "definition-list": {
+                "id": "definition-list",
+                "title": "`<dl>`'ler yalnızca düzgün sıralanmış `<dt>` ve `<dd>` grupları, `<script>`, `<template>` veya `<div>` öğeleri içerir.",
+                "description": "Tanım listeleri uygun şekilde işaretlenmediğinde, ekran okuyucular karışık veya yanıltıcı çıktılar üretebilir. [Tanım listelerini doğru şekilde yapılandırmanın nasıl yapılacağını öğrenin](https://dequeuniversity.com/rules/axe/4.7/definition-list)."
+            },
+            "list": {
+                "id": "list",
+                "title": "Listeler yalnızca `<li>` öğeleri ve komut destekleyici öğeler (`<script>` ve `<template>`) içerir.",
+                "description": "Ekran okuyucuların listeleri duyurmak için belirli bir yolu vardır. Uygun liste yapısını sağlamak, ekran okuyucu çıktısına yardımcı olur. [Uygun liste yapısı hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/list)."
+            },
+            "aria-required-children": {
+                "id": "aria-required-children",
+                "title": "Belirli bir `[role]` gerektiren ARIA `[role]`'ye sahip öğelerin tüm gereken çocukları vardır.",
+                "description": "Bazı ARIA ebeveyn rolleri, amaçlanan erişilebilirlik işlevlerini gerçekleştirmek için belirli çocuk rollerini içermelidir. [Roller ve gerekli çocuk öğeleri hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/aria-required-children)."
+            },
+            "uses-text-compression": {
+                "id": "uses-text-compression",
+                "title": "Metin sıkıştırmasını etkinleştir",
+                "description": "Metin tabanlı kaynaklar, toplam ağ baytlarını en aza indirmek için sıkıştırma (gzip, deflate veya brotli) ile sunulmalıdır. [Metin sıkıştırması hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/performance/uses-text-compression/)."
+            },
+            "aria-required-attr": {
+                "id": "aria-required-attr",
+                "title": "`[role]`'lerin tüm gerekli `[aria-*]` öznitelikleri vardır",
+                "description": "Bazı ARIA rollerinin, ekran okuyuculara öğenin durumunu açıklayan gerekli özniteliklere sahip olması gerekir. [Roller ve gerekli öznitelikler hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/aria-required-attr)."
+            },
+            "skip-link": {
+                "id": "skip-link",
+                "title": "Atlanabilir bağlantılar odaklanabilir.",
+                "description": "Bir atlanabilir bağlantı eklemek, kullanıcıların zaman kazanmak için ana içeriğe atlamasına yardımcı olabilir. [Atlanabilir bağlantılar hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/skip-link)."
+            },
+            "uses-long-cache-ttl": {
+                "id": "uses-long-cache-ttl",
+                "title": "Statik varlıkların verimli bir önbellek politikası ile sunulması",
+                "description": "Uzun önbellek ömrü, sayfanızı tekrar ziyaret edenlerin hızını artırabilir. [Verimli önbellek politikaları hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/performance/uses-long-cache-ttl/)."
+            },
+            "http-status-code": {
+                "id": "http-status-code",
+                "title": "Sayfa başarılı bir HTTP durum koduna sahip",
+                "description": "Başarısız HTTP durum kodlarına sahip sayfalar doğru bir şekilde dizine eklenmeyebilir. [HTTP durum kodları hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/seo/http-status-code/)."
+            },
+            "crawlable-anchors": {
+                "id": "crawlable-anchors",
+                "title": "Bağlantılar taranabilir",
+                "description": "Arama motorları, web sitelerini tararken bağlantılardaki `href` özniteliğini kullanabilir. Birleşik ağ sayfasının daha fazla sayfasının keşfedilmesi için, bir bağlantı öğesinin `href` özniteliğinin uygun bir hedefe bağlanması sağlanmalıdır. [Bağlantıların taranabilir hale getirilmesi hakkında bilgi edinin](https://support.google.com/webmasters/answer/9112205)"
+            },
+            "logical-tab-order": {
+                "id": "logical-tab-order",
+                "title": "Sayfada mantıksal bir sekme sırası var",
+                "description": "Sayfa üzerinde gezinmek için tab tuşuna basma, görsel düzeni takip eder. Kullanıcılar ekran dışında olan öğelere odaklanamazlar. [Mantıksal sekme sırası hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/accessibility/logical-tab-order/)."
+            },
+            "errors-in-console": {
+                "id": "errors-in-console",
+                "title": "Konsola kaydedilen hata yok",
+                "description": "Konsola kaydedilen hatalar çözülmemiş sorunları işaret eder. Bunlar ağ isteği hataları ve diğer tarayıcı endişelerinden kaynaklanabilir. [Konsoldaki hatalar hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/best-practices/errors-in-console/)"
+            },
+            "main-thread-tasks": {
+                "id": "main-thread-tasks",
+                "title": "Görevler",
+                "description": "Sayfa yükleme sırasında yürütülen üst düzey ana iş parçacığı görevlerini listeler."
+            },
+            "geolocation-on-start": {
+                "id": "geolocation-on-start",
+                "title": "Sayfa yüklenirken konum izni istenmemiş",
+                "description": "Kullanıcılar, bağlam olmadan konumlarını isteyen veya karışık olan sitelere güvensizlik duyarlar. İsteği bir kullanıcı eylemiyle ilişkilendirmeyi düşünün. [Konum izni hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/best-practices/geolocation-on-start/)."
+            },
+            "link-text": {
+                "id": "link-text",
+                "title": "Bağlantılar açıklayıcı metne sahiptir",
+                "description": "Açıklayıcı bağlantı metni, arama motorlarının içeriğinizi anlamasına yardımcı olur. [Bağlantıları daha erişilebilir hale getirmenin yollarını öğrenin](https://developer.chrome.com/docs/lighthouse/seo/link-text/)."
+            },
+            "splash-screen": {
+                "id": "splash-screen",
+                "title": "Özel bir başlangıç ekranı için yapılandırılmamıştır",
+                "description": "Tema uyumlu bir başlangıç ekranı, kullanıcılar uygulamanızı ana ekranlarından başlattıklarında yüksek kaliteli bir deneyim sağlar. [Başlangıç ekranları hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)."
+            },
+            "total-blocking-time": {
+                "id": "total-blocking-time",
+                "title": "Toplam Engelleme Süresi",
+                "description": "FCP ve Etkileşim için Zaman arasındaki tüm zaman aralıklarının toplamı, görev süresi 50 ms'yi aştığında ifade edilen milisaniyeler. [Toplam Engelleme Süresi metriği hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/)."
+            },
+            "duplicate-id-aria": {
+                "id": "duplicate-id-aria",
+                "title": "ARIA Kimlikleri benzersizdir",
+                "description": "Bir ARIA Kimliği değeri, yardımcı teknolojiler tarafından gözden kaçırılmasını önlemek için benzersiz olmalıdır. [Tekrarlanan ARIA Kimliklerini nasıl düzelteceğinizi öğrenin](https://dequeuniversity.com/rules/axe/4.7/duplicate-id-aria)."
+            },
+            "visual-order-follows-dom": {
+                "id": "visual-order-follows-dom",
+                "title": "Sayfadaki görsel sıra DOM sırasını takip eder",
+                "description": "DOM sırası, ekran okuyucu için gezinmeyi iyileştirerek görsel sıra ile eşleşir. [DOM ve görsel sıralama hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/accessibility/visual-order-follows-dom/)."
+            },
+            "diagnostics": {
+                "id": "diagnostics",
+                "title": "Teşhisler",
+                "description": "Faydalı sayfa durumları koleksiyonu."
+            },
+            "meta-description": {
+                "id": "meta-description",
+                "title": "Belgenin bir meta açıklaması var",
+                "description": "Meta açıklamalar, sayfa içeriğini öz olarak özetlemek için arama sonuçlarına dahil edilebilir. [Meta açıklaması hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/seo/meta-description/)."
+            },
+            "table-duplicate-name": {
+                "id": "table-duplicate-name",
+                "title": "Tablolarda özet özniteliği ve `<caption>` farklı içeriklere sahiptir.",
+                "description": "Özet özniteliği tablo yapısını açıklamalıdır, `<caption>` ise ekrandaki başlığı taşımalıdır. Doğru tablo işaretleme, ekran okuyucu kullanan kullanıcılara yardımcı olur. [Özet ve başlık hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/table-duplicate-name)."
+            },
+            "modern-image-formats": {
+                "id": "modern-image-formats",
+                "title": "Resimleri yeni nesil formatlarda sun",
+                "description": "WebP ve AVIF gibi resim formatları genellikle PNG veya JPEG'den daha iyi sıkıştırma sağlar, bu da daha hızlı indirmeler ve daha az veri tüketimi anlamına gelir. [Modern resim formatları hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/performance/uses-webp-images/)."
+            },
+            "offscreen-images": {
+                "id": "offscreen-images",
+                "title": "Ekran dışı resimleri erteleyin",
+                "description": "Tüm kritik kaynaklar yüklendikten sonra ekran dışı ve gizli resimleri gecikmeli olarak yüklemeyi düşünün. Bu, etkileşim zamanını azaltır. [Ekran dışı resimleri nasıl erteleyeceğiniz hakkında bilgi edinin](https://developer.chrome.com/docs/lighthouse/performance/offscreen-images/)."
+            },
+            "structured-data": {
+                "id": "structured-data",
+                "title": "Yapılandırılmış veri geçerlidir",
+                "description": "Yapılandırılmış veriyi doğrulamak için [Yapılandırılmış Veri Test Aracı](https://search.google.com/structured-data/testing-tool/) ve [Yapılandırılmış Veri Linter](http://linter.structured-data.org/) kullanın. [Yapılandırılmış Veri hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/seo/structured-data/)."
+            },
+            "plugins": {
+                "id": "plugins",
+                "title": "Belge eklentilerden kaçınır",
+                "description": "Arama motorları, eklenti içeriğini dizine ekleyemez ve birçok cihaz eklentileri kısıtlar veya desteklemez. [Eklentilerden kaçınma hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/seo/plugins/)."
+            },
+            "efficient-animated-content": {
+                "id": "efficient-animated-content",
+                "title": "Animasyonlu içerik için video formatları kullanın",
+                "description": "Büyük GIF'ler, animasyonlu içerik sağlamak için verimsizdir. Ağ baytlarını tasarruf etmek için animasyonlar için MPEG4/WebM videolarını ve statik resimler için PNG/WebP'yi GIF yerine kullanmayı düşünün. [Verimli video formatları hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/performance/efficient-animated-content/)"
+            },
+            "max-potential-fid": {
+                "id": "max-potential-fid",
+                "title": "Maksimum Potansiyel İlk Giriş Gecikmesi",
+                "description": "Kullanıcılarınızın deneyimleyebileceği maksimum potansiyel İlk Giriş Gecikmesi, en uzun görevin süresidir. [Maksimum Potansiyel İlk Giriş Gecikmesi metriği hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/)."
+            },
+            "aria-roles": {
+                "id": "aria-roles",
+                "title": "`[role]` değerleri geçerlidir",
+                "description": "ARIA rollerinin, amaçlanan erişilebilirlik işlevlerini gerçekleştirmek için geçerli değerlere sahip olması gerekir. [Geçerli ARIA rolleri hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/aria-roles)."
+            },
+            "total-byte-weight": {
+                "id": "total-byte-weight",
+                "title": "Büyük ağ yüklerinden kaçının",
+                "description": "Büyük ağ yükleri, kullanıcılara gerçek para maliyeti ve uzun yükleme süreleri ile yüksek bir şekilde ilişkilidir. [Yük boyutlarını nasıl azaltacağınızı öğrenin](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/)."
+            },
+            "duplicate-id-active": {
+                "id": "duplicate-id-active",
+                "title": "Etkin, odaklanabilir öğelerdeki `[id]` öznitelikleri benzersizdir",
+                "description": "Tüm odaklanabilir öğelerin benzersiz bir `id`'ye sahip olması, bunların yardımcı teknolojilere görünür olmasını sağlar. [Tekrarlanan `id`'leri nasıl düzelteceğinizi öğrenin](https://dequeuniversity.com/rules/axe/4.7/duplicate-id-active)."
+            },
+            "final-screenshot": {
+                "id": "final-screenshot",
+                "title": "Son Ekran Görüntüsü",
+                "description": "Sayfa yüklemesinin son ekran görüntüsü."
+            },
+            "installable-manifest": {
+                "id": "installable-manifest",
+                "title": "Web uygulama manifesti veya hizmet işçisi kurulabilirlik gereksinimlerini karşılamıyor",
+                "description": "Hizmet işçisi, uygulamanızın çevrimdışı, ana ekrana ekleme ve bildirim al gibi birçok İlerici Web Uygulaması özelliğini kullanmasını sağlayan teknolojidir. Doğru hizmet işçisi ve manifest uygulamalarıyla, tarayıcılar kullanıcıları uygulamanızı ana ekranlarına eklemeleri için proaktif olarak teşvik edebilir, bu da daha yüksek etkileşimle sonuçlanabilir. [Manifest kurulabilirlik gereksinimleri hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/pwa/installable-manifest/)."
+            },
+            "paste-preventing-inputs": {
+                "id": "paste-preventing-inputs",
+                "title": "Kullanıcıların giriş alanlarına yapıştırmalarına izin verir",
+                "description": "Giriş yapıştırmanın engellenmesi, UX için kötü bir uygulama olup, parola yöneticilerini engelleyerek güvenliği zayıflatır. [Kullanıcı dostu giriş alanları hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/best-practices/paste-preventing-inputs/)."
+            },
+            "largest-contentful-paint": {
+                "id": "largest-contentful-paint",
+                "title": "En Büyük İçerikli Boya",
+                "description": "En Büyük İçerikli Boya, en büyük metnin veya resmin boyandığı zamanı işaret eder. [En Büyük İçerikli Boya metriği hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
+            },
+            "image-redundant-alt": {
+                "id": "image-redundant-alt",
+                "title": "Resim öğelerinde `[alt]` öznitelikleri gereksiz metin içermez",
+                "description": "Bilgilendirici öğeler kısa, açıklayıcı alternatif metin hedeflemelidir. Bağlantı veya resim yanındaki metinle tam olarak aynı olan alternatif metin, ekran okuyucu kullanıcıları için potansiyel olarak kafa karıştırıcıdır, çünkü metin iki kez okunacaktır. [`alt` özniteliği hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/image-redundant-alt)."
+            },
+            "label": {
+                "id": "label",
+                "title": "Form öğeleri ilişkili etiketlere sahiptir",
+                "description": "Etiketler, form kontrollerinin ekran okuyucular tarafından doğru şekilde duyurulmasını sağlar. [Form öğesi etiketleri hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/label)."
+            },
+            "use-landmarks": {
+                "id": "use-landmarks",
+                "title": "HTML5 landmark öğeleri navigasyonu iyileştirmek için kullanılır",
+                "description": "Landmark öğeleri (`<main>`, `<nav>`, vb.) sayfanın klavye gezintisini, yardımcı teknoloji için iyileştirmek için kullanılır. [Landmark öğeleri hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/accessibility/use-landmarks/)."
+            },
+            "aria-allowed-attr": {
+                "id": "aria-allowed-attr",
+                "title": "`[aria-*]` öznitelikleri rolleriyle eşleşir",
+                "description": "Her ARIA `role`, belirli bir `[aria-*]` özniteliği alt kümesini destekler. Bunların eşleşmemesi `[aria-*]` özniteliklerini geçersiz kılar. [ARIA özniteliklerini rolleriyle eşleştirmeyi öğrenin](https://dequeuniversity.com/rules/axe/4.7/aria-allowed-attr)."
+            },
+            "focus-traps": {
+                "id": "focus-traps",
+                "title": "Kullanıcı odak yanlışlıkla bir bölgede tıkanmaz",
+                "description": "Bir kullanıcı, odaklanabilir ve odaklanamaz herhangi bir denetim veya bölgeye yanlışlıkla odaklanmadan girebilir ve çıkabilir. [Odak tuzağından kaçınma hakkında bilgi edinin](https://developer.chrome.com/docs/lighthouse/accessibility/focus-traps/)."
+            },
+            "html-has-lang": {
+                "id": "html-has-lang",
+                "title": "`<html>` öğesi bir `[lang]` özniteliğine sahip",
+                "description": "Bir sayfa `lang` özniteliğini belirtmezse, bir ekran okuyucu sayfanın varsayılan dilinin, ekran okuyucuyu kurarken kullanıcının seçtiği dil olduğunu varsayar. Sayfa aslında varsayılan dilde değilse, ekran okuyucu sayfanın metnini doğru şekilde duyurmayabilir. [`lang` özniteliği hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/html-has-lang)."
+            },
+            "is-crawlable": {
+                "id": "is-crawlable",
+                "title": "Sayfa dizinlemeyi engellemiyor",
+                "description": "Arama motorları, sayfaları dizinlemek için izinleri yoksa sayfaları arama sonuçlarına ekleyemezler. [Örümcek direktifleri hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/seo/is-crawlable/)."
+            },
+            "aria-dialog-name": {
+                "id": "aria-dialog-name",
+                "title": "`role=\"dialog\"` veya `role=\"alertdialog\"` öğeleri erişilebilir isme sahip değil.",
+                "description": "Erişilebilir ismi olmayan ARIA iletişim öğeleri, ekran okuyucu kullanıcılarının bu öğelerin amacını ayırt etmesini engelleyebilir. [ARIA iletişim öğelerini daha erişilebilir hale getirmeyi öğrenin](https://dequeuniversity.com/rules/axe/4.7/aria-dialog-name)."
+            },
+            "td-headers-attr": {
+                "id": "td-headers-attr",
+                "title": "`<table>` öğesindeki hücreler `[headers]` özniteliğini aynı tablo içindeki diğer hücrelere işaret eder.",
+                "description": "Ekran okuyucuların tabloları daha kolay gezmesini sağlayan özellikleri vardır. `[headers]` özniteliğini kullanan `<td>` hücrelerinin yalnızca aynı tablodaki diğer hücrelere işaret ettiğinden emin olmak, ekran okuyucu kullanıcıları için deneyimi iyileştirebilir. [`headers` özniteliği hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/td-headers-attr)."
+            },
+            "no-unload-listeners": {
+                "id": "no-unload-listeners",
+                "title": "`unload` olay dinleyicilerinden kaçının",
+                "description": "`unload` olayı güvenilir bir şekilde tetiklenmez ve bunu dinlemek, Geri-İleri Önbelleği gibi tarayıcı optimizasyonlarını engelleyebilir. Bunun yerine `pagehide` veya `visibilitychange` olaylarını kullanın. [unload olay dinleyicileri hakkında daha fazla bilgi edinin](https://web.dev/bfcache/#never-use-the-unload-event)"
+            },
+            "aria-valid-attr": {
+                "id": "aria-valid-attr",
+                "title": "`[aria-*]` öznitelikleri geçerli ve yanlış yazılmamıştır",
+                "description": "Ekran okuyucu gibi yardımcı teknolojiler, geçersiz adlara sahip ARIA özniteliklerini yorumlayamaz. [Geçerli ARIA öznitelikleri hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/aria-valid-attr)."
+            },
+            "uses-rel-preconnect": {
+                "id": "uses-rel-preconnect",
+                "title": "Gerekli kökenlere önbağlantı kurar",
+                "description": "Önemli üçüncü taraf kökenlere erken bağlantılar kurmak için `preconnect` veya `dns-prefetch` kaynak ipuçları eklemeyi düşünün. [Gerekli kökenlere önbağlantı kurmayı öğrenin](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/)."
+            },
+            "is-on-https": {
+                "id": "is-on-https",
+                "title": "HTTPS kullanıyor",
+                "description": "Tüm sitelerin HTTPS ile korunması gerekir, hatta hassas verileri işlemeyenler bile. Bu, bazı kaynakların HTTPS üzerinden sunulmasına rağmen ilk isteğin HTTPS üzerinden sunulmasına rağmen bazı kaynakların HTTP üzerinden yüklenmesini içeren [karışık içeriği](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content) içerir. HTTPS, uygulamanız ve kullanıcılarınız arasındaki iletişimi yabancıların müdahale etmesini veya pasif olarak dinlemesini önler ve HTTP/2 ve birçok yeni web platformu API'si için bir ön koşuldur. [HTTPS hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/pwa/is-on-https/)."
+            },
+            "user-timings": {
+                "id": "user-timings",
+                "title": "Kullanıcı Zamanlama işaretleri ve ölçümleri",
+                "description": "Uygulamanızı kullanıcı deneyimlerinin anahtar noktalarında uygulama Zamanlama API'si ile enstrümantalize etmeyi düşünün. [Kullanıcı Zamanlama işaretleri hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/performance/user-timings/)."
+            },
+            "target-size": {
+                "id": "target-size",
+                "title": "Dokunma hedefleri yeterli boyutta ve aralıklıdır.",
+                "description": "Yeterli boyutta ve aralıklı dokunma hedefleri, küçük kontrolleri hedeflemekte zorluk çeken kullanıcılara hedefleri etkinleştirmelerine yardımcı olur. [Dokunma hedefleri hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/target-size)."
+            },
+            "aria-hidden-body": {
+                "id": "aria-hidden-body",
+                "title": "`[aria-hidden=\"true\"]` belge `<body>` öğesinde bulunmaz",
+                "description": "Erişilebilirlik teknolojileri, ekran okuyucular gibi, `aria-hidden=\"true\"` belirtecinin belge `<body>` öğesine ayarlandığında tutarsız çalışır. [`aria-hidden`'ın belge gövdesini nasıl etkilediğini öğrenin](https://dequeuniversity.com/rules/axe/4.7/aria-hidden-body)."
+            },
+            "cumulative-layout-shift": {
+                "id": "cumulative-layout-shift",
+                "title": "Kümülatif Düzen Kayması",
+                "description": "Kümülatif Düzen Kayması, görünür öğelerin görüntü içindeki hareketini ölçer. [Kümülatif Düzen Kayması metriği hakkında daha fazla bilgi edinin](https://web.dev/cls/)."
+            },
+            "no-document-write": {
+                "id": "no-document-write",
+                "title": "`document.write()` kullanmaktan kaçınır",
+                "description": "Yavaş bağlantılardaki kullanıcılar için, `document.write()` aracılığıyla dinamik olarak enjekte edilen harici betikler sayfa yüklemesini on saniyelerce geciktirebilir. [`document.write()` kullanmaktan nasıl kaçınılır](https://developer.chrome.com/docs/lighthouse/best-practices/no-document-write/)."
+            },
+            "non-composited-animations": {
+                "id": "non-composited-animations",
+                "title": "Bileşiklenmemiş animasyonlardan kaçının",
+                "description": "Bileşiklenmemiş animasyonlar sıkışık olabilir ve CLS'yi artırabilir. [Bileşiklenmemiş animasyonlardan nasıl kaçınılır](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/)"
+            },
+            "heading-order": {
+                "id": "heading-order",
+                "title": "Başlık öğeleri sıralı olarak azalan bir sırayla görünür",
+                "description": "Başlıkların doğru sırayla, seviyeleri atlamadan sıralanması sayfanın anlamsal yapısını iletişim teknolojileri kullanılırken daha kolay gezilmesini ve anlaşılmasını sağlar. [Başlık sırası hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/heading-order)."
+            },
+            "metrics": {
+                "id": "metrics",
+                "title": "Metrikler",
+                "description": "Mevcut tüm metrikleri toplar."
+            },
+            "mainthread-work-breakdown": {
+                "id": "mainthread-work-breakdown",
+                "title": "Ana iş parçacığını minimuma indirin",
+                "description": "JS ayrıştırma, derleme ve yürütme için harcanan zamanı azaltmayı düşünebilirsiniz. Bu konuda daha küçük JS yükleri sağlamanın bununla yardımcı olabileceğini bulabilirsiniz. [Ana iş parçacığını minimuma indirmenin yolunu öğrenin](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)"
+            },
+            "pwa-page-transitions": {
+                "id": "pwa-page-transitions",
+                "title": "Sayfa geçişleri ağda engellenmiş gibi hissettirmiyor",
+                "description": "Geçişler, yavaş bir ağda bile etrafta tıkladığınızda çevik hissetmeli. Bu deneyim, bir kullanıcının performans algısının anahtarıdır. [Sayfa geçişleri hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/pwa/pwa-page-transitions/)."
+            },
+            "deprecations": {
+                "id": "deprecations",
+                "title": "Kullanımdan kaldırılan API'leri kullanmaktan kaçınır",
+                "description": "Kullanımdan kaldırılan API'ler sonunda tarayıcıdan kaldırılacaktır. [Kullanımdan kaldırılan API'ler hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/best-practices/deprecations/)."
+            },
+            "frame-title": {
+                "id": "frame-title",
+                "title": "`<frame>` veya `<iframe>` öğeleri bir başlık içermez",
+                "description": "Ekran okuyucu kullanıcıları, çerçeve içeriğini açıklamak için çerçeve başlıklarına güvenir. [Çerçeve başlıkları hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/frame-title)."
+            },
+            "valid-source-maps": {
+                "id": "valid-source-maps",
+                "title": "Büyük birinci taraf JavaScript için kaynak haritaları eksik",
+                "description": "Kaynak haritaları, küçültülmüş kodu orijinal kaynak koduna çevirir. Bu, geliştiricilerin üretimde hata ayıklamasına yardımcı olur. Ayrıca, Lighthouse daha fazla içgörü sağlayabilir. Bu avantajlardan faydalanmak için kaynak haritalarını dağıtmayı düşünün. [Kaynak haritaları hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/devtools/javascript/source-maps/)."
+            },
+            "color-contrast": {
+                "id": "color-contrast",
+                "title": "Arka plan ve ön plan renkleri arasında yeterli bir kontrast oranı bulunmaktadır",
+                "description": "Düşük kontrastlı metin, birçok kullanıcının okumasını zor veya imkansız hale getirir. [Yeterli renk kontrastı sağlamanın yollarını öğrenin](https://dequeuniversity.com/rules/axe/4.7/color-contrast)."
+            },
+            "html-xml-lang-mismatch": {
+                "id": "html-xml-lang-mismatch",
+                "title": "`<html>` öğesinin `[xml:lang]` özniteliği, `[lang]` özniteliğiyle aynı temel dilde.",
+                "description": "Web sayfası tutarlı bir dil belirtmezse, ekran okuyucu sayfanın metnini doğru bir şekilde duyurmayabilir. [Dil özniteliği hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/html-xml-lang-mismatch)."
+            },
+            "interactive-element-affordance": {
+                "id": "interactive-element-affordance",
+                "title": "Etkileşimli öğeler amaçlarını ve durumlarını belirtir",
+                "description": "Bağlantılar ve düğmeler gibi etkileşimli öğeler, durumlarını belirtmeli ve etkileşimli olmayan öğelerden ayırt edilebilir olmalıdır. [Etkileşimli öğeleri etkileşim ipuçları ile süslemenin yolunu öğrenin](https://developer.chrome.com/docs/lighthouse/accessibility/interactive-element-affordance/)."
+            },
+            "form-field-multiple-labels": {
+                "id": "form-field-multiple-labels",
+                "title": "Hiçbir form alanının birden fazla etiketi yoktur",
+                "description": "Birden fazla etikete sahip form alanları, ilk, son veya tüm etiketleri kullanan ekran okuyucular gibi erişilebilirlik teknolojileri tarafından kafa karıştırıcı şekilde duyurulabilir. [Form etiketlerini nasıl kullanacağınızı öğrenin](https://dequeuniversity.com/rules/axe/4.7/form-field-multiple-labels)."
+            },
+            "interactive": {
+                "id": "interactive",
+                "title": "Etkileşim Zamanı",
+                "description": "Etkileşim Zamanı, sayfanın tamamen etkileşimli hale gelmesi için geçen süredir. [Etkileşim Zamanı metriği hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/performance/interactive/)."
+            },
+            "first-contentful-paint": {
+                "id": "first-contentful-paint",
+                "title": "İlk İçerikli Boyama",
+                "description": "İlk İçerikli Boyama, ilk metin veya resmin boyandığı zamanı belirtir. [İlk İçerikli Boyama metriği hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)."
+            },
+            "accesskeys": {
+                "id": "accesskeys",
+                "title": "`[accesskey]` değerleri benzersizdir",
+                "description": "Erişim tuşları, kullanıcıların sayfanın bir bölümüne hızlıca odaklanmasını sağlar. Doğru gezinti için her erişim tuşunun benzersiz olması gerekir. [Erişim tuşları hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/accesskeys)."
+            },
+            "content-width": {
+                "id": "content-width",
+                "title": "İçerik, viewport için doğru boyutta",
+                "description": "Uygulamanızın içeriğinin genişliği, viewport'un genişliğiyle eşleşmiyorsa, uygulamanız mobil ekranlar için optimize edilmemiş olabilir. [İçeriği viewport için boyutlandırmanın yolunu öğrenin](https://developer.chrome.com/docs/lighthouse/pwa/content-width/)."
+            },
+            "aria-text": {
+                "id": "aria-text",
+                "title": "`role=text` özniteliğine sahip öğelerin odaklanabilir alt öğeleri yoktur.",
+                "description": "Metin düğümünü işaretlemele ekran okuyucuların onu bir kelime olarak ele almasını sağlar ancak öğenin odaklanabilir alt öğeleri duyurulmaz. [`role=text` özniteliği hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/aria-text)."
+            },
+            "image-aspect-ratio": {
+                "id": "image-aspect-ratio",
+                "title": "Görüntüler doğru en boy oranıyla görüntülenir",
+                "description": "Görüntü görüntüleme boyutları, doğal en boy oranına uymalıdır. [Görüntü en boy oranı hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/best-practices/image-aspect-ratio/)."
+            },
+            "image-size-responsive": {
+                "id": "image-size-responsive",
+                "title": "Uygun çözünürlükte görüntüler sunar",
+                "description": "Görüntü doğal boyutları, görüntü netliğini maksimize etmek için görüntüleme boyutu ve piksel oranıyla orantılı olmalıdır. [Duyarlı görüntüler sunmanın yolunu öğrenin](https://web.dev/serve-responsive-images/)."
+            },
+            "focusable-controls": {
+                "id": "focusable-controls",
+                "title": "Etkileşimli kontroller klavye ile odaklanabilir",
+                "description": "Özel etkileşimli kontroller klavye ile odaklanabilir ve bir odak göstergesi görüntüler. [Özel kontrolleri odaklanabilir hale getirmenin yolunu öğrenin](https://developer.chrome.com/docs/lighthouse/accessibility/focusable-controls/)."
+            },
+            "prioritize-lcp-image": {
+                "id": "prioritize-lcp-image",
+                "title": "En Büyük İçerikli Boyama resmini önceden yükle",
+                "description": "LCP öğesi sayfaya dinamik olarak ekleniyorsa, LCP'yi iyileştirmek için resmi önceden yüklemelisiniz. [LCP öğelerini ön yüklemek hakkında daha fazla bilgi edinin](https://web.dev/optimize-lcp/#optimize-when-the-resource-is-discovered)."
+            },
+            "label-content-name-mismatch": {
+                "id": "label-content-name-mismatch",
+                "title": "Görünür metin etiketleri olan öğelerin eşleşen erişilebilir adı var",
+                "description": "Erişilebilir adıyla eşleşmeyen görünür metin etiketleri, ekran okuyucu kullanıcıları için kafa karıştırıcı bir deneyime neden olabilir. [Erişilebilir adlar hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/label-content-name-mismatch)."
+            },
+            "lcp-lazy-loaded": {
+                "id": "lcp-lazy-loaded",
+                "title": "En Büyük İçerikli Boyama resmi tembel yüklendi",
+                "description": "Üst kısımdaki görüntülerin tembel yüklenmesi sayfa yaşam döngüsünde daha sonra renderlenir ve en büyük içerikli boyamayı geciktirebilir. [Optimal tembel yükleme hakkında daha fazla bilgi edinin](https://web.dev/lcp-lazy-loading/)."
+            },
+            "aria-required-parent": {
+                "id": "aria-required-parent",
+                "title": "`[role]`lar gerekli üst öğe tarafından içerilir",
+                "description": "Bazı ARIA alt rollerinin, uygun erişilebilirlik işlevlerini gerçekleştirmek için belirli üst roller tarafından içerilmesi gerekir. [ARIA rolleri ve gerekli üst öğe hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/aria-required-parent)."
+            },
+            "largest-contentful-paint-element": {
+                "id": "largest-contentful-paint-element",
+                "title": "En Büyük İçerikli Boyama öğesi",
+                "description": "Bu, viewport içinde boyanan en büyük içerikli elemandır. [En Büyük İçerikli Boyama öğesi hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)."
+            },
+            "layout-shift-elements": {
+                "id": "layout-shift-elements",
+                "title": "Büyük düzen kaymalarından kaçının",
+                "description": "Bu DOM öğeleri, sayfanın CLS'sine en çok katkıda bulunan öğelerdir. [CLS'yi nasıl iyileştireceğinizi öğrenin](https://web.dev/optimize-cls/)"
+            },
+            "uses-responsive-images": {
+                "id": "uses-responsive-images",
+                "title": "Görüntüleri uygun şekilde boyutlandırma",
+                "description": "Hücresel verileri kaydetmek ve yükleme süresini iyileştirmek için uygun boyutta görüntüler sunun. [Görüntüleri boyutlandırmanın yolunu öğrenin](https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images/)."
+            },
+            "table-fake-caption": {
+                "id": "table-fake-caption",
+                "title": "Tablolar bir başlık belirtmek için `[colspan]` özniteliğine sahip hücreler yerine `<caption>` öğesini kullanır.",
+                "description": "Ekran okuyucuların tabloları daha kolay gezmesine yardımcı olan özellikleri vardır. Tabloların gerçek başlık öğesini, `[colspan]` özniteliğine sahip hücreler yerine kullanılması, ekran okuyucu kullanıcıları için deneyimi iyileştirebilir. [Başlıklar hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/table-fake-caption)."
+            },
+            "screenshot-thumbnails": {
+                "id": "screenshot-thumbnails",
+                "title": "Ekran Görüntüsü Küçük Resimleri",
+                "description": "Bu, sitenizin yüklenme görünümüdür."
+            },
+            "network-server-latency": {
+                "id": "network-server-latency",
+                "title": "Sunucu Arka Uç Gecikmeleri",
+                "description": "Sunucu gecikmeleri web performansını etkileyebilir. Bir kaynağın sunucu gecikmesi yüksekse, sunucunun aşırı yüklü olduğu veya kötü arka uç performansı olduğu bir göstergedir. [Sunucu yanıt süresi hakkında daha fazla bilgi edinin](https://hpbn.co/primer-on-web-performance/#analyzing-the-resource-waterfall)."
+            },
+            "unminified-javascript": {
+                "id": "unminified-javascript",
+                "title": "JavaScript'i Sıkıştırın",
+                "description": "JavaScript dosyalarını sıkıştırmak, payload boyutlarını ve betik ayrışma süresini azaltabilir. [JavaScript'i nasıl sıkıştıracağınızı öğrenin](https://developer.chrome.com/docs/lighthouse/performance/unminified-javascript/)."
+            },
+            "network-rtt": {
+                "id": "network-rtt",
+                "title": "Ağ Tur Süre Zamanları",
+                "description": "Ağ tur süreleri (RTT), performans üzerinde büyük bir etkiye sahiptir. Bir kaynağa olan RTT yüksekse, bu, kullanıcıya daha yakın sunucuların performansını artırabileceğinin bir göstergesidir. [Tur süre zamanı hakkında daha fazla bilgi edinin](https://hpbn.co/primer-on-latency-and-bandwidth/)."
+            },
+            "critical-request-chains": {
+                "id": "critical-request-chains",
+                "title": "Kritik istek zincirlerini zincirlemekten kaçının",
+                "description": "Aşağıdaki Kritik İstek Zincirleri, yüksek öncelikle yüklenen kaynakları gösterir. Sayfa yüklemesini iyileştirmek için zincirlerin uzunluğunu azaltmayı, kaynakların indirme boyutunu azaltmayı veya gereksiz kaynakların indirilmesini ertelemeyi düşünün. [Kritik istek zincirlerini zincirlemekten nasıl kaçınacağınızı öğrenin](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/)."
+            },
+            "inspector-issues": {
+                "id": "inspector-issues",
+                "title": "Chrome Devtools'taki `Sorunlar` panelinde sorunlar kaydedildi",
+                "description": "Sorunlar, çözümlenmemiş sorunları gösteren Chrome Devtools'taki `Sorunlar` paneline kaydedilir. Bunlar, ağ isteği başarısızlıklarından, yetersiz güvenlik kontrollerinden ve diğer tarayıcı endişelerinden kaynaklanabilir. Her bir sorunla ilgili daha fazla ayrıntı için Chrome DevTools'taki Sorunlar panelini açın."
+            },
+            "charset": {
+                "id": "charset",
+                "title": "Doğru bir karakter kümesi tanımlar",
+                "description": "Bir karakter kodlaması bildirimi gereklidir. İlk 1024 bayt HTML içinde bir `<meta>` etiketiyle veya Content-Type HTTP yanıt başlığında yapılabilir. [Karakter kodlamasını nasıl bildireceğiniz hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/best-practices/charset/)."
+            },
+            "select-name": {
+                "id": "select-name",
+                "title": "Seçim öğelerinin ilişkili etiket öğeleri vardır.",
+                "description": "Etkili etiketleri olmayan form öğeleri, ekran okuyucu kullanıcıları için sinir bozucu deneyimler oluşturabilir. [Seçim öğesi hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/select-name)."
+            },
+            "canonical": {
+                "id": "canonical",
+                "title": "Belge geçerli bir `rel=canonical`'a sahiptir",
+                "description": "Kanonik bağlantılar, arama sonuçlarında hangi URL'nin gösterileceğini önerir. [Kanonik bağlantılar hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/seo/canonical/)."
+            },
+            "meta-viewport": {
+                "id": "meta-viewport",
+                "title": "`<meta name=\"viewport\">` öğesinde `[user-scalable=\"no\"]` kullanılmaz ve `[maximum-scale]` özniteliği 5'ten az değildir.",
+                "description": "Yakınlaştırmayı devre dışı bırakmak, düşük görme yeteneğine sahip kullanıcılar için sorunlu olabilir çünkü ekran büyütmesine dayanarak web sayfasının içeriğini doğru bir şekilde görmek. [Görünüm meta etiketi hakkında daha fazla bilgi edinin](https://dequeuniversity.com/rules/axe/4.7/meta-viewport)."
+            },
+            "dlitem": {
+                "id": "dlitem",
+                "title": "Tanım listesi öğeleri `<dl>` öğelerine sarılır",
+                "description": "Tanım listesi öğeleri (`<dt>` ve `<dd>`) doğru bir şekilde duyurulabilmesi için bir üst `<dl>` öğesi içinde sarılmalıdır. [Tanım listelerini doğru bir şekilde nasıl yapılandıracağınızı öğrenin](https://dequeuniversity.com/rules/axe/4.7/dlitem)."
+            },
+            "link-in-text-block": {
+                "id": "link-in-text-block",
+                "title": "Bağlantılar renk kullanmadan ayırt edilebilir.",
+                "description": "Düşük kontrastlı metin, birçok kullanıcı için zor veya imkansızdır. Ayırt edilebilir bağlantı metni, düşük görme yeteneğine sahip kullanıcılar için deneyimi iyileştirir. [Bağlantıları ayırt edilebilir hale getirmenin yollarını öğrenin](https://dequeuniversity.com/rules/axe/4.7/link-in-text-block)."
+            },
+            "speed-index": {
+                "id": "speed-index",
+                "title": "Hız Endeksi",
+                "description": "Hız Endeksi, bir sayfanın içeriğinin ne kadar hızlı görünür hale geldiğini gösterir. [Hız Endeksi metriği hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/performance/speed-index/)."
+            }
+        
+        },
+        "categories": {
+            "performance": {
+                "id": "performance",
+                "title": "Performans"
+            },
+            "accessibility": {
+                "id": "accessibility",
+                "title": "Erişilebilirlik",
+                "description": "Bu kontroller, web uygulamanızın [erişilebilirliğini geliştirme fırsatlarını vurgular](https://developer.chrome.com/docs/lighthouse/accessibility/). Otomatik tespit yalnızca belirli bir sorun kümesini algılayabilir ve web uygulamanızın erişilebilirliğini garanti etmez, bu nedenle [manuel test](https://web.dev/how-to-review/) etme de teşvik edilir.",
+                "manualDescription": "Bu öğeler, otomatik test aracının kapsayamadığı alanları ele alır. Daha fazla bilgi için [erişilebilirlik incelemesi yapma kılavuzumuza](https://web.dev/how-to-review/) bakın."
+            },
+            "best-practices": {
+                "id": "best-practices",
+                "title": "En İyi Uygulamalar"
+            },
+            "seo": {
+                "id": "seo",
+                "title": "SEO",
+                "description": "Bu kontroller, sayfanızın temel arama motoru optimizasyonu tavsiyelerini takip ettiğinden emin olur. Lighthouse burada puanlamadığı birçok ek faktör bulunmaktadır ve arama sıralamanızı etkileyebilir, bunlar arasında [Ana Web Ölçütleri](https://web.dev/learn-core-web-vitals/) performansı da bulunur. [Google Arama Temel İlkeleri hakkında daha fazla bilgi edinin](https://support.google.com/webmasters/answer/35769).",
+                "manualDescription": "Sitenizde bu ek doğrulayıcıları çalıştırarak ek SEO en iyi uygulamalarını kontrol edin."
+            },
+            "pwa": {
+                "id": "pwa",
+                "title": "PWA",
+                "description": "Bu kontroller, Birleşik Web Uygulaması'nın (PWA) yönlerini doğrular. [İyi Bir Birleşik Web Uygulaması'nı oluşturan unsurları öğrenin](https://web.dev/pwa-checklist/).",
+                "manualDescription": "Bu kontroller, temel [PWA Kontrol Listesi](https://web.dev/pwa-checklist/) tarafından gereklidir, ancak otomatik olarak Lighthouse tarafından kontrol edilmez. Puanınızı etkilemezler, ancak bunları manuel olarak doğrulamanız önemlidir."
+            }
+        },
+        "categoryGroups": {
+            "metrics": {
+                "title": "Metrics"
+            },
+            "pwa-optimized": {
+                "title": "PWA Optimized"
+            },
+            "diagnostics": {
+                "title": "Diagnostics",
+                "description": "More information about the performance of your application. These numbers don't [directly affect](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) the Performance score."
+            },
+            "seo-crawl": {
+                "title": "Crawling and Indexing",
+                "description": "To appear in search results, crawlers need access to your app."
+            },
+            "budgets": {
+                "title": "Budgets",
+                "description": "Performance budgets set standards for the performance of your site."
+            },
+            "a11y-color-contrast": {
+                "title": "Contrast",
+                "description": "These are opportunities to improve the legibility of your content."
+            },
+            "seo-mobile": {
+                "title": "Mobile Friendly",
+                "description": "Make sure your pages are mobile friendly so users don\u2019t have to pinch or zoom in order to read the content pages. [Learn how to make pages mobile-friendly](https://developers.google.com/search/mobile-sites/)."
+            },
+            "best-practices-browser-compat": {
+                "title": "Browser Compatibility"
+            },
+            "a11y-best-practices": {
+                "title": "Best practices",
+                "description": "These items highlight common accessibility best practices."
+            },
+            "best-practices-general": {
+                "title": "General"
+            },
+            "pwa-installable": {
+                "title": "Installable"
+            },
+            "a11y-audio-video": {
+                "title": "Audio and video",
+                "description": "These are opportunities to provide alternative content for audio and video. This may improve the experience for users with hearing or vision impairments."
+            },
+            "a11y-language": {
+                "title": "Internationalization and localization",
+                "description": "These are opportunities to improve the interpretation of your content by users in different locales."
+            },
+            "a11y-navigation": {
+                "title": "Navigation",
+                "description": "These are opportunities to improve keyboard navigation in your application."
+            },
+            "a11y-tables-lists": {
+                "title": "Tables and lists",
+                "description": "These are opportunities to improve the experience of reading tabular or list data using assistive technology, like a screen reader."
+            },
+            "load-opportunities": {
+                "title": "Opportunities",
+                "description": "These suggestions can help your page load faster. They don't [directly affect](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) the Performance score."
+            },
+            "a11y-aria": {
+                "title": "ARIA",
+                "description": "These are opportunities to improve the usage of ARIA in your application which may enhance the experience for users of assistive technology, like a screen reader."
+            },
+            "seo-content": {
+                "title": "Content Best Practices",
+                "description": "Format your HTML in a way that enables crawlers to better understand your app\u2019s content."
+            },
+            "best-practices-trust-safety": {
+                "title": "Trust and Safety"
+            },
+            "best-practices-ux": {
+                "title": "User Experience"
+            },
+            "a11y-names-labels": {
+                "title": "Names and labels",
+                "description": "These are opportunities to improve the semantics of the controls in your application. This may enhance the experience for users of assistive technology, like a screen reader."
+            }
+        },
+        "timing": {
+            "total": 18021
+        },
+        "i18n": {
+            "rendererFormattedStrings": {
+                "varianceDisclaimer": "Values are estimated and may vary. The [performance score is calculated](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) directly from these metrics.",
+                "opportunityResourceColumnLabel": "Opportunity",
+                "opportunitySavingsColumnLabel": "Estimated Savings",
+                "errorMissingAuditInfo": "Report error: no audit information",
+                "errorLabel": "Error!",
+                "warningHeader": "Warnings: ",
+                "passedAuditsGroupTitle": "Passed audits",
+                "notApplicableAuditsGroupTitle": "Not applicable",
+                "manualAuditsGroupTitle": "Additional items to manually check",
+                "toplevelWarningsMessage": "There were issues affecting this run of Lighthouse:",
+                "crcLongestDurationLabel": "Maximum critical path latency:",
+                "crcInitialNavigation": "Initial Navigation",
+                "lsPerformanceCategoryDescription": "[Lighthouse](https://developers.google.com/web/tools/lighthouse/) analysis of the current page on an emulated mobile network. Values are estimated and may vary.",
+                "labDataTitle": "Lab Data",
+                "warningAuditsGroupTitle": "Passed audits but with warnings",
+                "snippetExpandButtonLabel": "Expand snippet",
+                "snippetCollapseButtonLabel": "Collapse snippet",
+                "thirdPartyResourcesLabel": "Show 3rd-party resources",
+                "runtimeDesktopEmulation": "Emulated Desktop",
+                "runtimeMobileEmulation": "Emulated Moto G Power",
+                "runtimeNoEmulation": "No emulation",
+                "runtimeSettingsBenchmark": "Unthrottled CPU/Memory Power",
+                "runtimeSettingsCPUThrottling": "CPU throttling",
+                "runtimeSettingsDevice": "Device",
+                "runtimeSettingsNetworkThrottling": "Network throttling",
+                "runtimeSettingsUANetwork": "User agent (network)",
+                "runtimeUnknown": "Unknown",
+                "dropdownCopyJSON": "Copy JSON",
+                "dropdownDarkTheme": "Toggle Dark Theme",
+                "dropdownPrintExpanded": "Print Expanded",
+                "dropdownPrintSummary": "Print Summary",
+                "dropdownSaveGist": "Save as Gist",
+                "dropdownSaveHTML": "Save as HTML",
+                "dropdownSaveJSON": "Save as JSON",
+                "dropdownViewer": "Open in Viewer",
+                "footerIssue": "File an issue",
+                "throttlingProvided": "Provided by environment",
+                "calculatorLink": "See calculator.",
+                "runtimeSettingsAxeVersion": "Axe version",
+                "viewTreemapLabel": "View Treemap",
+                "showRelevantAudits": "Show audits relevant to:"
+            }
+        },
+        "entities": [
+            {
+                "name": "impalabt.com",
+                "isFirstParty": true,
+                "isUnrecognized": true,
+                "origins": [
+                    "https://impalabt.com",
+                    "https://www.impalabt.com"
+                ]
+            },
+            {
+                "name": "Google Fonts",
+                "homepage": "https://fonts.google.com/",
+                "category": "cdn",
+                "origins": [
+                    "https://fonts.googleapis.com",
+                    "https://fonts.gstatic.com"
+                ]
+            },
+            {
+                "name": "Vimeo",
+                "homepage": "https://vimeo.com/",
+                "category": "video",
+                "origins": [
+                    "https://player.vimeo.com",
+                    "https://f.vimeocdn.com",
+                    "https://i.vimeocdn.com",
+                    "https://fresnel.vimeocdn.com",
+                    "https://player-telemetry.vimeo.com",
+                    "https://vimeo.com"
+                ]
+            },
+            {
+                "name": "unsplash.com",
+                "isUnrecognized": true,
+                "origins": [
+                    "https://views.unsplash.com"
+                ]
+            },
+            {
+                "name": "Akamai",
+                "homepage": "https://www.akamai.com/",
+                "category": "cdn",
+                "origins": [
+                    "https://150vod-adaptive.akamaized.net"
+                ]
+            }
+        ],
+        "fullPageScreenshot": {
+            "screenshot": {
+                "data": "data:image/webp;base64,UklGRnJHAABXRUJQVlA4WAoAAAAgAAAAmwEANgMASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZWUDgghEUAAFBOAZ0BKpwBNwM/EYS5VawopiMl80qZgCIJZ278V3kzeYbwyvHPtbN1yA2IH+C/V6Yf8NvDudX3Zj116eH8tf7j+o/3f3BfMP3P/e/4f/FeXPm7+qaG2Kvse1Vu8f/r65P639cvFX6E6gvuv/+/9DyQ/rn/iO8r2j/a/9P/V/1r9//kF+Db+L6u9R/1f/P+wD5j/+Xwmfy3/N9gT+Of2X9ff9B7s32B6A/sv94fgN/Yz///8T/v9xH94f/////ifK07BalTMPWfnCv6iqBvMIzmfNlR4kF85dwGnFBAb8JjQStV0C3nhmWqntoBe2xlozHs3wc1HhQdUgRoga17Pne8jIu4lwh/wSdeYm6qtmBVH9GcEksjw9Wv5a3jDwMUvUeWEdPtqeLNNg5hO9Ue06FDDBcOia9plo/mNeCvXxrSqLoUCXyvJYzmBXWAL5I6SLZPqbgU/7S8mPYPsL3G7Nggr+CytScDqBMaYk2vJLAbYVtT7s43ARifb1a/PUyq84cuEdzCCo/6DKpHyigz0QGg7Qee4XvjXH2WZHF/vXLVerTovW97xE06iCiJiqVtEQHPUhDSC7hDSC7hDSC7hDSC7hDSC7hDSC7hDSC7hDSC7hDSC7hBFRCHmFUo6MlikI6w3kbb6diawmMusBqMVSOhA1HUfqyjhmctM0c0zw5Ngxxpc95tPApviyqmSlNXPMdQ/hg1aFdtT47vK8le9y737JdXw/8b8wt9vdvue2QJgsegFN++vvJoGzCS0iJMFG0Wn0OfA9H+cOgdkv34ald1IINPMrIoFYbvbwGts4sbrOP/vEoMjrVrVBz/oK+Eaz7s38gGYxU5HNvuEXObCuWb5sCpwDwaCUr/NF1+Yf2/Ha+4PFzVvu55i6+Yj/je3ELH0OYLYuoAVTY5/8jbfB7QCMXD37dUY8ye2sAxEe9F5VKGw8UmH4gaxymYyUtAMiuKkEQYGTT2/0JblxmaQEPQJ7RjzqyaU/tPBV+CEfEEdWewqmvJlQl3pa6EdWewsJSC7hDcSPCGkF9qredo5wXb8RWQYhFh8kQlD3tdvZIuXoGiHGq/BMQuN7E+HJ/sOyIZsAdAahaUvZ7MogE96KMPoVUWLDShgNlJmhlSgm9NsJb9Fq+O8njePpa3vNeRrE8dzs/9PhvhiZSLzNg748eVUilNZ4Zlp+p7ghNpHQZ6MoZVU/E6h52RlOEWSBk2SRGzHXOyjbLT779UMqn5b1rrx+mXs08e4TODAzK8mqbatOTVxstVrIalyDcxTbF2RddHnYGn4Uaoqz3SqxAD3MHTjumWLzVBDMTteQX31zf9iU+uDQGRRPiPGHmdrqW/6pOHcmoOPEQp057G+CLiVN0BgXxCqVOlMRFzHrOupxyqmJrBh32Z/0cFuU9kRpTAtxqx1NwlymyfFGrBjtrmyMTZQSkCLNcLlt88d6BbzGhZwIaIVejrRA3mwwAwsia1wqH6TFd7l0uclshBRfSNrsjzaN7doH02JeiykEB92oMJmk56xX3nPpPg3ANb84gl95VJET9oGeKLGC6II+B0x8sz1J5afriZu+R96Q2bPFJ7GmA5qwsCvVsD5V7eVeNUT18XYTlDaTLQcox2mPf76Whe/Ydq/m8N+ZWYqXa3f96PUYmMot9GaO1elcdYhh7r5LxfXr55l71tG+47lLkIvgBAjI9NQEEUlSBFPB8/9JRWtIy5fB7gnK/LoYDslGmMPlj3UA3xXGvFt55SB/kK7HRrYUG4ZMogDE/14pT8OYUxjPtQhygfqnVuwdsTi6+126uEPPRpWWAgHxLFOYKfwpDv4m9Pc7sQVXmYVVf3Jh95wGtKY8NzetAbnzw/QXjCyq3aSJvcZae8gaskL7BJLKzY6gkTyxHMMSzYKnwOhAxZDR3z4wB2ZXRLi4yFEys2wdjkY4iKx5KNazgUnlAVl901C9tVGNxW7jgKpX/EDIg6DMNd17oXAL9Mz5MAfkZgT6d0KX925GkiTRYPAz/YbiM18KcoJAgHQK9jXAXhpEGE4hOBhbtKJie11FnftCYJyN7TSeQxyOmeOlTZYE5ae0MrDFjQ9O1lM7n2iq5YUQBidMnCWCqbQXhNQX03a0nIYjr9jFoZ1KZZdbL2lrI3Z+P69hiIZuZIWfG08EoQ5DcEGoc6cOEM4fZHMXBG/IXqWw1U68kpZ1q8Qek+iugjMkofl1RabHU8tkO9cznQbMveyps6480xAETTS8h/Y1J1ITBKeqIW51m0mcMa6GHNtsJrnaKeQS7ygWtLONjBwKxFE3jtfMuPw2HTGTdcSccVod4aLrDLv90G5O7hf9yuJ/1AiNPlvjHZhlQV45BHVnsKpW0Q3TbVmqWPZViBfi8GvCPI56kIaQXcD9ShoJO/A6bt45Wiqx3Wx/a9EasH1h8c9SENILuENILf0FOk1XKUMTQFpHz7MuiXBWrB+IihNXBW2FUraIgOepCGjKPgGt6YuroW+s6aWDUdWewqlbREBz1ITI6ISKPI56kIaQXcIaQXcIaQXcIaQXcIaQXcIaQXcIaQXcIaQXcIaQXafoR/y9T6alIPejqz2FUraIf/imUdb0dCU4loJjwCZmN1K7fQMNdlUMijHkc9SENIG9R+6MxeJJb0a0fj7F2VXRsjWEPoDTQohGB1AiWJQyisEXVnsKpWzkb+EK5bIpD8zI2zt1rLe6ADoNF5aQ73C/oxpXrxr1416wvu4PYVStoh/8p+y525M1Xi88YQP92FpYDr5lNuh0l0CQFj0YZKvRhAu4Q0guBCz3+THpqOecF9kamh5p+GMCjSC7hDKXTUXG5wC1Cyn4deD/nPpwkoa7uz2FHccDMXkT/+Ogaaw2tvAjtWMepGgmBJ4w8YH0srPyDpCqjZ0deYlOk2n/OIurN9Zz5reqLP5k1lSnCCgg9PFpPgtru0nKAC2lyzvLovrFTKSwVvKDn1zZ3oR9h0LnIV+GI6WFwTp43+L6BFEBD3MkXvyaykS+Yj8NidV5yQ/GTs/53YfwWU0h2idnTvQbhRNhaRks3bHR3GxBblr6cWWHonBmOPH7m8SM4tlpkLZpFeLqz1/D8W2ELRAEfocaMAKtT2dN+Nk8pN+AGkVJ5gS3PeGYSbCWPLbOEbEeVFpv3bH+UIpN8El5+9NAZDacqMeEGbCjjhkQvq/5qWgqCDfy0IBfJDoa4Vo8rqE9mnT6rkxQxJ+kLSgGyb5vTCASsyHK4LM7fRjmpVEVKqhjydLbszenHCPtkiXM04x/FHhemBWwb1g2Rl7Nz+/b1bD4Vp/r2uK6ayKCQUMLazbRMxEo1VUjnKBc8Lviz5h2ZJZD4QmRhYZyDdQsP4K2T5p22U0fzAQRGAV2LBdIBwVeMI4j9yrITkwfz6xhVK2jjJu8UscKAEPBS0IjyOepCGkF3CGjWIWYAN7szExHUVhgiI+N2kxn9v4ThKA56kIaQW1qnGJsTQMxVpjAU5wIWTR/0QubvwwHgcR1ewMZa2uw11msYJQ8TVuKJTyguuVaaGt0Bz1IQ0gt+YCzId9SUmTkKjLKKxVw4aV+A7ZcepI4OepCGkF3CGkGCryGbkQQAA/v3KuPRZpSnSrxInfM1ngtxuVV4kfGUFjAwoPaFdtlYnC2CI298LfHfUEGqWAyJd66Z2rsozfbkKyk6sduYaGbuCoJ7r4PyA7xFB83Yd0+/UmOeUi5V1OikIC8rA1RgQB1HfF0lcNxwZf+mYdqAWqosJkrt7iRqtOMPEA59fTyhtNCzIt7EXAKq3pwBAmipgFU66vVWJxvxJSybDDoF060Vj3lonaFVkNYEp/XAbNKAAXpFm/ouZ6GaT64PW2a3r0hyJlpilBkAkvEZWeKm40ypFEdBLNG+zwlavvdYJ0hDBavJFN/oXA54BeyWkEABtxfr8wIs47gEH3HzWZBzuV+i53jT1GDMBGMVwq9LxblHu2taA75cmfmb8NOJ3gHjlhxJ7LG/mct4OdR9lrHH7UNCaZp48sXpL4RopnxmlF6jhy3nJb3RiSh627MEnzjIzOvD/yZGmLJp0ceTR0cyKJxzGx5SUQY/s1dITn52MNTqJUM15XdRm6a+t1mkpIW4lF1ETjNnKWPX7TCmNKzskn7MHOC/or7UV4uWwlVPZmpNc+BVf0y2ayaq7cPK/MhGylAu1vgf7Yv+4YzI1XIumZM0PIsq+0rFrXPsdhtBc4lTGBIvEfBqN17zUH9mzsqwlZkJlr1Imq7gfpXMCT0KfbArTK3zwKykmNwqSqOKUQqqogXPgWS5czFedhjpJe04zGDL2HCixYwpnW7rB+GDS6Jmsh2Q8aUCnorqSNpEnhbTn4wYANGmJ3iLD7k0eP1xKlFj+H50VtNKpJpuxwQd/M5mYK87ZBAGBzCzHDvObeDhyqP5CIWBEbgKtHN33L5eLZH+bvtBfIPoCOv3ykmMX+h3DxXK7lnXd5dCx2RQ8xhXAKIgpikmkOot28IzlpRk0N/qxJpbLKzarzTft9LkrcE2IaiSKb4ZVboSQZGCUu+MMEvFEU2gD9HHyF6rVnOvjqg7LpKX2wLNbBUHj4OcvR2svPerMyXDlNllVZqPj7y5bbStyY3S0hYwdS+nM7Kciq7DDdQiq/plszsI/ctVS/n1jTgYm2ZJt763vdel6u7OmF6/wFSDJU3itUCN/w+k6ZgEsqzuO+J3eE9PWhLSghctoBGVJUFa3rlrudpRAdO7CxZYnBCFYUYeEz4lRBa/4Y/d8ZH+YX4AAAAvgpe4AAAAAAACFuGtjPv24+5nlWu+7c5M672Dj0hWniPryd9kaYXqGTMNu3HmA5EKH050CTa0iEdsWh/4yTh4+4mOGCJB0C581K1F9SIMu2TqkKe/OXiiq2nNOq1gIW9zxHHRKpbe4aonfj19jcm385RbIjjAF76J7fPgGxZLKSQABQFfFZD2kGVjTBq5IDFTGTBwjhTtLxfMVWDbMc9lkfGf/d7uW5o7WOP+yoIjoTH1VX1UIRTJsXrlk/zVSBy0CQBFmKViNGgJSwVw/WHA0TSs9onRA9BWXJDzj4D31FigJgDAMNGi/9Pm2Tg4p2vL5sKX2t3wYrrt+Myfi5hYJOEtFLcgX7Cy1d+LP+RMBizE2d7tVUYw2TLf8Jljdaa3iw8dB6pxcutSuCoX8r/3/5nTZplGWvjX2r5Ci1r3FdOdG4ird603o2V+EAf1mFYKIgnQsyB2fj8+DIg5vTlXNmKsKq7ZZWLNYEWh0XiVWR+uzcMXg5U4boFPxZfq5EpOMPpi6IBovigq3dalIQeYjfV6/UhfZi07yImN+6DHg+jD3bKJpd7T3UEytLgri+47tPVfvBbhiJwUZzqnSBOGSAEorgpyo8i9y3VQuLoOWfHmyUBDJaR6xrNFYADBq7BQz1HY39gf1nlcOwVimeojMDAq++oTnb7CjGRuiAA9UbteLP2E5IIUOAJPkOdkh6ZLWbbqNEf5c93cVvtoYEbW4HAUKWL+kAhFb9Fct4Jx1r/M0ShHdTGSAVyhZ0vZ9cvIPOLdjWeUPFsxaA0tUAKdp9lXECejlqcXSgT1XM41Y3vsEKCTQBBQKjev3g9w16BBdZ8mDqpejRYkjonh+OidY0q8mF/W5WJcPkN5JmwIVnNOYj8xF8dVs/a4jeQcwt26novoK/VTBnDo0KTD2leHvmvQaryptZOoJwRVT2wzF6GpsXJZASBfOpIUGe6HYtVvmm1BLkYxKsA88uCLxpnpHHsJMlKwuXzmwbwlXzHFxUNBxj0DJb3pvk+EwAti96j1HRRQhPcw+z4Q8qf+jPDurZeWs+gd+vp9apMd/Xgs22lx0LzAzN4lnbl8XNwHMUQzL4J7klLFDNYbGvomqbebdCXsod5hTY84HAQaMC/+ntUp6xCb5SM7RrRQebaoDEYsiWNhYg7OrjKm9QXLVxmkjJTpT73FsdAcpbhYkUM9OhN+TQNj0rA+JmNF7uq6PEdRgAL8pF7hQVqxdgV8MWtL87bFDJSXYv5V3Wg27TGjMZKa0CcPOO3ST4fceSEhaJhLL/FTUttoOCZ0EsoMScbl5HmNhVTiUyxD8H8o46h/BPXK1tRPeFAeXdSe61/we0VsGek+E0qyFv2M4ZtZxDiY0cBSqZryFZ3bf2UmuyRGyPa40U3EFudw+G2WnbcHsxVDhFpk2DJhCfkV6OPxxoVTVoprX9+bbR1XrWu34H9lFpS0dobrmBp0kniSkcaRMgLlfJsaA8Y7FnrY4v57dy2uNrnY5kmhXZFfxJYTp7LS6q0Gb3/a28FVtKfqBOowV2+F3SVgHahkzkLe84ROCmoYkmsXFy6ZDksGFTdm7hrDfRIk29t6egHVYYHOP9SJrXWrsTm/mgVLynMIjt/lSwfo20QdnB3KNS8IheNyNDVAP9zpz4TCnGtUUL5Aq/mHMycSJ4lozPBNEiiYUgxL1GZSZkAU7R+iaxF3VSpdl+K3jAhlGzNAijmEqTk8J1B8eUGZ6NQ+1/jxC3JHFbe4EuIj83EFA1v/ZBo9iF9n2afDydI+g3pI0Vc0X3/zNdAUIBx9FVveM52ePrYb2wsNWKcdTjqKU0ijbwGEgajivtpNwMpdHmvGvxTL0r0TjK5UkJOTHMJ1gk8AddbYKiuak4xrlVkZjg4koe169q4tp25ArH0XGDLnVYUUe28sFgFToPD7bGHvk4+SHQYXKE8KPo0DADomK++n2XGVYCkNEwdFonXW5JvjWFRvACno+PXVQs1YqNQZSOgmCtZrUEgwim5EmmAk0CgYg4zkBbtZVyO0HaODkrHv6BNk6ocBLEEV1sA2DsvZ37UwVTuTxAtKTsFqyObUxa+LCcy+XaMhmrmkrDgCpsvCTwbTdChdnILrPwoAM2JPAoUa1Ir8DbmBiRNtrBJuZ//FK36g+l7xxM+L1CH/9yuHhXtLSM5wMJAN8hBZr3JLH5X+3GOxlegtxhnxFo2nF3noCv5aDf9TXNwlveF/ztjs2p4EV+saQg34hmXHCTucytIQyI8DNyHJ3vSi4lUBK5A6OGPZc8/gNt8lL2D41Zjq40qY/7ApR0OV90Hv6kxZZQYQQQzpqgvyTtJF4EBWIHOsNPs4DxOWUoR+i2+UOxgY4/1qVcDz7JHkud3Y5zqgOKOKW4pPCY/z1ROSAR3qXF2F7FesyUsREpYafZROiUd6DGEcxoKU9PaZ2bA+S3JtUozGukJLoBFzNDm3iCY/064fZLXn7U+qCHfNIOOaCN+iP0kzc6C6/SmLM5L6cylfHaA7vVKaP6xXdfwHvggNl8/CEjKeY8Jra5m0U2VmIv27JFbGc5AZwprQtESRuSivz1SMzX+qrUIQ+dpog23RDz+oJ0E8gl1nb54vdIBGwTWvgSeN80JRZGPyE45e+V3p/lX3UkcXLFheleafKfnHze3doVa7hpYJe+9x3aiTdJpHm/fh7dZzo1wj/yVc9qKXXb6no6m3aHEWELz3oaDggXQ5JEC9xtppZA0ziFCI7DyHuDevMRBoV871hFHle8sNOM2WhXjgG+RWgZbxa07WWc3F+gZEp6kY2L5DhImKQUjT8hmihcIApxcAbnjfNxeOmJP9HgR+B3vbgMRO/uQyW5h/7Vw9WsVZdduJ2PhVkq+0IcYAka3dNU3iI/vJhJPxuVpwd4vcwcfow1zNr8ALWJVmdWWRchumaKIT2QVHM18MLO5DwJnymGKYXKmggD3Gc6Gh5mIXKLiHHgxYf4Br1CjmqK/NjRKk2DMKu+/swwSjainD0f0wYbyBZ8yGylDW9/Ysra6+cbgkUxvGHbwq3WFNH3XiJli9Hq5zGRDHwD8Ka+GnXDKb2kfsRfpfk9eVC2h20nDNwSvzxiPFmsrym2cyXgbLN2r8nugzzK5cNmOSJs+EBBG7GirnJHMpfqQ3ZDCR3yp8GCYHYf4z3nR/yNojcwycKQ3thdk+pNBRxKcV38Bw5iehnn4otigciHh3yexddeb6gk8Q9INNDl4EBXPQ8DU/6XybUqZIT+dPuXyNfVzwjeXuHV8jSi2jDsOeBgsJuWg76/OGmfv1QXWxBvrA5+mOG/pxRUan1AmaddAgwixUzJ4ORTFZQnuLWOIs11AcBkILwwuzJVCExNXdq+vzxiOQicNwNuEby918uKwqQyx+e/Eh6RFdqkseHythqp5FiUc3ij+C0mClufCge3Hikk2C1HZpgl0Rdf/Q5CkHDz1I6OschHuY5j3HeFzfXn6WlDGuLr5yHN9UQ7PK5WvRptnyGUlAWm6k1d1/D3Jy/qG2z7Upwzag/tHcC+g4w8tsH/O8Tlx/x9rYusPI62TiasrwHG8MjtLqZiGC8US0o42j3wU68sw1OEZZ/8x1G8uccBocI7kTw0/BJoUyJl96Yg4VPlR3X1uaCm4sRZAe5pSk8S30rxvEWnnUF5efk6KIuSJ4Hyu0Vzlxnu0T+C/j+1qv1lUUrfcMWsUiVwZgfiXFTNkJEyOdCcDH3UHe8pyLvttwNv92D9IDEs7j1BYv1rcKRtM4uaqlVKAvFhT5xpIiMfkPXFlPCHEaei+hjStGfUES65IOUrGcaJm/7H8Bx+sYjXYwD+jutVpbKB3tigio9RpTghC5YfhmqCM1544kTkxXzMipTsOPrQr0gLqB+uQAG00HK2pFvYTB6ryUnKeJLid81ZeXGqEDwsvkwGZRNYnyUuZQL1BeyDQYqj4MxxGDh4CeRgdbzQBtNCc43RxoECOq2Yao3A5kOwe5YlE/Ds4VLDGn/RQ+zXWzaIe2cFZpMc0nsL1fCHLSH7h0nwAl980yv/wDvJgdsFKZ65LTikaQ8sI+FPpPbvDywfFZZZH+toWukWKD3iQEUJJSLjdRpbi8DdgArcNXUpxQ1ez8jD1dSgfGiC4WwXc+qYZZCKxunhHExZ54l3VMZ8MTf2rHlgKGkqaFA+bUTr+ZvoAUfqW2XKzVYli9CvZDCR33/KhrQaJvQ2kDSd7550kXI5VTAcU1iA+ri/bT3XoxjfS4YIsYq14mbph7fE7zlKeG7ey8qL8ZWPZ/BJfxQi/grrDVFZuxdgrb0S7fcfQzUeKXf/pQpIwTEDNuegY1gDFFkIrHqSbAbPUkbsqXuqp7udWSZmbBX8yOsXUlLTxmDKl0rQweSkxT4fmCc7AfMH9oq3LQNe1pkR5d3/0zs+osY0TSMXhXAznTqJso/Jy3+YZ5/+x4Q1vlVBmE/RMLd+FpXmLs5jWQWoM3Njl+9ajrdysJBuAMOfXrjb5kqUpz6RNS+QS992Mga4yZv63T7DaJUuWI0Z2b8n+GOLeBKbsoCqKjMqMED5vA60/evFKlJA0IvX3vrWUEW9kxRfzgKzbYcZ2CtbTc6XNrrPeG11KmcGsj5Th6V7dI8uW7jzgBSjXnSnviCzFYAD2s6g5FwbyMXJa/nCRDogbUHB/OpFHOjY9i7ri86IifVIVnicaY1WGoLayMG+jfmsei3MpZO2kDp8Ls3TE9kIzkv7VJVCdW8JzQRv1HG+1yQ+XH4Xgi6eFyCL85CkkG68mN7uV4FuZqYnwajpEIF/Qk+x75hMseIugZJHSVBZDOHk+OOTWegTFJ0Y6vUGenAxtiuyXAVR1Vou4AGh+nrgFINoTSZTftsBC2n2AtM4vX7EM2OjTiQpLPACgusVJ21D6JbbzHcVzxsTVSeBaRfkcO/SdxmqKnvSDahijuakQLjPgOrwYlCqe3YbHN66j8rwRI8hRuDs6N6dffKQL43kXczVQPpZa0BeAMeN0wOz7ZtrhJFmk8V22z7CAt9PLEkIHWrFdMkQvdOhQfEJeZEKIKNb+A4cxPTt/oAWR+lPRp+Sup0cHWjYi8H6lJkFdwXGVqAiRMGs7/KDdanKrILZuuL6g6OLVpS8eWKmZPBusAzqMibwSGVpWZb0tBSN+86HYLKQ36NOgQPSbM9DZ4tOAeODKgmzsubgUfb5tn/t5G3O+1EAqDS/Yk8Va+YRIjUmpk38b+vkioZNHirjrpfDMKkn5kAlLST2e3Aax3jn22nkno5OmQSeEKEj0udfpeMZrwPkVSAxvwbIzzRQ8ImYjzZTQRMUK885WRnG/2iiop+CTgQ81bTGDUgMo8HmcOS1sW2rSpa+jbm4kJ0TL3aBWqS+s/ENn9LMmJCwZ9578jZyCV00fGiot91zxGXxz7JHGq6IrYePXcBXiz5WDEb/S7N2/vC2AZXNqoiJsr7MBgb2zRhndigCgIxSE8PUOWUgnkYxLeygbjtRF55bV8mcE5oKK7goDQF/kSkHICqgPmU6VQo4Uz9ZRE5Rq5tg7qWyQdkNL88KBh10V5U/xhrJY8Qv/l78Idi4LC/TGJ43yc2fNe0q+vJyMNxSKu89duqqRwRDCTeT9K76GV794ZrQXmmMep6j816b0mW0BiUWmhz0cPGtYn2k3pOrExmtTWdFjwHIaxwRzJDM3ps9oqlGvc5O1KLF5RoCWc+P19s7NW7Pqse3wbLJ/WfVTXJd6DUQla2P4T2DlsgIlhume5Z/HJ1hTEIAbMKgwO4k1tI0Z2b8qStvFJ7xcHubQ88PbtjsPmtrLNZTaCM+r47dPNnKdMJNp9vgpaJsNZV5DRpbCO8zJaI/018tbJ+Iy2bmBOEGEtiwZ0x9yHv5cmnVYTYZWsD0Ik2X709ictA2TSWXE6judBfs1oC9tzYBDzU2Klv17MUfQku+gc3xyJuuEFxw5FnDgLKogzum0xFPAFh0JI+0oX4y3SuxKVQKsxqoK7ytrSOMC0srDNw1ZM2aFf2dvLZBDb+PSlOKPuohadAeMYX8Lnq4Yc1a+JEOoBH27BrF9Omh9jcO8vrK1ZEw1mP2T3ye3i10z+azTrMQujes+xVAKg3yHPN1igSgMkooFHHGd8ECD+LEaQTBq0wMDjthg8LeaWS6ztDuJ7a5MIVpNG78UeIgTaMYBcx4kcdqQLIEFTyYSJ4KLd4ejpD2QA46m69l3lpJLl4w2PhjoED1pYBETxJedB915wkH0NfpACqEr+yaUGoRUQHZUSKDVphpgFUb/txREQh6P8WpXCZSospfk+Z5wklIo+AFyN6Eh9WAhF/sg/e0vUYH2apD/KoOcuXJ6xYV+HE02n04sL3A8poYhEkjP4JMx98kIic54onwD375xzYFAHkOA4B/YKcMdNbeXLZWMrGjNTE83XKPLLQblsaj9iyEHMSlf8VyBZZnkI1B3eI086e9kapog5wfpAYlhh+CMBBRVk6CprfkVfA8stAuNfttZd7LVBhK4rj/qiHUjy2zy0P+UK+8LIrGwUn3OXRZuRIz6Cv+pYzZP69GmPOe8y3uVeXLlx2bxo3GT0cqKQ54+pHT1pPYRQgIbvHVCPxbE6c+6wC7ILcSsB6m6GqJOJbeTm3aF7NmewojkmQXY151XLTRPdtFXtMrHNWkHaCCzXxIiDLeLv/T41m2BDr5E2b1/T6f1lv70oD0RfqYpNBGa88cSJyWE97Gzq40b+kH+W+IYBWuEj9D2N7QeIlP20eJgSiRPZ2H1qy5kRSu+nxm56sy4fpV7btnUNhN42mXfOvMWwOzfIV224G3+pUhWyEkW6kiAcPIffpeEhDFso/9usngKkl8kPnv/hA6olD26C4pjiUkL6RDbPd/s7ZRhjF4y0qp2nIUkFnOg8XeGnCSrglY4ULDrPgXP+8QoTeOIF4Wg8HN2naQp99dWWOzDJX/EmmT86E6GCbz0F4Bce+gIu1LF5x1B/gJuwlDSxQnkPbdz5vN7uvCmNyaeazMVkIttIyXri8htHkL+nSYa1pIi7C1PbW908kzitcKZDhxT+9I2X1O+5YsSmqfjb5+U3ip2nM7EMH/WvezL+Wq4bQ8WdZRf8RhSXWoTEVUlHC4h0GVk5KkV8eJlf+ffqceHmHuQmHt2recpTw3b4DPY6gnZALKGSwtV1AbDHw+enDrUxXC5tPdofgZ5zNm3EoEBX5SC+Ta5lszir7QD0uCsBTry36apctoIbPQcJAIoGRHzvBwCgO04UHEtGSMoKAiBEowgXuLh+NprHUcmfVCVSXJ6YHajEVIivSlOJ9a4smmVwUPBYIUOhM3XRgmbQ6fkYfabez+mivg3wld5cfdYG36mKOwgQvDOw0PeR2NgpaDazZqgrlmtGGw6qWSeocQAJDEMNLrYUnKf42znWdtoRZu5tAGqF8YvepAfRgf6rw7nokXEcFygHWUiU0rNyGtwoDCEsex3JHeZku1N6Op7sFov+NQ9q14UKbWjeyezGpoldZ3a6sCe4A4vuDeQFflIJf7qR3mAdx4jbLYl2gwT6v/BpEBX5SDDN39rlUEQP2QyprHo/QwoKos0lgSxZPw0oqbBRkTt0HCl2nmVp93wT/OR2usKyvOKSy2VPG6VcVK4RDhHExgG4u54Kj6D5AwtetT+981ghZpyefMtd5Z5XGS256KwV/Fke7BegEFWHmnRqEBvn6AoO6bJqxDp95RlrDK/VChvRhomRGIgz6A/6iXkr2cZPy8R6U2uWbqZsPEYTRLP4xbIi6f6Gnuorc2HII5EPQ3+Ix20gAQVbJZNNwiz5WfmgTBJjxvAw1QJFwUXRO/nKX48SvKpQhPeiURR6Zoj/TQv8nLQYtDd0cnEPrwpxq2ZUko58lqUMWFur8EeyzvM16UpxPrXFjVIO2qVfe5uLznorUr/WCxI9m4mskpGvGRi6pHiiNHCoeGuQiIGfkLlXpmAIX43tLthn9UKuYt9WvlSiNsuJUm1Khjl8Mgd/R1xK6PXCjrP+TCPYek7ycvQ5Zy+rLNYarXZYnaqIiUUEwA/TYaMdnnGLZAHylGlbeu+xNaImZ7H9DU3RlUvdI4WL283plIs4udIRfY2ZPluLcb22HCSC6j8LTlwO1Onfk40xYX64ENLRXzIoS9Stm3KJXc+l0u8hVCm1nYME3HzMsmXuNT0lOWEdUBkk/TS2MnN1BeTxiq68Wz0PAgc6o8gZIAzvXVJMlkyz0T1o0R542eexNPVOJr11SqGiBSYsltgFQZGPI2w5LQ8pzDVXcDRksLc+sN9wiiGLgGPGSZLkMKexIAVUBZWKEPACmKMq/zJpKal5I72cTkV02h3o/PFqaE9rEY281IygvE3gM/R/ryWJWh00BYSMlw1TMnj+CNfFFUAjVL5ay3hvrUZb/YEYDIVQ0+CcLNbJ0GIy64GpZqai3pviOfIYT0wBuJZuGHVSYJUd7gjDI8D52vIs3J2ZSFfRVWy7CtXlK9tct0pbnKXWe474v9NiuWTzu2l0V2r8nhMECdgkNiOrUAyo529R/uLaCLXqQ7EEAj/UfoKEcrmcXeuQ/75KL5q7kgApCnsRiXMAL8TuO0Zo0Pj+6oww2V3BRdE2Gsq8ho0thHeZktEf6a+Wtk/EZbNzAnCDCWxYM6Y+5D38uTTqsJwzYdqPAFFktmbRfXlr8HoNk3OUoifDjHllsKtCAJUcIQWgGfNykGlXFnAbu3KSmsTN9Iw3Snf3CFlECKC+UBTN1LUr0bM+EDNo/quDhEDi9O3G7Qgwc8gk9zVgHZZb3yXN7UjW7PLMv8GguIBH+scwzdPTyEqRKsgrzDKRCA8Mn7yVwy4NhZbuBNQHPZVgLV5JFVErutshjX7PtO8ovYGnnIQoKkecpWLOw/xnvK9o+hJgZbKSUFfrlHqGJ5vn64OMFtEIlajPJJDEFpodAWvrGXVMvstWT1Z8qo6YdHqn4R6KKtDnjUPmSZfVjSBzB33Ca1vY+DDCO7YLODfkSD3LRMOuVpCopI2RzafRGVdM2G9ZByTn0fjjbhNKzjc+eYv0sJU1qSBbVuWwX7Q0bBFdUqqK0MJO4Bi9qPt8dcNWQIueHfpOPcEohbL0OkRZ/iKq2Wzxo5GvegBcQ18CPRzQjNOHpXuCLrIU9ZqDMM9x8Qkh6TehlSEPcnhxFy9xRV8++94B0oiVaOjwNzSD/MzCBEUk+ImTasPPZnbv394WxWCVLOAqVEzMxmaScyvQWoByKky1sLurKQTyMYmJb8maFajiZHs8NlyRh1LVV3L1z2p6YzdRxkFT/jKOK5D4JHksLVdQGwxWg9LUr0bM+EDNo/quDhEDi9O3G7QgyE8glBwi7blWbaOFrCI9ncMbvESK9KU4pH1sG31hNhg4IHH36k0frwmbfHrCzcOL47YeRFoo97pGiPPGzzq8yr73HTO8LYsOc7P+84KudtoCWSByFq0M5CmBln9EiNOJG+qMs0wIYfE/BnMdG31COlELesF4KW/I7inE3uy+N08HG5g2AwCtbW8QlVIASwMo5F+75OcbGhXQvAcZW+OfZu/VPbYf+W8+JJUdxMN1DkD0nxKn1JeIX1YFG09bnyzcLHXNKzjUTDfktuQ3OXTaaunzkqlKh6KK1wpPLwsuwh0atN/mF2sk1TN/jNKbQWLtI0v+76XmsSCV8HZJnBVW4yGCm7JHSG4mG6hIuZjjPrEIWKAd9TRJsBZglat9gHWKJFFqQ1A9a1vndEugqJ5DBFSJ8F0paP9VqQ1AxSwPzbrs5LoOZgG9K/bsQETxNWV4DACjwn4EH85YOoW8Vb7IjH2fn7qE0qIPcMlIQg49/2Ay77lsvMdY151awleUQOgLx+9Sg0dpuC03+y8N/RWV1bqe9uLRhtduezHWTqbWXe4+NGMDh/qjeXOOA0l0SxxBRm9wImJz45P6BIdLMalSEl7zqDxxJqLDVXiLNFpxnHwyOzLI0hKuOpQrex+rgPH0CEMkoQUMMPozlLz6U9vZMv9hz71GvixTosI8ckiLsKcGGHNxn6bIO2uBnQfFQlKbpBGjhsPstDNAVMe47wuo6gKi8nMSIgy0KUk1ZktPdSynY5Y1a8Rrfn3UbXOYVoxP+S+Vbpzdoa39UvFNi3GkiIxs8zCJ6qujXUx+3yvkgYMlnwCWEwvtlXY3W0WKysMNOgxN6pC9kT0ltpID0SuwxEdATPjUYbQbtMRSyyMPFCx+jlnI7j3d24Xni4TbTiEItyFk1qw8j5XxpuezBUonkaN4JCs7yQ9hIEKQ2CgF+wzyKVARYQBprIfRbeWFslajl7wHtgkLh4ruT+njw6bPOmdn8pc/xRQXeKsF0oJYRgbGx6iME7AiZlhHVRNJHkemmTkxRjw9W4z7KEXZ0cVJ9o7JjsQHgn+KZSCkahy7+b6gkqAubBeKOxU8o7qv2vKilWjeh7B+G6WFPq1ZBNbc99ssEq7BVm9wj1BswdUdxi4KOGStgUiHMLAE8IqjPqSawqim2mQjs2AnIDbTqlsrhjTt9L2rbad0GJjn39n/GgnmDSfyId64hU6qJhfQNjtRTinM/C8XZaoyt/KumS1+/z3ZxikLXcEMU0oBw/hrfstn8sSKQ1vy2lREXVRIddXo7Jw1p659dH/q1oe51DNiNUT7ShFYHJaFY6MpPkM+HfyjQm88oaPV/UDeEHSIgL+uxfQrshnW20D5aAogzun0socNGj8vuSjcxC1JtbQnNgLYzO28D4LvrswoPegNz3MrjisOS0PKdSUGalO6+hQzbH0RGSwVNUgG+dhXRwd+XErYN6x+iIck3X7KGv/Kg1TzAo6wW63l91Gu2sZTl1lLEW2GK4SxgYLgRGK6Czgev2WM3i9eCd2mIvY24xA8nq5Tuzd83L0LFZHfKd5VP8p/iuo3eg+ys8+a8zU5AV+UgtNrv5ync73h/q1epPcWwYfOUBwo6yJdVIKEMxFRL91j73hDXlN3jJW64gEf6yjsdnStIdnYvxPlcgUiTJi1OcwTcQvQ88obG0u64Gjeiho1T6tb1lAZoiSwBGjeqGvFKgvaJRcrk91Kxk5A3zUFZPAhXjaRlY8I/P+UrkKLh7ondjA8dot/1S02qNCPPr77OI0BZX4z4mMep9ug9chZdBCga+ZctNhyvUhclIAgDRVl7g8FGTkn5OKL6mzuRxMz3IFQwaQECuJ/JiDP6MzXo1PzWLK61y3RrL+XFuJwlACg1ksPWceGzNCEeoNy9vbtmEsjQtHdkrLOLUL8snvU4QRqoukKUq8pLVriiN34p6q4k+oXf+va9EFQ1zYiPZ2e+WjQwcNoOjrkEeBm5YnS1D/2nLsTfy4lNzBY8yeC5TB+gW3B69GMnhCHCykFt9cXGbeLA9p8GHKt1krqjP0l1nZ3p4MOf1tIn0z3rFYXB6keMC/s/FdwRyZjY7S+5AccoJdvwpw9K9vEr5KKTwuDDo7FwRMiZ1wDhygkGurE5zYctEXjfVMTcL/A5JiB0rSCl2dKgoYeskUl+xzO8AOayawhe81FQ//ZqSJFWmpPU4dgu1cHH/S+kIkb3BVNdj1wUu5L5VdLhC5GSJq8WPsJnGuittW5nZT0inJt7KfYAdRYqZl3bwRtvFa1kEdP5rb6EX2HHVwyTZVp7yvx8OJSxgyZSospfii8jeshTXUAj7kcQJSD0P0FBijWEaqrRfw4W+gewz6grRS11Sqs1p9DQ4GohmJu1uogXGio9xrTl2+83YusfLnBS5Wa1PvATNB0UxckBX5SC+Ta5ls3hy4pJNoBRWkG+Xp1MI8+YEs9RnFPHfF+YV507sQBwuLdvU9liXtJmgVjpEGhX3iwCWv2SH6Uv9w4h3G9CWG9WYCYZ5tdEprVBKxNaqFpD6Bz3DMYafrwICs4/6I9Su/sioAdNHiCfB5AstBlfG5Y9AmwQg8UOTu+WNeisX9jnkqXLEaoyN4YpaWAY8bxMJALp/gYn20Pq2cQb6wAunndOfBvjMeZvel46aheAWnw6DbVNzHjkM/MkrLuM17OMPV3+sPtMH08caO3v37kQjxNAuf+C2b+gugllHEDdZdwbmvElHUwQUzLUuDQiLsnFguNFR7jWnKTyHxxGrNf1q2XTgwGK61y3RrL+XFGJHxZ0Mi0VD5Y5pQ1cbh8/TZzCyB+ElOCZsNykB/baePbQRvpPxDfbbzVGoCX08LrIBo+WPa6Z/NZp1mIXSYwm9MKQdxGXfg2RnM5c+84x0SuQ/P+UutFip9OwqVMwUGEicZStGfzDQ57WIHkfsG16fESXFJSrSdJvEg2XlrzXHS09gdmHdpjIPtevPf5vNS6VPZy9oDt8xjUb5oSlXJ7qVjIp/SgWWC1DddjmAJ49v/Fy2Ed2GMeDF/xe4zgKDtiRgrwyY66d0EE55na7FbsMYTlD6Wbwp1YQmWTXjAwwBIofqwEfgmtZisFmtrMi1ONbJbkRcVXDaHgx454l4kuROepPRmQNgXl2bzQx2nQUoy9jHeavOfrkMzy2/zGXr4KR7ZQJwxYn15goqnH1cGdmEoHKVjQHPPA57J2aKA7UTimn+DIkQT0iVwYzBZnEWPG6sadLYCzBK1b7AOsUSKLUhqB61rfO6JcDNpsisJAsHz1uKb+JqnonyvUHl/L1xpdwE0sA3zyHC2hCoqbrrUPk/iuVk4mrMlqm6Iaa7PHQgnpErhPKcSrwaZLPcqi690UyTBB5T5bzapdsChBnOVxtBobPBZ3xaxdPcRC6Y3LAUhBeG93p9LkC2YYSfbxqe7CZ2xPG28xtayybUsEYmhjbXeEEcu3sa5XcQc1WhUTImH67P+12uJ/+HjmfJz/cgKyxYuNGYADC4LiYSyVx8ch5sA7dBdNjuUfmA4vqTz90H2WlIdAtP5I0z7k+gwUbtaBwxJfDX8eay5dQ0P008Xvu7VMUsFVQacn1dkx81OuPBqJIhtMZxWzsAps6NPjuVNN380u9ueipDtH5QfeFJ5TiT0DQj6MZBIvOjVVONbJbkQcfbhHrhfTylYS3RFCgVWSgFbjfHF+6xq84DLhXvgxqFDrflIZZm85m1X/EUnZieSfkAFKxM4bliYDUpCrgfSGr4oVh6EGYksoIPv21Hn42L3fxMdJt979KuMMTme+tF/bQLbMWkiuvs06xvFABBypX40XDUXiOxIBu47iLk3jyph5saPdhb70E1TRPOnyV4ugyIJwQhJ1Bw89zXjKUGSB+J29UQhpPhy60+xscopFJJ6kwSmo/tL4NSj0jaU1O6FpZOOrtzBLUjj9Uq65gAbPOEX/tehn4akIEUcR8RTKk4pgJh3kiEnaENhQGsvhKsvgp/01jRCktN2O+dJOrEu6mMNB2EIyzwp/fiGR4+B4+TE3101NVMfgzsfZ9LRwtyFjdSdmgwwcXI++0oS3NayaFmRLkHWsfh1/0Is02Zz4tQzDqP3jr3zgiDAALdiFgwa8azi73IWYXg0OKrA7le5qODZIfa2ZqIAJZQc07DBnCAjwakUSHokTafb7lJ++ADKt22WL2JybaHsap6QTw4CJWIwAAPEuOAAAHQEsiWtX+LkTO3ZFgYzrJkqmvzzJteCVhwA1UcL8GXFYslO1VhZjnW+OqfIpap90pEUu99NBSCq4LaDf2Ou+Hf4jwkdVlyAOouY/MWYtV5IvV3l4vJWXtUMHseGBbclK8f/6i7OeYtR4hdEfqdzuUkJpoWS8/CsE/+ESIIiqHsTlkvk6tp6f+d0Bk0G+NMR7kW85hzisfY8UWx808jkTLLTImyhSaN0ak7+OkddLRXyj55l3yRqgpEdqejK/7cgNeyH6ZzToEj4ce7Dypv78YYhHtW/F1zeYLOcbZsf4nvbNYdJEIdTVGTPi9oJ3JGw/dzUCZqSVT280MHDn83V3vsscNeOuUsYHjEWjsLdpzAbsv61Ymi1mYM4DuRO815Apcwdr62NJ/knW+apww7DvrXcprKImGEACG/asttKEIIsb9AFRFd60qmupxyKQADGUCXnAKEKIIx8qAVk4j3/oiU0E1lgVCPDLMxrxQ7fK32uHhqmNQscWwye5aaoe/p8F5Xdd6JWgk0a3KOvQp4fyJWCg0tMlzSgDXuKy3ftxU4A7xnq+tckcDw3cr7bJAxdX+W7gn2chTTfLLc3qiKuHDkP/iZSIAni/C6DUTyusN0gmiFRXYnK517UvaB6G6E2cB4cXuDJXxyv1nGGQVp+Qk5mq5C9FxctRhd4foweqb/Xdz84/myc16WTTd3Ampn6203/e/xUE8G6VAIdw6moI0WfoXomTL2AZRZ7gWSSTFwErIKBjqKCPk7xxbSzgqgSA91GdJ5ekPJVCL5+nGJXlzgRlPioveBqMb6kZTWTGGEIBqxx+rbIlMIU3D8R5DU7ZrajGzKANL0JnzPS26OklMYce7dbvC/Lb2Wg5FSjCYT4iU2EwhKvf/8KZuSOuc27DX2v+uhKl8P5CvgdqhABvs45f4iZIJbWdaeWmYuolQlhZSbsFKA9YdWEhUEXDUq9V79gLz6Gw9Qp0620D5p8Txx1bV30nCeRoJ/oaWFmxDPETsjqLb4QMSfEq0+PsBdtKT8IPIsRoXz2JctfRzsM6vra9cLythWI/TLP7LRh5h/bn9RcVXZg98Pyjo9cUWGU8Fmqt+sf08L0flVkYtRxXdY/VqimVQRIdSz8z0UzGqvVjeGqKmbMQ1gKB9GKxVd51YZoIJNG8RHZQh6Atxey92hPCrOiW/rEKxVJYfTNnqKwuXf1jKerOUmHWfWS3IMsOVe9IZ024aSg31wIto9jbXvcFleYgHBS3XBATMYSmt+wU6QpENzwEDCCoWS/e2oB3+1RAbjtO/oLVq1zIxekWGbzjPh6g7OcXLnd8PqRWm+1Tfv4HfUBslKfAaTPie77keiFFDwAuMf0avhMJrJiqwBe/sQtITxGYnZU+Dxon/fgP3u4E22EOEEJaQnU4kQMO3/ErgPCUHvpa3D8b99hobcj2Ud4ZpmB6TzADGt0UntP2/dEs36gnciVoD3g8gAOBzLqWtpsj9Yg6wqAfou6H8g/Kj8RLT2PMNviIol+sB8QjozX+gdlEeZd9gH3VxG+m/G3znzxnSwfupqdpKBUu+gHAZGIQtUN9EJssRg8KMlKb+CvvYSfPp/LXgYnSGleM0hc4TtE9yGf573Mo1DAHilhultMk3RMGyoNICzkLFAdOCoWuLNVmSFnli4EuWYYjkfAb9ds73IqKS+ZOhG4wYOJjQxmGx/BXAGDc623EXu/hbsL2XBgKAN6EbXlpmyQ1fWji+iELfOjdm/98yJumynYIzJ515oNlrgcrdytsnFo9yquC73g7HJXFSfZsgi5zjNViLxWrLb2wtQgRnzbiJkUMXeeS9OAnm9aazjtJUIzyKRiAX1m1lBMcVJs9F9BHNkzsuftYblpNDHxqHo4+8FjgBT4nxkD0QLYKbyFDawl8pJGDpzJ9W909gI5TO8DKvCadEdTEOTImb18oy6k4CyYtv6ju6XzItI7NEGxDQm+0tHYi9J2A/WkFREnfF8nkMiY6xsv+EmR3yc/OpZIPuRSzJrtI7aeaq2rqCYiFj7QmtlxzOkNhvOb/ra0Q8TYG8C8KC/Mmzlhpjg6xTzE74C/teEseFFS5QwbPzy9JTWvgR5dBMBs/AquYSPpIu8o/JW1H+w61a2pVBmqYRTPvt1NmihJ/lF6b/or1dBnMkpJeciWW46hElfMnMBppeXuvmbnAjJERkFVozPqq+3wE8i/kc1pc9F07S94JYm4k+Ii5HFAOV9RYf3o6nzs8KQKcaadXzTPzl/08UMCutPNuwFs7vjMrGGweha1OEq6TKc9MfkXpsWLMCt2wNHCvhWGK5bMWHUdfnOFE06oscgig1Lwmvm1hPsiMstB7o5iYrJumnxrf5gkjJH9V4sHZyR3Ck4orsQqqjj8OO6p8DtUc8y/qsBMDJE6EZJ+uvYn+bdqcwjjxQVy9ZqpDhT8R4vg69IzGswvEnVZ9t3aRm7Fbb2Ksi6mxx7wtCLNinFQ8r8hycGgoPOfqKoqK7fkTpVaTh8/6/nbLy1AIcviosS0Oz0LoNSfYW2u3kILBHkBdjXSC+CZpz1y7taRGq+j3lkxgYM8IPctA6ErjuOutJ/DHNds78riaHZJn0O5aac8aGyS/M7jQATDq9Clco6dIkJ14WUflqDG1iWFbhy9BbCTRB1LGQw1CoEHcEmuIFkfrHeL1cGdp1SECGpUnYmyqW9ZvFBuzT5eJmXOnkFgjKb3i0x5qDMg3K1B9aIrdT+IudKliWlzT3vcD3JlbtmDk2E744nu03av/IoYLpczLU1HcPAHgF5h3WG7ghBLZftJJBXhTtX9CqaKyKwbXjnaZBm9NPWPSZdy5+mnxpVcXOlSxKowSKfxWxyjzpwC+d/0ew6OeVuAyqGuxj+GwgMX7ESbSAERKdwSjkIKy2PranKsCvDDGScJAGMkCmx7t5nJFK6x8OO69Y0biQFCEmep3/hD+jk3wDw1H6uUszfRn8tdiP3D//384Cs0KIQfIlFokey73Eyjd6NWjuXwnNzlNiTr3qq3Z5iGDUmg66poYa9Plp9L4osL0rzTf5IqVgjCtPYd3DhRBCIaDxsA8/6OBERNzHqsIR2mM0r+wPb5p33wM68AlfZ1T8jzD3T+a4GyL2WIKd7z/QC0Kanxl9oyEc20c94jUx0Sa4i862m6W7nz7fo17a/ZynfZv7Itz5TZseAXZJ6yQorO1xvaIk+DXpiuRxzvBsGEvk/mtMSwiBolel8QXsI6WkNscHziNCRXLgNROS1sp6fIJBP8v+6tpWD1uNGtJX+5cuOx0OJOKLoGED9MbYs91cIFubiXwmKTQRm5Koa7GS7SvmOn6jSlEPjLZd2IXWW0cZRaKX1QQFlzjj7CCuDG768OBW9Pnhf0/Y97qOS007N+cxsWGzp2+nm1Fyr0rXQtHol2iQ4RwM0wWOyRu01miTlo2gFlTw16HDJEMjaWnszVOaRbxCNeY4eVWvSqida2t28IZqPayaz5uWN/Z6VA4Qq8Z865B5mQFa5IL5sKqeVbxuAmBx32GkcvWHOvpJ0kB2Yd/8nmr2KG6IOVoXatJ/J8JzTs/DRyWH8OPbpOpW7/AFVk2t11RS+EgnK9TeZcctubJ9/pGEtAtH0OIlbOjfkToBsQ7b0/7nBNaAlRt/+mOrjd0D8XLLuSiJ6BDf0uPGHa28JlX5QeSj1J+PqIlqD2MWIPSc26/Qzfa/o0/0XYg9SP9bW0CbOYvdKvxcs3y2oNQLIP4oQSO1cpLc/OqNmn7ztrXfzI0uaXu25J/dnMD2GZkrOAxRY61+0nE05GfqJ6vdt7T9R36kV+iR0F84oVCeuFVi89Tw03GPY/Dhe6cxjVU2JKszdGg38nKkFIl16jE6J3kEqn5Q7QGi5DavXyzKdCWkDOHUkY/mslFgVGj8GezOSB7RlLR1I7TZ5izQpMdHT0hO8fIgZARcu3UBfTHAz9e4SJUV7h8sTzffGuoPxnecl59zopw5VZqF6bA1ktSVuN0syYzL5Nw6imHoj7cnvnjh/NzLAaus5+tzso+GZ8jvHq/P1T/qeH4ICtM/rokgnHaU+zhfVvodR/LMoOI3GrJBtj8jltkiJVYCttMxJSCHAYh6a5cQ9JySgTG2oB/oZJ+LeiF/Wu7K2MzXzBbFk76BnW/wHjvXqOXkFfRVtsFKYnZZbL3k7n9EyWcv+flDr7Hyj4GLB/fL1Y2tEtZbspnrmrcbFsnSXLkNfPyweaSVmN57H9mwG0Ds2Rqa8X730C9QfA7IDRXwb4Tvx1+Iq+6ocNvdVcHtHvlNVyPs8lKV+nJObSxBVY3V9dJvOjT0g+MGoM3nTZcLqrq8QQ7TX3aPqblh5vtna3e/CAMObM+WWXG5sGwhDhweQLUiZmJIUvBMev5M5ZYEBg7nJU+MNnjx4dOJRz/rbqbkoD/B1awtHJAgwsOB9qMXpr+OgHGuOVHwSwlzZI8/uY4cO9FzWUcNaVVDWqH4xsvyrl+r+zaiWhbzoTMng6PtRYig5D7k2utCcEaM2O6/q2Av5vOag4h4esGfuLUS8Lv1cNNoq6MTF9fnAAAAAAp6z5QuYuGKqbAL9mHxEk/zaG0O6XJ5MogtJ5Bmj/ibD/x+3CvAyYWJknkrRlpAUzuam7akaBrQm0340CJ8KQwLjLBrw4Ld5F15ejIBdjODy2uthqLrBHbWhUW5Gdqamvhlje6gCwiN8Lbb1IbSVqGdmNbMW+uwof1OKuFEHB4EYFjn6I+rgP2kCcTBt6ZRh0wPDdwz0wjT8lAE1dvLvaFg85fiwQrZvnXgEXzyxW2Ebcq/7SRna5479En9dF0vlvGM5U1vyM/EanvWJo1J1TQAOxaRJLXVoF3RqlFxtWsaxmQOCZz7xtlLgWd7h0Hjp6chRGyTnfob2oMPC/QsMaB/VMXSuobQbpBxdFRzDmIcxUVDVBu8MNWlrRPsZgDdxdZbnWBaLKVDZhr4Jvty4YZnQysIwHkIzakyAW2AAX1pgU71SrqVYQMXtRX+cpIX1g9v/I1A++peHBIMIpijQ1bheYf0xkktthJiB8U66sPEl42UBdINPuPVVLYxYQD2jyYjenAGwRgjNiNscOGYVxGscn2nyzY3974jiDyv9p5XAk8tjgtz5GOjCZM1PqSuyT3SqI3HvQFkPLrrO+FQfIJLkGLLxfKzCpxQcdDKhABhCCtezN1s3rlZIU3y8rbthN1KzdqZujqoGK5MeKD6UfxtTEM3ciskOvlrBtzezMPh3FhqijnNTPfkboPqlVR17+MI4BtXzHmUwwQ5wRSOzNXVW4QvUQAQcc3lt9ZD21eYCfaYMJgUtCMxU3eaMujQP+5AHvmAms8UlDjpjwg2w0GC7mXiKKpRfAi1ueUIMyQR/e4XP8bnm+VZJoq1sk51YKwrvihWyJWixzdAArJkF5Xach7K9FbbBUf3OU4NxeqH/C1VIXvz64L2EFCz4F3KQHoW+RQb5ZNKuOb9Q2hTjHFSHuOtE/lBrXSumAAAAA==",
+                "height": 823,
+                "width": 412
+            },
+            "nodes": {
+                "1-3-IMG": {
+                    "top": 4527,
+                    "height": 12,
+                    "bottom": 4539,
+                    "right": 246,
+                    "left": 234,
+                    "width": 12
+                },
+                "1-74-META": {
+                    "left": 0,
+                    "bottom": 0,
+                    "height": 0,
+                    "right": 0,
+                    "width": 0,
+                    "top": 0
+                },
+                "1-9-A": {
+                    "width": 0,
+                    "right": 0,
+                    "bottom": 0,
+                    "top": 0,
+                    "height": 0,
+                    "left": 0
+                },
+                "1-13-A": {
+                    "right": 0,
+                    "height": 0,
+                    "top": 0,
+                    "left": 0,
+                    "bottom": 0,
+                    "width": 0
+                },
+                "1-76-META": {
+                    "width": 0,
+                    "right": 0,
+                    "left": 0,
+                    "height": 0,
+                    "top": 0,
+                    "bottom": 0
+                },
+                "1-50-IMG": {
+                    "height": 0,
+                    "left": 0,
+                    "top": 0,
+                    "right": 0,
+                    "width": 0,
+                    "bottom": 0
+                },
+                "1-8-A": {
+                    "width": 144,
+                    "left": 31,
+                    "right": 175,
+                    "top": 8,
+                    "height": 40,
+                    "bottom": 48
+                },
+                "1-55-IMG": {
+                    "left": 0,
+                    "width": 0,
+                    "bottom": 0,
+                    "right": 0,
+                    "top": 0,
+                    "height": 0
+                },
+                "1-70-META": {
+                    "right": 0,
+                    "bottom": 0,
+                    "height": 0,
+                    "left": 0,
+                    "top": 0,
+                    "width": 0
+                },
+                "1-47-IMG": {
+                    "right": 0,
+                    "left": 0,
+                    "bottom": 0,
+                    "width": 0,
+                    "height": 0,
+                    "top": 0
+                },
+                "1-37-A": {
+                    "top": 4290,
+                    "bottom": 4338,
+                    "left": 299,
+                    "right": 347,
+                    "width": 48,
+                    "height": 48
+                },
+                "1-51-IMG": {
+                    "left": 0,
+                    "top": 0,
+                    "bottom": 0,
+                    "width": 0,
+                    "height": 0,
+                    "right": 0
+                },
+                "1-43-A": {
+                    "bottom": 807,
+                    "top": 777,
+                    "right": 397,
+                    "left": 324,
+                    "height": 30,
+                    "width": 73
+                },
+                "1-20-A": {
+                    "height": 0,
+                    "right": 0,
+                    "left": 0,
+                    "top": 0,
+                    "bottom": 0,
+                    "width": 0
+                },
+                "1-34-A": {
+                    "right": 172,
+                    "top": 4290,
+                    "left": 124,
+                    "height": 48,
+                    "bottom": 4338,
+                    "width": 48
+                },
+                "1-63-LINK": {
+                    "width": 0,
+                    "bottom": 0,
+                    "top": 0,
+                    "height": 0,
+                    "left": 0,
+                    "right": 0
+                },
+                "1-31-A": {
+                    "width": 97,
+                    "bottom": 1799,
+                    "top": 1761,
+                    "right": 122,
+                    "height": 38,
+                    "left": 25
+                },
+                "1-82-META": {
+                    "height": 0,
+                    "right": 0,
+                    "top": 0,
+                    "bottom": 0,
+                    "left": 0,
+                    "width": 0
+                },
+                "page-1-SECTION": {
+                    "width": 412,
+                    "height": 974,
+                    "bottom": 1865,
+                    "right": 412,
+                    "top": 892,
+                    "left": 0
+                },
+                "1-59-DIV": {
+                    "bottom": 0,
+                    "width": 0,
+                    "right": 0,
+                    "top": 0,
+                    "left": 0,
+                    "height": 0
+                },
+                "1-23-A": {
+                    "width": 0,
+                    "height": 0,
+                    "top": 0,
+                    "bottom": 0,
+                    "left": 0,
+                    "right": 0
+                },
+                "page-4-FONT": {
+                    "width": 327,
+                    "bottom": 190,
+                    "height": 57,
+                    "top": 133,
+                    "left": 15,
+                    "right": 342
+                },
+                "1-25-A": {
+                    "bottom": 0,
+                    "left": 0,
+                    "right": 0,
+                    "height": 0,
+                    "width": 0,
+                    "top": 0
+                },
+                "1-42-A": {
+                    "top": 777,
+                    "right": 320,
+                    "height": 30,
+                    "left": 210,
+                    "bottom": 807,
+                    "width": 110
+                },
+                "1-2-IFRAME": {
+                    "right": 888,
+                    "top": 3488,
+                    "height": 767,
+                    "left": -476,
+                    "width": 1364,
+                    "bottom": 4255
+                },
+                "1-11-A": {
+                    "top": 0,
+                    "left": 0,
+                    "bottom": 0,
+                    "right": 0,
+                    "width": 0,
+                    "height": 0
+                },
+                "1-81-META": {
+                    "bottom": 0,
+                    "left": 0,
+                    "height": 0,
+                    "width": 0,
+                    "top": 0,
+                    "right": 0
+                },
+                "1-16-A": {
+                    "left": 0,
+                    "top": 0,
+                    "bottom": 0,
+                    "right": 0,
+                    "width": 0,
+                    "height": 0
+                },
+                "1-38-A": {
+                    "top": 4419,
+                    "bottom": 4439,
+                    "width": 127,
+                    "right": 282,
+                    "left": 155,
+                    "height": 20
+                },
+                "1-66-LINK": {
+                    "left": 0,
+                    "height": 0,
+                    "right": 0,
+                    "width": 0,
+                    "bottom": 0,
+                    "top": 0
+                },
+                "1-73-META": {
+                    "height": 0,
+                    "left": 0,
+                    "top": 0,
+                    "right": 0,
+                    "width": 0,
+                    "bottom": 0
+                },
+                "1-45-UL": {
+                    "right": 0,
+                    "height": 0,
+                    "bottom": 0,
+                    "left": 0,
+                    "width": 0,
+                    "top": 0
+                },
+                "1-7-A": {
+                    "top": 723,
+                    "right": 303,
+                    "bottom": 745,
+                    "height": 22,
+                    "width": 82,
+                    "left": 221
+                },
+                "1-62-LINK": {
+                    "height": 0,
+                    "top": 0,
+                    "width": 0,
+                    "right": 0,
+                    "bottom": 0,
+                    "left": 0
+                },
+                "1-41-A": {
+                    "height": 0,
+                    "left": 0,
+                    "right": 0,
+                    "width": 0,
+                    "top": 0,
+                    "bottom": 0
+                },
+                "1-77-META": {
+                    "width": 0,
+                    "height": 0,
+                    "top": 0,
+                    "bottom": 0,
+                    "right": 0,
+                    "left": 0
+                },
+                "1-68-META": {
+                    "right": 0,
+                    "height": 0,
+                    "top": 0,
+                    "width": 0,
+                    "bottom": 0,
+                    "left": 0
+                },
+                "1-40-A": {
+                    "bottom": 0,
+                    "height": 0,
+                    "right": 0,
+                    "top": 0,
+                    "left": 0,
+                    "width": 0
+                },
+                "page-0-IMG": {
+                    "bottom": 764,
+                    "height": 234,
+                    "right": 397,
+                    "left": 15,
+                    "width": 382,
+                    "top": 530
+                },
+                "page-3-BUTTON": {
+                    "width": 32,
+                    "top": 8,
+                    "height": 40,
+                    "right": 265,
+                    "bottom": 48,
+                    "left": 233
+                },
+                "1-80-META": {
+                    "height": 0,
+                    "bottom": 0,
+                    "right": 0,
+                    "top": 0,
+                    "left": 0,
+                    "width": 0
+                },
+                "1-26-A": {
+                    "width": 0,
+                    "top": 0,
+                    "bottom": 0,
+                    "left": 0,
+                    "height": 0,
+                    "right": 0
+                },
+                "1-44-SPAN": {
+                    "bottom": 0,
+                    "width": 0,
+                    "top": 0,
+                    "height": 0,
+                    "right": 0,
+                    "left": 0
+                },
+                "1-60-LINK": {
+                    "height": 0,
+                    "right": 0,
+                    "width": 0,
+                    "bottom": 0,
+                    "top": 0,
+                    "left": 0
+                },
+                "1-17-A": {
+                    "bottom": 0,
+                    "width": 0,
+                    "top": 0,
+                    "right": 0,
+                    "height": 0,
+                    "left": 0
+                },
+                "1-15-A": {
+                    "width": 0,
+                    "right": 0,
+                    "height": 0,
+                    "bottom": 0,
+                    "left": 0,
+                    "top": 0
+                },
+                "1-33-A": {
+                    "top": 4290,
+                    "right": 113,
+                    "bottom": 4338,
+                    "height": 48,
+                    "left": 65,
+                    "width": 48
+                },
+                "1-53-IMG": {
+                    "bottom": 4492,
+                    "top": 4491,
+                    "height": 1,
+                    "right": 387,
+                    "left": 25,
+                    "width": 362
+                },
+                "page-2-DIV": {
+                    "width": 382,
+                    "top": 1280,
+                    "right": 397,
+                    "height": 553,
+                    "bottom": 1833,
+                    "left": 15
+                },
+                "1-71-META": {
+                    "left": 0,
+                    "right": 0,
+                    "height": 0,
+                    "top": 0,
+                    "bottom": 0,
+                    "width": 0
+                },
+                "1-49-IMG": {
+                    "top": 0,
+                    "height": 0,
+                    "bottom": 0,
+                    "left": 0,
+                    "width": 0,
+                    "right": 0
+                },
+                "1-65-LINK": {
+                    "bottom": 0,
+                    "height": 0,
+                    "right": 0,
+                    "top": 0,
+                    "width": 0,
+                    "left": 0
+                },
+                "1-27-A": {
+                    "bottom": 0,
+                    "top": 0,
+                    "right": 0,
+                    "left": 0,
+                    "height": 0,
+                    "width": 0
+                },
+                "1-58-DIV": {
+                    "width": 0,
+                    "top": 0,
+                    "bottom": 0,
+                    "height": 0,
+                    "left": 0,
+                    "right": 0
+                },
+                "page-6-IFRAME": {
+                    "bottom": 4255,
+                    "height": 767,
+                    "left": -476,
+                    "top": 3488,
+                    "width": 1364,
+                    "right": 888
+                },
+                "1-21-A": {
+                    "left": 0,
+                    "right": 0,
+                    "width": 0,
+                    "bottom": 0,
+                    "top": 0,
+                    "height": 0
+                },
+                "1-64-LINK": {
+                    "width": 0,
+                    "top": 0,
+                    "height": 0,
+                    "right": 0,
+                    "bottom": 0,
+                    "left": 0
+                },
+                "1-78-META": {
+                    "right": 0,
+                    "bottom": 0,
+                    "left": 0,
+                    "width": 0,
+                    "height": 0,
+                    "top": 0
+                },
+                "1-24-A": {
+                    "top": 0,
+                    "height": 0,
+                    "left": 0,
+                    "right": 0,
+                    "bottom": 0,
+                    "width": 0
+                },
+                "1-10-A": {
+                    "left": 308,
+                    "height": 30,
+                    "top": 13,
+                    "right": 381,
+                    "bottom": 43,
+                    "width": 73
+                },
+                "1-39-A": {
+                    "left": 148,
+                    "height": 20,
+                    "bottom": 4463,
+                    "width": 145,
+                    "right": 293,
+                    "top": 4443
+                },
+                "1-5-IMG": {
+                    "bottom": 764,
+                    "right": 397,
+                    "top": 530,
+                    "width": 382,
+                    "height": 234,
+                    "left": 15
+                },
+                "1-4-A": {
+                    "top": 4491,
+                    "bottom": 4492,
+                    "width": 362,
+                    "right": 387,
+                    "left": 25,
+                    "height": 1
+                },
+                "1-72-META": {
+                    "height": 0,
+                    "left": 0,
+                    "width": 0,
+                    "bottom": 0,
+                    "right": 0,
+                    "top": 0
+                },
+                "1-67-LINK": {
+                    "height": 0,
+                    "width": 0,
+                    "bottom": 0,
+                    "top": 0,
+                    "right": 0,
+                    "left": 0
+                },
+                "1-69-META": {
+                    "height": 0,
+                    "top": 0,
+                    "bottom": 0,
+                    "left": 0,
+                    "width": 0,
+                    "right": 0
+                },
+                "1-52-IMG": {
+                    "height": 321,
+                    "left": 25,
+                    "right": 387,
+                    "top": 950,
+                    "width": 362,
+                    "bottom": 1270
+                },
+                "1-56-SPAN": {
+                    "height": 30,
+                    "right": 264,
+                    "width": 30,
+                    "top": 13,
+                    "bottom": 43,
+                    "left": 234
+                },
+                "1-35-A": {
+                    "top": 4290,
+                    "right": 230,
+                    "bottom": 4338,
+                    "height": 48,
+                    "left": 182,
+                    "width": 48
+                },
+                "1-57-DIV": {
+                    "right": 0,
+                    "top": 0,
+                    "bottom": 0,
+                    "width": 0,
+                    "height": 0,
+                    "left": 0
+                },
+                "page-5-FONT": {
+                    "height": 31,
+                    "top": 1287,
+                    "right": 168,
+                    "left": 25,
+                    "width": 143,
+                    "bottom": 1318
+                },
+                "1-48-IMG": {
+                    "left": 0,
+                    "right": 0,
+                    "width": 0,
+                    "top": 0,
+                    "bottom": 0,
+                    "height": 0
+                },
+                "1-12-A": {
+                    "right": 0,
+                    "top": 0,
+                    "height": 0,
+                    "bottom": 0,
+                    "left": 0,
+                    "width": 0
+                },
+                "1-14-A": {
+                    "height": 0,
+                    "top": 0,
+                    "bottom": 0,
+                    "width": 0,
+                    "left": 0,
+                    "right": 0
+                },
+                "1-79-META": {
+                    "top": 0,
+                    "bottom": 0,
+                    "height": 0,
+                    "right": 0,
+                    "left": 0,
+                    "width": 0
+                },
+                "1-54-IMG": {
+                    "left": 0,
+                    "height": 0,
+                    "top": 0,
+                    "bottom": 0,
+                    "right": 0,
+                    "width": 0
+                },
+                "1-29-A": {
+                    "left": 0,
+                    "top": 0,
+                    "right": 0,
+                    "bottom": 0,
+                    "height": 0,
+                    "width": 0
+                },
+                "1-22-A": {
+                    "top": 0,
+                    "width": 0,
+                    "left": 0,
+                    "height": 0,
+                    "right": 0,
+                    "bottom": 0
+                },
+                "1-18-A": {
+                    "right": 0,
+                    "left": 0,
+                    "bottom": 0,
+                    "height": 0,
+                    "top": 0,
+                    "width": 0
+                },
+                "1-0-DIV": {
+                    "width": 412,
+                    "right": 412,
+                    "top": 0,
+                    "bottom": 823,
+                    "height": 823,
+                    "left": 0
+                },
+                "1-75-META": {
+                    "height": 0,
+                    "right": 0,
+                    "left": 0,
+                    "top": 0,
+                    "width": 0,
+                    "bottom": 0
+                },
+                "1-28-A": {
+                    "left": 0,
+                    "top": 0,
+                    "height": 0,
+                    "bottom": 0,
+                    "width": 0,
+                    "right": 0
+                },
+                "1-1-BUTTON": {
+                    "left": 233,
+                    "width": 32,
+                    "bottom": 48,
+                    "right": 265,
+                    "top": 8,
+                    "height": 40
+                },
+                "1-32-A": {
+                    "height": 51,
+                    "left": 15,
+                    "top": 3381,
+                    "right": 188,
+                    "width": 173,
+                    "bottom": 3432
+                },
+                "1-61-LINK": {
+                    "right": 0,
+                    "height": 0,
+                    "width": 0,
+                    "bottom": 0,
+                    "top": 0,
+                    "left": 0
+                },
+                "1-46-IMG": {
+                    "bottom": 48,
+                    "top": 8,
+                    "right": 175,
+                    "left": 31,
+                    "height": 40,
+                    "width": 144
+                },
+                "1-19-A": {
+                    "top": 0,
+                    "height": 0,
+                    "right": 0,
+                    "left": 0,
+                    "width": 0,
+                    "bottom": 0
+                },
+                "1-6-FONT": {
+                    "top": 133,
+                    "bottom": 190,
+                    "height": 57,
+                    "width": 327,
+                    "left": 15,
+                    "right": 342
+                },
+                "1-30-A": {
+                    "left": 15,
+                    "right": 107,
+                    "height": 38,
+                    "width": 92,
+                    "bottom": 466,
+                    "top": 428
+                },
+                "1-36-A": {
+                    "height": 48,
+                    "left": 240,
+                    "right": 288,
+                    "top": 4290,
+                    "width": 48,
+                    "bottom": 4338
+                }
+            }
+        }
+    },
+    "analysisUTCTimestamp": "2023-11-02T17:59:48.323Z"
+}
