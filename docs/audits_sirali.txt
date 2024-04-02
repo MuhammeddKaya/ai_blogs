@@ -152,23 +152,28 @@ errors-in-console
 inspector-issues
 valid-source-maps
 preload-fonts
-third-party-cookies
 
 
 
 
+-------------pwa--------------------------------------------------
+installable-manifest
+splash-screen
+themed-omnibox
+content-width
+viewport      ***********
+maskable-icon
+pwa-cross-browser
+pwa-page-transitions
+pwa-each-page-has-url
 
 -------------page speed insightde gelmiyor-----------------------------------------
-splash-screen
+
 max-potential-fid
-pwa-each-page-has-url
-content-width
 diagnostics
-maskable-icon
 screenshot-thumbnails
 final-screenshot
 network-rtt
-installable-manifest
 main-thread-tasks
 metrics
 interactive
@@ -177,10 +182,8 @@ network-server-latency
 performance-budget
 network-requests
 timing-budget
-themed-omnibox
-pwa-page-transitions
 landmark-one-main
-pwa-cross-browser
+third-party-cookies
 
 
 

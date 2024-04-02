@@ -376,7 +376,7 @@ $(document).on('click', '.serp-analyze-link', function (event) {
             else if (!(audit_score == 1) && ['inspector-issues','js-libraries','valid-source-maps'].includes(audit_id)) {
               $('.mobile_best_practices_general_audits').append(html);
             }
-            else if (!(audit_score == 1) && ['image-aspect-ratio','image-aspect-ratio'].includes(audit_id)) {
+            else if (!(audit_score == 1) && ['image-aspect-ratio'].includes(audit_id)) {
               $('.mobile_best_practices_user_experience_audits').append(html);
             }
             else {
