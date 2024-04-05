@@ -176,6 +176,9 @@ def link_analyze(request):
 #--------------------------------------------------------------------------------------------------------------------------
 #------------ Mobile Side Data--------------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------------------------------------
+            with open("./json/tr_TR.json", "r") as dosya:
+                mobile_result_tr = json.load(dosya)
+
 
             mobile_result = get_seo(domain_name,"mobile")
             # current_directory = os.getcwd()
@@ -243,6 +246,7 @@ def link_analyze(request):
             # print("mobile_minimizes_main_thread_work",mobile_minimizes_main_thread_work)
 
             audit = mobile_result['lighthouseResult']["audits"]
+            audit_tr = mobile_result_tr
             # audit_list = audit.keys()
             # print("audittttttt",len(audit_list))
             # with open('audit_keys.txt', 'w') as file:
@@ -270,6 +274,7 @@ def link_analyze(request):
                 #--------------------DIAGNOSTICS-------------------------------------
                 "mobile_minimizes_main_thread_work"    : mobile_minimizes_main_thread_work,
                 "audit"    : audit,
+                "audit_tr"    : audit_tr,
 
 
 

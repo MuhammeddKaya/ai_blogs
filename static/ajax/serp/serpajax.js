@@ -283,181 +283,218 @@ $(document).on('click', '.serp-analyze-link', function (event) {
 
 //------------------------Mobile SİDE  DIAGNOSTICS-----------------------------------------------
       var audits = data.audit; // AJAX ile aldığınız audit verileri
+      var audits_tr = data.audit_tr; // AJAX ile aldığınız audit verileri
       // console.log(audits)
-      for (var key in audits) {
-        
-        var audit_id = audits[key].id;
-        var audit_score = audits[key].score;
-        var audit_score_display_mode = audits[key].scoreDisplayMode;
+      var lang_code;
 
-        var audit_ttitle = audits[key].title;
-        var audit_title = audit_ttitle.replace(/<[^>]+>/g, function(match) {
-          return match.replace(/\</g, '&lt;').replace(/\>/g, '&gt;');
-        });
+      $("#mobile_lang_tr").click(function() {
+          var lang_code = "tr";
+          console.log("langgggggggggggggggggggggggg",lang_code);
+          updateData();
+      });
+      $("#mobile_lang_en").click(function() {
+        var lang_code = "en";
+        console.log("langgggggggggggggggggggggggg",lang_code);
+        updateData();
 
-        var tdescription = audits[key].description;
-        var description = tdescription.replace(/<[^>]+>/g, function(match) {
-          return match.replace(/\</g, '&lt;').replace(/\>/g, '&gt;');
-        }).replace(/\[[^\]]*\]|\([^\)]*\)/g, '');
-        
+      });
 
-        // HTML içeriğini oluştur
-        var html =                 '<div class="accordion accordion-flush mb-1 card position-relative overflow-hidden" id="accordionFlushExample">'+
-                  '<div class="accordion-item">'+
-                    '<h2 class="accordion-header" id="flush-headingOne">'+
-                      '<button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#'+audit_id+'" aria-expanded="false" aria-controls="'+audit_id+'">'+
-                        '<div class="row">'+
-                         ' <div class="row">'+
-                            '<h6>'+audit_title+'</h6>'+
-                          '</div>'+
-                          '<div class="row">'+
-                            '<div class="'+audit_id+'"></div>'+
-                          '</div>'+
-                        '</div>'+
-                      '</button>'+
-                    '</h2>'+
-                    '<div id="'+audit_id+'" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">'+
-                      '<div class="accordion-body fw-normal">'+description+
-                      '</div>'+
-                      '<div> <!--'+
-                        '<table class="table border mb-0" id="mobile_minimizes_main_thread_work_table">'+
-                          '<thead>'+
-                            '<tr>'+
-                             ' <th scope="col">Category</th>'+
-                              '<th scope="col">Duration (ms)</th>'+
-                            '</tr>'+
-                          '</thead>'+
-                          '<tbody>'+
 
-                          '</tbody>'+
-                        '</table>'+
-                      '</div> -->'+
-                    '</div>'+
-                  '</div>'+
 
-                '</div>';
+      function updateData() {
+        for (var key in audits) {
 
-        var seoAudits = ["crawlable-anchors", "image-alt", "structured-data", "viewport", "document-title", "meta-description", "http-status-code", 
-            "link-text", "is-crawlable", "hreflang", "font-size", "plugins", "tap-targets", "robots-txt", "canonical"];
+          var audit_id = audits[key].id;
+          var audit_score = audits[key].score;
+          var audit_score_display_mode = audits[key].scoreDisplayMode;
 
-        var bestPractices = [
-            "image-size-responsive", "csp-xss",   "js-libraries", "is-on-https", "deprecations", "paste-preventing-inputs",  "geolocation-on-start",
-            "notification-on-start", "image-aspect-ratio","doctype", "charset",  "no-unload-listeners","errors-in-console",    "inspector-issues",
-            "valid-source-maps","preload-fonts", "third-party-cookies"
-        ];
-        var performanceAudits = ["largest-contentful-paint-element", "mainthread-work-breakdown", "bootup-time", "third-party-facades", "render-blocking-resources", 
-            "lcp-lazy-loaded", "unused-css-rules", "layout-shift-elements", "third-party-summary", "unminified-css", "modern-image-formats", "unsized-images", "uses-long-cache-ttl", 
-            "font-display", "legacy-javascript", "unused-javascript", "server-response-time", "non-composited-animations", "total-byte-weight", "dom-size", "critical-request-chains",
-            "long-tasks", "offscreen-images", "unminified-javascript", "uses-optimized-images", "uses-rel-preconnect", "redirects", "uses-rel-preload", "efficient-animated-content", 
-            "duplicated-javascript", "prioritize-lcp-image", "user-timings", "uses-passive-event-listeners", "no-document-write", "viewport", "uses-text-compression", "uses-responsive-images"];
+          if (lang_code== "tr") {
 
-        var accessibilityAudits = ["button-name", "image-alt", "link-name", "color-contrast", "heading-order", "focusable-controls", "interactive-element-affordance", "logical-tab-order", 
-            "visual-order-follows-dom", "focus-traps", "managed-focus", "use-landmarks", "offscreen-content-hidden", "custom-controls-labels", "custom-controls-roles", "aria-hidden-body", 
-            "meta-viewport", "aria-hidden-focus", "document-title", "html-has-lang", "valid-lang", "image-redundant-alt", "accesskeys", "aria-allowed-attr", "aria-allowed-role", "aria-command-name",
-            "aria-dialog-name", "aria-input-field-name", "aria-meter-name", "aria-required-children", "aria-progressbar-name", "aria-required-attr", "aria-required-parent", "aria-roles", "aria-text", 
-            "aria-toggle-field-name", "aria-valid-attr", "aria-tooltip-name", "aria-treeitem-name", "duplicate-id-aria", "aria-valid-attr-value", "bypass", "definition-list", "dlitem", 
-            "duplicate-id-active", "form-field-multiple-labels", "html-xml-lang-mismatch", "input-button-name", "input-image-alt", "label", "link-in-text-block", "list", "listitem", "meta-refresh", 
-            "object-alt", "select-name", "skip-link", "tabindex", "table-duplicate-name", "td-headers-attr", "th-has-data-cells", "video-caption", "empty-heading", "identical-links-same-purpose",
-            "target-size", "label-content-name-mismatch", "table-fake-caption", "td-has-header", "html-lang-valid", "frame-title"];
-        
+            var audit_ttitle = audits_tr[key].title;
+            var audit_title = audit_ttitle.replace(/<[^>]+>/g, function(match) {
+              return match.replace(/\</g, '&lt;').replace(/\>/g, '&gt;');
+            });
+    
+            var tdescription = audits_tr[key].description;
+            var description = tdescription.replace(/<[^>]+>/g, function(match) {
+              return match.replace(/\</g, '&lt;').replace(/\>/g, '&gt;');
+            }).replace(/\[[^\]]*\]|\([^\)]*\)/g, '');
+            
+          }
+          else {
+    
+            var audit_ttitle = audits[key].title;
+            var audit_title = audit_ttitle.replace(/<[^>]+>/g, function(match) {
+              return match.replace(/\</g, '&lt;').replace(/\>/g, '&gt;');
+            });
+    
+            var tdescription = audits[key].description;
+            var description = tdescription.replace(/<[^>]+>/g, function(match) {
+              return match.replace(/\</g, '&lt;').replace(/\>/g, '&gt;');
+            }).replace(/\[[^\]]*\]|\([^\)]*\)/g, '');
+          }
           
-        // Audit'in listemizde olup olmadığını kontrol et
-        if (bestPractices.includes(audit_id)) {
 
-            if (audit_score==1){
-              $('.mobile_best_practices_passed_audits').append(html);
-            }
-            else if (audit_score==null){
-              $('.mobile_best_practices_not_applicable_audits').append(html);
-            }
-            else if (!(audit_score == 1) && ['csp-xss'].includes(audit_id)) {
-              $('.mobile_best_practices_trust_and_safety_audits').append(html);
-            }
-            else if (!(audit_score == 1) && ['inspector-issues','js-libraries','valid-source-maps'].includes(audit_id)) {
-              $('.mobile_best_practices_general_audits').append(html);
-            }
-            else if (!(audit_score == 1) && ['image-aspect-ratio'].includes(audit_id)) {
-              $('.mobile_best_practices_user_experience_audits').append(html);
-            }
-            else {
-              console.log("best practices kategoriye uymayan audit",audit_id);
-            } 
+          
 
-        } else if (seoAudits.includes(audit_id)) {
-            if (audit_score==1){
-              $('.mobile_seo_passed_audits').append(html);
-            }
-            else if (audit_score==null){
-              $('.mobile_seo_not_applicable_audits').append(html);
-            }
-            else if (!(audit_score == 1) && ['crawlable-anchors'].includes(audit_id)) {
-              $('.mobile_seo_crawl_and_indexing_audits').append(html);
-            }
-            else if (!(audit_score == 1) && ['image-alt'].includes(audit_id)) {
-              $('.mobile_seo_content_best_practices_audits').append(html);
-            }
-            else if (!(audit_score == 1) && ['tap-targets'].includes(audit_id)) {
-              $('.mobile_seo_mobile_friendly_audits').append(html);
-            }
-            else if (!(audit_score == 1) && ['structured-data'].includes(audit_id)) {
-              $('.mobile_seo_add_item_to_manually_check_audits').append(html);
-            }
-            else {
-              console.log("Seo kategoriye uymayan audit",audit_id);
-            } 
+          // HTML içeriğini oluştur
+          var html =                 '<div class="accordion accordion-flush mb-1 card position-relative overflow-hidden" id="accordionFlushExample">'+
+                    '<div class="accordion-item">'+
+                      '<h2 class="accordion-header" id="flush-headingOne">'+
+                        '<button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#'+audit_id+'" aria-expanded="false" aria-controls="'+audit_id+'">'+
+                          '<div class="row">'+
+                          ' <div class="row">'+
+                              '<h6>'+audit_title+'</h6>'+
+                            '</div>'+
+                            '<div class="row">'+
+                              '<div class="'+audit_id+'"></div>'+
+                            '</div>'+
+                          '</div>'+
+                        '</button>'+
+                      '</h2>'+
+                      '<div id="'+audit_id+'" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">'+
+                        '<div class="accordion-body fw-normal">'+description+
+                        '</div>'+
+                        '<div> <!--'+
+                          '<table class="table border mb-0" id="mobile_minimizes_main_thread_work_table">'+
+                            '<thead>'+
+                              '<tr>'+
+                              ' <th scope="col">Category</th>'+
+                                '<th scope="col">Duration (ms)</th>'+
+                              '</tr>'+
+                            '</thead>'+
+                            '<tbody>'+
 
-        } else if (performanceAudits.includes(audit_id)) {
-            if (audit_score==1){
-              $('.mobile_performance_passed_audits').append(html);
-            }
-            else {
-              $('.mobile_performance_diagnostic_audits').append(html);
-            }
+                            '</tbody>'+
+                          '</table>'+
+                        '</div> -->'+
+                      '</div>'+
+                    '</div>'+
 
-        } else if (accessibilityAudits.includes(audit_id)) {
+                  '</div>';
 
-            if (audit_score==1){
-              $('.mobile_accessibility_passed_audits').append(html);
-            }
+          var seoAudits = ["crawlable-anchors", "image-alt", "structured-data", "viewport", "document-title", "meta-description", "http-status-code", 
+              "link-text", "is-crawlable", "hreflang", "font-size", "plugins", "tap-targets", "robots-txt", "canonical"];
 
-            else if (audit_score_display_mode=='manual'){
-              $('.mobile_accessibility_add_manual_check_audits').append(html);
-            }
+          var bestPractices = [
+              "image-size-responsive", "csp-xss",   "js-libraries", "is-on-https", "deprecations", "paste-preventing-inputs",  "geolocation-on-start",
+              "notification-on-start", "image-aspect-ratio","doctype", "charset",  "no-unload-listeners","errors-in-console",    "inspector-issues",
+              "valid-source-maps","preload-fonts", "third-party-cookies"
+          ];
+          var performanceAudits = ["largest-contentful-paint-element", "mainthread-work-breakdown", "bootup-time", "third-party-facades", "render-blocking-resources", 
+              "lcp-lazy-loaded", "unused-css-rules", "layout-shift-elements", "third-party-summary", "unminified-css", "modern-image-formats", "unsized-images", "uses-long-cache-ttl", 
+              "font-display", "legacy-javascript", "unused-javascript", "server-response-time", "non-composited-animations", "total-byte-weight", "dom-size", "critical-request-chains",
+              "long-tasks", "offscreen-images", "unminified-javascript", "uses-optimized-images", "uses-rel-preconnect", "redirects", "uses-rel-preload", "efficient-animated-content", 
+              "duplicated-javascript", "prioritize-lcp-image", "user-timings", "uses-passive-event-listeners", "no-document-write", "viewport", "uses-text-compression", "uses-responsive-images"];
 
-            else if (audit_score_display_mode=='notApplicable'){
-              $('.mobile_accessibility_not_applicable_audits').append(html);
-            }
+          var accessibilityAudits = ["button-name", "image-alt", "link-name", "color-contrast", "heading-order", "focusable-controls", "interactive-element-affordance", "logical-tab-order", 
+              "visual-order-follows-dom", "focus-traps", "managed-focus", "use-landmarks", "offscreen-content-hidden", "custom-controls-labels", "custom-controls-roles", "aria-hidden-body", 
+              "meta-viewport", "aria-hidden-focus", "document-title", "html-has-lang", "valid-lang", "image-redundant-alt", "accesskeys", "aria-allowed-attr", "aria-allowed-role", "aria-command-name",
+              "aria-dialog-name", "aria-input-field-name", "aria-meter-name", "aria-required-children", "aria-progressbar-name", "aria-required-attr", "aria-required-parent", "aria-roles", "aria-text", 
+              "aria-toggle-field-name", "aria-valid-attr", "aria-tooltip-name", "aria-treeitem-name", "duplicate-id-aria", "aria-valid-attr-value", "bypass", "definition-list", "dlitem", 
+              "duplicate-id-active", "form-field-multiple-labels", "html-xml-lang-mismatch", "input-button-name", "input-image-alt", "label", "link-in-text-block", "list", "listitem", "meta-refresh", 
+              "object-alt", "select-name", "skip-link", "tabindex", "table-duplicate-name", "td-headers-attr", "th-has-data-cells", "video-caption", "empty-heading", "identical-links-same-purpose",
+              "target-size", "label-content-name-mismatch", "table-fake-caption", "td-has-header", "html-lang-valid", "frame-title"];
+          
+            
+          // Audit'in listemizde olup olmadığını kontrol et
+          if (bestPractices.includes(audit_id)) {
 
-            else if (!(audit_score==1) && (audit_id=='button-name'|| audit_id=='link-name'||audit_id=='image-alt')){
-              $('.mobile_accessibility_names_and_labels_audits').append(html);
-            }
+              if (audit_score==1){
+                $('.mobile_best_practices_passed_audits').append(html);
+              }
+              else if (audit_score==null){
+                $('.mobile_best_practices_not_applicable_audits').append(html);
+              }
+              else if (!(audit_score == 1) && ['csp-xss'].includes(audit_id)) {
+                $('.mobile_best_practices_trust_and_safety_audits').append(html);
+              }
+              else if (!(audit_score == 1) && ['inspector-issues','js-libraries','valid-source-maps'].includes(audit_id)) {
+                $('.mobile_best_practices_general_audits').append(html);
+              }
+              else if (!(audit_score == 1) && ['image-aspect-ratio'].includes(audit_id)) {
+                $('.mobile_best_practices_user_experience_audits').append(html);
+              }
+              else {
+                console.log("best practices kategoriye uymayan audit",audit_id);
+              } 
 
-            else if (!(audit_score==1) && (audit_id=='heading-order')){
-              $('.mobile_accessibility_navigation_audits').append(html);
-            }
+          } else if (seoAudits.includes(audit_id)) {
+              if (audit_score==1){
+                $('.mobile_seo_passed_audits').append(html);
+              }
+              else if (audit_score==null){
+                $('.mobile_seo_not_applicable_audits').append(html);
+              }
+              else if (!(audit_score == 1) && ['crawlable-anchors'].includes(audit_id)) {
+                $('.mobile_seo_crawl_and_indexing_audits').append(html);
+              }
+              else if (!(audit_score == 1) && ['image-alt'].includes(audit_id)) {
+                $('.mobile_seo_content_best_practices_audits').append(html);
+              }
+              else if (!(audit_score == 1) && ['tap-targets'].includes(audit_id)) {
+                $('.mobile_seo_mobile_friendly_audits').append(html);
+              }
+              else if (!(audit_score == 1) && ['structured-data'].includes(audit_id)) {
+                $('.mobile_seo_add_item_to_manually_check_audits').append(html);
+              }
+              else {
+                console.log("Seo kategoriye uymayan audit",audit_id);
+              } 
 
-            else if (!(audit_score==1) && (audit_id=='color-contrast')){
-              $('.mobile_accessibility_contrast_audits').append(html);
-            }
-            else if (!(audit_score==1) && (audit_id=='list'|| audit_id=='listitem')){
-              $('.mobile_accessibility_tables_lists_audits').append(html);
-            }
-            else if (!(audit_score==1) && (audit_id=='list'|| audit_id=='listitem')){
-              $('.mobile_accessibility_aria_audits').append(html);
-            }
-            else if (!(audit_score == 1) && ['aria-allowed-attr', 'aria-allowed-role', 'aria-command-name', 'aria-dialog-name', 'aria-input-field-name', 'aria-meter-name', 'aria-required-children', 'aria-progressbar-name', 'aria-required-attr', 'aria-required-parent', 'aria-roles', 'aria-text', 'aria-toggle-field-name', 'aria-valid-attr', 'aria-tooltip-name', 'aria-treeitem-name', 'duplicate-id-aria', 'aria-valid-attr-value', 'aria-hidden-body', 'aria-hidden-focus'].includes(audit_id)) {
-              $('.mobile_accessibility_aria_audits').append(html);
-            }
-                    
-            else {
-              console.log("accessibility kategoriye uymayan audit",audit_id);
-            }
+          } else if (performanceAudits.includes(audit_id)) {
+              if (audit_score==1){
+                $('.mobile_performance_passed_audits').append(html);
+              }
+              else {
+                $('.mobile_performance_diagnostic_audits').append(html);
+              }
 
-        }  else {
+          } else if (accessibilityAudits.includes(audit_id)) {
 
-              console.log(audit_id);
+              if (audit_score==1){
+                $('.mobile_accessibility_passed_audits').append(html);
+              }
+
+              else if (audit_score_display_mode=='manual'){
+                $('.mobile_accessibility_add_manual_check_audits').append(html);
+              }
+
+              else if (audit_score_display_mode=='notApplicable'){
+                $('.mobile_accessibility_not_applicable_audits').append(html);
+              }
+
+              else if (!(audit_score==1) && (audit_id=='button-name'|| audit_id=='link-name'||audit_id=='image-alt')){
+                $('.mobile_accessibility_names_and_labels_audits').append(html);
+              }
+
+              else if (!(audit_score==1) && (audit_id=='heading-order')){
+                $('.mobile_accessibility_navigation_audits').append(html);
+              }
+
+              else if (!(audit_score==1) && (audit_id=='color-contrast')){
+                $('.mobile_accessibility_contrast_audits').append(html);
+              }
+              else if (!(audit_score==1) && (audit_id=='list'|| audit_id=='listitem')){
+                $('.mobile_accessibility_tables_lists_audits').append(html);
+              }
+              else if (!(audit_score==1) && (audit_id=='list'|| audit_id=='listitem')){
+                $('.mobile_accessibility_aria_audits').append(html);
+              }
+              else if (!(audit_score == 1) && ['aria-allowed-attr', 'aria-allowed-role', 'aria-command-name', 'aria-dialog-name', 'aria-input-field-name', 'aria-meter-name', 'aria-required-children', 'aria-progressbar-name', 'aria-required-attr', 'aria-required-parent', 'aria-roles', 'aria-text', 'aria-toggle-field-name', 'aria-valid-attr', 'aria-tooltip-name', 'aria-treeitem-name', 'duplicate-id-aria', 'aria-valid-attr-value', 'aria-hidden-body', 'aria-hidden-focus'].includes(audit_id)) {
+                $('.mobile_accessibility_aria_audits').append(html);
+              }
+                      
+              else {
+                console.log("accessibility kategoriye uymayan audit",audit_id);
+              }
+
+          }  else {
+
+                console.log(audit_id);
+          }
+          
         }
-        
       }
                   
       // Her bir audit için döngü
