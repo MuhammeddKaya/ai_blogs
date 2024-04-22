@@ -176,13 +176,13 @@ def link_analyze(request):
 #--------------------------------------------------------------------------------------------------------------------------
 #------------ Mobile Side Data--------------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------------------------------------
-            with open("./json/tr_TR.json", "r") as dosya:
+            with open("./json_ref/tr_TR.json", "r") as dosya:
                 mobile_result_tr = json.load(dosya)
 
 
             mobile_result = get_seo(domain_name,"mobile")
             # current_directory = os.getcwd()
-            # file_name = 'json/'+ f"{domain_name.replace('https://', '')}.json"
+            # file_name = 'json/mobile_'+ f"{domain_name.replace('https://', '')}.json"
             # file_path = os.path.join(current_directory, file_name)
 
             # with open(file_path, "w") as f:
@@ -213,6 +213,12 @@ def link_analyze(request):
 #------------ Desktop Side Data--------------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------------------------------------
             desktop_result = get_seo(domain_name,"desktop")
+            # current_directory = os.getcwd()
+            # file_name = 'json/desktop_'+ f"{domain_name.replace('https://', '')}.json"
+            # file_path = os.path.join(current_directory, file_name)
+
+            # with open(file_path, "w") as f:
+            #     json.dump(desktop_result, f)
 
             #----- seo - performance-accessiblity best-practices--------------------------------------
             desktop_performance_score                 = desktop_result['lighthouseResult']["categories"]["performance"]["score"]
@@ -245,7 +251,8 @@ def link_analyze(request):
             # print("desktop_speed_index",type(desktop_speed_index))
             # print("mobile_minimizes_main_thread_work",mobile_minimizes_main_thread_work)
 
-            audit = mobile_result['lighthouseResult']["audits"]
+            mobile_audit = mobile_result['lighthouseResult']["audits"]
+            desktop_audit = desktop_result['lighthouseResult']["audits"]
             audit_tr = mobile_result_tr['lighthouseResult']["audits"]
             # print(audit_tr)
             # audit_list = audit.keys()
@@ -272,10 +279,10 @@ def link_analyze(request):
                 "mobile_cumulative_layout_shift"       : mobile_cumulative_layout_shift,
                 "mobile_speed_index"                   : mobile_speed_index,
                 
-                #--------------------DIAGNOSTICS-------------------------------------
+                #--------------------All_Audits-------------------------------------
                 "mobile_minimizes_main_thread_work"    : mobile_minimizes_main_thread_work,
-                "audit"    : audit,
-                "audit_tr"    : audit_tr,
+                "mobile_audit"                  : mobile_audit,
+                "audit_tr"                      : audit_tr,
 
 
 
@@ -286,7 +293,7 @@ def link_analyze(request):
                 "desktop_first_contentful_paint"        : desktop_first_contentful_paint,
                 "desktop_largest_contentful_paint"      : desktop_largest_contentful_paint,
                 "desktop_total_blocking_time"           : desktop_total_blocking_time,
-                "desktop_cumulative_layout_shift"      : desktop_cumulative_layout_shift,
+                "desktop_cumulative_layout_shift"       : desktop_cumulative_layout_shift,
                 "desktop_speed_index"                   : desktop_speed_index,
                 #--------------------Metrics-------------------------------------
                 "desktop_performance_score"             : desktop_performance_score,
@@ -294,7 +301,10 @@ def link_analyze(request):
                 "desktop_seo_score"                     : desktop_seo_score,
                 "desktop_best_practices_score"          : desktop_best_practices_score,
                 "desktop_fullPageScreenshot"            : desktop_fullPageScreenshot,
-                #--------------------DIAGNOSTICS-------------------------------------
+                #--------------------All_Audits-------------------------------------
+                "desktop_audit"                 : desktop_audit
+
+
             }
             return JsonResponse(response_data)
         

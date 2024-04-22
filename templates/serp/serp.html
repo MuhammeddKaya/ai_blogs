@@ -148,7 +148,12 @@
               <div class="p-3">
                 
                 <div class="row">
-
+                  <div class="row">
+                    <div class="col-md-3">
+                      <button type="button"  id="desktop_lang_tr" class="btn mb-1 waves-effect waves-light btn-light-success text-success">Tr</button>
+                      <button type="button"  id="desktop_lang_en" class="btn mb-1 waves-effect waves-light btn-light-success text-success">En</button>
+                    </div>                    
+                  </div>
 
                   <!-- start  -->
                   <div class="col-lg-3 d-flex align-items-stretch">
@@ -375,6 +380,18 @@
                       </div>
                     </div>
                   </div>
+                  <div class="card-body">
+                    <h6>Diagnostics</h6>
+                    <div class="accordion accordion-flush desktop_performance_diagnostic_audits" id="accordionFlushExample">
+                      <!-- buraya seo auditleri gelecek-->
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h6>PASSED AUDITS</h6>
+                    <div class="accordion accordion-flush desktop_performance_passed_audits" id="accordionFlushExample">
+                      <!-- buraya seo auditleri gelecek-->
+                    </div>
+                  </div>
                 </div>
                 <div class="row">
                   <div class="col-lg-12 d-flex align-items-strech">
@@ -383,6 +400,54 @@
                         <div id="desktop_accessibility_score_big-div"></div>
                         <h5 class="text-center"> Accessibility</h5>
                         <h6 class="text-center">These checks highlight opportunities to improve the accessibility of your web app. Automatic detection can only detect a subset of issues and does not guarantee the accessibility of your web app, so manual testing is also encouraged.</h6>
+                      </div>
+                      <div class="card-body">
+                        <h6>ARIA</h6>
+                        <div class="accordion accordion-flush desktop_accessibility_aria_audits" id="accordionFlushExample">
+                          <!-- buraya seo auditleri gelecek-->
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <h6>NAMES AND LABELS</h6>
+                        <div class="accordion accordion-flush desktop_accessibility_names_and_labels_audits" id="accordionFlushExample">
+                          <!-- buraya seo auditleri gelecek-->
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <h6>CONTRAST</h6>
+                        <div class="accordion accordion-flush desktop_accessibility_contrast_audits" id="accordionFlushExample">
+                          <!-- buraya seo auditleri gelecek-->
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <h6>TABLES AND LISTS</h6>
+                        <div class="accordion accordion-flush desktop_accessibility_tables_lists_audits" id="accordionFlushExample">
+                          <!-- buraya seo auditleri gelecek-->
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <h6>NAVIGATION</h6>
+                        <div class="accordion accordion-flush desktop_accessibility_navigation_audits" id="accordionFlushExample">
+                          <!-- buraya seo auditleri gelecek-->
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <h6>ADDITIONAL ITEMS TO MANUALLY CHECK</h6>
+                        <div class="accordion accordion-flush desktop_accessibility_add_manual_check_audits" id="accordionFlushExample">
+                          <!-- buraya seo auditleri gelecek-->
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <h6>PASSED AUDITS</h6>
+                        <div class="accordion accordion-flush desktop_accessibility_passed_audits" id="accordionFlushExample">
+                          <!-- buraya seo auditleri gelecek-->
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <h6>NOT APPLICABLE</h6>
+                        <div class="accordion accordion-flush desktop_accessibility_not_applicable_audits" id="accordionFlushExample">
+                          <!-- buraya seo auditleri gelecek-->
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -394,6 +459,36 @@
                         <div id="desktop_best_practices_score_big-div"></div>
                         <h5 class="text-center">Best Practices</h5>
                       </div>
+                      <div class="card-body">
+                        <h6>USER EXPERIENCE</h6>
+                        <div class="accordion accordion-flush desktop_best_practices_user_experience_audits" id="accordionFlushExample">
+                          <!-- buraya seo auditleri gelecek-->
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <h6>TRUST AND SAFETY</h6>
+                        <div class="accordion accordion-flush desktop_best_practices_trust_and_safety_audits" id="accordionFlushExample">
+                          <!-- buraya seo auditleri gelecek-->
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <h6>GENERAL</h6>
+                        <div class="accordion accordion-flush desktop_best_practices_general_audits" id="accordionFlushExample">
+                          <!-- buraya seo auditleri gelecek-->
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <h6>PASSED AUDITS</h6>
+                        <div class="accordion accordion-flush desktop_best_practices_passed_audits" id="accordionFlushExample">
+                          <!-- buraya seo auditleri gelecek-->
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <h6>NOT APPLICABLE</h6>
+                        <div class="accordion accordion-flush desktop_best_practices_not_applicable_audits" id="accordionFlushExample">
+                          <!-- buraya seo auditleri gelecek-->
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -404,6 +499,42 @@
                         <div id="desktop_seo_score_big-div"></div>
                         <h5 class="text-center"> SEO</h5>
                         <h6 class="text-center">These checks ensure that your page is following basic search engine optimization advice. There are many additional factors Lighthouse does not score here that may affect your search ranking, including performance on Core Web Vitals. Learn more about Google Search Essentials.</h6>
+                      </div>
+                      <div class="card-body">
+                        <h6>CRAWLING AND INDEXING</h6>
+                        <div class="accordion accordion-flush desktop_seo_crawl_and_indexing_audits" id="accordionFlushExample">
+                          <!-- buraya seo auditleri gelecek-->
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <h6>desktop FRIENDLY bura düzelltilecekkkkkkkkkkkkkk</h6>
+                        <div class="accordion accordion-flush desktop_seo_desktop_friendly_audits" id="accordionFlushExample">
+                          <!-- buraya seo auditleri gelecek-->
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <h6>CONTENT BEST PRACTICES</h6>
+                        <div class="accordion accordion-flush desktop_seo_content_best_practices_audits" id="accordionFlushExample">
+                          <!-- buraya seo auditleri gelecek-->
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <h6>ADDITIONAL ITEMS TO MANUALLY CHECK</h6>
+                        <div class="accordion accordion-flush desktop_seo_add_item_to_manually_check_audits" id="accordionFlushExample">
+                          <!-- buraya seo auditleri gelecek-->
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <h6>PASSED AUDITS</h6>
+                        <div class="accordion accordion-flush desktop_seo_passed_audits" id="accordionFlushExample">
+                          <!-- buraya seo auditleri gelecek-->
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <h6>NOT APPLICABLE</h6>
+                        <div class="accordion accordion-flush desktop_seo_not_applicable_audits" id="accordionFlushExample">
+                          <!-- buraya seo auditleri gelecek-->
+                        </div>
                       </div>
                     </div>
                   </div>
