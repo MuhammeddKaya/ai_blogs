@@ -288,46 +288,86 @@ $(document).on('click', '.serp-analyze-link', function (event) {
       var lang_code;
 
       $("#mobile_lang_tr").click(function() {
-          var lang_code = "tr";
-          console.log("langgggggggggggggggggggggggg",lang_code);
+          lang_code = "tr";
+          // console.log("langgggggggggggggggggggggggg",lang_code);
           updateData();
       });
       $("#mobile_lang_en").click(function() {
-        var lang_code = "en";
-        console.log("langgggggggggggggggggggggggg",lang_code);
-        updateData();
+          lang_code = "en";
+          // console.log("langgggggggggggggggggggggggg",lang_code);
+          updateData();
 
+      });
+
+      $(document).ready(function() {
+        updateData();
       });
 
 
 
+      function clearContents() {
+        // İlgili HTML elemanlarını temizle
+        $('.mobile_best_practices_passed_audits').empty();
+        $('.mobile_best_practices_not_applicable_audits').empty();
+        $('.mobile_best_practices_trust_and_safety_audits').empty();
+        $('.mobile_best_practices_general_audits').empty();
+        $('.mobile_best_practices_user_experience_audits').empty();
+    
+        $('.mobile_seo_passed_audits').empty();
+        $('.mobile_seo_not_applicable_audits').empty();
+        $('.mobile_seo_crawl_and_indexing_audits').empty();
+        $('.mobile_seo_content_best_practices_audits').empty();
+        $('.mobile_seo_mobile_friendly_audits').empty();
+        $('.mobile_seo_add_item_to_manually_check_audits').empty();
+    
+        $('.mobile_performance_passed_audits').empty();
+        $('.mobile_performance_diagnostic_audits').empty();
+    
+        $('.mobile_accessibility_passed_audits').empty();
+        $('.mobile_accessibility_add_manual_check_audits').empty();
+        $('.mobile_accessibility_not_applicable_audits').empty();
+        $('.mobile_accessibility_names_and_labels_audits').empty();
+        $('.mobile_accessibility_navigation_audits').empty();
+        $('.mobile_accessibility_contrast_audits').empty();
+        $('.mobile_accessibility_tables_lists_audits').empty();
+        $('.mobile_accessibility_aria_audits').empty();
+    }
+
       function updateData() {
+        clearContents();
+
         for (var key in audits) {
 
           var audit_id = audits[key].id;
           var audit_score = audits[key].score;
           var audit_score_display_mode = audits[key].scoreDisplayMode;
+          var audit_tr_title = audits_tr[audit_id];
 
-          if (lang_code== "tr") {
 
-            var audit_ttitle = audits_tr[key].title;
-            var audit_title = audit_ttitle.replace(/<[^>]+>/g, function(match) {
-              return match.replace(/\</g, '&lt;').replace(/\>/g, '&gt;');
-            });
-    
-            var tdescription = audits_tr[key].description;
-            var description = tdescription.replace(/<[^>]+>/g, function(match) {
-              return match.replace(/\</g, '&lt;').replace(/\>/g, '&gt;');
-            }).replace(/\[[^\]]*\]|\([^\)]*\)/g, '');
-            
+          if (lang_code == "tr") {
+            if (audits_tr.hasOwnProperty(audit_id)) {
+                var audit_ttitle = audits_tr[audit_id].title;
+                var audit_title = audit_ttitle.replace(/<[^>]+>/g, function(match) {
+                    return match.replace(/\</g, '&lt;').replace(/\>/g, '&gt;');
+                });
+
+        
+                var tdescription = audits_tr[audit_id].description;
+                var description = tdescription.replace(/<[^>]+>/g, function(match) {
+                    return match.replace(/\</g, '&lt;').replace(/\>/g, '&gt;');
+                }).replace(/\[[^\]]*\]|\([^\)]*\)/g, '');
+            } else {
+                console.log('Translation missing for audit ID:', audit_id);
+                continue; // Bu ID için çeviri yoksa döngünün bu adımını atla
+            }
           }
           else {
-    
+            
             var audit_ttitle = audits[key].title;
             var audit_title = audit_ttitle.replace(/<[^>]+>/g, function(match) {
               return match.replace(/\</g, '&lt;').replace(/\>/g, '&gt;');
             });
-    
+
             var tdescription = audits[key].description;
             var description = tdescription.replace(/<[^>]+>/g, function(match) {
               return match.replace(/\</g, '&lt;').replace(/\>/g, '&gt;');

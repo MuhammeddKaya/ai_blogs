@@ -246,7 +246,8 @@ def link_analyze(request):
             # print("mobile_minimizes_main_thread_work",mobile_minimizes_main_thread_work)
 
             audit = mobile_result['lighthouseResult']["audits"]
-            audit_tr = mobile_result_tr
+            audit_tr = mobile_result_tr['lighthouseResult']["audits"]
+            # print(audit_tr)
             # audit_list = audit.keys()
             # print("audittttttt",len(audit_list))
             # with open('audit_keys.txt', 'w') as file:
