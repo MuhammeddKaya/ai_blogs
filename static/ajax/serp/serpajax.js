@@ -410,6 +410,56 @@ $(document).on('click', '.serp-analyze-link', function (event) {
         $('.desktop_accessibility_tables_lists_audits').empty();
         $('.desktop_accessibility_aria_audits').empty();
       }
+      function createTableHTML(mobile_html_audit) {
+        if (mobile_html_audit=='') {
+          return '';
+          
+        }else{
+              
+          let headings = mobile_html_audit.headings;
+          let items = mobile_html_audit.items;
+
+          let tableHTML = '<table class="table border mb-0" >' +
+                          '<thead>' +
+                          '<tr>';
+      
+
+          headings.forEach(function(heading) {
+              if (heading.label) { // heading.label mevcut ve boş değilse
+                  tableHTML += '<th scope="col">' + heading.label + '</th>';
+              } else { // heading.label boş ya da tanımlanmamış ise
+                  tableHTML += '<th scope="col"></th>'; // Boş bir başlık sütunu ekle
+              }
+          });
+          tableHTML += '</tr>' +
+                       '</thead>' +
+                       '<tbody>';
+      
+          // Tablo satırlarını (items) oluşturma
+          items.forEach(function(item) {
+              tableHTML += '<tr>';
+              headings.forEach(function(heading) {
+                  let value = item[heading.key];
+                  if (value === undefined) {
+                      value = '-';  // Değer tanımlanmamışsa
+                  } else if (typeof value === 'number') {
+                      value = value.toLocaleString();  // Sayı değerlerini yerel biçimde göster
+                  }
+                  tableHTML += '<td>' + value + '</td>';
+              });
+              tableHTML += '</tr>';
+          });
+          tableHTML += '</tbody></table>';
+          // console.log(items);
+          // console.log(headings);
+    
+          return tableHTML;
+
+        }
+
+      }
+    
+
 
       function updateData() {
         clearContents();
@@ -419,7 +469,34 @@ $(document).on('click', '.serp-analyze-link', function (event) {
           var mobile_audit_id = mobile_audits[key].id;
           var mobile_audit_score = mobile_audits[key].score;
           var mobile_audit_score_display_mode = mobile_audits[key].scoreDisplayMode;
+          var mobile_display_value = mobile_audits[key].displayValue;
           var audit_tr_title = audits_tr[mobile_audit_id];
+
+
+          if ((mobile_audits[key].details)&&(mobile_audits[key].details.items)&&(mobile_audits[key].details.headings)) {
+            var mobile_html_audit = mobile_audits[key].details;
+
+          }else{
+            var mobile_html_audit='';
+          }
+
+
+          if (typeof mobile_display_value === 'undefined') {
+            mobile_display_value = ''; // Veya 'N/A', 'Not Available', vs. gibi bir placeholder metin kullanabilirsiniz.
+          }
+
+          var mobile_display_value_class;
+          var ikon;
+          if (mobile_audit_score == 1) {
+              ikon = '<i class="ti ti-circle me-2 fs-4 text-success"></i>';
+              mobile_display_value_class = 'text-success';
+          } else if (mobile_audit_score >= 0.5) {
+              ikon = '<i class="ti ti-triangle me-2 fs-4 text-warning"></i>';
+              mobile_display_value_class = 'text-warning';
+          } else {
+              ikon = '<i class="ti ti-alert-octagon me-2 fs-4 text-danger"></i>';
+              mobile_display_value_class = 'text-danger';
+          }
 
 
           if (lang_code == "tr") {
@@ -453,16 +530,16 @@ $(document).on('click', '.serp-analyze-link', function (event) {
           }
           
 
-          
+          var mobile_audit_table = createTableHTML(mobile_html_audit);
 
           // HTML içeriğini oluştur
-          var html =                 '<div class="accordion accordion-flush mb-1 card position-relative overflow-hidden" id="accordionFlushExample">'+
+          var html =                 '<div class="accordion accordion-flush mb-2 card position-relative overflow-hidden" id="accordionFlushExample">'+
                     '<div class="accordion-item">'+
                       '<h2 class="accordion-header" id="flush-headingOne">'+
                         '<button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#'+'mobile'+mobile_audit_id+'" aria-expanded="false" aria-controls="'+'mobile'+mobile_audit_id+'">'+
                           '<div class="row">'+
                           ' <div class="row">'+
-                              '<h6>'+mobile_audit_title+'</h6>'+
+                              '<h6>'+ikon + mobile_audit_title+'&nbsp; &nbsp; <span class="' + mobile_display_value_class + '">' + mobile_display_value + '</span></h6>' +
                             '</div>'+
                             '<div class="row">'+
                               '<div class="'+'mobile'+mobile_audit_id+'"></div>'+
@@ -473,19 +550,9 @@ $(document).on('click', '.serp-analyze-link', function (event) {
                       '<div id="'+'mobile'+mobile_audit_id+'" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">'+
                         '<div class="accordion-body fw-normal">'+description+
                         '</div>'+
-                        '<div> <!--'+
-                          '<table class="table border mb-0" id="mobile_minimizes_main_thread_work_table">'+
-                            '<thead>'+
-                              '<tr>'+
-                              ' <th scope="col">Category</th>'+
-                                '<th scope="col">Duration (ms)</th>'+
-                              '</tr>'+
-                            '</thead>'+
-                            '<tbody>'+
-
-                            '</tbody>'+
-                          '</table>'+
-                        '</div> -->'+
+                        '<div class="card-body"> '+
+                          mobile_audit_table+
+                        '</div>'+
                       '</div>'+
                     '</div>'+
 
@@ -621,7 +688,19 @@ $(document).on('click', '.serp-analyze-link', function (event) {
           var desktop_audit_id = desktop_audits[key].id;
           var desktop_audit_score = desktop_audits[key].score;
           var desktop_audit_score_display_mode = desktop_audits[key].scoreDisplayMode;
+          var desktop_display_value = desktop_audits[key].displayValue;
           var audit_tr_title = audits_tr[desktop_audit_id];
+
+          if (typeof desktop_display_value === 'undefined') {
+            desktop_display_value = ''; // Veya 'N/A', 'Not Available', vs. gibi bir placeholder metin kullanabilirsiniz.
+          }
+
+          if ((desktop_audits[key].details)&&(desktop_audits[key].details.items)&&(desktop_audits[key].details.headings)) {
+            var desktop_html_audit = desktop_audits[key].details;
+
+          }else{
+            var desktop_html_audit='';
+          }
 
 
           if (lang_code == "tr") {
@@ -656,15 +735,29 @@ $(document).on('click', '.serp-analyze-link', function (event) {
           
 
           
+          var desktop_display_value_class;
+          var ikon;
+          if (desktop_audit_score == 1) {
+              ikon = '<i class="ti ti-circle me-2 fs-4 text-success"></i>';
+              desktop_display_value_class = 'text-success';
+          } else if (desktop_audit_score >= 0.5) {
+              ikon = '<i class="ti ti-triangle me-2 fs-4 text-warning"></i>';
+              desktop_display_value_class = 'text-warning';
+          } else {
+              ikon = '<i class="ti ti-alert-octagon me-2 fs-4 text-danger"></i>';
+              desktop_display_value_class = 'text-danger';
+          }
 
+
+          var desktop_audit_table = createTableHTML(desktop_html_audit);
           // HTML içeriğini oluştur
-          var html =                 '<div class="accordion accordion-flush mb-1 card position-relative overflow-hidden" id="accordionFlushExample">'+
+          var html =                 '<div class="accordion accordion-flush mb-2 card position-relative overflow-hidden" id="accordionFlushExample">'+
                     '<div class="accordion-item">'+
                       '<h2 class="accordion-header" id="flush-headingOne">'+
                         '<button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#'+'desktop'+desktop_audit_id+'" aria-expanded="false" aria-controls="'+'desktop'+desktop_audit_id+'">'+
                           '<div class="row">'+
                           ' <div class="row">'+
-                              '<h6>'+desktop_audit_title+'</h6>'+
+                              '<h6>'+ ikon + desktop_audit_title+'&nbsp; &nbsp; <span class="' + desktop_display_value_class + '">' + desktop_display_value + '</span></h6>' +
                             '</div>'+
                             '<div class="row">'+
                               '<div class="'+'desktop'+desktop_audit_id+'"></div>'+
@@ -675,23 +768,15 @@ $(document).on('click', '.serp-analyze-link', function (event) {
                       '<div id="'+'desktop'+desktop_audit_id+'" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">'+
                         '<div class="accordion-body fw-normal">'+description+
                         '</div>'+
-                        '<div> <!--'+
-                          '<table class="table border mb-0" id="mobile_minimizes_main_thread_work_table">'+
-                            '<thead>'+
-                              '<tr>'+
-                              ' <th scope="col">Category</th>'+
-                                '<th scope="col">Duration (ms)</th>'+
-                              '</tr>'+
-                            '</thead>'+
-                            '<tbody>'+
-
-                            '</tbody>'+
-                          '</table>'+
-                        '</div> -->'+
+                        '<div class="card-body">'+
+                          desktop_audit_table+
+                        '</div>'+
                       '</div>'+
                     '</div>'+
 
                   '</div>';
+
+
 
           var seoAudits = ["crawlable-anchors", "image-alt", "structured-data", "viewport", "document-title", "meta-description", "http-status-code", 
               "link-text", "is-crawlable", "hreflang", "font-size", "plugins", "tap-targets", "robots-txt", "canonical"];
@@ -716,7 +801,7 @@ $(document).on('click', '.serp-analyze-link', function (event) {
               "object-alt", "select-name", "skip-link", "tabindex", "table-duplicate-name", "td-headers-attr", "th-has-data-cells", "video-caption", "empty-heading", "identical-links-same-purpose",
               "target-size", "label-content-name-mismatch", "table-fake-caption", "td-has-header", "html-lang-valid", "frame-title"];
           
-            
+
           // Audit'in listemizde olup olmadığını kontrol et
           if (bestPractices.includes(desktop_audit_id)) {
 
