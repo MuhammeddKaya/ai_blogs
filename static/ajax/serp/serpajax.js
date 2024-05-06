@@ -445,6 +445,7 @@ $(document).on('click', '.serp-analyze-link', function (event) {
                   } else if (typeof value === 'number') {
                       value = value.toLocaleString();  // Sayı değerlerini yerel biçimde göster
                   }
+                  console.log("448",value);
                   tableHTML += '<td>' + value + '</td>';
               });
               tableHTML += '</tr>';
