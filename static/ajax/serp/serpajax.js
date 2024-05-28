@@ -13,12 +13,7 @@ $(document).on('click', '.serp-analyze-link', function (event) {
   console.log("serp analyze çalıştı");
   console.log(link);
 
-  // Link girilmediyse uyarı ver
-  // var linkFormat = /^https?:\/\/[-a-zA-Z0-9@:%._\\+~#?&//=]*$/;
-  // if (!linkFormat.test(link)) {
-  //   alert("Lütfen geçerli bir link giriniz.");
-  //   return;
-  // }
+
   if (!link) {
     alert("Lütfen bir link giriniz.");
     return;
@@ -410,55 +405,73 @@ $(document).on('click', '.serp-analyze-link', function (event) {
         $('.desktop_accessibility_tables_lists_audits').empty();
         $('.desktop_accessibility_aria_audits').empty();
       }
-      function createTableHTML(mobile_html_audit) {
-        if (mobile_html_audit=='') {
-          return '';
-          
-        }else{
-              
-          let headings = mobile_html_audit.headings;
-          let items = mobile_html_audit.items;
 
-          let tableHTML = '<table class="table border mb-0" >' +
-                          '<thead>' +
-                          '<tr>';
       
-
-          headings.forEach(function(heading) {
-              if (heading.label) { // heading.label mevcut ve boş değilse
-                  tableHTML += '<th scope="col">' + heading.label + '</th>';
-              } else { // heading.label boş ya da tanımlanmamış ise
-                  tableHTML += '<th scope="col"></th>'; // Boş bir başlık sütunu ekle
-              }
-          });
-          tableHTML += '</tr>' +
-                       '</thead>' +
-                       '<tbody>';
-      
-          // Tablo satırlarını (items) oluşturma
-          items.forEach(function(item) {
-              tableHTML += '<tr>';
-              headings.forEach(function(heading) {
-                  let value = item[heading.key];
-                  if (value === undefined) {
-                      value = '-';  // Değer tanımlanmamışsa
-                  } else if (typeof value === 'number') {
-                      value = value.toLocaleString();  // Sayı değerlerini yerel biçimde göster
-                  }
-                  console.log("448",value);
-                  tableHTML += '<td>' + value + '</td>';
-              });
-              tableHTML += '</tr>';
-          });
-          tableHTML += '</tbody></table>';
-          // console.log(items);
-          // console.log(headings);
+      function escapeHtml(unsafe) {
+        return unsafe
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
     
-          return tableHTML;
-
-        }
-
+    function createTableHTML(details) {
+      if (!details || !details.items || !details.headings) {
+        return '';
       }
+    
+      let headings = details.headings;
+      let items = details.items;
+    
+      let tableHTML = '<table class="table border mb-0">' +
+                      '<thead>' +
+                      '<tr>';
+    
+      // Tablo başlıklarını oluştur
+      headings.forEach(function(heading) {
+        tableHTML += '<th scope="col">' + (heading.label || '') + '</th>';
+      });
+    
+      tableHTML += '</tr>' +
+                   '</thead>' +
+                   '<tbody>';
+    
+      // Tablo satırlarını oluştur
+      items.forEach(function(item) {
+        tableHTML += '<tr>';
+        headings.forEach(function(heading) {
+          let value = item[heading.key];
+    
+          if (value === undefined) {
+            value = '-';
+          } else if (typeof value === 'number') {
+            value = value.toLocaleString();
+          } else if (typeof value === 'object' && value !== null) {
+            if (heading.valueType === 'node') {
+              // Node türündeki değerleri özel olarak işleyin
+              let selector = value.selector || '-';
+              let snippet = value.snippet ? escapeHtml(value.snippet) : '-';
+              value = ` ${selector}<br> <span style="color: #253dc8;">${snippet}</span>`;
+            } else {
+              // Diğer nesneleri JSON string olarak gösterin
+              value = JSON.stringify(value);
+            }
+          }
+          tableHTML += '<td>' + value + '</td>';
+        });
+        tableHTML += '</tr>';
+      });
+    
+      tableHTML += '</tbody></table>';
+    
+      return tableHTML;
+    }
+    
+      
+      
+      
+      
     
 
 
@@ -907,73 +920,7 @@ $(document).on('click', '.serp-analyze-link', function (event) {
         checkAndHideEmptyDivs();
       }
                   
-      // Her bir audit için döngü
-      // for (var key in audits) {
-      //     if (audits.hasOwnProperty(key)) {
-      //         var audit = audits[key]; // Tek bir audit verisi
 
-      //         // HTML içeriğini oluştur
-      //         var html = '<div class="accordion-item">' +
-      //                       '<h2 class="accordion-header" id="flush-headingOne">' +
-      //                           '<button class="accordion-button collapsed fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#' + key + '" aria-expanded="false" aria-controls="' + key + '">' +
-      //                               '<div class="row">' +
-      //                                   '<div class="row">' +
-      //                                       '<h6>' + audit.description + '</h6>' +
-      //                                   '</div>' +
-      //                                   '<div class="row">' +
-      //                                       '<div class="' + key + ' title"></div>' +
-      //                                   '</div>' +
-      //                               '</div>' +
-      //                           '</button>' +
-      //                       '</h2>' +
-      //                       '<div id="' + key + '" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">' +
-      //                           '<div class="accordion-body fw-normal">' +
-      //                               '<table class="table border mb-0" id="' + key + '">' +
-      //                                   '<thead>' +
-      //                                       '<tr>';
-
-      //         // headings içeriğini ekle
-      //         for (var i = 0; i < audit.details.headings.length; i++) {
-      //             html += '<th scope="col">' + audit.details.headings[i].label + '</th>';
-      //         }
-
-      //         html += '</tr>' +
-      //                   '</thead>' +
-      //                   '<tbody>';
-
-      //         // items içeriğini ekle
-      //         for (var j = 0; j < audit.details.items.length; j++) {
-      //             html += '<tr>';
-      //             for (var k = 0; k < audit.details.headings.length; k++) {
-      //                 var keyItem = audit.details.headings[k].key;
-      //                 html += '<td>' + audit.details.items[j][keyItem] + '</td>';
-      //             }
-      //             html += '</tr>';
-      //         }
-
-            //   html += '</tbody>' +
-            //             '</table>' +
-            //         '</div>' +
-            //     '</div>' +
-            // '</div>';
-
-      //         // HTML içeriğini ekle
-      //         $('#diagnostic_audits').append(html);
-      //     }
-      // }
-
-
-
-
-
-
-
-
-      // Sonucu div'e ya
-      
-
-      // // Chart'a data ekle
-      // chart_radial_gradient.series[0].data = data.sub_page_seo_score;
     },
     error: function () {
       console.log("AJAX isteğinde hata oluştu.");
