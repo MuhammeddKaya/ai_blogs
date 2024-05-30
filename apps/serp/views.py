@@ -209,6 +209,11 @@ def link_analyze(request):
 
             #-------DIAGNOSTICS------------------------------------------
             mobile_minimizes_main_thread_work         = mobile_result['lighthouseResult']["audits"]["mainthread-work-breakdown"]
+            #-------audit list------------------------------------------
+            mobile_performance_audit_list             = mobile_result['lighthouseResult']["categories"]["performance"]["auditRefs"]
+            mobile_accessibility_audit_list           = mobile_result['lighthouseResult']["categories"]["accessibility"]["auditRefs"]
+            mobile_best_practices_audit_list          = mobile_result['lighthouseResult']["categories"]["best-practices"]["auditRefs"]
+            mobile_seo_audit_list                     = mobile_result['lighthouseResult']["categories"]["seo"]["auditRefs"]
 
 
 #--------------------------------------------------------------------------------------------------------------------------
@@ -241,8 +246,11 @@ def link_analyze(request):
             desktop_cumulative_layout_shift            = desktop_result['lighthouseResult']["audits"]["cumulative-layout-shift"]["displayValue"]
             desktop_speed_index                        = desktop_result['lighthouseResult']["audits"]["speed-index"]["displayValue"]
             
-            #-------DIAGNOSTICS------------------------------------------
-
+            #-------audit list------------------------------------------
+            desktop_performance_audit_list             = desktop_result['lighthouseResult']["categories"]["performance"]["auditRefs"]
+            desktop_accessibility_audit_list           = desktop_result['lighthouseResult']["categories"]["accessibility"]["auditRefs"]
+            desktop_best_practices_audit_list          = desktop_result['lighthouseResult']["categories"]["best-practices"]["auditRefs"]
+            desktop_seo_audit_list                     = desktop_result['lighthouseResult']["categories"]["seo"]["auditRefs"]
 
             #------------ --------------------------------------------------------------------------------------------------------------
             
@@ -288,6 +296,12 @@ def link_analyze(request):
                 "mobile_minimizes_main_thread_work"    : mobile_minimizes_main_thread_work,
                 "mobile_audit"                  : mobile_audit,
                 "audit_tr"                      : audit_tr,
+                #--------------------audit list-------------------------------------
+                "mobile_performance_audit_list"          : mobile_performance_audit_list,
+                "mobile_accessibility_audit_list"        : mobile_accessibility_audit_list,
+                "mobile_best_practices_audit_list"       : mobile_best_practices_audit_list,
+                "mobile_seo_audit_list"                  : mobile_seo_audit_list,
+
 
 
 
@@ -307,7 +321,12 @@ def link_analyze(request):
                 "desktop_best_practices_score"          : desktop_best_practices_score,
                 "desktop_fullPageScreenshot"            : desktop_fullPageScreenshot,
                 #--------------------All_Audits-------------------------------------
-                "desktop_audit"                 : desktop_audit
+                "desktop_audit"                 : desktop_audit,
+                #--------------------audit list-------------------------------------
+                "desktop_performance_audit_list"          : desktop_performance_audit_list,
+                "desktop_accessibility_audit_list"        : desktop_accessibility_audit_list,
+                "desktop_best_practices_audit_list"       : desktop_best_practices_audit_list,
+                "desktop_seo_audit_list"                  : desktop_seo_audit_list,
 
 
             }

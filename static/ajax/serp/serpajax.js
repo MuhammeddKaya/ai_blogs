@@ -81,7 +81,7 @@ $(document).on('click', '.serp-analyze-link', function (event) {
             color = "#ff0000";
         }
     
-        console.log(score);
+        // console.log(score);
     
         chart.updateOptions({
             series: [score],
@@ -406,74 +406,177 @@ $(document).on('click', '.serp-analyze-link', function (event) {
         $('.desktop_accessibility_aria_audits').empty();
       }
 
+   
       
-      function escapeHtml(unsafe) {
-        return unsafe
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(/"/g, "&quot;")
-            .replace(/'/g, "&#039;");
-    }
-    
-    function createTableHTML(details) {
-      if (!details || !details.items || !details.headings) {
-        return '';
+    var mobile_seo_audit_list_data=data.mobile_seo_audit_list;
+    var mobile_seo_audit_list=[];
+
+    for (let audit of mobile_seo_audit_list_data) {
+      if (audit.group !== "hidden") {
+          mobile_seo_audit_list.push(audit.id);
       }
-    
-      let headings = details.headings;
-      let items = details.items;
-    
-      let tableHTML = '<table class="table border mb-0">' +
-                      '<thead>' +
-                      '<tr>';
-    
-      // Tablo başlıklarını oluştur
-      headings.forEach(function(heading) {
-        tableHTML += '<th scope="col">' + (heading.label || '') + '</th>';
-      });
-    
-      tableHTML += '</tr>' +
-                   '</thead>' +
-                   '<tbody>';
-    
-      // Tablo satırlarını oluştur
-      items.forEach(function(item) {
-        tableHTML += '<tr>';
-        headings.forEach(function(heading) {
-          let value = item[heading.key];
-    
-          if (value === undefined) {
-            value = '-';
-          } else if (typeof value === 'number') {
-            value = value.toLocaleString();
-          } else if (typeof value === 'object' && value !== null) {
-            if (heading.valueType === 'node') {
-              // Node türündeki değerleri özel olarak işleyin
-              let selector = value.selector || '-';
-              let snippet = value.snippet ? escapeHtml(value.snippet) : '-';
-              value = ` ${selector}<br> <span style="color: #253dc8;">${snippet}</span>`;
-            } else {
-              // Diğer nesneleri JSON string olarak gösterin
-              value = JSON.stringify(value);
-            }
-          }
-          tableHTML += '<td>' + value + '</td>';
-        });
-        tableHTML += '</tr>';
-      });
-    
-      tableHTML += '</tbody></table>';
-    
-      return tableHTML;
     }
-    
-      
-      
-      
-      
+
+    console.log('mobile_seo_audit_list',mobile_seo_audit_list); 
+
+
+    var mobile_best_practices_audit_list_data=data.mobile_best_practices_audit_list;
+    var mobile_best_practices_audit_list=[];
+
+    for (let audit of mobile_best_practices_audit_list_data) {
+      if (audit.group !== "hidden") {
+          mobile_best_practices_audit_list.push(audit.id);
+      }
+    }
+
+    console.log('mobile_best_practices_audit_list',mobile_best_practices_audit_list); 
     
 
+    var mobile_performance_audit_list_data=data.mobile_performance_audit_list;
+    var mobile_performance_audit_list=[];
+
+    for (let audit of mobile_performance_audit_list_data) {
+      if (audit.group !== "hidden") {
+          mobile_performance_audit_list.push(audit.id);
+      }
+    }
+
+    console.log('mobile_performance_audit_list',mobile_performance_audit_list); 
+
+
+    var mobile_accessibility_audit_list_data=data.mobile_accessibility_audit_list;
+    var mobile_accessibility_audit_list=[];
+
+    for (let audit of mobile_accessibility_audit_list_data) {
+      if (audit.group !== "hidden") {
+          mobile_accessibility_audit_list.push(audit.id);
+      }
+    }
+
+    console.log('mobile_accessibility_audit_list',mobile_accessibility_audit_list); 
+
+
+    var desktop_seo_audit_list_data=data.desktop_seo_audit_list;
+    var desktop_seo_audit_list=[];
+
+    for (let audit of desktop_seo_audit_list_data) {
+      if (audit.group !== "hidden") {
+          desktop_seo_audit_list.push(audit.id);
+      }
+    }
+
+    console.log('desktop_seo_audit_list',desktop_seo_audit_list); 
+
+
+    var desktop_best_practices_audit_list_data=data.desktop_best_practices_audit_list;
+    var desktop_best_practices_audit_list=[];
+
+    for (let audit of desktop_best_practices_audit_list_data) {
+      if (audit.group !== "hidden") {
+          desktop_best_practices_audit_list.push(audit.id);
+      }
+    }
+
+    console.log('desktop_best_practices_audit_list',desktop_best_practices_audit_list); 
+    
+
+    var desktop_performance_audit_list_data=data.desktop_performance_audit_list;
+    var desktop_performance_audit_list=[];
+
+    for (let audit of desktop_performance_audit_list_data) {
+      if (audit.group !== "hidden") {
+          desktop_performance_audit_list.push(audit.id);
+      }
+    }
+
+    console.log('desktop_performance_audit_list',desktop_performance_audit_list); 
+
+
+    var desktop_accessibility_audit_list_data=data.desktop_accessibility_audit_list;
+    var desktop_accessibility_audit_list=[];
+
+    for (let audit of desktop_accessibility_audit_list_data) {
+      if (audit.group !== "hidden") {
+          desktop_accessibility_audit_list.push(audit.id);
+      }
+    }
+
+    console.log('desktop_accessibility_audit_list',desktop_accessibility_audit_list); 
+
+
+
+    function escapeHtml(unsafe) {
+      return unsafe
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#039;");
+    }
+    
+
+
+    function createTableHTML(details) {
+        if (!details || !details.items) {
+            return '';
+        }
+
+        if (details.type === 'list') {
+            console.log('Birden fazla tablolu audit');
+            return '';
+        } else {
+            let headings = details.headings;
+            let items = details.items;
+
+            let tableHTML = '<table class="table border mb-0">' +
+                            '<thead>' +
+                            '<tr>';
+
+            // Tablo başlıklarını oluştur
+            headings.forEach(function(heading) {
+                tableHTML += '<th scope="col">' + (heading.label || '') + '</th>';
+            });
+
+            tableHTML += '</tr>' +
+                        '</thead>' +
+                        '<tbody>';
+
+            // Tablo satırlarını oluştur
+            items.forEach(function(item) {
+                tableHTML += '<tr>';
+                headings.forEach(function(heading) {
+                    let value = item[heading.key];
+
+                    if (value === undefined) {
+                        value = '-';
+                    } else if (typeof value === 'number') {
+                        value = value.toLocaleString();
+                    } else if (typeof value === 'object' && value !== null) {
+                        if (heading.valueType === 'node') {
+                            // Node türündeki değerleri özel olarak işleyin
+                            let selector = value.selector || '-';
+                            let snippet = value.snippet ? escapeHtml(value.snippet) : '-';
+                            value = `Selector: ${selector}<br>Snippet: ${snippet}`;
+                        } else {
+                            // Diğer nesneleri JSON string olarak gösterin
+                            value = JSON.stringify(value);
+                        }
+                    }
+                    tableHTML += '<td>' + value + '</td>';
+                });
+                tableHTML += '</tr>';
+            });
+
+            tableHTML += '</tbody></table>';
+
+            return tableHTML;
+        }
+    }
+
+  
+ 
+  
+      
 
       function updateData() {
         clearContents();
@@ -485,6 +588,7 @@ $(document).on('click', '.serp-analyze-link', function (event) {
           var mobile_audit_score_display_mode = mobile_audits[key].scoreDisplayMode;
           var mobile_display_value = mobile_audits[key].displayValue;
           var audit_tr_title = audits_tr[mobile_audit_id];
+          
 
 
           if ((mobile_audits[key].details)&&(mobile_audits[key].details.items)&&(mobile_audits[key].details.headings)) {
@@ -572,32 +676,11 @@ $(document).on('click', '.serp-analyze-link', function (event) {
 
                   '</div>';
 
-          var seoAudits = ["crawlable-anchors", "image-alt", "structured-data", "viewport", "document-title", "meta-description", "http-status-code", 
-              "link-text", "is-crawlable", "hreflang", "font-size", "plugins", "tap-targets", "robots-txt", "canonical"];
 
-          var bestPractices = [
-              "image-size-responsive", "csp-xss",   "js-libraries", "is-on-https", "deprecations", "paste-preventing-inputs",  "geolocation-on-start",
-              "notification-on-start", "image-aspect-ratio","doctype", "charset",  "no-unload-listeners","errors-in-console",    "inspector-issues",
-              "valid-source-maps","preload-fonts", "third-party-cookies"
-          ];
-          var performanceAudits = ["largest-contentful-paint-element", "mainthread-work-breakdown", "bootup-time", "third-party-facades", "render-blocking-resources", 
-              "lcp-lazy-loaded", "unused-css-rules", "layout-shift-elements", "third-party-summary", "unminified-css", "modern-image-formats", "unsized-images", "uses-long-cache-ttl", 
-              "font-display", "legacy-javascript", "unused-javascript", "server-response-time", "non-composited-animations", "total-byte-weight", "dom-size", "critical-request-chains",
-              "long-tasks", "offscreen-images", "unminified-javascript", "uses-optimized-images", "uses-rel-preconnect", "redirects", "uses-rel-preload", "efficient-animated-content", 
-              "duplicated-javascript", "prioritize-lcp-image", "user-timings", "uses-passive-event-listeners", "no-document-write", "viewport", "uses-text-compression", "uses-responsive-images"];
-
-          var accessibilityAudits = ["button-name", "image-alt", "link-name", "color-contrast", "heading-order", "focusable-controls", "interactive-element-affordance", "logical-tab-order", 
-              "visual-order-follows-dom", "focus-traps", "managed-focus", "use-landmarks", "offscreen-content-hidden", "custom-controls-labels", "custom-controls-roles", "aria-hidden-body", 
-              "meta-viewport", "aria-hidden-focus", "document-title", "html-has-lang", "valid-lang", "image-redundant-alt", "accesskeys", "aria-allowed-attr", "aria-allowed-role", "aria-command-name",
-              "aria-dialog-name", "aria-input-field-name", "aria-meter-name", "aria-required-children", "aria-progressbar-name", "aria-required-attr", "aria-required-parent", "aria-roles", "aria-text", 
-              "aria-toggle-field-name", "aria-valid-attr", "aria-tooltip-name", "aria-treeitem-name", "duplicate-id-aria", "aria-valid-attr-value", "bypass", "definition-list", "dlitem", 
-              "duplicate-id-active", "form-field-multiple-labels", "html-xml-lang-mismatch", "input-button-name", "input-image-alt", "label", "link-in-text-block", "list", "listitem", "meta-refresh", 
-              "object-alt", "select-name", "skip-link", "tabindex", "table-duplicate-name", "td-headers-attr", "th-has-data-cells", "video-caption", "empty-heading", "identical-links-same-purpose",
-              "target-size", "label-content-name-mismatch", "table-fake-caption", "td-has-header", "html-lang-valid", "frame-title"];
           
             
           // Audit'in listemizde olup olmadığını kontrol et
-          if (bestPractices.includes(mobile_audit_id)) {
+          if (mobile_best_practices_audit_list.includes(mobile_audit_id)) {
 
               if (mobile_audit_score==1){
                 $('.mobile_best_practices_passed_audits').append(html);
@@ -608,7 +691,7 @@ $(document).on('click', '.serp-analyze-link', function (event) {
               else if (!(mobile_audit_score == 1) && ['csp-xss'].includes(mobile_audit_id)) {
                 $('.mobile_best_practices_trust_and_safety_audits').append(html);
               }
-              else if (!(mobile_audit_score == 1) && ['inspector-issues','js-libraries','valid-source-maps'].includes(mobile_audit_id)) {
+              else if (!(mobile_audit_score == 1) && ['inspector-issues','js-libraries','valid-source-maps','third-party-cookies'].includes(mobile_audit_id)) {
                 $('.mobile_best_practices_general_audits').append(html);
               }
               else if (!(mobile_audit_score == 1) && ['image-aspect-ratio'].includes(mobile_audit_id)) {
@@ -618,7 +701,7 @@ $(document).on('click', '.serp-analyze-link', function (event) {
                 console.log("best practices kategoriye uymayan audit",mobile_audit_id);
               } 
 
-          } else if (seoAudits.includes(mobile_audit_id)) {
+          } else if (mobile_seo_audit_list.includes(mobile_audit_id)) {
               if (mobile_audit_score==1){
                 $('.mobile_seo_passed_audits').append(html);
               }
@@ -641,7 +724,7 @@ $(document).on('click', '.serp-analyze-link', function (event) {
                 console.log("Seo kategoriye uymayan audit",mobile_audit_id);
               } 
 
-          } else if (performanceAudits.includes(mobile_audit_id)) {
+          } else if (mobile_performance_audit_list.includes(mobile_audit_id)) {
               if (mobile_audit_score==1){
                 $('.mobile_performance_passed_audits').append(html);
               }
@@ -649,7 +732,7 @@ $(document).on('click', '.serp-analyze-link', function (event) {
                 $('.mobile_performance_diagnostic_audits').append(html);
               }
 
-          } else if (accessibilityAudits.includes(mobile_audit_id)) {
+          } else if (mobile_accessibility_audit_list.includes(mobile_audit_id)) {
 
               if (mobile_audit_score==1){
                 $('.mobile_accessibility_passed_audits').append(html);
@@ -792,32 +875,11 @@ $(document).on('click', '.serp-analyze-link', function (event) {
 
 
 
-          var seoAudits = ["crawlable-anchors", "image-alt", "structured-data", "viewport", "document-title", "meta-description", "http-status-code", 
-              "link-text", "is-crawlable", "hreflang", "font-size", "plugins", "tap-targets", "robots-txt", "canonical"];
 
-          var bestPractices = [
-              "image-size-responsive", "csp-xss",   "js-libraries", "is-on-https", "deprecations", "paste-preventing-inputs",  "geolocation-on-start",
-              "notification-on-start", "image-aspect-ratio","doctype", "charset",  "no-unload-listeners","errors-in-console",    "inspector-issues",
-              "valid-source-maps","preload-fonts", "third-party-cookies"
-          ];
-          var performanceAudits = ["largest-contentful-paint-element", "mainthread-work-breakdown", "bootup-time", "third-party-facades", "render-blocking-resources", 
-              "lcp-lazy-loaded", "unused-css-rules", "layout-shift-elements", "third-party-summary", "unminified-css", "modern-image-formats", "unsized-images", "uses-long-cache-ttl", 
-              "font-display", "legacy-javascript", "unused-javascript", "server-response-time", "non-composited-animations", "total-byte-weight", "dom-size", "critical-request-chains",
-              "long-tasks", "offscreen-images", "unminified-javascript", "uses-optimized-images", "uses-rel-preconnect", "redirects", "uses-rel-preload", "efficient-animated-content", 
-              "duplicated-javascript", "prioritize-lcp-image", "user-timings", "uses-passive-event-listeners", "no-document-write", "viewport", "uses-text-compression", "uses-responsive-images"];
-
-          var accessibilityAudits = ["button-name", "image-alt", "link-name", "color-contrast", "heading-order", "focusable-controls", "interactive-element-affordance", "logical-tab-order", 
-              "visual-order-follows-dom", "focus-traps", "managed-focus", "use-landmarks", "offscreen-content-hidden", "custom-controls-labels", "custom-controls-roles", "aria-hidden-body", 
-              "meta-viewport", "aria-hidden-focus", "document-title", "html-has-lang", "valid-lang", "image-redundant-alt", "accesskeys", "aria-allowed-attr", "aria-allowed-role", "aria-command-name",
-              "aria-dialog-name", "aria-input-field-name", "aria-meter-name", "aria-required-children", "aria-progressbar-name", "aria-required-attr", "aria-required-parent", "aria-roles", "aria-text", 
-              "aria-toggle-field-name", "aria-valid-attr", "aria-tooltip-name", "aria-treeitem-name", "duplicate-id-aria", "aria-valid-attr-value", "bypass", "definition-list", "dlitem", 
-              "duplicate-id-active", "form-field-multiple-labels", "html-xml-lang-mismatch", "input-button-name", "input-image-alt", "label", "link-in-text-block", "list", "listitem", "meta-refresh", 
-              "object-alt", "select-name", "skip-link", "tabindex", "table-duplicate-name", "td-headers-attr", "th-has-data-cells", "video-caption", "empty-heading", "identical-links-same-purpose",
-              "target-size", "label-content-name-mismatch", "table-fake-caption", "td-has-header", "html-lang-valid", "frame-title"];
           
 
           // Audit'in listemizde olup olmadığını kontrol et
-          if (bestPractices.includes(desktop_audit_id)) {
+          if (desktop_best_practices_audit_list.includes(desktop_audit_id)) {
 
               if (desktop_audit_score==1){
                 $('.desktop_best_practices_passed_audits').append(html);
@@ -838,7 +900,7 @@ $(document).on('click', '.serp-analyze-link', function (event) {
                 console.log("best practices kategoriye uymayan audit",desktop_audit_id);
               } 
 
-          } else if (seoAudits.includes(desktop_audit_id)) {
+          } else if (desktop_seo_audit_list.includes(desktop_audit_id)) {
               if (desktop_audit_score==1){
                 $('.desktop_seo_passed_audits').append(html);
               }
@@ -861,7 +923,7 @@ $(document).on('click', '.serp-analyze-link', function (event) {
                 console.log("Seo kategoriye uymayan audit",desktop_audit_id);
               } 
 
-          } else if (performanceAudits.includes(desktop_audit_id)) {
+          } else if (desktop_performance_audit_list.includes(desktop_audit_id)) {
               if (desktop_audit_score==1){
                 $('.desktop_performance_passed_audits').append(html);
               }
@@ -869,7 +931,7 @@ $(document).on('click', '.serp-analyze-link', function (event) {
                 $('.desktop_performance_diagnostic_audits').append(html);
               }
 
-          } else if (accessibilityAudits.includes(desktop_audit_id)) {
+          } else if (desktop_accessibility_audit_list.includes(desktop_audit_id)) {
 
               if (desktop_audit_score==1){
                 $('.desktop_accessibility_passed_audits').append(html);
@@ -932,81 +994,3 @@ $(document).on('click', '.serp-analyze-link', function (event) {
 });
 
 
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// $("#toogle").click(function (event) {
-//   $(".ackapat").slideToggle(1000)
-// });
-
-
-
-// $("#sent_link").click(function (event) {
-//   console.log("buton çalıştı");
-  
-//   $.ajax({
-//     type: "GET",
-//     url: "https://jsonplaceholder.typicode.com/posts/1",
-//     success: function (data) {
-//         console.log("AJAX isteği tamamlandı. Gelen veri: ", data);
-//     },
-//     error: function () {
-//         console.log("AJAX isteğinde hata oluştu.");
-//     }
-// });
-// });
-
-
-// $("#sent_link").click(function (event) {
-//   console.log("buton çalıştı");
-  
-//   $.ajax({
-//     type: "GET",
-//     url: "sub_link_analyze/",
-//     dataType: 'json',
-//     data: {
-//       "den":"den",
-
-//      },
-//   success: function (data) {
-//       console.log("AJAX isteği tamamlandı. Gelen veri: ", data);
-//   },
-//   error: function () {
-//       console.log("AJAX isteğinde hata oluştu.");
-//   }
-// });
-// });
