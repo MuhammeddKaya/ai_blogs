@@ -516,63 +516,65 @@ $(document).on('click', '.serp-analyze-link', function (event) {
     
 
 
+    // function createTableHTML(details) {
+    //     if (!details || !details.items) {
+    //         return '';
+    //     }
+
+    //     if (details.type === 'list') {
+    //         console.log('Birden fazla tablolu audit');
+    //         return '';
+    //     } else {
+    //         let headings = details.headings;
+    //         let items = details.items;
+
+    //         let tableHTML = '<table class="table border mb-0">' +
+    //                         '<thead>' +
+    //                         '<tr>';
+
+    //         // Tablo başlıklarını oluştur
+    //         headings.forEach(function(heading) {
+    //             tableHTML += '<th scope="col">' + (heading.label || '') + '</th>';
+    //         });
+
+    //         tableHTML += '</tr>' +
+    //                     '</thead>' +
+    //                     '<tbody>';
+
+    //         // Tablo satırlarını oluştur
+    //         items.forEach(function(item) {
+    //             tableHTML += '<tr>';
+    //             headings.forEach(function(heading) {
+    //                 let value = item[heading.key];
+
+    //                 if (value === undefined) {
+    //                     value = '-';
+    //                 } else if (typeof value === 'number') {
+    //                     value = value.toLocaleString();
+    //                 } else if (typeof value === 'object' && value !== null) {
+    //                     if (heading.valueType === 'node') {
+    //                         // Node türündeki değerleri özel olarak işleyin
+    //                         let selector = value.selector || '-';
+    //                         let snippet = value.snippet ? escapeHtml(value.snippet) : '-';
+    //                         value = `Selector: ${selector}<br>Snippet: ${snippet}`;
+    //                     } else {
+    //                         // Diğer nesneleri JSON string olarak gösterin
+    //                         value = JSON.stringify(value);
+    //                     }
+    //                 }
+    //                 tableHTML += '<td>' + value + '</td>';
+    //             });
+    //             tableHTML += '</tr>';
+    //         });
+
+    //         tableHTML += '</tbody></table>';
+
+    //         return tableHTML;
+    //     }
+    // }
     function createTableHTML(details) {
-        if (!details || !details.items) {
-            return '';
-        }
-
-        if (details.type === 'list') {
-            console.log('Birden fazla tablolu audit');
-            return '';
-        } else {
-            let headings = details.headings;
-            let items = details.items;
-
-            let tableHTML = '<table class="table border mb-0">' +
-                            '<thead>' +
-                            '<tr>';
-
-            // Tablo başlıklarını oluştur
-            headings.forEach(function(heading) {
-                tableHTML += '<th scope="col">' + (heading.label || '') + '</th>';
-            });
-
-            tableHTML += '</tr>' +
-                        '</thead>' +
-                        '<tbody>';
-
-            // Tablo satırlarını oluştur
-            items.forEach(function(item) {
-                tableHTML += '<tr>';
-                headings.forEach(function(heading) {
-                    let value = item[heading.key];
-
-                    if (value === undefined) {
-                        value = '-';
-                    } else if (typeof value === 'number') {
-                        value = value.toLocaleString();
-                    } else if (typeof value === 'object' && value !== null) {
-                        if (heading.valueType === 'node') {
-                            // Node türündeki değerleri özel olarak işleyin
-                            let selector = value.selector || '-';
-                            let snippet = value.snippet ? escapeHtml(value.snippet) : '-';
-                            value = `Selector: ${selector}<br>Snippet: ${snippet}`;
-                        } else {
-                            // Diğer nesneleri JSON string olarak gösterin
-                            value = JSON.stringify(value);
-                        }
-                    }
-                    tableHTML += '<td>' + value + '</td>';
-                });
-                tableHTML += '</tr>';
-            });
-
-            tableHTML += '</tbody></table>';
-
-            return tableHTML;
-        }
+      return '';
     }
-
   
  
   
@@ -590,13 +592,27 @@ $(document).on('click', '.serp-analyze-link', function (event) {
           var audit_tr_title = audits_tr[mobile_audit_id];
           
 
-
-          if ((mobile_audits[key].details)&&(mobile_audits[key].details.items)&&(mobile_audits[key].details.headings)) {
-            var mobile_html_audit = mobile_audits[key].details;
-
-          }else{
-            var mobile_html_audit='';
+          if (mobile_audits[key] && mobile_audits[key].details) {
+            if (mobile_audits[key].details.items !== undefined && mobile_audits[key].details.items.length > 0) {
+                var mobile_html_audit = mobile_audits[key].details;
+            } else if (mobile_audits[key].details.chains) {
+                var mobile_html_audit = mobile_audits[key].details;
+            } else {
+                var mobile_html_audit = 'undefined';
+            }
+          } else {
+              var mobile_html_audit = 'undefined';
           }
+        
+
+
+          // console.log(mobile_audit_id,mobile_html_audit);
+          // if ((mobile_audits[key].details)&&(mobile_audits[key].details.items)&&(mobile_audits[key].details.headings)) {
+          //   var mobile_html_audit = mobile_audits[key].details;
+
+          // }else{
+          //   var mobile_html_audit='';
+          // }
 
 
           if (typeof mobile_display_value === 'undefined') {
