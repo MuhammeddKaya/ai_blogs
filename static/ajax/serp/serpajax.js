@@ -689,7 +689,7 @@ $(document).on('click', '.serp-analyze-link', function (event) {
                       '<div id="'+'mobile'+mobile_audit_id+'" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">'+
                         '<div class="accordion-body fw-normal">'+description+
                         '</div>'+
-                        '<div class="card-body"> '+
+                        '<div class="card-body" style="overflow-x:auto;"> '+
                           mobile_audit_table+
                         '</div>'+
                       '</div>'+
@@ -813,11 +813,16 @@ $(document).on('click', '.serp-analyze-link', function (event) {
             desktop_display_value = ''; // Veya 'N/A', 'Not Available', vs. gibi bir placeholder metin kullanabilirsiniz.
           }
 
-          if ((desktop_audits[key].details)&&(desktop_audits[key].details.items)&&(desktop_audits[key].details.headings)) {
-            var desktop_html_audit = desktop_audits[key].details;
-
-          }else{
-            var desktop_html_audit='';
+          if (desktop_audits[key] && desktop_audits[key].details) {
+            if (desktop_audits[key].details.items !== undefined && desktop_audits[key].details.items.length > 0) {
+                var desktop_html_audit = desktop_audits[key].details;
+            } else if (desktop_audits[key].details.chains) {
+                var desktop_html_audit = desktop_audits[key].details;
+            } else {
+                var desktop_html_audit = 'undefined';
+            }
+          } else {
+              var desktop_html_audit = 'undefined';
           }
 
 
@@ -886,7 +891,7 @@ $(document).on('click', '.serp-analyze-link', function (event) {
                       '<div id="'+'desktop'+desktop_audit_id+'" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">'+
                         '<div class="accordion-body fw-normal">'+description+
                         '</div>'+
-                        '<div class="card-body">'+
+                        '<div class="card-body" style="overflow-x:auto;">'+
                           desktop_audit_table+
                         '</div>'+
                       '</div>'+
