@@ -516,65 +516,70 @@ $(document).on('click', '.serp-analyze-link', function (event) {
     
 
 
-    // function createTableHTML(details) {
-    //     if (!details || !details.items) {
-    //         return '';
-    //     }
-
-    //     if (details.type === 'list') {
-    //         console.log('Birden fazla tablolu audit');
-    //         return '';
-    //     } else {
-    //         let headings = details.headings;
-    //         let items = details.items;
-
-    //         let tableHTML = '<table class="table border mb-0">' +
-    //                         '<thead>' +
-    //                         '<tr>';
-
-    //         // Tablo başlıklarını oluştur
-    //         headings.forEach(function(heading) {
-    //             tableHTML += '<th scope="col">' + (heading.label || '') + '</th>';
-    //         });
-
-    //         tableHTML += '</tr>' +
-    //                     '</thead>' +
-    //                     '<tbody>';
-
-    //         // Tablo satırlarını oluştur
-    //         items.forEach(function(item) {
-    //             tableHTML += '<tr>';
-    //             headings.forEach(function(heading) {
-    //                 let value = item[heading.key];
-
-    //                 if (value === undefined) {
-    //                     value = '-';
-    //                 } else if (typeof value === 'number') {
-    //                     value = value.toLocaleString();
-    //                 } else if (typeof value === 'object' && value !== null) {
-    //                     if (heading.valueType === 'node') {
-    //                         // Node türündeki değerleri özel olarak işleyin
-    //                         let selector = value.selector || '-';
-    //                         let snippet = value.snippet ? escapeHtml(value.snippet) : '-';
-    //                         value = `Selector: ${selector}<br>Snippet: ${snippet}`;
-    //                     } else {
-    //                         // Diğer nesneleri JSON string olarak gösterin
-    //                         value = JSON.stringify(value);
-    //                     }
-    //                 }
-    //                 tableHTML += '<td>' + value + '</td>';
-    //             });
-    //             tableHTML += '</tr>';
-    //         });
-
-    //         tableHTML += '</tbody></table>';
-
-    //         return tableHTML;
-    //     }
-    // }
     function createTableHTML(details) {
-      return '';
+        if (!details || !details.items) {
+            return '';
+        }
+
+        if (details.type === 'list') {
+            console.log('Birden fazla tablolu audit');
+            return '';
+        } else {
+          if (details.headings !== undefined) {
+            let headings = details.headings;
+            let items = details.items;
+
+            let tableHTML = '<table class="table border mb-0">' +
+                            '<thead>' +
+                            '<tr>';
+
+            // Tablo başlıklarını oluştur
+            headings.forEach(function(heading) {
+                tableHTML += '<th scope="col">' + (heading.label || '') + '</th>';
+            });
+
+            tableHTML += '</tr>' +
+                        '</thead>' +
+                        '<tbody>';
+
+            // Tablo satırlarını oluştur
+            items.forEach(function(item) {
+                tableHTML += '<tr>';
+                headings.forEach(function(heading) {
+                    let value = item[heading.key];
+
+                    if (value === undefined) {
+                        value = '-';
+                    } else if (typeof value === 'number') {
+                        value = value.toLocaleString();
+                    } else if (typeof value === 'object' && value !== null) {
+                        if (heading.valueType === 'node') {
+                            // Node türündeki değerleri özel olarak işleyin
+                            let selector = value.selector || '-';
+                            let snippet = value.snippet ? escapeHtml(value.snippet) : '-';
+                            value = `Selector: ${selector}<br>Snippet: ${snippet}`;
+                        } else {
+                            // Diğer nesneleri JSON string olarak gösterin
+                            value = JSON.stringify(value);
+                        }
+                    }
+                    tableHTML += '<td>' + value + '</td>';
+                });
+                tableHTML += '</tr>';
+            });
+
+            tableHTML += '</tbody></table>';
+
+            return tableHTML;
+            
+          }
+
+        }
     }
+
+    // function createTableHTML(details) {
+    //   return '';
+    // }
   
  
   
