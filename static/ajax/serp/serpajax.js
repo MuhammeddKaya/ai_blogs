@@ -516,70 +516,110 @@ $(document).on('click', '.serp-analyze-link', function (event) {
     
 
 
-    function createTableHTML(details) {
-        if (!details || !details.items) {
-            return '';
-        }
-
-        if (details.type === 'list') {
-            console.log('Birden fazla tablolu audit');
-            return '';
-        } else {
-          if (details.headings !== undefined) {
-            let headings = details.headings;
-            let items = details.items;
-
-            let tableHTML = '<table class="table border mb-0">' +
-                            '<thead>' +
-                            '<tr>';
-
-            // Tablo başlıklarını oluştur
-            headings.forEach(function(heading) {
-                tableHTML += '<th scope="col">' + (heading.label || '') + '</th>';
-            });
-
-            tableHTML += '</tr>' +
-                        '</thead>' +
-                        '<tbody>';
-
-            // Tablo satırlarını oluştur
-            items.forEach(function(item) {
-                tableHTML += '<tr>';
-                headings.forEach(function(heading) {
-                    let value = item[heading.key];
-
-                    if (value === undefined) {
-                        value = '-';
-                    } else if (typeof value === 'number') {
-                        value = value.toLocaleString();
-                    } else if (typeof value === 'object' && value !== null) {
-                        if (heading.valueType === 'node') {
-                            // Node türündeki değerleri özel olarak işleyin
-                            let selector = value.selector || '-';
-                            let snippet = value.snippet ? escapeHtml(value.snippet) : '-';
-                            value = `Selector: ${selector}<br>Snippet: ${snippet}`;
-                        } else {
-                            // Diğer nesneleri JSON string olarak gösterin
-                            value = JSON.stringify(value);
-                        }
-                    }
-                    tableHTML += '<td>' + value + '</td>';
-                });
-                tableHTML += '</tr>';
-            });
-
-            tableHTML += '</tbody></table>';
-
-            return tableHTML;
-            
+    function createTableHTML(mobile_html_audit) {
+        
+      if (mobile_html_audit == '') {
+          return '';
+      } else {
+          let tableHTML = '';
+  
+          // Check the type of table and handle accordingly
+          if (mobile_html_audit.type === 'table' || mobile_html_audit.type === 'opportunity') {
+              // Single table case
+              tableHTML = buildSingleTable(mobile_html_audit.headings, mobile_html_audit.items);
+              
+  
+          } else if (mobile_html_audit.type === 'list') {
+              let deger=mobile_html_audit.type;
+              console.log(deger);
+              // Multiple tables case
+              mobile_html_audit.items.forEach(function (item) {
+                  if (item.type === 'table') {
+                      tableHTML += buildSingleTable(item.headings, item.items);
+                  } else if (Array.isArray(item.items)) {
+                      tableHTML += buildSingleTable(mobile_html_audit.headings, item.items);
+                  }
+              });
+  
+          } else if (mobile_html_audit.type === 'criticalrequestchain') {
+              // Chains structure
+              console.log('chaiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiinnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn');
+              tableHTML = buildChainsTable(mobile_html_audit);
+  
+          } else {
+              return ''; // Unsupported type
           }
-
-        }
+  
+          return tableHTML;
+      }
     }
-
-    // function createTableHTML(details) {
-    //   return '';
-    // }
+    
+    function buildSingleTable(headings, items) {
+        let tableHTML = '<table class="table border mb-0">' +
+            '<thead>' +
+            '<tr>';
+    
+        // Add headings to the table
+        headings.forEach(function (heading) {
+            if (heading.label) {
+                tableHTML += '<th scope="col">' + heading.label + '</th>';
+            } else {
+                tableHTML += '<th scope="col"></th>';
+            }
+        });
+        tableHTML += '</tr>' +
+            '</thead>' +
+            '<tbody>';
+    
+        // Add items to the table
+        items.forEach(function (item) {
+            tableHTML += '<tr>';
+            headings.forEach(function (heading) {
+                let value = item[heading.key];
+                if (value === undefined) {
+                    value = '-';
+                } else if (typeof value === 'number') {
+                    value = value.toLocaleString();
+                }
+                tableHTML += '<td>' + value + '</td>';
+            });
+            tableHTML += '</tr>';
+        });
+    
+        tableHTML += '</tbody></table>';
+        return tableHTML;
+    }
+    
+    function buildChainsTable(mobile_html_audit) {
+        let chains = mobile_html_audit.items;
+        let tableHTML = '<table class="table border mb-0">' +
+            '<thead>' +
+            '<tr>' +
+            '<th scope="col">Request URL</th>' +
+            '<th scope="col">Start Time</th>' +
+            '<th scope="col">Duration</th>' +
+            '</tr>' +
+            '</thead>' +
+            '<tbody>';
+    
+        // Recursive function to iterate over chains
+        function renderChain(chain) {
+            for (let request in chain) {
+                tableHTML += '<tr>' +
+                    '<td>' + chain[request].url + '</td>' +
+                    '<td>' + chain[request].startTime + '</td>' +
+                    '<td>' + chain[request].endTime + '</td>' +
+                    '</tr>';
+                if (chain[request].children) {
+                    renderChain(chain[request].children);
+                }
+            }
+        }
+    
+        renderChain(chains);
+        tableHTML += '</tbody></table>';
+        return tableHTML;
+    }
   
  
   
@@ -597,16 +637,11 @@ $(document).on('click', '.serp-analyze-link', function (event) {
           var audit_tr_title = audits_tr[mobile_audit_id];
           
 
-          if (mobile_audits[key] && mobile_audits[key].details) {
-            if (mobile_audits[key].details.items !== undefined && mobile_audits[key].details.items.length > 0) {
-                var mobile_html_audit = mobile_audits[key].details;
-            } else if (mobile_audits[key].details.chains) {
-                var mobile_html_audit = mobile_audits[key].details;
-            } else {
-                var mobile_html_audit = 'undefined';
-            }
-          } else {
-              var mobile_html_audit = 'undefined';
+          if ((mobile_audits[key].details)) {
+            var mobile_html_audit = mobile_audits[key].details;
+
+          }else{
+            var mobile_html_audit='';
           }
         
 
@@ -813,7 +848,9 @@ $(document).on('click', '.serp-analyze-link', function (event) {
             desktop_display_value = ''; // Veya 'N/A', 'Not Available', vs. gibi bir placeholder metin kullanabilirsiniz.
           }
 
-          if ((desktop_audits[key].details)&&(desktop_audits[key].details.items)&&(desktop_audits[key].details.headings)) {
+
+          
+          if ((desktop_audits[key].details)) {
             var desktop_html_audit = desktop_audits[key].details;
 
           }else{
