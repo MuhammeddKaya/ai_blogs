@@ -517,7 +517,6 @@ $(document).on('click', '.serp-analyze-link', function (event) {
 
 
     function createTableHTML(mobile_html_audit) {
-        
       if (mobile_html_audit == '') {
           return '';
       } else {
@@ -527,11 +526,8 @@ $(document).on('click', '.serp-analyze-link', function (event) {
           if (mobile_html_audit.type === 'table' || mobile_html_audit.type === 'opportunity') {
               // Single table case
               tableHTML = buildSingleTable(mobile_html_audit.headings, mobile_html_audit.items);
-              
   
           } else if (mobile_html_audit.type === 'list') {
-              let deger=mobile_html_audit.type;
-              console.log(deger);
               // Multiple tables case
               mobile_html_audit.items.forEach(function (item) {
                   if (item.type === 'table') {
@@ -543,7 +539,6 @@ $(document).on('click', '.serp-analyze-link', function (event) {
   
           } else if (mobile_html_audit.type === 'criticalrequestchain') {
               // Chains structure
-              console.log('chaiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiinnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn');
               tableHTML = buildChainsTable(mobile_html_audit);
   
           } else {
@@ -575,12 +570,24 @@ $(document).on('click', '.serp-analyze-link', function (event) {
         items.forEach(function (item) {
             tableHTML += '<tr>';
             headings.forEach(function (heading) {
-                let value = item[heading.key];
+                let value;
+    
+                // Check if the heading key corresponds to a node
+                if (heading.valueType === 'node' && item.node) {
+                    value = item.node.nodeLabel;  // Use nodeLabel if it exists
+                    if (item.node.snippet) {
+                        value += '<br><small>' + item.node.snippet + '</small>';  // Add snippet below nodeLabel
+                    }
+                } else {
+                    value = item[heading.key];
+                }
+    
                 if (value === undefined) {
                     value = '-';
                 } else if (typeof value === 'number') {
                     value = value.toLocaleString();
                 }
+    
                 tableHTML += '<td>' + value + '</td>';
             });
             tableHTML += '</tr>';
@@ -620,6 +627,9 @@ $(document).on('click', '.serp-analyze-link', function (event) {
         tableHTML += '</tbody></table>';
         return tableHTML;
     }
+  
+  
+  
   
  
   
@@ -849,7 +859,7 @@ $(document).on('click', '.serp-analyze-link', function (event) {
           }
 
 
-          
+
           if ((desktop_audits[key].details)) {
             var desktop_html_audit = desktop_audits[key].details;
 

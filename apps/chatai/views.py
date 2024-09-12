@@ -5,23 +5,45 @@ from apps.blog.models import BlogPost
 import base64
 from django.core.files.base import ContentFile
 
+import google.generativeai as genai
+
 # Create your views here.
 
 
 
 openai.api_key = ''
 
-def get_completion(prompt_blog):
-	query = openai.Completion.create(
-		engine="gpt-3.5-turbo",
-		prompt=prompt_blog,
-		max_tokens=1024,
-		n=1,
-		stop=None,
-		temperature=0.5,
-	)
+# def get_completion(prompt_blog):
+# 	query = openai.Completion.create(
+# 		engine="gpt-3.5-turbo",
+# 		prompt=prompt_blog,
+# 		max_tokens=1024,
+# 		n=1,
+# 		stop=None,
+# 		temperature=0.5,
+# 	)
 
-	response = query.choices[0].text
+# 	response = query.choices[0].text
+# 	print(response)
+# 	return response
+
+# def get_image_completion(prompt):
+# 	response = openai.Image.create(
+# 		prompt=prompt,
+# 		n=1,
+# 		response_format="b64_json", #'url,json'
+# 		size='1024x1024' 			#'512x512,256x256'
+# 	)
+
+# 	response=response["data"][0]["b64_json"]
+# 	# print(response)
+# 	return response
+
+
+# with google gemini
+def get_completion(prompt_blog):
+	model = genai.GenerativeModel("gemini-1.5-flash")
+	response = model.generate_content(prompt_blog)
 	print(response)
 	return response
 
@@ -36,6 +58,7 @@ def get_image_completion(prompt):
 	response=response["data"][0]["b64_json"]
 	# print(response)
 	return response
+
 
 
 def query_view(request):
