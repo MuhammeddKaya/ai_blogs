@@ -576,7 +576,7 @@ $(document).on('click', '.serp-analyze-link', function (event) {
                 if (heading.valueType === 'node' && item.node) {
                     value = item.node.nodeLabel;  // Use nodeLabel if it exists
                     if (item.node.snippet) {
-                        value += '<br><small>' + item.node.snippet + '</small>';  // Add snippet below nodeLabel
+                        value += '<br><small style="color: #3b61ce;">' +  escapeHtml(item.node.snippet) + '</small>';  // Add snippet below nodeLabel
                     }
                 } else {
                     value = item[heading.key];

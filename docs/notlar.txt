@@ -12,7 +12,8 @@ DIAGNOSTICS
 
 
 
-
+eksik auditsler 
+          - Elements use prohibited ARIA attributes
 
 
 

@@ -180,9 +180,9 @@ def link_analyze(request):
                 mobile_result_tr = json.load(dosya)
 
 
-            # mobile_result = get_seo(domain_name,"mobile")
-            with open("./json/mobile_www.impalabt.com.json", "r") as mobile_dosya:
-                mobile_result = json.load(mobile_dosya)
+            mobile_result = get_seo(domain_name,"mobile")
+            # with open("./json/mobile_www.impalabt.com.json", "r") as mobile_dosya:
+            #     mobile_result = json.load(mobile_dosya)
             # current_directory = os.getcwd()
             # file_name = 'json/mobile_'+ f"{domain_name.replace('https://', '')}.json"
             # file_path = os.path.join(current_directory, file_name)
@@ -219,10 +219,11 @@ def link_analyze(request):
 #--------------------------------------------------------------------------------------------------------------------------
 #------------ Desktop Side Data--------------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------------------------------------
-            # desktop_result = get_seo(domain_name,"desktop")
+            desktop_result = get_seo(domain_name,"desktop")
 
-            with open("./json/desktop_www.impalabt.com.json", "r") as desktop_dosya:
-                desktop_result = json.load(desktop_dosya)
+            # with open("./json/desktop_www.impalabt.com.json", "r") as desktop_dosya:
+            #     desktop_result = json.load(desktop_dosya)
+
             # current_directory = os.getcwd()
             # file_name = 'json/desktop_'+ f"{domain_name.replace('https://', '')}.json"
             # file_path = os.path.join(current_directory, file_name)
