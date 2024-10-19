@@ -287,7 +287,7 @@ $(document).on('click', '.serp-analyze-link', function (event) {
         lang_code = this.id.includes('tr') ? 'tr' : 'en';
         console.log(lang_code,"langkodeeeeeee");
         updateData();
-    });
+      });
 
       $(document).ready(function() {
         updateData();
