@@ -18,6 +18,23 @@
     </div>
     
     <div class="theme-option pb-4">
+        <h6 class="fw-semibold fs-4 mb-1">Ai Chat</h6>
+        <div class="position-relative">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-md-8 col-xl-9">
+                  <input type="text" class="form-control product-search ps-5" name="ai-chat" id="ai-chat" placeholder="Enter question..."/>
+                  <i class="ti ti-search position-absolute top-50 start-0 translate-middle-y fs-6 text-dark ms-3"></i>
+              </div>
+              <div class="col-md-4 col-xl-3 text-end d-flex justify-content-md-end justify-content-center mt-3 mt-md-0">
+                <button type="submit" class="btn btn-info d-flex align-items-center serp-ai">
+                  <i class="ti ti-users text-white me-1 fs-5"></i>Send
+                </button>
+              </div>
+            </div>
+          </div>
+    </div>
+    <div class="theme-option pb-4">
         <h6 class="fw-semibold fs-4 mb-1">Theme Option</h6>
         <div class="d-flex align-items-center gap-3 my-3">
         <a href="javascript:void(0)"  onclick="toggleTheme('../../dist/css/style.min.css')"  class="rounded-2 p-9 customizer-box hover-img d-flex align-items-center gap-2 light-theme text-dark">
@@ -30,6 +47,7 @@
         </a>
         </div>
     </div>
+
     <div class="theme-direction pb-4">
         <h6 class="fw-semibold fs-4 mb-1">Theme Direction</h6>
         <div class="d-flex align-items-center gap-3 my-3">

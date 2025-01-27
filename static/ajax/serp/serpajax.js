@@ -406,16 +406,29 @@ $(document).on('click', '.serp-analyze-link', function (event) {
         $('.desktop_accessibility_aria_audits').empty();
       }
 
-   
-      
+    //--------------------------------------------------  
+    // audit listelerinin dinamik oluşturulması
+    //--------------------------------------------------
+    
+    
+    // mobile audit listeleri
     var mobile_seo_audit_list_data=data.mobile_seo_audit_list;
     var mobile_seo_audit_list=[];
 
     for (let audit of mobile_seo_audit_list_data) {
       if (audit.group !== "hidden") {
-          mobile_seo_audit_list.push(audit.id);
+          mobile_seo_audit_list.push({
+              id: audit.id,
+              weight: audit.weight
+          });
       }
     }
+
+    // for (let audit of mobile_seo_audit_list_data) {
+    //   if (audit.group !== "hidden") {
+    //       mobile_seo_audit_list.push(audit.id);
+    //   }
+    // }
 
     console.log('mobile_seo_audit_list',mobile_seo_audit_list); 
 
@@ -425,7 +438,10 @@ $(document).on('click', '.serp-analyze-link', function (event) {
 
     for (let audit of mobile_best_practices_audit_list_data) {
       if (audit.group !== "hidden") {
-          mobile_best_practices_audit_list.push(audit.id);
+          mobile_best_practices_audit_list.push({
+            id: audit.id,
+            weight: audit.weight
+        });
       }
     }
 
@@ -437,7 +453,10 @@ $(document).on('click', '.serp-analyze-link', function (event) {
 
     for (let audit of mobile_performance_audit_list_data) {
       if (audit.group !== "hidden") {
-          mobile_performance_audit_list.push(audit.id);
+          mobile_performance_audit_list.push({
+            id: audit.id,
+            weight: audit.weight
+        });
       }
     }
 
@@ -449,19 +468,25 @@ $(document).on('click', '.serp-analyze-link', function (event) {
 
     for (let audit of mobile_accessibility_audit_list_data) {
       if (audit.group !== "hidden") {
-          mobile_accessibility_audit_list.push(audit.id);
+          mobile_accessibility_audit_list.push({
+            id: audit.id,
+            weight: audit.weight
+        });
       }
     }
 
     console.log('mobile_accessibility_audit_list',mobile_accessibility_audit_list); 
 
-
+    // desktop audit listeleri
     var desktop_seo_audit_list_data=data.desktop_seo_audit_list;
     var desktop_seo_audit_list=[];
 
     for (let audit of desktop_seo_audit_list_data) {
       if (audit.group !== "hidden") {
-          desktop_seo_audit_list.push(audit.id);
+          desktop_seo_audit_list.push({
+            id: audit.id,
+            weight: audit.weight
+        });
       }
     }
 
@@ -473,7 +498,10 @@ $(document).on('click', '.serp-analyze-link', function (event) {
 
     for (let audit of desktop_best_practices_audit_list_data) {
       if (audit.group !== "hidden") {
-          desktop_best_practices_audit_list.push(audit.id);
+          desktop_best_practices_audit_list.push({
+              id: audit.id,
+              weight: audit.weight
+          });
       }
     }
 
@@ -485,7 +513,10 @@ $(document).on('click', '.serp-analyze-link', function (event) {
 
     for (let audit of desktop_performance_audit_list_data) {
       if (audit.group !== "hidden") {
-          desktop_performance_audit_list.push(audit.id);
+          desktop_performance_audit_list.push({
+              id: audit.id,
+              weight: audit.weight
+          });
       }
     }
 
@@ -497,7 +528,10 @@ $(document).on('click', '.serp-analyze-link', function (event) {
 
     for (let audit of desktop_accessibility_audit_list_data) {
       if (audit.group !== "hidden") {
-          desktop_accessibility_audit_list.push(audit.id);
+          desktop_accessibility_audit_list.push({
+              id: audit.id,
+              weight: audit.weight
+          });
       }
     }
 
@@ -516,6 +550,7 @@ $(document).on('click', '.serp-analyze-link', function (event) {
     
 
 
+<<<<<<< HEAD
     function createTableHTML(mobile_html_audit) {
       if (mobile_html_audit == '') {
           return '';
@@ -543,11 +578,73 @@ $(document).on('click', '.serp-analyze-link', function (event) {
   
           } else {
               return ''; // Unsupported type
+=======
+
+
+  // audit içindeki verilerin tablolarının oluşturulması
+    function createTableHTML(details) {
+        if (!details || !details.items) {
+            return '';
+        }
+
+        if (details.type === 'list') {
+            console.log('Birden fazla tablolu audit');
+            return '';
+        } else {
+          if (details.headings !== undefined) {
+            let headings = details.headings;
+            let items = details.items;
+
+            let tableHTML = '<table class="table border mb-0">' +
+                            '<thead>' +
+                            '<tr>';
+
+            // Tablo başlıklarını oluştur
+            headings.forEach(function(heading) {
+                tableHTML += '<th scope="col">' + (heading.label || '') + '</th>';
+            });
+
+            tableHTML += '</tr>' +
+                        '</thead>' +
+                        '<tbody>';
+
+            // Tablo satırlarını oluştur
+            items.forEach(function(item) {
+                tableHTML += '<tr>';
+                headings.forEach(function(heading) {
+                    let value = item[heading.key];
+
+                    if (value === undefined) {
+                        value = '-';
+                    } else if (typeof value === 'number') {
+                        value = value.toLocaleString();
+                    } else if (typeof value === 'object' && value !== null) {
+                        if (heading.valueType === 'node') {
+                            // Node türündeki değerleri özel olarak işleyin
+                            let selector = value.selector || '-';
+                            let snippet = value.snippet ? escapeHtml(value.snippet) : '-';
+                            value = `Selector: ${selector}<br>Snippet: ${snippet}`;
+                        } else {
+                            // Diğer nesneleri JSON string olarak gösterin
+                            value = JSON.stringify(value);
+                        }
+                    }
+                    tableHTML += '<td>' + value + '</td>';
+                });
+                tableHTML += '</tr>';
+            });
+
+            tableHTML += '</tbody></table>';
+
+            return tableHTML;
+            
+>>>>>>> a2cbb8f (score added for criticial audit)
           }
   
           return tableHTML;
       }
     }
+<<<<<<< HEAD
     
     function buildSingleTable(headings, items) {
         let tableHTML = '<table class="table border mb-0">' +
@@ -631,12 +728,19 @@ $(document).on('click', '.serp-analyze-link', function (event) {
   
   
   
+=======
+
+>>>>>>> a2cbb8f (score added for criticial audit)
  
   
       
 
       function updateData() {
         clearContents();
+
+// -----------------------------------------------------------------        
+// mobil için auditlerin oluşturulması ve ilgili yerde listelenmesi        
+// -----------------------------------------------------------------      
 
         for (var key in mobile_audits) {
 
@@ -669,6 +773,8 @@ $(document).on('click', '.serp-analyze-link', function (event) {
             mobile_display_value = ''; // Veya 'N/A', 'Not Available', vs. gibi bir placeholder metin kullanabilirsiniz.
           }
 
+
+// Audit skoruna göre ikonunu belirle          
           var mobile_display_value_class;
           var ikon;
           if (mobile_audit_score == 1) {
@@ -682,7 +788,7 @@ $(document).on('click', '.serp-analyze-link', function (event) {
               mobile_display_value_class = 'text-danger';
           }
 
-
+// dil çevirisi için lang koda göre kontrol yap ve ilgili json dosyasından veri çek 
           if (lang_code == "tr") {
             if (audits_tr.hasOwnProperty(mobile_audit_id)) {
                 var mobile_audit_ttitle = audits_tr[mobile_audit_id].title;
@@ -741,12 +847,11 @@ $(document).on('click', '.serp-analyze-link', function (event) {
                     '</div>'+
 
                   '</div>';
-
-
           
+         
             
           // Audit'in listemizde olup olmadığını kontrol et
-          if (mobile_best_practices_audit_list.includes(mobile_audit_id)) {
+          if (mobile_best_practices_audit_list.some(audit => audit.id === mobile_audit_id)) {
 
               if (mobile_audit_score==1){
                 $('.mobile_best_practices_passed_audits').append(html);
@@ -767,7 +872,7 @@ $(document).on('click', '.serp-analyze-link', function (event) {
                 console.log("best practices kategoriye uymayan audit",mobile_audit_id);
               } 
 
-          } else if (mobile_seo_audit_list.includes(mobile_audit_id)) {
+          } else if (mobile_seo_audit_list.some(audit => audit.id === mobile_audit_id)) {
               if (mobile_audit_score==1){
                 $('.mobile_seo_passed_audits').append(html);
               }
@@ -790,7 +895,7 @@ $(document).on('click', '.serp-analyze-link', function (event) {
                 console.log("Seo kategoriye uymayan audit",mobile_audit_id);
               } 
 
-          } else if (mobile_performance_audit_list.includes(mobile_audit_id)) {
+          } else if (mobile_performance_audit_list.some(audit => audit.id === mobile_audit_id)) {
               if (mobile_audit_score==1){
                 $('.mobile_performance_passed_audits').append(html);
               }
@@ -798,7 +903,7 @@ $(document).on('click', '.serp-analyze-link', function (event) {
                 $('.mobile_performance_diagnostic_audits').append(html);
               }
 
-          } else if (mobile_accessibility_audit_list.includes(mobile_audit_id)) {
+          } else if (mobile_accessibility_audit_list.some(audit => audit.id === mobile_audit_id)) {
 
               if (mobile_audit_score==1){
                 $('.mobile_accessibility_passed_audits').append(html);
@@ -841,11 +946,34 @@ $(document).on('click', '.serp-analyze-link', function (event) {
 
                 console.log(mobile_audit_id);
           }
+
+          const all_audit_lists = [
+            ...mobile_best_practices_audit_list,
+            ...mobile_seo_audit_list,
+            ...mobile_performance_audit_list,
+            ...mobile_accessibility_audit_list
+          ];
+          
+          all_audit_lists.forEach(audit => {
+            if (audit.id === mobile_audit_id && mobile_audit_score < 1 && audit.weight !== 0) {
+                const failure_percentage = (1 - mobile_audit_score) * 100;
+                const priority = (failure_percentage * audit.weight) / 10;
+                const audit_html = `
+                    <tr>
+                        <td>${ikon}</td>
+                        <td>${mobile_audit_title}</td>
+                        <td>${priority.toFixed(2)}</td>
+                    </tr>`;
+                $('.mobile_performance_key_insights tbody').append(audit_html);
+            }
+          });
           
         }
 
 
-
+// -----------------------------------------------------------------        
+// desktop için auditlerin oluşturulması ve ilgili yerde listelenmesi        
+// -----------------------------------------------------------------  
         for (var key in desktop_audits) {
 
           var desktop_audit_id = desktop_audits[key].id;
@@ -947,7 +1075,7 @@ $(document).on('click', '.serp-analyze-link', function (event) {
           
 
           // Audit'in listemizde olup olmadığını kontrol et
-          if (desktop_best_practices_audit_list.includes(desktop_audit_id)) {
+          if (desktop_best_practices_audit_list.some(audit => audit.id === desktop_audit_id)) {
 
               if (desktop_audit_score==1){
                 $('.desktop_best_practices_passed_audits').append(html);
@@ -968,7 +1096,7 @@ $(document).on('click', '.serp-analyze-link', function (event) {
                 console.log("best practices kategoriye uymayan audit",desktop_audit_id);
               } 
 
-          } else if (desktop_seo_audit_list.includes(desktop_audit_id)) {
+          } else if (desktop_seo_audit_list.some(audit => audit.id === desktop_audit_id)) {
               if (desktop_audit_score==1){
                 $('.desktop_seo_passed_audits').append(html);
               }
@@ -991,7 +1119,7 @@ $(document).on('click', '.serp-analyze-link', function (event) {
                 console.log("Seo kategoriye uymayan audit",desktop_audit_id);
               } 
 
-          } else if (desktop_performance_audit_list.includes(desktop_audit_id)) {
+          } else if (desktop_performance_audit_list.some(audit => audit.id === desktop_audit_id)) {
               if (desktop_audit_score==1){
                 $('.desktop_performance_passed_audits').append(html);
               }
@@ -999,7 +1127,7 @@ $(document).on('click', '.serp-analyze-link', function (event) {
                 $('.desktop_performance_diagnostic_audits').append(html);
               }
 
-          } else if (desktop_accessibility_audit_list.includes(desktop_audit_id)) {
+          } else if (desktop_accessibility_audit_list.some(audit => audit.id === desktop_audit_id)) {
 
               if (desktop_audit_score==1){
                 $('.desktop_accessibility_passed_audits').append(html);
@@ -1042,6 +1170,27 @@ $(document).on('click', '.serp-analyze-link', function (event) {
 
                 console.log(desktop_audit_id);
           }
+
+          const all_audit_lists = [
+            ...desktop_best_practices_audit_list,
+            ...desktop_seo_audit_list,
+            ...desktop_performance_audit_list,
+            ...desktop_accessibility_audit_list
+          ];
+          
+          all_audit_lists.forEach(audit => {
+            if (audit.id === desktop_audit_id && desktop_audit_score < 1 && audit.weight !== 0) {
+                const failure_percentage = (1 - desktop_audit_score) * 100;
+                const priority = (failure_percentage * audit.weight) / 10;
+                const audit_html = `
+                    <tr>
+                        <td>${ikon}</td>
+                        <td>${desktop_audit_title}</td>
+                        <td>${priority.toFixed(2)}</td>
+                    </tr>`;
+                $('.desktop_performance_key_insights tbody').append(audit_html);
+            }
+          });
           
         }
 
