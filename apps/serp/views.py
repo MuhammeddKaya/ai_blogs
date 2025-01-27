@@ -87,15 +87,15 @@ def link_analyze(request):
 #--------------------------------------------------------------------------------------------------------------------------
 #------------ Mobile Side Data--------------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------------------------------------
-            with open("./ai_blogs/json_ref/tr_TR.json", "r") as dosya:
+            with open("./json_ref/tr_TR.json", "r") as dosya:
                 mobile_result_tr = json.load(dosya)
 
                 
 
 
-            mobile_result = get_seo(domain_name,"mobile")
-            # with open("./json/desktop_www.impalabt.com.json", "r") as mobile_dosya:
-            #     mobile_result = json.load(mobile_dosya)
+            #mobile_result = get_seo(domain_name,"mobile")
+            with open("./json/desktop_www.impalabt.com.json", "r") as mobile_dosya:
+                mobile_result = json.load(mobile_dosya)
 
 
 
@@ -140,10 +140,10 @@ def link_analyze(request):
 #--------------------------------------------------------------------------------------------------------------------------
 #------------ Desktop Side Data--------------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------------------------------------
-            desktop_result = get_seo(domain_name,"desktop")
+            #desktop_result = get_seo(domain_name,"desktop")
 
-            # with open("./json/desktop_www.impalabt.com.json", "r") as desktop_dosya:
-            #     desktop_result = json.load(desktop_dosya)
+            with open("./json/desktop_www.impalabt.com.json", "r") as desktop_dosya:
+                desktop_result = json.load(desktop_dosya)
 
 
             # current_directory = os.getcwd()

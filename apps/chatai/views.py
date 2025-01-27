@@ -5,7 +5,6 @@ from apps.blog.models import BlogPost
 import base64
 from django.core.files.base import ContentFile
 
-import google.generativeai as genai
 
 # Create your views here.
 

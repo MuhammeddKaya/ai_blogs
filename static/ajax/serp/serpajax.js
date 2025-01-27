@@ -409,8 +409,8 @@ $(document).on('click', '.serp-analyze-link', function (event) {
     //--------------------------------------------------  
     // audit listelerinin dinamik oluşturulması
     //--------------------------------------------------
-    
-    
+   
+      
     // mobile audit listeleri
     var mobile_seo_audit_list_data=data.mobile_seo_audit_list;
     var mobile_seo_audit_list=[];
@@ -550,7 +550,6 @@ $(document).on('click', '.serp-analyze-link', function (event) {
     
 
 
-<<<<<<< HEAD
     function createTableHTML(mobile_html_audit) {
       if (mobile_html_audit == '') {
           return '';
@@ -578,73 +577,11 @@ $(document).on('click', '.serp-analyze-link', function (event) {
   
           } else {
               return ''; // Unsupported type
-=======
-
-
-  // audit içindeki verilerin tablolarının oluşturulması
-    function createTableHTML(details) {
-        if (!details || !details.items) {
-            return '';
-        }
-
-        if (details.type === 'list') {
-            console.log('Birden fazla tablolu audit');
-            return '';
-        } else {
-          if (details.headings !== undefined) {
-            let headings = details.headings;
-            let items = details.items;
-
-            let tableHTML = '<table class="table border mb-0">' +
-                            '<thead>' +
-                            '<tr>';
-
-            // Tablo başlıklarını oluştur
-            headings.forEach(function(heading) {
-                tableHTML += '<th scope="col">' + (heading.label || '') + '</th>';
-            });
-
-            tableHTML += '</tr>' +
-                        '</thead>' +
-                        '<tbody>';
-
-            // Tablo satırlarını oluştur
-            items.forEach(function(item) {
-                tableHTML += '<tr>';
-                headings.forEach(function(heading) {
-                    let value = item[heading.key];
-
-                    if (value === undefined) {
-                        value = '-';
-                    } else if (typeof value === 'number') {
-                        value = value.toLocaleString();
-                    } else if (typeof value === 'object' && value !== null) {
-                        if (heading.valueType === 'node') {
-                            // Node türündeki değerleri özel olarak işleyin
-                            let selector = value.selector || '-';
-                            let snippet = value.snippet ? escapeHtml(value.snippet) : '-';
-                            value = `Selector: ${selector}<br>Snippet: ${snippet}`;
-                        } else {
-                            // Diğer nesneleri JSON string olarak gösterin
-                            value = JSON.stringify(value);
-                        }
-                    }
-                    tableHTML += '<td>' + value + '</td>';
-                });
-                tableHTML += '</tr>';
-            });
-
-            tableHTML += '</tbody></table>';
-
-            return tableHTML;
-            
->>>>>>> a2cbb8f (score added for criticial audit)
-          }
+      }
   
           return tableHTML;
-      }
     }
-<<<<<<< HEAD
+    }
     
     function buildSingleTable(headings, items) {
         let tableHTML = '<table class="table border mb-0">' +
@@ -728,9 +665,6 @@ $(document).on('click', '.serp-analyze-link', function (event) {
   
   
   
-=======
-
->>>>>>> a2cbb8f (score added for criticial audit)
  
   
       
@@ -847,8 +781,9 @@ $(document).on('click', '.serp-analyze-link', function (event) {
                     '</div>'+
 
                   '</div>';
+
+
           
-         
             
           // Audit'in listemizde olup olmadığını kontrol et
           if (mobile_best_practices_audit_list.some(audit => audit.id === mobile_audit_id)) {
@@ -946,7 +881,7 @@ $(document).on('click', '.serp-analyze-link', function (event) {
 
                 console.log(mobile_audit_id);
           }
-
+          
           const all_audit_lists = [
             ...mobile_best_practices_audit_list,
             ...mobile_seo_audit_list,
@@ -1170,7 +1105,7 @@ $(document).on('click', '.serp-analyze-link', function (event) {
 
                 console.log(desktop_audit_id);
           }
-
+          
           const all_audit_lists = [
             ...desktop_best_practices_audit_list,
             ...desktop_seo_audit_list,
