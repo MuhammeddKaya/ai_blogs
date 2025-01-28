@@ -377,6 +377,7 @@ $(document).on('click', '.serp-analyze-link', function (event) {
         $('.mobile_accessibility_contrast_audits').empty();
         $('.mobile_accessibility_tables_lists_audits').empty();
         $('.mobile_accessibility_aria_audits').empty();
+        $('.mobile_performance_key_insights tbody').empty();
 
 
 
@@ -404,6 +405,7 @@ $(document).on('click', '.serp-analyze-link', function (event) {
         $('.desktop_accessibility_contrast_audits').empty();
         $('.desktop_accessibility_tables_lists_audits').empty();
         $('.desktop_accessibility_aria_audits').empty();
+        $('.desktop_performance_key_insights tbody').empty();
       }
 
     //--------------------------------------------------  

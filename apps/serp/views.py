@@ -64,8 +64,101 @@ def analyze_sub_url(request):
         }
         return JsonResponse(response_data)
 
+def check_content_compatibility(title, meta_description, paragraphs):
+    # Paragrafları birleştir
+    combined_paragraphs = " ".join(paragraphs)
 
+    # Kontrol için prompt oluştur
+    def create_prompt(element, content):
+        return f"""
+        You are a content quality analyst. Your task is to determine if the {element} is semantically compatible with the main content provided below.  Consider the meaning, topics covered, and overall message.
 
+        {element}: {content.splitlines()[0] if element != 'Paragraphs' else content}
+
+        Main Content:
+        {' '.join(content.splitlines()[1:]) if element != 'Paragraphs' else ''}
+
+        Answer with only 'Yes' or 'No'.
+    """
+
+    # API isteği gönder ve yanıtı al
+    def get_compatibility(element, content):
+        prompt = create_prompt(element, content)
+        response = requests.post('http://localhost:11434/api/generate',
+        json={
+            "model": "deepseek-r1:1.5b", # ,llama3.2:1b
+            "prompt": prompt,
+            "stream": False,
+        })
+        response = response.json()
+        return response['response'].strip()
+
+    # Her bir öğe için uyumluluğu kontrol et
+    results = {
+        'title': get_compatibility('Title', f"{title}\n{combined_paragraphs}"),
+        'meta_description': get_compatibility('Meta Description', f"{meta_description}\n{combined_paragraphs}")
+    }
+
+    return results
+
+    
+
+def get_website_data(url):
+    try:
+        # Web sitesine GET isteği gönder
+        response = requests.get(url)
+        response.raise_for_status()  # İstek başarılı olmadıysa hata fırlat
+
+        # Web sitesinin içeriğini al
+        html_content = response.text
+
+        # BeautifulSoup ile HTML içeriğini ayrıştır
+        soup = BeautifulSoup(html_content, 'html.parser')
+
+        # Web sitesinin başlığını al
+        title = soup.title.string if soup.title else 'No title found'
+
+        # Web sitesinin meta açıklamasını al
+        meta_description = ''
+        if soup.find('meta', attrs={'name': 'description'}):
+            meta_description = soup.find('meta', attrs={'name': 'description'}).get('content', '')
+
+        # Web sitesindeki başlık etiketlerini al
+        headings = {f'h{i}': [h.get_text(strip=True) for h in soup.find_all(f'h{i}')] for i in range(1, 7)}
+
+        # Web sitesindeki bağlantıları al
+        links = [a.get('href') for a in soup.find_all('a', href=True)]
+
+        # Web sitesindeki resimleri al
+        images = [img.get('src') for img in soup.find_all('img', src=True)]
+
+        # Web sitesindeki paragrafları al
+        paragraphs = [p.get_text(strip=True) for p in soup.find_all('p')]
+
+        # Web sitesinin içeriğini döndür
+        data = {
+            'title': title,
+            'meta_description': meta_description,
+            'headings': headings,
+            'links': links,
+            'images': images,
+            'paragraphs': paragraphs,
+            'html_content': html_content
+        }
+        # JSON formatında düzenli bir şekilde döndür
+        json_data = json.dumps(data, indent=4, ensure_ascii=False)
+
+        # # JSON verilerini dosyaya kaydet
+        # domain_name = url.split("//")[-1].split("/")[0]
+        # file_name = f"{domain_name}.json"
+        # with open(file_name, 'w', encoding='utf-8') as json_file:
+        #     json_file.write(json_data)
+
+        return json_data
+
+    except requests.exceptions.RequestException as e:
+        # Hata durumunda hata mesajını döndür
+        return json.dumps({'error': str(e)}, indent=4, ensure_ascii=False)
 
 def link_analyze(request):
     if request.method == "GET":
@@ -82,6 +175,21 @@ def link_analyze(request):
 
             print("analyze_sub_url çalıştı")
             print(domain_name)
+
+            website_data = get_website_data(domain_name)
+            # print(website_data)
+
+            # JSON verisini yükle
+            website_data = json.loads(website_data)
+
+            # Title, meta description ve paragraphs verilerini al
+            title = website_data.get('title', '')
+            meta_description = website_data.get('meta_description', '')
+            paragraphs = website_data.get('paragraphs', [])
+
+            # Anlamsal uyumluluğu kontrol et
+            compatibility_result = check_content_compatibility(title, meta_description, paragraphs)
+            print(compatibility_result)
             
 
 #--------------------------------------------------------------------------------------------------------------------------
@@ -258,7 +366,8 @@ def link_analyze(request):
 
                 #--------------------audit categoies for weight evaluation-------------------------------------
                 "desktop_seo_audit_categories"            : desktop_seo_audit_categories,
-                
+                #---------web data------------------------------------------------
+                "website_data": website_data,
 
             }
             return JsonResponse(response_data)
