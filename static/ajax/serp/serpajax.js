@@ -23,7 +23,9 @@ $(document).on('click', '.serp-analyze-link', function (event) {
   $("#hidden-initial-div").addClass("d-none");
   // hidden-progress-div div'ini göster
   $("#hidden-progress-div").removeClass("d-none");
+  $("#hidden-progress-div").removeClass("d-none");
   $('#seo-link').text("Analyzing "+ link);
+
 
 
 
@@ -45,6 +47,23 @@ $(document).on('click', '.serp-analyze-link', function (event) {
 
 
       $('#hidden-result-div').removeClass('d-none');
+
+// url, final url and time
+      var website_requested_url=data.website_requested_url;
+      $('#website_requested_url p').text(website_requested_url);
+
+      var website_final_url=data.website_final_url;
+      $('#website_final_url p').text(website_final_url);
+
+      var website_fetch_time = data.website_fetch_time;
+
+      // Tarih ve saat bilgisini istediğiniz formata dönüştür
+      var formatted_date = website_fetch_time.substring(0, 16).replace('T', ' ');
+      
+      // Metni div içindeki p etiketine ekle
+      $('#website_fetch_time p').text(formatted_date);
+
+// screenshots      
 
       var mobile_fullPageScreenshot = data.mobile_fullPageScreenshot
       var $mobileImage = $('<img/>').attr('src', mobile_fullPageScreenshot);
@@ -1128,6 +1147,9 @@ $(document).on('click', '.serp-analyze-link', function (event) {
                 $('.desktop_performance_key_insights tbody').append(audit_html);
             }
           });
+
+
+
           
         }
 
@@ -1148,3 +1170,90 @@ $(document).on('click', '.serp-analyze-link', function (event) {
 });
 
 
+
+// --------------------tıklama ile ilgili dive gitmesi---------------------------------------------
+
+$(document).ready(function() {
+  // Tıklama olayını dinle ve hedef div'e kaydır
+  $('[id$="_score-div"]').on('click', function() {
+      var id = $(this).attr('id');
+      var targetId = id.replace('_score-div', '_score_big-div');
+      $('html, body').animate({
+          scrollTop: $('#' + targetId).offset().top
+      }, 100); // 1000 milisaniye (1 saniye) süresince kaydırma
+  });
+});
+
+
+
+
+///--------------------------------------------------------------------------------
+///--------------------------------------------------------------------------------
+///---------------chat--------------------------------------------------------
+///--------------------------------------------------------------------------------
+
+$(document).ready(function() {
+  // Chat butonuna tıklama olayını dinle
+  $('#send-chat-button').on('click', function(event) {
+    event.preventDefault(); // Formun varsayılan davranışını durdur
+
+    var message = $('#chat-input').val();
+    if (!message) {
+      alert("Please enter a message.");
+      return;
+    }
+
+    // Kullanıcı mesajını ekranda göster
+    var userMessageHtml = `
+      <div class="hstack gap-3 align-items-start mb-7 justify-content-end">
+        <div class="text-end">
+          <h6 class="fs-2 text-muted">You</h6>
+          <div class="p-2 bg-info-subtle text-dark rounded-1 d-inline-block fs-3">
+            ${message}
+          </div>
+        </div>
+      </div>`;
+    $('#chat-container').append(userMessageHtml);
+    $('#chat-input').val(''); // Input alanını temizle
+
+    // Chat kutusunu en alta kaydır
+    var chatBoxInner = document.querySelector('.chat-box-inner');
+    chatBoxInner.scrollTop = chatBoxInner.scrollHeight;
+
+    // AJAX isteğini gönder
+    $.ajax({
+      type: "POST",
+      url: "chat_view/",
+      dataType: 'json',
+      data: {
+        message: message
+      },
+      success: function(data) {
+        // Sunucudan gelen yanıtı ekranda göster
+        var responseMessageHtml = `
+          <div class="hstack gap-3 align-items-start mb-7 justify-content-start">
+            <div>
+              <h6 class="fs-2 text-muted">AI</h6>
+              <div class="p-2 text-bg-light rounded-1 d-inline-block text-dark fs-3">
+                ${data.response}
+              </div>
+            </div>
+          </div>`;
+        $('#chat-container').append(responseMessageHtml);
+
+        // Chat kutusunu en alta kaydır
+        scrollToBottom();
+      },
+      error: function(error) {
+        console.log("Error:", error);
+        alert("An error occurred while sending the message.");
+      }
+    });
+  });
+
+  // Chat kutusunu en alta kaydırma işlevi
+  function scrollToBottom() {
+    var chatBoxInner = document.querySelector('.chat-box-inner');
+    chatBoxInner.scrollTop = chatBoxInner.scrollHeight;
+  }
+});

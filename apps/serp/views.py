@@ -4,6 +4,7 @@ import os
 import json
 from bs4 import BeautifulSoup
 from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 import base64
 
 
@@ -48,22 +49,6 @@ def get_seo(domain,device):
     
 
 
-def analyze_sub_url(request):
-    print("ajax view çalıştı")
-    if request.method == "GET":
-        link = request.GET.get("link")
-        print("analyze_sub_url çalıştı")
-        print(link)
-        
-
-        sub_page_seo_result = get_seo(link,"mobile")
-        sub_page_seo_score = sub_page_seo_result['lighthouseResult']["categories"]["performance"]["score"]
-        print(sub_page_seo_score)
-        response_data = {
-            "sub_page_seo_score": sub_page_seo_score,
-        }
-        return JsonResponse(response_data)
-
 def check_content_compatibility(title, meta_description, paragraphs):
     # Paragrafları birleştir
     combined_paragraphs = " ".join(paragraphs)
@@ -86,7 +71,7 @@ def check_content_compatibility(title, meta_description, paragraphs):
         prompt = create_prompt(element, content)
         response = requests.post('http://localhost:11434/api/generate',
         json={
-            "model": "deepseek-r1:1.5b", # ,llama3.2:1b
+            "model": "granite3-moe:latest", # ,llama3.2:1b, ,deepseek-r1:1.5b
             "prompt": prompt,
             "stream": False,
         })
@@ -261,6 +246,12 @@ def link_analyze(request):
             # with open(file_path, "w") as f:
             #     json.dump(desktop_result, f)
 
+
+            #------general info----------------------------------------------------------
+            website_final_url                     = desktop_result['lighthouseResult']["finalUrl"]
+            website_requested_url                 = desktop_result['lighthouseResult']["requestedUrl"]
+            website_fetch_time                    = desktop_result['lighthouseResult']["fetchTime"]
+
             #----- seo - performance-accessiblity best-practices--------------------------------------
             desktop_performance_score                 = desktop_result['lighthouseResult']["categories"]["performance"]["score"]
             desktop_accessibility_score               = desktop_result['lighthouseResult']["categories"]["accessibility"]["score"]
@@ -312,6 +303,11 @@ def link_analyze(request):
             #         file.write(key + '\n')
 
             response_data = {
+
+                "website_final_url"                     : website_final_url,
+                "website_requested_url"                 : website_requested_url,
+                "website_fetch_time"                    : website_fetch_time,
+
                 #----------------------------------------------------------------
                 #--------------------Mobile-------------------------------------
                 #----------------------------------------------------------------
@@ -375,3 +371,20 @@ def link_analyze(request):
         else:
 
             raise ValueError(f"API request failed: {status}")
+        
+
+@csrf_exempt
+def chat_view(request):
+    if request.method == "POST":
+        print("chat_view çalıştı")
+        message = request.POST.get("message")
+        prompt = message
+        response = requests.post('http://localhost:11434/api/generate',
+        json={
+        "model": "granite3-moe:latest",
+        "prompt": prompt,
+        "stream": False
+        })
+        response = response.json()
+        print(response)
+        return JsonResponse(response)   
